@@ -94,7 +94,7 @@
 | [Amazon Pinpoint](https://aws.amazon.com/pinpoint/?did=ap_card&trk=ap_card) | 同名 | [Amazon Pinpoint](https://docs.aws.amazon.com/general/latest/gr/pinpoint.html) | — |
 | [Amazon Polly](https://aws.amazon.com/polly/?did=ap_card&trk=ap_card) | 同名 | [Amazon Polly](https://docs.aws.amazon.com/general/latest/gr/pol.html) | — |
 | [Amazon Q](https://aws.amazon.com/q/?did=ap_card&trk=ap_card&nc2=hp) | 関連・別粒度（非同等） | [Amazon Q Business](https://docs.aws.amazon.com/general/latest/gr/amazonq.html) | Q Business / Q Developer等を含む製品群の総称。Q Business単独とは異なる |
-| [Amazon Quantum Ledger Database (QLDB)](https://aws.amazon.com/qldb/?did=ap_card&trk=ap_card) | 目録外・未対応 | — | — |
+| [Amazon Quantum Ledger Database (QLDB)](https://aws.amazon.com/qldb/?did=ap_card&trk=ap_card) | 目録外・未対応 | — | Full Shutdown済み（2025-07-31） |
 | [Amazon QuickSight](https://aws.amazon.com/quicksight/?did=ap_card&trk=ap_card) | 確認済み別名 | [AWS Quick Sight](https://docs.aws.amazon.com/general/latest/gr/quicksight.html) | AWS Quick Sightへの改称。AWS Quick（AIワークスペース全体）とは別 |
 | [Amazon RDS](https://aws.amazon.com/rds/?did=ap_card&trk=ap_card) | 同名 | [Amazon RDS](https://docs.aws.amazon.com/general/latest/gr/rds-service.html) | — |
 | [Amazon Redshift](https://aws.amazon.com/redshift/?did=ap_card&trk=ap_card) | 同名 | [Amazon Redshift](https://docs.aws.amazon.com/general/latest/gr/redshift-service.html) | — |
@@ -194,7 +194,7 @@
 | [AWS Identity and Access Management](https://aws.amazon.com/iam/?did=ap_card&trk=ap_card) | 確認済み別名 | [IAM](https://docs.aws.amazon.com/general/latest/gr/iam-service.html) | — |
 | [AWS Inferentia](https://aws.amazon.com/machine-learning/inferentia/?did=ap_card&trk=ap_card) | 関連・別粒度（非同等） | [Amazon EC2](https://docs.aws.amazon.com/general/latest/gr/ec2-service.html) | EC2 Inf系インスタンスで利用する推論用チップ。EC2サービスそのものと同等ではない |
 | [AWS Infrastructure Composer](https://aws.amazon.com/infrastructure-composer/?did=ap_card&trk=ap_card) | 関連・別粒度（非同等） | [CloudFormation](https://docs.aws.amazon.com/general/latest/gr/cfn.html) | 構成可視化・編集ツールとIaCリソース管理サービスは別 |
-| [AWS IoT Button](https://aws.amazon.com/iotbutton/?did=ap_card&trk=ap_card) | 目録外・未対応 | — | — |
+| [AWS IoT Button](https://aws.amazon.com/iotbutton/?did=ap_card&trk=ap_card) | 目録外・未対応 | — | AWS IoT 1-Click（関連サービス）はFull Shutdown（2025-01-29）。ボタン本体の終了状態とは区別 |
 | [AWS IoT Core](https://aws.amazon.com/iot-core/?did=ap_card&trk=ap_card) | 同名 | [AWS IoT Core](https://docs.aws.amazon.com/general/latest/gr/iot-core.html) | — |
 | [AWS IoT Device Defender](https://aws.amazon.com/iot-device-defender/?did=ap_card&trk=ap_card) | 同名 | [AWS IoT Device Defender](https://docs.aws.amazon.com/general/latest/gr/iot_device_defender.html) | — |
 | [AWS IoT Device Management](https://aws.amazon.com/iot-device-management/?did=ap_card&trk=ap_card) | 同名 | [AWS IoT Device Management](https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html) | — |
