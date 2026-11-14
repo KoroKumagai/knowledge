@@ -54,7 +54,9 @@ def get_products():
         except (ValueError, TypeError):
             categories = []
         category = categories[0] if categories else "Uncategorized"
-        url = urljoin(PAGE, fields.get("ctaLink") or "")
+        if not fields.get("ctaLink"):
+            raise ValueError("AWS Products card has no product CTA: "+identifier)
+        url = urljoin(PAGE, fields["ctaLink"])
         docs_url = urljoin(PAGE, fields["secondaryCTALink"]) if fields.get("secondaryCTALink") else ""
         if urlsplit(url).scheme != "https" or not urlsplit(url).netloc:
             raise ValueError("Unsafe official catalog product link: " + url)
