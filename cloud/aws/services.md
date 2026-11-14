@@ -16,7 +16,7 @@ AWS固有の設計モデル、AWSが強みを持つ統合サービスや他社�
 |---|---|
 | AWS Organizations | 組織単位のアカウント統制 |
 | AWS Control Tower | マルチアカウントの統制とランディングゾーン |
-| AWS Service Catalog | 承認済み製品の提供 |
+| AWS Service Catalog | 承認済み製品の提供。Application Registry機能はMaintenance（[公式ライフサイクル](lifecycle.md)参照） |
 | AWS Resource Access Manager (RAM) | AWSリソースの共有 |
 | AWS Audit Manager | 監査証跡の収集（公式Maintenance一覧に掲載。新規顧客には提供されない） |
 | AWS Artifact | コンプライアンス文書 |
