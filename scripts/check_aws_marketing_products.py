@@ -55,7 +55,7 @@ check(all(p.get("url","").startswith("https://") for p in products),
       "Unsafe or missing product URL in official listing")
 check(len(refs)>=250, "General Reference source unexpectedly small")
 
-# Independently verify each Markdown section is a 4-column GFM table with
+# Independently verify each Markdown section is a 5-column GFM table with
 # header, separator and the exact number of marketing card IDs.
 sections=list(re.finditer(r"^## (.+?)（(\d+)件）$",product_md,re.M))
 check(len(sections)==len({p["category"] for p in products}),
@@ -68,14 +68,18 @@ for i,section in enumerate(sections):
                                if "## 同一表示名の別カード" in product_md[section.end():]
                                else len(product_md))]
     rows=[line for line in span.splitlines() if line.startswith("|")]
-    check(len(rows)>=2 and rows[0]=="| 公式Products名 | 製品ページ | Docs（掲載分） | ディレクトリID |" and
-          rows[1]=="|---|---|---|---|", "Invalid product table heading/divider: "+group)
+    check(len(rows)>=2 and rows[0]=="| 公式Products名 | 製品ページ | Docs（掲載分） | ライフサイクル（本体） | ディレクトリID |" and
+          rows[1]=="|---|---|---|---|---|", "Invalid product table heading/divider: "+group)
     actual=rows[2:] if len(rows)>=2 else []
     check(len(actual)==int(section.group(2)), "Group count mismatch: "+group)
     for line in actual:
         cols=[x.strip() for x in re.split(r"(?<!\\)\|",line.strip())[1:-1]]
-        check(len(cols)==4,"Invalid product data row width: "+group)
-        if len(cols)==4: found_ids.append(cols[3])
+        check(len(cols)==5,"Invalid product data row width: "+group)
+        if len(cols)==5:
+            found_ids.append(cols[4])
+            check("](lifecycle.md)" in cols[3] or
+                  cols[3]=="本体の該当記載なし（GA未確認）",
+                  "Missing or unsupported lifecycle status: "+cols[0])
 check(set(found_ids)==set(ids) and len(found_ids)==len(ids),
       "Product Markdown dropped, duplicated or changed official card IDs")
 
@@ -101,6 +105,19 @@ try:
 except Exception as exc:
     check(False,"Products mapping/rendering failed: "+repr(exc))
 
+shutdown_products={
+    "Amazon FinSpace","Amazon Chime","Amazon Pinpoint",
+    "Amazon Lookout for Equipment","Amazon Lookout for Metrics",
+    "Amazon Lookout for Vision","AWS DeepLens","AWS DeepComposer",
+    "Amazon Nimble Studio","AWS Proton","AWS App Mesh",
+    "Amazon Elastic Transcoder","AWS Elemental MediaStore",
+    "Amazon Quantum Ledger Database (QLDB)"
+}
+for name in shutdown_products:
+    lines=[line for line in product_md.splitlines() if line.startswith("| "+name+" |")]
+    check(len(lines)==1 and "Full Shutdown（終了済み）" in lines[0] and
+          "](lifecycle.md)" in lines[0],
+          "Full Shutdown must be visible on official Product row: "+name)
 check("**"+str(total)+"カード**" in overview and
       str(len({p["category"] for p in products}))+"カテゴリ" in overview,
       "AWS README official Products counts are stale")
@@ -112,6 +129,31 @@ check(mapping.get("aliases",{}).get("Amazon QuickSight")=="AWS Quick Sight",
       "AWS Quick Sight current brand alias missing")
 check(mapping.get("related_not_equivalent",{}).get("AWS Quick",{}).get("reference")=="AWS Quick Sight",
       "AWS Quick must not be equated with its Quick Sight BI capability")
+check(mapping.get("aliases",{}).get("AWS Personal Health Dashboard")=="AWS Health",
+      "AWS Health Dashboard renamed service mapping missing")
+check(mapping.get("lifecycle_aliases",{}).get("Amazon Quantum Ledger Database (QLDB)")
+      =="Amazon Quantum Ledger Database (Amazon QLDB)",
+      "QLDB shutdown alias missing")
+for name,target in (("AWS Local Zones","Amazon EC2"),
+                    ("AWS Inferentia","Amazon EC2"),
+                    ("AWS PrivateLink","Amazon VPC"),
+                    ("AWS Transit Gateway","Amazon VPC"),
+                    ("AWS VPN","Amazon VPC"),
+                    ("Amazon Q","Amazon Q Business")):
+    check(mapping.get("related_not_equivalent",{}).get(name,{}).get("reference")==target,
+          "Related-but-not-equivalent rule missing: "+name)
+check("非公開" in product_md and "仕様保証なし" in product_md and
+      "原文ママ" in product_md,
+      "Internal endpoint warning or original AWS spelling note missing")
+check("## 照合サマリー" in coverage_md and
+      coverage_md.index("## 照合サマリー")<coverage_md.index("## Products側の全件照合"),
+      "Coverage summary must come before detailed rows")
+for name in ("AWS DevOps Agent","Amazon SageMaker AI"):
+    check("（ID: " in coverage_md and
+          any(name in row for row in coverage_md.splitlines() if "（ID: " in row),
+          "Duplicate product cards must be distinguished by ID")
+check("Broadcom提供" in coverage_md and "旧VMware Cloud on AWS" not in coverage_md,
+      "VMware Cloud on AWS must not be presented as a discontinued product")
 for display_name, repeat_count in duplicates.items():
     check(display_name in overview or display_name in product_md,
           "Duplicated marketing display name not documented: "+display_name)
