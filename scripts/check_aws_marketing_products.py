@@ -139,6 +139,28 @@ check(mapping.get("aliases",{}).get("AWS Personal Health Dashboard")=="AWS Healt
 check(mapping.get("lifecycle_aliases",{}).get("Amazon Quantum Ledger Database (QLDB)")
       =="Amazon Quantum Ledger Database (Amazon QLDB)",
       "QLDB shutdown alias missing")
+check(mapping.get("lifecycle_aliases",{}).get("Amazon WorkSpaces Thin Client")
+      =="Amazon WorkSpaces – Thin Client",
+      "WorkSpaces Thin Client sunset name mapping missing")
+related_button=mapping.get("lifecycle_related",{}).get("AWS IoT Button",{})
+check(related_button.get("service")=="AWS IoT 1-Click" and related_button.get("reason"),
+      "IoT Button must link to the retired IoT 1-Click DEPENDENCY, not alias")
+check("AWS IoT Button" not in mapping.get("lifecycle_aliases",{}),
+      "IoT Button may not inherit whole-product retirement through an alias")
+for product_name,expected in (
+    ("Amazon WorkSpaces Thin Client", "[Sunset（終了予定）](lifecycle.md)（2027-03-31）"),
+    ("AWS IoT Button", "[関連サービスが終了済み：AWS IoT 1-Click](lifecycle.md)（2025-01-29。ボタン本体の終了を意味しない）")
+):
+    candidates=[line for line in product_md.splitlines()
+                if line.startswith("| "+product_name+" |")]
+    check(len(candidates)==1 and expected in candidates[0],
+          "Expected lifecycle status missing for "+product_name)
+check("| [Amazon Quantum Ledger Database (QLDB)]" in coverage_md and
+      "目録外・未対応 | — | Full Shutdown済み（2025-07-31） |" in coverage_md,
+      "QLDB General Reference mismatch needs its shutdown annotation")
+summary="**公式Full Shutdown台帳でサービス本体の終了を確認: 14カード**"
+check(summary+"\n\n[269項目との差分]" in product_md,
+      "Full Shutdown summary must be a separate Markdown paragraph")
 for name,target in (("AWS Local Zones","Amazon EC2"),
                     ("AWS Inferentia","Amazon EC2"),
                     ("AWS PrivateLink","Amazon VPC"),
