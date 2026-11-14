@@ -11,6 +11,7 @@
 公式の Amazon DocumentDB (with MongoDB compatability) は綴り誤りを含む掲載名をそのまま記録（原文ママ）。
 
 **公式Full Shutdown台帳でサービス本体の終了を確認: 14カード**
+
 [269項目との差分](products-coverage.md) / [手動対応定義](products-mapping.json)
 
 ## Aerospace Satellite（1件）
@@ -203,7 +204,7 @@
 |---|---|---|---|---|
 | Amazon WorkSpaces Applications | [公式](https://aws.amazon.com/appstream2/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html) | 本体の該当記載なし（GA未確認） | amazon-appstream-2-0 |
 | Amazon WorkSpaces Family | [公式](https://aws.amazon.com/workspaces/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/workspaces/) | 本体の該当記載なし（GA未確認） | amazon-workspaces |
-| Amazon WorkSpaces Thin Client | [公式](https://aws.amazon.com/workspaces/thin-client/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/workspaces-thin-client/) | 本体の該当記載なし（GA未確認） | amazon-workspaces-thin-client |
+| Amazon WorkSpaces Thin Client | [公式](https://aws.amazon.com/workspaces/thin-client/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/workspaces-thin-client/) | [Sunset（終了予定）](lifecycle.md)（2027-03-31） | amazon-workspaces-thin-client |
 
 ## Front End Web & Mobile, Serverless（1件）
 
@@ -227,7 +228,7 @@
 
 | 公式Products名 | 製品ページ | Docs（掲載分） | ライフサイクル（本体） | ディレクトリID |
 |---|---|---|---|---|
-| AWS IoT Button | [公式](https://aws.amazon.com/iotbutton/?did=ap_card&trk=ap_card) | — | 本体の該当記載なし（GA未確認） | aws-iot-button |
+| AWS IoT Button | [公式](https://aws.amazon.com/iotbutton/?did=ap_card&trk=ap_card) | — | [関連サービスが終了済み：AWS IoT 1-Click](lifecycle.md)（2025-01-29。ボタン本体の終了を意味しない） | aws-iot-button |
 | AWS IoT Core | [公式](https://aws.amazon.com/iot-core/?did=ap_card&trk=ap_card) | — | 本体の該当記載なし（GA未確認） | aws-iot-core |
 | AWS IoT Device Defender | [公式](https://aws.amazon.com/iot-device-defender/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/iot-device-defender/) | 本体の該当記載なし（GA未確認） | aws-iot-device-defender |
 | AWS IoT Device Management | [公式](https://aws.amazon.com/iot-device-management/?did=ap_card&trk=ap_card) | — | 本体の該当記載なし（GA未確認） | aws-iot-device-management |
