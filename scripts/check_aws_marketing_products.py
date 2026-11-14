@@ -42,6 +42,9 @@ check(params.get("item.directoryId")==["products-cards-interactive-aws-products-
       params.get("item.locale")==["en_US"],
       "Incorrect official Products service-tag filter")
 check(params.get("size")==["500"], "Not fetching enough results for complete service-tag catalog")
+check(params.get("sort_by")==["item.additionalFields.title"] and
+      params.get("sort_order")==["asc"],
+      "AWS Products internal search order changed; review snapshot before accepting")
 check(isinstance(total,int) and total==len(products) and 170<=total<=450,
       "API totalHits differs from frozen product cards")
 ids=[p.get("id") for p in products]
