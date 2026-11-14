@@ -6,12 +6,16 @@ on:
       - "cloud/**"
       - "scripts/check_cloud_consistency.py"
       - "scripts/check_cloudflare_catalog.py"
+      - "scripts/refresh_cloudflare_directory.py"
+      - ".github/workflows/refresh-cloudflare-directory.yml"
       - ".github/workflows/cloud-doc-consistency.yml"
   push:
     paths:
       - "cloud/**"
       - "scripts/check_cloud_consistency.py"
       - "scripts/check_cloudflare_catalog.py"
+      - "scripts/refresh_cloudflare_directory.py"
+      - ".github/workflows/refresh-cloudflare-directory.yml"
       - ".github/workflows/cloud-doc-consistency.yml"
 
 permissions:
@@ -27,5 +31,10 @@ jobs:
           python-version: "3.12"
       - name: Validate tables, moved products, excluded features, and counts
         run: python scripts/check_cloud_consistency.py
+      - name: Syntax-check snapshot generator and validators
+        run: |
+          python -m py_compile scripts/refresh_cloudflare_directory.py
+          python -m py_compile scripts/check_cloudflare_catalog.py
+          python -m py_compile scripts/check_cloud_consistency.py
       - name: Validate Cloudflare official catalogs
         run: python scripts/check_cloudflare_catalog.py
