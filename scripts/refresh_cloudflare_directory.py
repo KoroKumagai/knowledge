@@ -93,17 +93,17 @@ def main():
             raise RuntimeError("Cannot update documented count: "+description)
         return result
 
-    updated_products=substitute(r"の\\d+エントリのどれに対応",
+    updated_products=substitute(r"の\d+エントリのどれに対応",
         "の"+str(count)+"エントリのどれに対応",updated_products,"products Docs count")
     cf_readme=substitute(
-        r"\\*\\*\\d+エントリ\\*\\*全件。公開\\d+、非表示\\d+",
+        r"\*\*\d+エントリ\*\*全件。公開\d+、非表示\d+",
         "**"+str(count)+"エントリ**全件。公開"+str(visible)+"、非表示"+str(hidden),
         cf_readme,"Cloudflare README summary")
-    cf_readme=substitute(r"\\d+件を漏れなく一覧化",
+    cf_readme=substitute(r"\d+件を漏れなく一覧化",
         str(count)+"件を漏れなく一覧化",cf_readme,"Cloudflare README total")
-    root_readme=substitute(r"公式Docs索引\\d+件","公式Docs索引"+str(count)+"件",
+    root_readme=substitute(r"公式Docs索引\d+件","公式Docs索引"+str(count)+"件",
         root_readme,"global README Docs inventory")
-    root_readme=substitute(r"公式目録については\\d+件",
+    root_readme=substitute(r"公式目録については\d+件",
         "公式目録については"+str(count)+"件",root_readme,"global README audit note")
     now=datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d")
     visible=sum(bool(x["url"]) and not x["hidden"] for x in all_entries)
