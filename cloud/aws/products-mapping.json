@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "note": "Explicit marketing Product -> General Reference relations. Add only after checking official names and scopes. Related-but-not-equivalent entries do not count as matches. Lifecycle statuses must match exact official lifecycle item names; only explicitly reviewed lifecycle_aliases are applied to whole-product status. A feature-only shutdown never implies a product shutdown.",
+  "note": "Explicit marketing Product -> General Reference relations. Add only after checking official names and scopes. Related-but-not-equivalent entries do not count as matches. Lifecycle statuses must match exact official lifecycle item names; only explicitly reviewed lifecycle_aliases are applied to whole-product status. A feature-only shutdown never implies a product shutdown. WorkSpaces Thin Client uses an explicitly reviewed service-name alias; IoT Button is only RELATED to IoT 1-Click and must never inherit its whole-product retirement as an alias.",
   "aliases": {
     "Amazon API Gateway": "API Gateway",
     "Amazon Athena": "Athena",
@@ -218,10 +218,17 @@
     }
   },
   "lifecycle_aliases": {
-    "Amazon Quantum Ledger Database (QLDB)": "Amazon Quantum Ledger Database (Amazon QLDB)"
+    "Amazon Quantum Ledger Database (QLDB)": "Amazon Quantum Ledger Database (Amazon QLDB)",
+    "Amazon WorkSpaces Thin Client": "Amazon WorkSpaces – Thin Client"
   },
   "alias_notes": {
     "AWS Personal Health Dashboard": "2022年にAWS Health Dashboardへ名称変更（[AWS Health文書履歴](https://docs.aws.amazon.com/health/latest/ug/doc-history.html)）",
     "Amazon QuickSight": "AWS Quick Sightへの改称。AWS Quick（AIワークスペース全体）とは別"
+  },
+  "lifecycle_related": {
+    "AWS IoT Button": {
+      "service": "AWS IoT 1-Click",
+      "reason": "IoT Buttonが利用する連携サービス。AWS IoT 1-Clickの終了はボタン本体のFull Shutdownと同義ではない"
+    }
   }
 }
