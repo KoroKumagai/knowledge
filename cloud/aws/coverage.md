@@ -38,3 +38,14 @@
 公式エンドポイント目録の各項目は**API/機能群**を含みます。このカタログの全件収録と、他社比較への分類完了は別の作業です。
 
 上記の個別22件以外も[公式エンドポイントカタログ](catalog.md)で全件検索できます。機械的な文字列一致で50項目の5社比較へ流し込むことはしません。
+
+## エンドポイント一覧にない既存AWS独自項目の一次資料
+
+| 名称 | AWS公式資料 | 目録での扱い |
+|---|---|---|
+| AWS Artifact | [公式FAQ](https://aws.amazon.com/artifact/faq/) | コンプライアンス資料取得ポータル。専用エンドポイント項目とは別 |
+| Amazon Connect | [Connect Customerの製品概要](https://docs.aws.amazon.com/connect/latest/adminguide/what-is-amazon-connect.html) | Amazon Connectは製品群。General ReferenceのConnect Customer等と同一視しない |
+| AWS Quick | [2026-11-09改称告知](https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-quick-aws-quick/) | AWS Quick Sightは一部機能で、AWS Quick全体とは異なる |
+| Amazon Nova | [Amazon Nova公式](https://aws.amazon.com/nova/) | 基盤モデル・関連サービス群。単独のエンドポイントサービス名ではない |
+
+これら4件は存在しないという意味ではなく、**採録基準となるAWS General Referenceの外側にある**という意味です。
