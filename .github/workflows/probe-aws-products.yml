@@ -1,9 +1,7 @@
 name: Probe AWS Products marketing catalog (temporary)
 
 on:
-  push:
-    branches:
-      - docs/aws-marketing-products-audit-20261115
+  pull_request:
     paths:
       - .github/workflows/probe-aws-products.yml
 
