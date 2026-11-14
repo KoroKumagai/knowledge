@@ -2,11 +2,11 @@
 
 **照合日：2026-11-14**（公式Webページのスナップショット）
 
-対象: [Cloudflare Products](https://www.cloudflare.com/products/) 掲載の **67製品・ソリューション**。各製品が [公式Docsソース全件索引](catalog.md) の195エントリのどれに対応するかを記録する。
+対象: [Cloudflare Products](https://www.cloudflare.com/products/) 掲載の **68製品・ソリューション**。各製品が [公式Docsソース全件索引](catalog.md) の195エントリのどれに対応するかを記録する。
 
 **注意:** 公式マーケティングページと公式Docsは、ブランド・SKU・機能・製品群の掲載粒度が異なる。対応候補は**機能の完全一致を意味しない**。特に旧称・新名称の移行期は正式な現行名称をDocs側で確認する。
 
-製品ページが67項目であることは、Cloudflare全機能が67種類という意味ではない。Docs索引にある管理機能、開発者向け機能、ベータ等も [catalog.md](catalog.md) に収録している。
+製品ページが68項目であることは、Cloudflare全機能が67種類という意味ではない。Docs索引にある管理機能、開発者向け機能、ベータ等も [catalog.md](catalog.md) に収録している。
 
 ## Compute（10件）
 
@@ -23,15 +23,16 @@
 | Workers Observability | [公式](https://developers.cloudflare.com/observability/) [observability.yaml](https://github.com/cloudflare/cloudflare-docs/blob/34d908abc615fdf22eeb386b171b9657b9abcf38/src/content/directory/observability.yaml) | 関連領域：機能集合 |
 | Workflows | [公式](https://developers.cloudflare.com/workflows/) [workflows.yaml](https://github.com/cloudflare/cloudflare-docs/blob/34d908abc615fdf22eeb386b171b9657b9abcf38/src/content/directory/workflows.yaml) | 同名 |
 
-## Storage（8件）
+## Storage（9件）
 
 | 公式Products掲載名 | Docs索引との対応 | 判定 |
 |---|---|---|
 | Artifacts | [公式](https://developers.cloudflare.com/artifacts/) [artifacts.yaml](https://github.com/cloudflare/cloudflare-docs/blob/34d908abc615fdf22eeb386b171b9657b9abcf38/src/content/directory/artifacts.yaml) | 同名 |
 | Cache Reserve | [公式](https://developers.cloudflare.com/cache/advanced-configuration/cache-reserve/) [cache-reserve.yaml](https://github.com/cloudflare/cloudflare-docs/blob/34d908abc615fdf22eeb386b171b9657b9abcf38/src/content/directory/cache-reserve.yaml) | 同名 |
 | D1 | [公式](https://developers.cloudflare.com/d1/) [d1.yaml](https://github.com/cloudflare/cloudflare-docs/blob/34d908abc615fdf22eeb386b171b9657b9abcf38/src/content/directory/d1.yaml) | 同名 |
-| Data Platform | [公式](https://developers.cloudflare.com/basin/) [basin.yaml](https://github.com/cloudflare/cloudflare-docs/blob/34d908abc615fdf22eeb386b171b9657b9abcf38/src/content/directory/basin.yaml) | 旧名：Basinへ改称（2026-10-01） |
+| Basin | [公式](https://developers.cloudflare.com/basin/) [basin.yaml](https://github.com/cloudflare/cloudflare-docs/blob/34d908abc615fdf22eeb386b171b9657b9abcf38/src/content/directory/basin.yaml) | 同名（旧Data Platform） |
 | Hyperdrive | [公式](https://developers.cloudflare.com/hyperdrive/) [hyperdrive.yaml](https://github.com/cloudflare/cloudflare-docs/blob/34d908abc615fdf22eeb386b171b9657b9abcf38/src/content/directory/hyperdrive.yaml) | 同名 |
+| K2 | [公式](https://developers.cloudflare.com/k2/) [k2.yaml](https://github.com/cloudflare/cloudflare-docs/blob/34d908abc615fdf22eeb386b171b9657b9abcf38/src/content/directory/k2.yaml) | 同名（public beta） |
 | KV | [公式](https://developers.cloudflare.com/kv/) [kv.yaml](https://github.com/cloudflare/cloudflare-docs/blob/34d908abc615fdf22eeb386b171b9657b9abcf38/src/content/directory/kv.yaml) | 同名 |
 | Queues | [公式](https://developers.cloudflare.com/queues/) [queues.yaml](https://github.com/cloudflare/cloudflare-docs/blob/34d908abc615fdf22eeb386b171b9657b9abcf38/src/content/directory/queues.yaml) | 同名 |
 | R2 | [公式](https://developers.cloudflare.com/r2/) [r2.yaml](https://github.com/cloudflare/cloudflare-docs/blob/34d908abc615fdf22eeb386b171b9657b9abcf38/src/content/directory/r2.yaml) | 同名 |
@@ -110,10 +111,15 @@
 | Secure Web Gateway | [公式](https://developers.cloudflare.com/cloudflare-one/traffic-controls/) [gateway.yaml](https://github.com/cloudflare/cloudflare-docs/blob/34d908abc615fdf22eeb386b171b9657b9abcf38/src/content/directory/gateway.yaml) | 同製品群の機能名称 |
 | WAN | [公式](https://developers.cloudflare.com/cloudflare-wan/) [cloudflare-wan.yaml](https://github.com/cloudflare/cloudflare-docs/blob/34d908abc615fdf22eeb386b171b9657b9abcf38/src/content/directory/cloudflare-wan.yaml) | 名称表記 |
 
+## 掲載名の更新履歴
+
+- 2026-10-01: Cloudflare Data Platform は **Basin** に改称、一般提供開始。[公式発表](https://developers.cloudflare.com/changelog/post/2026-10-01-basin-ga/)
+- 2026-10-01: **K2** を公開ベータとして製品一覧に追加。[公式発表](https://blog.cloudflare.com/cloudflare-k2-streams)
+
 ## 照合結果
 
-- 同名: **47件**
-- 別名・旧称・機能/製品群への暫定対応: **20件**
+- 同名（旧名補足を含む）: **49件**
+- 別名・旧称・機能/製品群への暫定対応: **19件**
 - Docs索引との1対1対応未特定: **0件**
 
 この表で示した「別名・旧称」の一部は機能粒度の関連づけであり、同一サービスとは断定しません。追加の公式資料を調べる際のトリアージ用です。
