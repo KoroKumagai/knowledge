@@ -14,6 +14,8 @@ API = "https://api.github.com/repos/cloudflare/cloudflare-docs"
 DOCS = "https://developers.cloudflare.com"
 KNOWN = {
  "agent-memory": ("private beta", "/agent-memory/"),
+ "ai-search": ("GA (2026-10-01)", "/changelog/post/2026-10-01-ai-search-generally-available/"),
+ "cf": ("beta (2026-09-28)", "/changelog/post/2026-09-28-cloudflare-cli-beta/"),
  "artifacts": ("open beta", "/changelog/product/artifacts/"),
  "k2": ("public beta", "/k2/platform/pricing/"),
  "email-service": ("sending: public beta", "/email-service/"),
