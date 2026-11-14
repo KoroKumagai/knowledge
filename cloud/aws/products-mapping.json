@@ -1,0 +1,227 @@
+{
+  "version": 2,
+  "note": "Explicit marketing Product -> General Reference relations. Add only after checking official names and scopes. Related-but-not-equivalent entries do not count as matches. Lifecycle statuses must match exact official lifecycle item names; only explicitly reviewed lifecycle_aliases are applied to whole-product status. A feature-only shutdown never implies a product shutdown.",
+  "aliases": {
+    "Amazon API Gateway": "API Gateway",
+    "Amazon Athena": "Athena",
+    "Amazon Augmented AI": "Amazon A2I",
+    "Amazon Aurora": "Aurora",
+    "Amazon Braket": "Braket",
+    "Amazon CloudFront": "CloudFront",
+    "Amazon CloudWatch": "CloudWatch",
+    "Amazon Connect Customer": "Connect Customer",
+    "Amazon Connect Health": "Connect Health",
+    "Amazon Detective": "Detective",
+    "Amazon DocumentDB (with MongoDB compatability)": "Amazon DocumentDB",
+    "Amazon DynamoDB": "DynamoDB",
+    "Amazon Elastic Block Store (EBS)": "Amazon EBS",
+    "Amazon Elastic Container Registry (ECR)": "Amazon ECR",
+    "Amazon Elastic Container Service (ECS)": "Amazon ECS",
+    "Amazon Elastic File System (EFS)": "Amazon EFS",
+    "Amazon Elastic Kubernetes Service (EKS)": "Amazon EKS",
+    "Amazon ElastiCache": "ElastiCache",
+    "Amazon EventBridge": "EventBridge",
+    "Amazon FinSpace": "FinSpace",
+    "Amazon Forecast": "Forecast",
+    "Amazon GuardDuty": "GuardDuty",
+    "Amazon HealthLake": "HealthLake",
+    "Amazon Interactive Video Service": "Amazon IVS",
+    "Amazon Keyspaces (for Apache Cassandra)": "Amazon Keyspaces",
+    "Amazon Kinesis Video Streams": "Kinesis Video Streams",
+    "Amazon Lightsail": "Lightsail",
+    "Amazon Lookout for Equipment": "Lookout for Equipment",
+    "Amazon Macie": "Macie",
+    "Amazon Managed Blockchain": "Managed Blockchain",
+    "Amazon Managed Streaming for Apache Kafka (MSK)": "Amazon MSK",
+    "Amazon Managed Workflows for Apache Airflow (MWAA)": "Amazon MWAA",
+    "Amazon Neptune": "Neptune",
+    "Amazon OpenSearch Service": "OpenSearch Service",
+    "Amazon QuickSight": "AWS Quick Sight",
+    "Amazon Route 53": "Route 53",
+    "Amazon SageMaker AI": "SageMaker AI",
+    "Amazon Security Lake": "Security Lake",
+    "Amazon Simple Email Service (SES)": "Amazon SES",
+    "Amazon Simple Notification Service (SNS)": "Amazon SNS",
+    "Amazon Simple Queue Service (SQS)": "Amazon SQS",
+    "Amazon Simple Storage Service (S3)": "Amazon S3",
+    "Amazon Timestream": "Timestream",
+    "Amazon Verified Permissions": "Verified Permissions",
+    "Amazon WorkSpaces Applications": "WorkSpaces Applications",
+    "AWS Amplify": "Amplify",
+    "AWS App Mesh": "App Mesh",
+    "AWS App Runner": "App Runner",
+    "AWS AppFabric": "AppFabric",
+    "AWS Application Discovery Service": "Application Discovery Service",
+    "AWS Application Migration Service (MGN)": "MGN",
+    "AWS Audit Manager": "Audit Manager",
+    "AWS Cloud WAN": "Cloud WAN",
+    "AWS CloudFormation": "CloudFormation",
+    "AWS CloudTrail": "CloudTrail",
+    "AWS CodeArtifact": "CodeArtifact",
+    "AWS CodeBuild": "CodeBuild",
+    "AWS CodeCommit": "CodeCommit",
+    "AWS CodeDeploy": "CodeDeploy",
+    "AWS CodePipeline": "CodePipeline",
+    "AWS Compute Optimizer": "Compute Optimizer",
+    "AWS Database Migration Service (DMS)": "AWS DMS",
+    "AWS DataSync": "DataSync",
+    "AWS Device Farm": "Device Farm",
+    "AWS Directory Service": "Directory Service",
+    "AWS Elastic Beanstalk": "Elastic Beanstalk",
+    "AWS Elastic Disaster Recovery (DRS)": "Elastic Disaster Recovery",
+    "AWS Elemental MediaConnect": "MediaConnect",
+    "AWS Elemental MediaConvert": "MediaConvert",
+    "AWS Elemental MediaLive": "MediaLive",
+    "AWS Elemental MediaPackage": "MediaPackage",
+    "AWS Elemental MediaTailor": "MediaTailor",
+    "AWS Fault Injection Service": "AWS FIS",
+    "AWS Firewall Manager": "Firewall Manager",
+    "AWS Global Accelerator": "Global Accelerator",
+    "AWS IAM Identity Center": "IAM Identity Center",
+    "AWS Identity and Access Management": "IAM",
+    "AWS Key Management Service (KMS)": "AWS KMS",
+    "AWS Lake Formation": "Lake Formation",
+    "AWS Lambda": "Lambda",
+    "AWS Launch Wizard": "Launch Wizard",
+    "AWS License Manager": "License Manager",
+    "AWS Migration Hub": "Migration Hub",
+    "AWS Network Firewall": "Network Firewall",
+    "AWS Organizations": "Organizations",
+    "AWS Resilience Hub": "Resilience Hub",
+    "AWS Resource Access Manager": "AWS RAM",
+    "AWS Secrets Manager": "Secrets Manager",
+    "AWS Service Catalog": "AWS Service Catalog endpoints and quotas",
+    "AWS Snow Family": "Snow Family",
+    "AWS Step Functions": "Step Functions",
+    "AWS Storage Gateway": "Storage Gateway",
+    "AWS Systems Manager": "Systems Manager",
+    "AWS Transfer Family": "Transfer Family",
+    "AWS User Notifications": "User Notifications",
+    "AWS Verified Access": "Verified Access",
+    "AWS Well-Architected Tool": "AWS Well-Architected",
+    "AWS X-Ray": "X-Ray",
+    "Elastic Load Balancing (ELB)": "Elastic Load Balancing",
+    "AWS Personal Health Dashboard": "AWS Health"
+  },
+  "related_not_equivalent": {
+    "Amazon CodeGuru": {
+      "reference": "CodeGuru Reviewer",
+      "reason": "CodeGuruは複数機能を含む製品群。Reviewerとは完全に同等でない"
+    },
+    "Amazon EC2 Spot Instances": {
+      "reference": "Amazon EC2",
+      "reason": "EC2の購入オプションであり独立したエンドポイントサービスではない"
+    },
+    "Amazon Kinesis": {
+      "reference": "Kinesis Data Streams",
+      "reason": "Kinesisはビデオ・データストリーム等を含む製品群"
+    },
+    "Amazon S3 Glacier": {
+      "reference": "Amazon Glacier",
+      "reason": "S3のストレージクラス系と従来のGlacier APIは区別"
+    },
+    "Amazon SageMaker": {
+      "reference": "SageMaker AI",
+      "reason": "SageMakerの広い製品群とML基盤のSageMaker AIは同じ粒度ではない"
+    },
+    "Amazon SageMaker Ground Truth": {
+      "reference": "SageMaker AI",
+      "reason": "SageMaker AIのラベル付け機能。独立した基盤サービスではない"
+    },
+    "Amazon WorkSpaces Family": {
+      "reference": "Amazon WorkSpaces",
+      "reason": "WorkSpacesの複数製品群・クライアントをまとめた名称"
+    },
+    "AWS Budgets": {
+      "reference": "Billing and Cost Management",
+      "reason": "料金管理の1機能。全体と同等ではない"
+    },
+    "AWS Cloud Development Kit (CDK)": {
+      "reference": "CloudFormation",
+      "reason": "CDKはIaC構成ツール。CloudFormationはリソース管理基盤"
+    },
+    "AWS Cost and Usage Report": {
+      "reference": "Billing and Cost Management",
+      "reason": "請求・利用実績レポート機能であり管理基盤全体ではない"
+    },
+    "AWS Cost Explorer": {
+      "reference": "Billing and Cost Management",
+      "reason": "費用分析機能であり請求管理全体ではない"
+    },
+    "AWS Deep Learning AMIs": {
+      "reference": "Amazon EC2",
+      "reason": "機械学習用AMIの配布。EC2全体とは別"
+    },
+    "AWS Fargate": {
+      "reference": "Amazon ECS",
+      "reason": "コンテナ実行モデル。ECS以外にもEKSから利用可能"
+    },
+    "AWS Infrastructure Composer": {
+      "reference": "CloudFormation",
+      "reason": "構成可視化・編集ツールとIaCリソース管理サービスは別"
+    },
+    "AWS IoT Greengrass": {
+      "reference": "AWS IoT Greengrass V2",
+      "reason": "Greengrass製品群とV2のAPI参照は粒度が異なる"
+    },
+    "AWS Management Console Mobile Application": {
+      "reference": "AWS Management Console",
+      "reason": "クラウド管理画面のモバイルアプリであり同一エンドポイントではない"
+    },
+    "AWS Quick": {
+      "reference": "AWS Quick Sight",
+      "reason": "AWS QuickはAIワークスペース全体、Quick SightはBI機能のみ"
+    },
+    "AWS Security Hub": {
+      "reference": "Security Hub CSPM",
+      "reason": "Security Hubの統合機能群とCSPM機能は同じ粒度ではない"
+    },
+    "AWS Shield": {
+      "reference": "Shield Advanced",
+      "reason": "Shield Standardを含む製品群と有料のAdvancedは別"
+    },
+    "AWS Trusted Advisor": {
+      "reference": "Trusted Advisor API",
+      "reason": "アドバイザリー製品とそのAPIは同じ機能単位ではない"
+    },
+    "AWS Wavelength": {
+      "reference": "Amazon EC2",
+      "reason": "5Gエッジ展開のインフラ提供形態。EC2と同一製品ではない"
+    },
+    "VMware Cloud on AWS": {
+      "reference": "Amazon EVS",
+      "reason": "VMware Cloud on AWS（Broadcom提供）とAmazon EVS（AWS提供）は別製品。後者が前者を終了・置換したと断定しない"
+    },
+    "AWS Local Zones": {
+      "reference": "Amazon EC2",
+      "reason": "EC2のリージョン近接ロケーション提供形態。独立したEC2 APIサービスではない"
+    },
+    "AWS Inferentia": {
+      "reference": "Amazon EC2",
+      "reason": "EC2 Inf系インスタンスで利用する推論用チップ。EC2サービスそのものと同等ではない"
+    },
+    "AWS PrivateLink": {
+      "reference": "Amazon VPC",
+      "reason": "VPCエンドポイントによるプライベート接続機能。VPC全体と同一ではない"
+    },
+    "AWS Transit Gateway": {
+      "reference": "Amazon VPC",
+      "reason": "VPC接続向け中継ネットワーク機能。VPC API等を使用するがVPC全体とは別"
+    },
+    "AWS VPN": {
+      "reference": "Amazon VPC",
+      "reason": "Site-to-Site VPN等のVPCネットワーク機能。VPC全体ではない"
+    },
+    "Amazon Q": {
+      "reference": "Amazon Q Business",
+      "reason": "Q Business / Q Developer等を含む製品群の総称。Q Business単独とは異なる"
+    }
+  },
+  "lifecycle_aliases": {
+    "Amazon Quantum Ledger Database (QLDB)": "Amazon Quantum Ledger Database (Amazon QLDB)"
+  },
+  "alias_notes": {
+    "AWS Personal Health Dashboard": "2022年にAWS Health Dashboardへ名称変更（[AWS Health文書履歴](https://docs.aws.amazon.com/health/latest/ug/doc-history.html)）",
+    "Amazon QuickSight": "AWS Quick Sightへの改称。AWS Quick（AIワークスペース全体）とは別"
+  }
+}

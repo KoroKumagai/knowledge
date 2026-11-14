@@ -1,0 +1,2141 @@
+{
+  "retrieved_utc": "2026-11-14",
+  "source_page": "https://aws.amazon.com/products/",
+  "api_url": "https://aws.amazon.com/api/dirs/items/search?item.directoryId=products-cards-interactive-aws-products-ams&item.locale=en_US&tags.id=GLOBAL%23local-tags-aws-products-type%23service&sort_by=item.additionalFields.title&sort_order=asc&size=500",
+  "source_total_hits": 237,
+  "products": [
+    {
+      "id": "amazon-api-gateway",
+      "name": "Amazon API Gateway",
+      "category": "Application Integration",
+      "url": "https://aws.amazon.com/api-gateway/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/apigateway/",
+      "description": "Build, deploy, and manage APIs",
+      "updated": "2025-10-29T20:50:02+0000"
+    },
+    {
+      "id": "amazon-appflow",
+      "name": "Amazon AppFlow",
+      "category": "Application Integration",
+      "url": "https://aws.amazon.com/appflow/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/appflow/",
+      "description": "No-code integration for SaaS apps & AWS services",
+      "updated": "2025-10-29T20:48:32+0000"
+    },
+    {
+      "id": "amazon-athena",
+      "name": "Amazon Athena",
+      "category": "Analytics",
+      "url": "https://aws.amazon.com/athena/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/athena/",
+      "description": "Query data in S3 using SQL",
+      "updated": "2025-11-18T19:13:58+0000"
+    },
+    {
+      "id": "amazon-augmented-ai",
+      "name": "Amazon Augmented AI",
+      "category": "Artificial Intelligence (AI)",
+      "url": "https://aws.amazon.com/augmented-ai/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/augmented-ai/",
+      "description": "Easily implement human review of ML predictions",
+      "updated": "2025-10-29T20:50:02+0000"
+    },
+    {
+      "id": "amazon-aurora",
+      "name": "Amazon Aurora",
+      "category": "Databases",
+      "url": "https://aws.amazon.com/rds/aurora/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html",
+      "description": "High performance managed relational database",
+      "updated": "2025-10-29T20:49:24+0000"
+    },
+    {
+      "id": "amazon-bedrock-1",
+      "name": "Amazon Bedrock",
+      "category": "Artificial Intelligence (AI)",
+      "url": "https://aws.amazon.com/bedrock/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/bedrock/latest/userguide/getting-started.html#getting-started-model-access",
+      "description": "Build with foundation models",
+      "updated": "2025-10-29T20:50:36+0000"
+    },
+    {
+      "id": "amazon-bedrock-agentcore",
+      "name": "Amazon Bedrock AgentCore",
+      "category": "Artificial Intelligence (AI)",
+      "url": "https://aws.amazon.com/bedrock/agentcore/",
+      "docs_url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/what-is-bedrock-agentcore.html",
+      "description": "Accelerate agents to production with composable services that work with any framework, any model",
+      "updated": "2026-11-09T20:01:50+0000"
+    },
+    {
+      "id": "amazon-braket",
+      "name": "Amazon Braket",
+      "category": "Compute",
+      "url": "https://aws.amazon.com/braket/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/braket/",
+      "description": "Accelerate quantum computing research",
+      "updated": "2025-10-29T20:47:46+0000"
+    },
+    {
+      "id": "amazon-chime",
+      "name": "Amazon Chime",
+      "category": "Business Applications",
+      "url": "https://aws.amazon.com/chime/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Frustration-free meetings, video calls, and chat",
+      "updated": "2026-11-09T20:04:51+0000"
+    },
+    {
+      "id": "amazon-cloudfront",
+      "name": "Amazon CloudFront",
+      "category": "Networking",
+      "url": "https://aws.amazon.com/cloudfront/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Global content delivery network",
+      "updated": "2025-10-29T20:50:13+0000"
+    },
+    {
+      "id": "amazon-cloudsearch",
+      "name": "Amazon CloudSearch",
+      "category": "Analytics",
+      "url": "https://aws.amazon.com/cloudsearch/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Managed search service",
+      "updated": "2025-10-29T20:50:32+0000"
+    },
+    {
+      "id": "amazon-cloudwatch",
+      "name": "Amazon CloudWatch",
+      "category": "Management Governance",
+      "url": "https://aws.amazon.com/cloudwatch/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Monitor resources and applications",
+      "updated": "2026-11-09T20:07:49+0000"
+    },
+    {
+      "id": "amazon-codecatalyst-1",
+      "name": "Amazon CodeCatalyst",
+      "category": "Developer Tools",
+      "url": "https://aws.amazon.com/codecatalyst/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Unified software development service for faster development and delivery on AWS",
+      "updated": "2025-10-17T22:18:01+0000"
+    },
+    {
+      "id": "amazon-codeguru",
+      "name": "Amazon CodeGuru",
+      "category": "Developer Tools",
+      "url": "https://aws.amazon.com/codeguru/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/codeguru/latest/security-ug/what-is-codeguru-security.html",
+      "description": "Find your most expensive lines of code",
+      "updated": "2025-11-18T19:13:57+0000"
+    },
+    {
+      "id": "amazon-cognito",
+      "name": "Amazon Cognito",
+      "category": "Uncategorized",
+      "url": "https://aws.amazon.com/cognito/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Identity management for your apps",
+      "updated": "2025-05-23T11:13:36+0000"
+    },
+    {
+      "id": "amazon-comprehend",
+      "name": "Amazon Comprehend",
+      "category": "Artificial Intelligence (AI)",
+      "url": "https://aws.amazon.com/comprehend/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/comprehend/",
+      "description": "Discover insights and relationships in text",
+      "updated": "2025-11-18T19:13:34+0000"
+    },
+    {
+      "id": "amazon-connect",
+      "name": "Amazon Connect Customer",
+      "category": "Business Applications",
+      "url": "https://aws.amazon.com/products/connect/customer/",
+      "docs_url": "https://docs.aws.amazon.com/connect/",
+      "description": "AI-powered customer experience platform that helps enterprises deliver exceptional service across every touchpoint.",
+      "updated": "2026-07-07T20:31:37+0000"
+    },
+    {
+      "id": "amazon-connect-decisions",
+      "name": "Amazon Connect Decisions",
+      "category": "Business Applications",
+      "url": "https://aws.amazon.com/products/connect/decisions/",
+      "docs_url": "",
+      "description": "Move your supply chain team from firefighting to strategy. AI monitors signals, surfaces risks, and acts before disruptions cascade.",
+      "updated": "2026-07-07T20:30:46+0000"
+    },
+    {
+      "id": "amazon-connect-health",
+      "name": "Amazon Connect Health",
+      "category": "Business Applications",
+      "url": "https://aws.amazon.com/products/connect/health/",
+      "docs_url": "",
+      "description": "Streamline scheduling, documentation, and medical coding with AI teammates purpose-built for healthcare workflows.",
+      "updated": "2026-07-07T20:29:58+0000"
+    },
+    {
+      "id": "amazon-connect-talent",
+      "name": "Amazon Connect Talent",
+      "category": "Business Applications",
+      "url": "https://aws.amazon.com/products/connect/talent/",
+      "docs_url": "",
+      "description": "Accelerate quality hiring from weeks to hours. AI teammates conduct assessments and interviews around the clock, at scale.",
+      "updated": "2026-07-07T20:29:44+0000"
+    },
+    {
+      "id": "amazon-corretto",
+      "name": "Amazon Corretto",
+      "category": "Developer Tools",
+      "url": "https://aws.amazon.com/corretto/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Production-ready distribution of OpenJDK",
+      "updated": "2025-10-17T22:18:06+0000"
+    },
+    {
+      "id": "amazon-dash-cart",
+      "name": "Amazon Dash Cart",
+      "category": "Business Applications",
+      "url": "https://aws.amazon.com/dash-cart/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Empower consumers to shop with efficiency and ease",
+      "updated": "2025-10-17T22:17:57+0000"
+    },
+    {
+      "id": "amazon-datazone",
+      "name": "Amazon DataZone",
+      "category": "Analytics",
+      "url": "https://aws.amazon.com/datazone/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/datazone/",
+      "description": "Unlock data across organizational boundaries with built-in governance",
+      "updated": "2026-11-09T20:06:58+0000"
+    },
+    {
+      "id": "amazon-detective",
+      "name": "Amazon Detective",
+      "category": "Uncategorized",
+      "url": "https://aws.amazon.com/detective/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Investigate potential security issues",
+      "updated": "2025-06-17T15:18:43+0000"
+    },
+    {
+      "id": "amazon-documentdb-with-mongodb-compatibility",
+      "name": "Amazon DocumentDB (with MongoDB compatability)",
+      "category": "Databases",
+      "url": "https://aws.amazon.com/documentdb/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/documentdb/",
+      "description": "Fully managed document database",
+      "updated": "2025-11-18T19:13:11+0000"
+    },
+    {
+      "id": "amazon-dynamodb",
+      "name": "Amazon DynamoDB",
+      "category": "Databases",
+      "url": "https://aws.amazon.com/dynamodb/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/dynamodb/",
+      "description": "Managed NoSQL database",
+      "updated": "2025-10-29T20:47:33+0000"
+    },
+    {
+      "id": "amazon-ec2",
+      "name": "Amazon EC2",
+      "category": "Compute",
+      "url": "https://aws.amazon.com/ec2/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/ec2/",
+      "description": "Virtual servers in the cloud",
+      "updated": "2025-10-29T20:48:05+0000"
+    },
+    {
+      "id": "amazon-ec2-auto-scaling",
+      "name": "Amazon EC2 Auto Scaling",
+      "category": "Compute",
+      "url": "https://aws.amazon.com/ec2/autoscaling/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/autoscaling/",
+      "description": "Scale compute capacity to meet demand",
+      "updated": "2025-10-29T20:50:24+0000"
+    },
+    {
+      "id": "amazon-ec2-spot-instances",
+      "name": "Amazon EC2 Spot Instances",
+      "category": "Compute",
+      "url": "https://aws.amazon.com/ec2/spot/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Run workloads for up to 90% off",
+      "updated": "2026-11-09T20:06:14+0000"
+    },
+    {
+      "id": "amazon-elastic-block-store-ebs",
+      "name": "Amazon Elastic Block Store (EBS)",
+      "category": "Storage",
+      "url": "https://aws.amazon.com/ebs/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/ebs/",
+      "description": "EC2 block storage volumes",
+      "updated": "2025-11-18T19:14:11+0000"
+    },
+    {
+      "id": "amazon-elastic-container-registry",
+      "name": "Amazon Elastic Container Registry (ECR)",
+      "category": "Compute",
+      "url": "https://aws.amazon.com/ecr/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/ecr/",
+      "description": "Easily store, manage, and deploy container images",
+      "updated": "2025-10-29T20:49:06+0000"
+    },
+    {
+      "id": "amazon-elastic-container-service-ecs",
+      "name": "Amazon Elastic Container Service (ECS)",
+      "category": "Compute",
+      "url": "https://aws.amazon.com/ecs/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/ecs/",
+      "description": "Highly secure, reliable, and scalable way to run containers",
+      "updated": "2025-10-29T20:49:42+0000"
+    },
+    {
+      "id": "amazon-elastic-file-system-efs",
+      "name": "Amazon Elastic File System (EFS)",
+      "category": "Storage",
+      "url": "https://aws.amazon.com/efs/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/efs/",
+      "description": "Fully managed file system for EC2",
+      "updated": "2025-10-29T20:47:48+0000"
+    },
+    {
+      "id": "amazon-elastic-kubernetes-service-eks",
+      "name": "Amazon Elastic Kubernetes Service (EKS)",
+      "category": "Compute",
+      "url": "https://aws.amazon.com/eks/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/eks/",
+      "description": "The most trusted way to run Kubernetes",
+      "updated": "2025-10-29T20:48:04+0000"
+    },
+    {
+      "id": "amazon-elastic-transcoder",
+      "name": "Amazon Elastic Transcoder",
+      "category": "Media Services",
+      "url": "https://aws.amazon.com/elastictranscoder/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Easy-to-use scalable media transcoding",
+      "updated": "2026-11-09T20:04:45+0000"
+    },
+    {
+      "id": "amazon-elasticache",
+      "name": "Amazon ElastiCache",
+      "category": "Databases",
+      "url": "https://aws.amazon.com/elasticache/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/elasticache/",
+      "description": "In-memory caching service",
+      "updated": "2025-10-29T20:50:05+0000"
+    },
+    {
+      "id": "amazon-emr",
+      "name": "Amazon EMR",
+      "category": "Analytics",
+      "url": "https://aws.amazon.com/emr/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/emr/",
+      "description": "Hosted Hadoop framework",
+      "updated": "2025-10-29T20:47:36+0000"
+    },
+    {
+      "id": "amazon-eventbridge",
+      "name": "Amazon EventBridge",
+      "category": "Application Integration",
+      "url": "https://aws.amazon.com/eventbridge/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/eventbridge/",
+      "description": "Serverless event bus for SaaS apps & AWS services",
+      "updated": "2025-10-29T20:47:33+0000"
+    },
+    {
+      "id": "amazon-finspace",
+      "name": "Amazon FinSpace",
+      "category": "Analytics",
+      "url": "https://aws.amazon.com/finspace/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Store, catalog, prepare, and analyze financial industry data in minutes",
+      "updated": "2026-11-09T20:04:47+0000"
+    },
+    {
+      "id": "amazon-forecast",
+      "name": "Amazon Forecast",
+      "category": "Artificial Intelligence (AI)",
+      "url": "https://aws.amazon.com/forecast/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Increase forecast accuracy using machine learning",
+      "updated": "2026-11-09T20:08:35+0000"
+    },
+    {
+      "id": "amazon-fraud-detector",
+      "name": "Amazon Fraud Detector",
+      "category": "Artificial Intelligence (AI)",
+      "url": "https://aws.amazon.com/fraud-detector/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/frauddetector/",
+      "description": "Detect more online fraud faster",
+      "updated": "2026-11-09T20:04:45+0000"
+    },
+    {
+      "id": "amazon-fsx",
+      "name": "Amazon FSx",
+      "category": "Storage",
+      "url": "https://aws.amazon.com/fsx/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Launch, run, and scale feature-rich and highly-performant file systems with just a few clicks",
+      "updated": "2026-11-09T20:08:43+0000"
+    },
+    {
+      "id": "amazon-gamelift",
+      "name": "Amazon GameLift Servers",
+      "category": "Games",
+      "url": "https://aws.amazon.com/gamelift/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/gameliftservers/?nc2=type_a",
+      "description": "Simple, fast, cost-effective dedicated game server hosting",
+      "updated": "2025-11-18T19:13:52+0000"
+    },
+    {
+      "id": "amazon-guardduty",
+      "name": "Amazon GuardDuty",
+      "category": "Uncategorized",
+      "url": "https://aws.amazon.com/guardduty/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Managed threat detection service",
+      "updated": "2025-06-17T15:19:07+0000"
+    },
+    {
+      "id": "amazon-healthlake",
+      "name": "Amazon HealthLake",
+      "category": "Machine Learning vs Deep Learning",
+      "url": "https://aws.amazon.com/healthlake/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Securely store, transform, query, and analyze health data in minutes",
+      "updated": "2026-11-09T20:00:17+0000"
+    },
+    {
+      "id": "amazon-inspector",
+      "name": "Amazon Inspector",
+      "category": "Uncategorized",
+      "url": "https://aws.amazon.com/inspector/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Automated and continual vulnerability management for Amazon EC2 and Amazon ECR",
+      "updated": "2025-05-23T11:26:59+0000"
+    },
+    {
+      "id": "amazon-interactive-video-service",
+      "name": "Amazon Interactive Video Service",
+      "category": "Media Services",
+      "url": "https://aws.amazon.com/ivs/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/ivs/",
+      "description": "Build engaging live stream experiences",
+      "updated": "2025-11-18T19:14:03+0000"
+    },
+    {
+      "id": "amazon-kendra",
+      "name": "Amazon Kendra",
+      "category": "Artificial Intelligence (AI)",
+      "url": "https://aws.amazon.com/kendra/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/kendra/",
+      "description": "Reinvent enterprise search with ML",
+      "updated": "2025-10-29T20:47:12+0000"
+    },
+    {
+      "id": "amazon-keyspaces-for-apache-cassandra",
+      "name": "Amazon Keyspaces (for Apache Cassandra)",
+      "category": "Databases",
+      "url": "https://aws.amazon.com/keyspaces/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/keyspaces/",
+      "description": "Managed Cassandra-compatible database",
+      "updated": "2025-10-29T20:48:26+0000"
+    },
+    {
+      "id": "amazon-kinesis",
+      "name": "Amazon Kinesis",
+      "category": "Data & Analytics",
+      "url": "https://aws.amazon.com/kinesis/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Analyze real-time video and data streams",
+      "updated": "2026-11-09T20:08:46+0000"
+    },
+    {
+      "id": "amazon-kinesis-video-streams",
+      "name": "Amazon Kinesis Video Streams",
+      "category": "Media Services",
+      "url": "https://aws.amazon.com/kinesis/video-streams/?did=ap_card&trk=ap_card",
+      "docs_url": "https://aws.amazon.com/documentation-overview/kinesis-video-streams/",
+      "description": "Process and analyze video streams",
+      "updated": "2025-11-18T19:14:27+0000"
+    },
+    {
+      "id": "amazon-lex",
+      "name": "Amazon Lex",
+      "category": "Artificial Intelligence (AI)",
+      "url": "https://aws.amazon.com/lex/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/lex/",
+      "description": "Build voice and text chatbots",
+      "updated": "2025-11-18T19:14:00+0000"
+    },
+    {
+      "id": "amazon-lightsail",
+      "name": "Amazon Lightsail",
+      "category": "Compute",
+      "url": "https://aws.amazon.com/lightsail/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/lightsail/",
+      "description": "Launch and manage virtual private servers",
+      "updated": "2025-11-18T19:13:28+0000"
+    },
+    {
+      "id": "amazon-location",
+      "name": "Amazon Location Service",
+      "category": "Developer Tools",
+      "url": "https://aws.amazon.com/location/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/location/",
+      "description": "Securely and easily add location data to applications",
+      "updated": "2025-11-18T19:13:37+0000"
+    },
+    {
+      "id": "amazon-lookout-for-equipment",
+      "name": "Amazon Lookout for Equipment",
+      "category": "Artificial Intelligence (AI)",
+      "url": "https://aws.amazon.com/lookout-for-equipment/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/lookout-for-equipment/",
+      "description": "Detect abnormal equipment behavior by analyzing sensor data",
+      "updated": "2025-11-18T19:13:22+0000"
+    },
+    {
+      "id": "amazon-lookout-for-metrics",
+      "name": "Amazon Lookout for Metrics",
+      "category": "Machine Learning vs Deep Learning",
+      "url": "https://aws.amazon.com/lookout-for-metrics/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Automatically detect anomalies in metrics and identify their root cause",
+      "updated": "2026-11-09T20:00:24+0000"
+    },
+    {
+      "id": "amazon-lookout-for-vision",
+      "name": "Amazon Lookout for Vision",
+      "category": "Machine Learning vs Deep Learning",
+      "url": "https://aws.amazon.com/lookout-for-vision/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Spot product defects using computer vision to automate quality inspection",
+      "updated": "2026-11-09T20:08:12+0000"
+    },
+    {
+      "id": "amazon-macie",
+      "name": "Amazon Macie",
+      "category": "Uncategorized",
+      "url": "https://aws.amazon.com/macie/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Discover and protect your sensitive data at scale",
+      "updated": "2025-06-17T15:19:22+0000"
+    },
+    {
+      "id": "amazon-managed-blockchain",
+      "name": "Amazon Managed Blockchain",
+      "category": "Databases",
+      "url": "https://aws.amazon.com/managed-blockchain/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/managed-blockchain/",
+      "description": "Create and manage scalable blockchain networks",
+      "updated": "2025-10-29T20:50:24+0000"
+    },
+    {
+      "id": "amazon-managed-grafana",
+      "name": "Amazon Managed Grafana",
+      "category": "Management Governance",
+      "url": "https://aws.amazon.com/grafana/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Scalable, secure, and highly available data visualization for your operational metrics, logs, and traces",
+      "updated": "2026-11-09T19:59:36+0000"
+    },
+    {
+      "id": "amazon-managed-promotheus",
+      "name": "Amazon Managed Service for Prometheus",
+      "category": "Management Governance",
+      "url": "https://aws.amazon.com/prometheus/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Highly available, secure, and managed monitoring for your containers",
+      "updated": "2026-11-09T20:01:24+0000"
+    },
+    {
+      "id": "amazon-managed-streaming-for-apache-kafka",
+      "name": "Amazon Managed Streaming for Apache Kafka (MSK)",
+      "category": "Analytics",
+      "url": "https://aws.amazon.com/msk/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/msk/",
+      "description": "Fully managed Apache Kafka service",
+      "updated": "2025-10-29T20:47:43+0000"
+    },
+    {
+      "id": "amazon-managed-workflows-for-apache-airflow",
+      "name": "Amazon Managed Workflows for Apache Airflow (MWAA)",
+      "category": "Application Integration",
+      "url": "https://aws.amazon.com/managed-workflows-for-apache-airflow/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/mwaa/",
+      "description": "Highly available, secure, and managed workflow orchestration for Apache Airflow",
+      "updated": "2025-10-17T22:20:55+0000"
+    },
+    {
+      "id": "amazon-memorydb-for-redis",
+      "name": "Amazon MemoryDB",
+      "category": "Databases",
+      "url": "https://aws.amazon.com/memorydb/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/memorydb/",
+      "description": "Valkey- and Redis OSS-compatible, durable, in-memory database service for ultra-fast performance",
+      "updated": "2025-10-29T20:49:29+0000"
+    },
+    {
+      "id": "amazon-monitron",
+      "name": "Amazon Monitron",
+      "category": "Artificial Intelligence (AI)",
+      "url": "https://aws.amazon.com/monitron/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Reduce unplanned equipment downtime with predictive maintenance and machine learning",
+      "updated": "2026-11-09T20:01:28+0000"
+    },
+    {
+      "id": "amazon-mq",
+      "name": "Amazon MQ",
+      "category": "Application Integration",
+      "url": "https://aws.amazon.com/amazon-mq/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/amazon-mq/",
+      "description": "Managed message broker service",
+      "updated": "2025-11-18T19:13:12+0000"
+    },
+    {
+      "id": "amazon-neptune",
+      "name": "Amazon Neptune",
+      "category": "Databases",
+      "url": "https://aws.amazon.com/neptune/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Fully managed graph database service",
+      "updated": "2026-11-09T19:59:55+0000"
+    },
+    {
+      "id": "amazon-nimble-studio",
+      "name": "Amazon Nimble Studio",
+      "category": "Uncategorized",
+      "url": "https://aws.amazon.com/nimble-studio/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Accelerate content creation in the cloud",
+      "updated": "2025-06-17T15:18:44+0000"
+    },
+    {
+      "id": "amazon-nova",
+      "name": "Amazon Nova",
+      "category": "Artificial Intelligence (AI)",
+      "url": "https://aws.amazon.com/nova/?hp=fa&trk=c6553eb9-60f2-436a-b294-162bda8a1ebb",
+      "docs_url": "",
+      "description": "Price performant multimodal and content generation models with frontier intelligence",
+      "updated": "2025-10-17T22:20:50+0000"
+    },
+    {
+      "id": "amazon-opensearch-service",
+      "name": "Amazon OpenSearch Service",
+      "category": "Analytics",
+      "url": "https://aws.amazon.com/opensearch-service/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/opensearch-service/",
+      "description": "Search, visualize, and analyze up to petabytes of text and unstructured data",
+      "updated": "2025-10-29T20:47:26+0000"
+    },
+    {
+      "id": "amazon-personalize",
+      "name": "Amazon Personalize",
+      "category": "Artificial Intelligence (AI)",
+      "url": "https://aws.amazon.com/personalize/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/personalize/",
+      "description": "Build real-time recommendations into your applications",
+      "updated": "2025-11-18T19:13:29+0000"
+    },
+    {
+      "id": "amazon-pinpoint",
+      "name": "Amazon Pinpoint",
+      "category": "Front End Web & Mobile, Serverless",
+      "url": "https://aws.amazon.com/pinpoint/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Multichannel marketing communications",
+      "updated": "2026-11-09T19:58:42+0000"
+    },
+    {
+      "id": "amazon-polly",
+      "name": "Amazon Polly",
+      "category": "Artificial Intelligence (AI)",
+      "url": "https://aws.amazon.com/polly/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/polly/",
+      "description": "Turn text into life-like speech",
+      "updated": "2025-11-18T19:14:31+0000"
+    },
+    {
+      "id": "amazon-q",
+      "name": "Amazon Q",
+      "category": "Generative Design, and Generative AI in Engineering and Beyond (featuring Steve Hooper, VP for design and manufacturing software tools at Autodesk)",
+      "url": "https://aws.amazon.com/q/?did=ap_card&trk=ap_card&nc2=hp",
+      "docs_url": "",
+      "description": "Generative AI-powered assistant, with security and privacy to meet the most stringent enterprise needs",
+      "updated": "2026-11-09T20:07:40+0000"
+    },
+    {
+      "id": "amazon-quantum-ledger-database-qldb",
+      "name": "Amazon Quantum Ledger Database (QLDB)",
+      "category": "Uncategorized",
+      "url": "https://aws.amazon.com/qldb/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Fully managed ledger database",
+      "updated": "2026-11-09T20:06:54+0000"
+    },
+    {
+      "id": "amazon-quicksight",
+      "name": "Amazon QuickSight",
+      "category": "Analytics",
+      "url": "https://aws.amazon.com/quicksight/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/quicksuite/",
+      "description": "Fast business analytics service",
+      "updated": "2025-10-29T20:47:56+0000"
+    },
+    {
+      "id": "amazon-rds",
+      "name": "Amazon RDS",
+      "category": "Databases",
+      "url": "https://aws.amazon.com/rds/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/rds/",
+      "description": "Managed relational database service for MySQL, PostgreSQL, Oracle, SQL Server, and MariaDB",
+      "updated": "2025-11-18T19:14:21+0000"
+    },
+    {
+      "id": "amazon-redshift",
+      "name": "Amazon Redshift",
+      "category": "Analytics",
+      "url": "https://aws.amazon.com/redshift/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/redshift/",
+      "description": "Fast, simple, cost-effective data warehousing",
+      "updated": "2025-10-29T20:47:19+0000"
+    },
+    {
+      "id": "amazon-rekognition",
+      "name": "Amazon Rekognition",
+      "category": "Artificial Intelligence (AI)",
+      "url": "https://aws.amazon.com/rekognition/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/rekognition/",
+      "description": "Analyze image and video",
+      "updated": "2025-10-29T20:47:15+0000"
+    },
+    {
+      "id": "amazon-route-53",
+      "name": "Amazon Route 53",
+      "category": "Networking",
+      "url": "https://aws.amazon.com/route53/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/route53/",
+      "description": "53 Scalable domain name system (DNS)",
+      "updated": "2025-11-18T19:13:12+0000"
+    },
+    {
+      "id": "amazon-glacier",
+      "name": "Amazon S3 Glacier",
+      "category": "Storage",
+      "url": "https://aws.amazon.com/glacier/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/glacier-storage-classes.html",
+      "description": "Low-cost archive storage in the cloud",
+      "updated": "2025-10-29T20:47:14+0000"
+    },
+    {
+      "id": "amazon-sagemaker-1",
+      "name": "Amazon SageMaker",
+      "category": "Machine Learning vs Deep Learning",
+      "url": "https://aws.amazon.com/sagemaker/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "The next generation of Amazon SageMaker is the center for all your data, analytics, and AI",
+      "updated": "2026-11-09T20:05:21+0000"
+    },
+    {
+      "id": "amazon-sagemaker-ai",
+      "name": "Amazon SageMaker AI",
+      "category": "Machine Learning",
+      "url": "https://aws.amazon.com/sagemaker/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Build, train, and deploy machine learning models at scale",
+      "updated": "2026-11-09T20:07:22+0000"
+    },
+    {
+      "id": "amazon-sagemaker-ai-1",
+      "name": "Amazon SageMaker AI",
+      "category": "Artificial Intelligence (AI)",
+      "url": "https://aws.amazon.com/sagemaker/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/sagemaker/",
+      "description": "Build, train, and deploy machine learning models at scale",
+      "updated": "2025-10-29T20:50:09+0000"
+    },
+    {
+      "id": "amazon-sagemaker-ground-truth",
+      "name": "Amazon SageMaker Ground Truth",
+      "category": "Artificial Intelligence (AI)",
+      "url": "https://aws.amazon.com/sagemaker/groundtruth/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Build accurate ML training datasets",
+      "updated": "2025-11-18T19:13:55+0000"
+    },
+    {
+      "id": "amazon-security-lake",
+      "name": "Amazon Security Lake",
+      "category": "Uncategorized",
+      "url": "https://aws.amazon.com/security-lake/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Automatically centralize your security data with a few clicks",
+      "updated": "2025-06-17T15:19:25+0000"
+    },
+    {
+      "id": "amazon-simple-email-service-ses",
+      "name": "Amazon Simple Email Service (SES)",
+      "category": "Business Applications",
+      "url": "https://aws.amazon.com/ses/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/ses/",
+      "description": "High-scale inbound and outbound email",
+      "updated": "2025-10-29T20:47:40+0000"
+    },
+    {
+      "id": "amazon-simple-notification-service-sns",
+      "name": "Amazon Simple Notification Service (SNS)",
+      "category": "Application Integration",
+      "url": "https://aws.amazon.com/sns/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/sns/",
+      "description": "Pub/sub, SMS, email, and mobile push notifications",
+      "updated": "2025-10-29T20:47:49+0000"
+    },
+    {
+      "id": "amazon-simple-queue-service-sqs",
+      "name": "Amazon Simple Queue Service (SQS)",
+      "category": "Application Integration",
+      "url": "https://aws.amazon.com/sqs/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/sqs/",
+      "description": "Managed message queues",
+      "updated": "2025-10-29T20:49:39+0000"
+    },
+    {
+      "id": "amazon-s3",
+      "name": "Amazon Simple Storage Service (S3)",
+      "category": "Storage",
+      "url": "https://aws.amazon.com/s3/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/s3/",
+      "description": "Object storage built to retrieve any amount of data from anywhere",
+      "updated": "2025-10-29T20:50:12+0000"
+    },
+    {
+      "id": "amazon-textract",
+      "name": "Amazon Textract",
+      "category": "Artificial Intelligence (AI)",
+      "url": "https://aws.amazon.com/textract/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/textract/",
+      "description": "Extract text and data from documents",
+      "updated": "2025-10-29T20:49:52+0000"
+    },
+    {
+      "id": "amazon-timestream",
+      "name": "Amazon Timestream",
+      "category": "Databases",
+      "url": "https://aws.amazon.com/timestream/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/timestream/",
+      "description": "Fully managed time series database",
+      "updated": "2025-10-29T20:48:12+0000"
+    },
+    {
+      "id": "amazon-transcribe",
+      "name": "Amazon Transcribe",
+      "category": "Artificial Intelligence (AI)",
+      "url": "https://aws.amazon.com/transcribe/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/transcribe/",
+      "description": "Automatic speech recognition",
+      "updated": "2025-10-29T20:49:20+0000"
+    },
+    {
+      "id": "amazon-translate",
+      "name": "Amazon Translate",
+      "category": "Artificial Intelligence (AI)",
+      "url": "https://aws.amazon.com/translate/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/translate/",
+      "description": "Natural and fluent language translation",
+      "updated": "2025-11-18T19:13:19+0000"
+    },
+    {
+      "id": "amazon-verified-permissions",
+      "name": "Amazon Verified Permissions",
+      "category": "Uncategorized",
+      "url": "https://aws.amazon.com/verified-permissions/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Fine-grained permissions and authorization for your applications",
+      "updated": "2025-06-17T15:19:27+0000"
+    },
+    {
+      "id": "amazon-vpc",
+      "name": "Amazon VPC",
+      "category": "Networking",
+      "url": "https://aws.amazon.com/vpc/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/vpc/",
+      "description": "Isolated cloud resources",
+      "updated": "2025-10-29T20:49:44+0000"
+    },
+    {
+      "id": "amazon-workmail",
+      "name": "Amazon WorkMail",
+      "category": "Business Applications",
+      "url": "https://aws.amazon.com/workmail/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/workmail/",
+      "description": "Secure email and calendaring",
+      "updated": "2025-10-29T20:48:37+0000"
+    },
+    {
+      "id": "amazon-appstream-2-0",
+      "name": "Amazon WorkSpaces Applications",
+      "category": "End-User Computing (EUC)",
+      "url": "https://aws.amazon.com/appstream2/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html",
+      "description": "Stream desktop applications securely to a browser",
+      "updated": "2025-11-11T18:07:18+0000"
+    },
+    {
+      "id": "amazon-workspaces",
+      "name": "Amazon WorkSpaces Family",
+      "category": "End-User Computing (EUC)",
+      "url": "https://aws.amazon.com/workspaces/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/workspaces/",
+      "description": "Virtual desktop services for every use case",
+      "updated": "2025-10-29T20:49:53+0000"
+    },
+    {
+      "id": "amazon-workspaces-thin-client",
+      "name": "Amazon WorkSpaces Thin Client",
+      "category": "End-User Computing (EUC)",
+      "url": "https://aws.amazon.com/workspaces/thin-client/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/workspaces-thin-client/",
+      "description": "Reduces costs, simplifies logistics, speeds time to deployment, and works with AWS virtual desktop services",
+      "updated": "2025-10-17T22:21:40+0000"
+    },
+    {
+      "id": "aws-amplify",
+      "name": "AWS Amplify",
+      "category": "Developer Tools",
+      "url": "https://aws.amazon.com/amplify/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/amplify/",
+      "description": "Build, deploy, host, and manage scalable web and mobile apps",
+      "updated": "2026-11-09T20:00:30+0000"
+    },
+    {
+      "id": "aws-app-mesh",
+      "name": "AWS App Mesh",
+      "category": "Networking",
+      "url": "https://aws.amazon.com/app-mesh/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Monitor and control microservices",
+      "updated": "2026-11-09T20:00:50+0000"
+    },
+    {
+      "id": "aws-app-runner",
+      "name": "AWS App Runner",
+      "category": "Compute",
+      "url": "https://aws.amazon.com/apprunner/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/apprunner/",
+      "description": "Production web applications at scale made easy for developers",
+      "updated": "2026-11-09T20:00:52+0000"
+    },
+    {
+      "id": "aws-appstudio",
+      "name": "AWS App Studio",
+      "category": "Developer Tools",
+      "url": "https://aws.amazon.com/appstudio/",
+      "docs_url": "https://docs.aws.amazon.com/appstudio/",
+      "description": "The fastest and easiest way to build enterprise-grade applications",
+      "updated": "2026-11-09T19:58:46+0000"
+    },
+    {
+      "id": "aws-app2container",
+      "name": "AWS App2Container",
+      "category": "Compute",
+      "url": "https://aws.amazon.com/app2container/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Containerize and migrate existing applications",
+      "updated": "2026-11-09T20:08:14+0000"
+    },
+    {
+      "id": "aws-appfabric",
+      "name": "AWS AppFabric",
+      "category": "Business Applications",
+      "url": "https://aws.amazon.com/appfabric/",
+      "docs_url": "https://docs.aws.amazon.com/appfabric/",
+      "description": "Quickly connect SaaS applications to work better together for enhanced security observability and increase employee productivity",
+      "updated": "2026-11-09T19:59:34+0000"
+    },
+    {
+      "id": "aws-application-discovery-service",
+      "name": "AWS Application Discovery Service",
+      "category": "Migration",
+      "url": "https://aws.amazon.com/application-discovery/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Discover on-premises applications to streamline migration",
+      "updated": "2026-11-09T20:08:41+0000"
+    },
+    {
+      "id": "cloudendure-migration",
+      "name": "AWS Application Migration Service (MGN)",
+      "category": "Migration",
+      "url": "https://aws.amazon.com/application-migration-service/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Automate application migration and modernization",
+      "updated": "2026-11-09T20:00:13+0000"
+    },
+    {
+      "id": "aws-appsync",
+      "name": "AWS AppSync",
+      "category": "Application Integration",
+      "url": "https://aws.amazon.com/appsync/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/appsync/",
+      "description": "Accelerate app development with fully-managed, scalable GraphQL APIs",
+      "updated": "2026-11-09T20:05:22+0000"
+    },
+    {
+      "id": "aws-artifact",
+      "name": "AWS Artifact",
+      "category": "Security",
+      "url": "https://aws.amazon.com/artifact/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "On-demand access to AWS’ compliance reports",
+      "updated": "2026-11-09T20:01:26+0000"
+    },
+    {
+      "id": "aws-audit-manager",
+      "name": "AWS Audit Manager",
+      "category": "Security",
+      "url": "https://aws.amazon.com/audit-manager/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/audit-manager/",
+      "description": "Continuously audit your AWS usage to simplify how you assess risk and compliance",
+      "updated": "2026-11-09T20:01:59+0000"
+    },
+    {
+      "id": "aws-auto-scaling",
+      "name": "AWS Auto Scaling",
+      "category": "Compute",
+      "url": "https://aws.amazon.com/autoscaling/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Scale multiple resources to meet demand",
+      "updated": "2026-11-09T20:01:55+0000"
+    },
+    {
+      "id": "aws-backup",
+      "name": "AWS Backup",
+      "category": "Storage",
+      "url": "https://aws.amazon.com/backup/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/aws-backup/",
+      "description": "Centralized backup across AWS services",
+      "updated": "2026-11-09T20:08:01+0000"
+    },
+    {
+      "id": "aws-batch",
+      "name": "AWS Batch",
+      "category": "Compute",
+      "url": "https://aws.amazon.com/batch/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/batch/",
+      "description": "Run batch jobs at any scale",
+      "updated": "2026-11-09T20:07:50+0000"
+    },
+    {
+      "id": "aws-budgets",
+      "name": "AWS Budgets",
+      "category": "Cloud Financial Management",
+      "url": "https://aws.amazon.com/aws-cost-management/aws-budgets/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Set custom cost and usage budgets",
+      "updated": "2026-11-09T19:58:32+0000"
+    },
+    {
+      "id": "aws-certificate-manager",
+      "name": "AWS Certificate Manager",
+      "category": "Security",
+      "url": "https://aws.amazon.com/certificate-manager/?did=ap_card&trk=ap_card",
+      "docs_url": "https://aws.amazon.com/documentation-overview/cetificate-manager/",
+      "description": "Manager Provision, manage, and deploy SSL/TLS certificates",
+      "updated": "2026-11-09T19:57:25+0000"
+    },
+    {
+      "id": "aws-clean-rooms",
+      "name": "AWS Clean Rooms",
+      "category": "Analytics",
+      "url": "https://aws.amazon.com/clean-rooms/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/clean-rooms/",
+      "description": "Match, analyze, and collaborate on datasets–without sharing or revealing underlying data",
+      "updated": "2026-11-09T20:03:07+0000"
+    },
+    {
+      "id": "aws-cloud-development-kit-cdk",
+      "name": "AWS Cloud Development Kit (CDK)",
+      "category": "Developer Tools",
+      "url": "https://aws.amazon.com/cdk/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Model cloud infrastructure using code",
+      "updated": "2026-11-09T20:03:55+0000"
+    },
+    {
+      "id": "aws-cloud-map",
+      "name": "AWS Cloud Map",
+      "category": "Networking",
+      "url": "https://aws.amazon.com/cloud-map/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/cloud-map/",
+      "description": "Service discovery for cloud resources",
+      "updated": "2026-11-09T20:06:56+0000"
+    },
+    {
+      "id": "aws-cloud-wan",
+      "name": "AWS Cloud WAN",
+      "category": "Networking",
+      "url": "https://aws.amazon.com/cloud-wan/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/network-manager/latest/cloudwan/what-is-cloudwan.html",
+      "description": "Easily build, manage, and monitor global wide area networks",
+      "updated": "2026-11-09T20:00:14+0000"
+    },
+    {
+      "id": "aws-cloud9",
+      "name": "AWS Cloud9",
+      "category": "Developer Tools",
+      "url": "https://aws.amazon.com/cloud9/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Write, run, and debug code on a cloud IDE",
+      "updated": "2026-11-09T20:07:09+0000"
+    },
+    {
+      "id": "aws-cloudformation",
+      "name": "AWS CloudFormation",
+      "category": "Developer Tools",
+      "url": "https://aws.amazon.com/cloudformation/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/cloudformation/",
+      "description": "Create and manage resources with templates",
+      "updated": "2026-11-09T20:03:25+0000"
+    },
+    {
+      "id": "aws-cloudhsm",
+      "name": "AWS CloudHSM",
+      "category": "Security & Identity",
+      "url": "https://aws.amazon.com/cloudhsm/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/cloudhsm/",
+      "description": "Hardware-based key storage for regulatory compliance",
+      "updated": "2026-11-09T20:08:00+0000"
+    },
+    {
+      "id": "aws-cloudtrail",
+      "name": "AWS CloudTrail",
+      "category": "Management Tools",
+      "url": "https://aws.amazon.com/cloudtrail/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/cloudtrail/",
+      "description": "Track user activity and API usage",
+      "updated": "2026-11-09T19:59:19+0000"
+    },
+    {
+      "id": "aws-code-artifact",
+      "name": "AWS CodeArtifact",
+      "category": "Developer Tools",
+      "url": "https://aws.amazon.com/codeartifact/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/codeartifact/",
+      "description": "Secure, scalable, and cost-effective artifact management for software development",
+      "updated": "2026-11-09T19:59:35+0000"
+    },
+    {
+      "id": "aws-codebuild",
+      "name": "AWS CodeBuild",
+      "category": "Developer Tools",
+      "url": "https://aws.amazon.com/codebuild/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/codebuild/",
+      "description": "Build and test code",
+      "updated": "2026-11-09T20:05:27+0000"
+    },
+    {
+      "id": "aws-codecommit",
+      "name": "AWS CodeCommit",
+      "category": "Developer Tools",
+      "url": "https://aws.amazon.com/codecommit/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/codecommit/",
+      "description": "Store code in private Git repositories",
+      "updated": "2026-11-09T20:00:36+0000"
+    },
+    {
+      "id": "aws-codedeploy",
+      "name": "AWS CodeDeploy",
+      "category": "Developer Tools",
+      "url": "https://aws.amazon.com/codedeploy/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/codedeploy/",
+      "description": "Automate code deployments",
+      "updated": "2026-11-09T20:05:46+0000"
+    },
+    {
+      "id": "aws-codepipeline",
+      "name": "AWS CodePipeline",
+      "category": "Developer Tools",
+      "url": "https://aws.amazon.com/codepipeline/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/codepipeline/",
+      "description": "Release software using continuous delivery",
+      "updated": "2026-11-09T20:06:00+0000"
+    },
+    {
+      "id": "aws-command-line-interface",
+      "name": "AWS Command Line Interface (CLI)",
+      "category": "Developer Tools",
+      "url": "https://aws.amazon.com/cli/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Line Interface Unified tool to manage AWS services",
+      "updated": "2026-11-09T20:03:10+0000"
+    },
+    {
+      "id": "aws-compute-optimizer",
+      "name": "AWS Compute Optimizer",
+      "category": "Compute",
+      "url": "https://aws.amazon.com/compute-optimizer/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Identify optimal AWS Compute resources",
+      "updated": "2026-11-09T20:07:45+0000"
+    },
+    {
+      "id": "aws-config",
+      "name": "AWS Config",
+      "category": "Operations",
+      "url": "https://aws.amazon.com/config/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/config/",
+      "description": "Track resources inventory and changes",
+      "updated": "2026-11-09T20:04:27+0000"
+    },
+    {
+      "id": "aws-control-tower",
+      "name": "AWS Control Tower",
+      "category": "Operations",
+      "url": "https://aws.amazon.com/controltower/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/controltower/",
+      "description": "Set up and govern a secure, compliant multi-account environment",
+      "updated": "2026-11-09T20:07:54+0000"
+    },
+    {
+      "id": "aws-copilot",
+      "name": "AWS Copilot",
+      "category": "Containers",
+      "url": "https://aws.amazon.com/containers/copilot/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "AWS Copilot is the easiest way to launch and manage your containerized application on AWS",
+      "updated": "2026-11-09T19:58:41+0000"
+    },
+    {
+      "id": "aws-cost-and-usage-report",
+      "name": "AWS Cost and Usage Report",
+      "category": "Cloud Financial Management",
+      "url": "https://aws.amazon.com/aws-cost-management/aws-cost-and-usage-reporting/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Access comprehensive cost and usage information",
+      "updated": "2026-11-09T20:00:32+0000"
+    },
+    {
+      "id": "aws-cost-explorer",
+      "name": "AWS Cost Explorer",
+      "category": "Cloud Financial Management",
+      "url": "https://aws.amazon.com/aws-cost-management/aws-cost-explorer/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Analyze your AWS cost and usage",
+      "updated": "2026-11-09T20:02:50+0000"
+    },
+    {
+      "id": "aws-data-exchange",
+      "name": "AWS Data Exchange",
+      "category": "Data & Analytics",
+      "url": "https://aws.amazon.com/data-exchange/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Find, subscribe to, and use third-party data in the cloud",
+      "updated": "2026-11-09T20:06:15+0000"
+    },
+    {
+      "id": "aws-data-pipeline",
+      "name": "AWS Data Pipeline",
+      "category": "Analytics",
+      "url": "https://aws.amazon.com/datapipeline/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Orchestration service for periodic, data-driven workflows",
+      "updated": "2026-11-09T20:08:03+0000"
+    },
+    {
+      "id": "aws-database-migration-service",
+      "name": "AWS Database Migration Service (DMS)",
+      "category": "Databases",
+      "url": "https://aws.amazon.com/dms/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/dms/",
+      "description": "Migrate databases with minimal downtime",
+      "updated": "2026-11-09T20:05:42+0000"
+    },
+    {
+      "id": "aws-datasync",
+      "name": "AWS DataSync",
+      "category": "Migration",
+      "url": "https://aws.amazon.com/datasync/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/datasync/",
+      "description": "Simple, fast, online data transfer",
+      "updated": "2026-11-09T20:02:04+0000"
+    },
+    {
+      "id": "aws-deadline-cloud-service",
+      "name": "AWS Deadline Cloud",
+      "category": "Media Services",
+      "url": "https://aws.amazon.com/deadline-cloud/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/deadline-cloud/",
+      "description": "Cloud Render Management",
+      "updated": "2026-11-09T19:59:59+0000"
+    },
+    {
+      "id": "aws-deep-learning-amis",
+      "name": "AWS Deep Learning AMIs",
+      "category": "Artificial Intelligence (AI)",
+      "url": "https://aws.amazon.com/machine-learning/amis/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Deep learning on Amazon EC2",
+      "updated": "2026-11-09T19:57:23+0000"
+    },
+    {
+      "id": "aws-deep-learning-containers",
+      "name": "AWS Deep Learning Containers",
+      "category": "Artificial Intelligence (AI)",
+      "url": "https://aws.amazon.com/machine-learning/containers/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Docker images for deep learning",
+      "updated": "2026-11-09T20:06:23+0000"
+    },
+    {
+      "id": "aws-deepcomposer",
+      "name": "AWS DeepComposer",
+      "category": "Machine Learning vs Deep Learning",
+      "url": "https://aws.amazon.com/deepcomposer/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "ML enabled musical keyboard",
+      "updated": "2026-11-09T20:00:18+0000"
+    },
+    {
+      "id": "aws-deeplens",
+      "name": "AWS DeepLens",
+      "category": "Artificial Intelligence (AI)",
+      "url": "https://aws.amazon.com/deeplens/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Deep learning enabled video camera",
+      "updated": "2026-11-09T20:01:11+0000"
+    },
+    {
+      "id": "aws-deepracer",
+      "name": "AWS DeepRacer",
+      "category": "Machine Learning vs Deep Learning",
+      "url": "https://aws.amazon.com/deepracer/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Autonomous 1/18th scale race car, driven by ML",
+      "updated": "2026-11-09T20:01:57+0000"
+    },
+    {
+      "id": "aws-device-farm",
+      "name": "AWS Device Farm",
+      "category": "Developer Tools",
+      "url": "https://aws.amazon.com/device-farm/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/devicefarm/",
+      "description": "Test Android, iOS, and web apps on real devices in the AWS cloud",
+      "updated": "2026-11-09T20:08:33+0000"
+    },
+    {
+      "id": "aws-devops-agent-(preview)",
+      "name": "AWS DevOps Agent",
+      "category": "Artificial Intelligence (AI)",
+      "url": "https://aws.amazon.com/devops-agent/",
+      "docs_url": "",
+      "description": "Drive operational excellence with a frontier agent that resolves and proactively prevents incidents",
+      "updated": "2025-12-08T22:35:40+0000"
+    },
+    {
+      "id": "aws-devops-agent-preview",
+      "name": "AWS DevOps Agent",
+      "category": "Artificial Intelligence (AI)",
+      "url": "https://aws.amazon.com/devops-agent/",
+      "docs_url": "",
+      "description": "Drive operational excellence with a frontier agent that resolves and proactively prevents incidents",
+      "updated": "2026-06-25T14:04:09+0000"
+    },
+    {
+      "id": "aws-direct-connect",
+      "name": "AWS Direct Connect",
+      "category": "Networking",
+      "url": "https://aws.amazon.com/directconnect/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/directconnect/",
+      "description": "Dedicated network connection to AWS",
+      "updated": "2026-11-09T20:07:03+0000"
+    },
+    {
+      "id": "aws-directory-service",
+      "name": "AWS Directory Service",
+      "category": "Security & Identity",
+      "url": "https://aws.amazon.com/directoryservice/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/directory-service/",
+      "description": "Host and manage active directory",
+      "updated": "2026-11-09T19:57:48+0000"
+    },
+    {
+      "id": "aws-distro-open-telemetry",
+      "name": "AWS Distro for OpenTelemetry",
+      "category": "Management Governance",
+      "url": "https://aws.amazon.com/otel/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Secure, production-ready open source distribution with predictable performance",
+      "updated": "2026-11-09T20:07:57+0000"
+    },
+    {
+      "id": "aws-elastic-beanstalk",
+      "name": "AWS Elastic Beanstalk",
+      "category": "Compute",
+      "url": "https://aws.amazon.com/elasticbeanstalk/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/elastic-beanstalk/",
+      "description": "Run and manage web apps",
+      "updated": "2026-11-09T20:05:05+0000"
+    },
+    {
+      "id": "cloudeendure-disaster-recovery",
+      "name": "AWS Elastic Disaster Recovery (DRS)",
+      "category": "Storage",
+      "url": "https://aws.amazon.com/disaster-recovery/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Scalable, cost-effective application recovery to AWS",
+      "updated": "2026-11-09T20:03:39+0000"
+    },
+    {
+      "id": "aws-elemental-appliances-software",
+      "name": "AWS Elemental Appliances & Software",
+      "category": "Media Services",
+      "url": "https://aws.amazon.com/elemental-appliances-software/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "On-premises media solutions",
+      "updated": "2026-11-09T20:07:41+0000"
+    },
+    {
+      "id": "aws-elemental-mediaconnect-media-services",
+      "name": "AWS Elemental MediaConnect",
+      "category": "Media Services",
+      "url": "https://aws.amazon.com/mediaconnect/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Reliable and secure live video transport",
+      "updated": "2026-11-09T20:05:26+0000"
+    },
+    {
+      "id": "aws-elemental-mediaconvert",
+      "name": "AWS Elemental MediaConvert",
+      "category": "Media Services",
+      "url": "https://aws.amazon.com/mediaconvert/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/mediaconvert/",
+      "description": "Convert file-based video content",
+      "updated": "2026-11-09T20:01:32+0000"
+    },
+    {
+      "id": "aws-elemental-medialive",
+      "name": "AWS Elemental MediaLive",
+      "category": "Media Services",
+      "url": "https://aws.amazon.com/medialive/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/medialive/",
+      "description": "Convert live video content",
+      "updated": "2026-11-09T20:06:22+0000"
+    },
+    {
+      "id": "aws-elemental-mediapackage",
+      "name": "AWS Elemental MediaPackage",
+      "category": "Media Services",
+      "url": "https://aws.amazon.com/mediapackage/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/mediapackage/",
+      "description": "Video origination and packaging",
+      "updated": "2026-11-09T19:57:44+0000"
+    },
+    {
+      "id": "aws-elemental-mediastore",
+      "name": "AWS Elemental MediaStore",
+      "category": "Media Services",
+      "url": "https://aws.amazon.com/mediastore/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Media storage and simple http origin",
+      "updated": "2026-11-09T20:06:19+0000"
+    },
+    {
+      "id": "aws-elemental-mediatailor",
+      "name": "AWS Elemental MediaTailor",
+      "category": "Media Services",
+      "url": "https://aws.amazon.com/mediatailor/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/mediatailor/",
+      "description": "Video personalization and monetization",
+      "updated": "2026-11-09T20:08:16+0000"
+    },
+    {
+      "id": "aws-end-user-messaging",
+      "name": "AWS End User Messaging",
+      "category": "Business Applications",
+      "url": "https://aws.amazon.com/end-user-messaging/?refid=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/end-user-messaging/",
+      "description": "Dependable, cost-effective messaging without compromising safety, security, or results",
+      "updated": "2026-11-09T20:08:14+0000"
+    },
+    {
+      "id": "aws-fargate",
+      "name": "AWS Fargate",
+      "category": "Compute",
+      "url": "https://aws.amazon.com/fargate/?did=ap_card&trk=ap_card",
+      "docs_url": "https://aws.amazon.com/documentation-overview/fargate/",
+      "description": "Serverless compute for containers",
+      "updated": "2026-11-09T20:03:05+0000"
+    },
+    {
+      "id": "aws-fault-injection-simulator",
+      "name": "AWS Fault Injection Service",
+      "category": "Developer Tools",
+      "url": "https://aws.amazon.com/fis/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Improve resiliency and performance with controlled experiments",
+      "updated": "2026-11-09T19:58:45+0000"
+    },
+    {
+      "id": "aws-firewall-manager",
+      "name": "AWS Firewall Manager",
+      "category": "Uncategorized",
+      "url": "https://aws.amazon.com/firewall-manager/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Central management of firewall rules",
+      "updated": "2025-06-17T15:19:15+0000"
+    },
+    {
+      "id": "aws-global-accelerator",
+      "name": "AWS Global Accelerator",
+      "category": "Networking",
+      "url": "https://aws.amazon.com/global-accelerator/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/global-accelerator/",
+      "description": "Improve global application availability and performance",
+      "updated": "2025-10-29T20:49:11+0000"
+    },
+    {
+      "id": "aws-glue",
+      "name": "AWS Glue",
+      "category": "Analytics",
+      "url": "https://aws.amazon.com/glue/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/glue/",
+      "description": "Simple, scalable, and serverless data integration",
+      "updated": "2025-11-18T19:14:33+0000"
+    },
+    {
+      "id": "aws-ground-station",
+      "name": "AWS Ground Station",
+      "category": "Aerospace Satellite",
+      "url": "https://aws.amazon.com/ground-station/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Fully managed ground station as a service",
+      "updated": "2026-11-09T20:01:30+0000"
+    },
+    {
+      "id": "aws-health",
+      "name": "AWS Health",
+      "category": "Management Governance",
+      "url": "https://aws.amazon.com/premiumsupport/technology/aws-health/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Data source for events and changes affecting your AWS cloud resources",
+      "updated": "2026-11-09T20:04:12+0000"
+    },
+    {
+      "id": "amazon-omics",
+      "name": "AWS HealthOmics",
+      "category": "Machine Learning vs Deep Learning",
+      "url": "https://aws.amazon.com/omics/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Transform omics data into insights",
+      "updated": "2026-11-09T19:59:03+0000"
+    },
+    {
+      "id": "aws-iam-identity-center",
+      "name": "AWS IAM Identity Center",
+      "category": "Security, Identity & Compliance",
+      "url": "https://aws.amazon.com/iam/identity-center/",
+      "docs_url": "",
+      "description": "Manage single sign-on access to AWS accounts and apps",
+      "updated": "2025-10-08T22:48:21+0000"
+    },
+    {
+      "id": "aws-identity-and-access-management-iam",
+      "name": "AWS Identity and Access Management",
+      "category": "Security, Identity & Compliance",
+      "url": "https://aws.amazon.com/iam/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Securely manage access to services and resources",
+      "updated": "2025-10-08T22:20:03+0000"
+    },
+    {
+      "id": "aws-inferentia",
+      "name": "AWS Inferentia",
+      "category": "Machine Learning vs Deep Learning",
+      "url": "https://aws.amazon.com/machine-learning/inferentia/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Machine learning inference chip",
+      "updated": "2026-11-09T20:01:29+0000"
+    },
+    {
+      "id": "aws-application-composer",
+      "name": "AWS Infrastructure Composer",
+      "category": "Compute",
+      "url": "https://aws.amazon.com/infrastructure-composer/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Visually design and build serverless applications quickly",
+      "updated": "2026-11-09T20:05:22+0000"
+    },
+    {
+      "id": "aws-iot-button",
+      "name": "AWS IoT Button",
+      "category": "Internet of Things",
+      "url": "https://aws.amazon.com/iotbutton/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Cloud programmable dash button",
+      "updated": "2026-11-09T19:57:26+0000"
+    },
+    {
+      "id": "aws-iot-core",
+      "name": "AWS IoT Core",
+      "category": "Internet of Things",
+      "url": "https://aws.amazon.com/iot-core/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Connect devices to the cloud",
+      "updated": "2025-10-08T22:20:34+0000"
+    },
+    {
+      "id": "aws-iot-device-defender",
+      "name": "AWS IoT Device Defender",
+      "category": "Internet of Things",
+      "url": "https://aws.amazon.com/iot-device-defender/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/iot-device-defender/",
+      "description": "Security management for IoT devices",
+      "updated": "2025-10-17T22:21:53+0000"
+    },
+    {
+      "id": "aws-iot-device-management",
+      "name": "AWS IoT Device Management",
+      "category": "Internet of Things",
+      "url": "https://aws.amazon.com/iot-device-management/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Onboard, organize, and remotely manage IoT devices",
+      "updated": "2025-10-08T22:20:34+0000"
+    },
+    {
+      "id": "aws-iot-fleetwise-1",
+      "name": "AWS IoT FleetWise",
+      "category": "Internet of Things",
+      "url": "https://aws.amazon.com/iot-fleetwise/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Easily collect, transform, and transfer vehicle data to the cloud in near-real time",
+      "updated": "2025-10-08T22:20:36+0000"
+    },
+    {
+      "id": "aws-iot-greengrass",
+      "name": "AWS IoT Greengrass",
+      "category": "Uncategorized",
+      "url": "https://aws.amazon.com/greengrass/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Local compute, messaging, and sync for devices",
+      "updated": "2025-06-17T15:18:46+0000"
+    },
+    {
+      "id": "aws-iot-sitewise",
+      "name": "AWS IoT SiteWise",
+      "category": "Internet of Things",
+      "url": "https://aws.amazon.com/iot-sitewise/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "IoT data collector and interpreter",
+      "updated": "2026-11-09T19:58:35+0000"
+    },
+    {
+      "id": "aws-iot-twinmaker",
+      "name": "AWS IoT TwinMaker",
+      "category": "Internet of Things",
+      "url": "https://aws.amazon.com/iot-twinmaker/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/iot-twinmaker/",
+      "description": "Optimize operations by easily creating digital twins of real-world systems",
+      "updated": "2026-11-09T20:02:34+0000"
+    },
+    {
+      "id": "aws-key-management-service",
+      "name": "AWS Key Management Service (KMS)",
+      "category": "Security, Identity & Compliance",
+      "url": "https://aws.amazon.com/kms/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Managed creation and control of encryption keys",
+      "updated": "2025-10-08T22:20:39+0000"
+    },
+    {
+      "id": "aws-lake-formation",
+      "name": "AWS Lake Formation",
+      "category": "Analytics",
+      "url": "https://aws.amazon.com/lake-formation/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/lake-formation/",
+      "description": "Build a secure data lake in days",
+      "updated": "2025-10-29T20:48:36+0000"
+    },
+    {
+      "id": "aws-lambda",
+      "name": "AWS Lambda",
+      "category": "Compute",
+      "url": "https://aws.amazon.com/lambda/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/lambda/",
+      "description": "Run code without thinking about servers",
+      "updated": "2025-11-18T19:13:30+0000"
+    },
+    {
+      "id": "aws-launch-wizard",
+      "name": "AWS Launch Wizard",
+      "category": "Management Governance",
+      "url": "https://aws.amazon.com/launchwizard/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Easily size, configure, and deploy third party applications on AWS",
+      "updated": "2026-11-09T19:58:31+0000"
+    },
+    {
+      "id": "aws-license-manager",
+      "name": "AWS License Manager",
+      "category": "Management Governance",
+      "url": "https://aws.amazon.com/license-manager/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Track, manage, and control licenses",
+      "updated": "2026-11-09T20:08:09+0000"
+    },
+    {
+      "id": "local-zones",
+      "name": "AWS Local Zones",
+      "category": "Compute",
+      "url": "https://aws.amazon.com/about-aws/global-infrastructure/localzones/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Run latency sensitive applications closer to end users",
+      "updated": "2026-11-09T20:01:56+0000"
+    },
+    {
+      "id": "aws-mainframe-modernization",
+      "name": "AWS Mainframe Modernization",
+      "category": "Migration",
+      "url": "https://aws.amazon.com/mainframe-modernization/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/m2/",
+      "description": "Migrate, modernize, operate, and run mainframe workloads",
+      "updated": "2025-10-29T20:47:28+0000"
+    },
+    {
+      "id": "aws-managed-services",
+      "name": "AWS Managed Services",
+      "category": "Management Governance",
+      "url": "https://aws.amazon.com/managed-services/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Infrastructure operations management for AWS",
+      "updated": "2025-10-08T22:48:12+0000"
+    },
+    {
+      "id": "aws-management-console",
+      "name": "AWS Management Console",
+      "category": "Management Governance",
+      "url": "https://aws.amazon.com/console/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Web-based user interface",
+      "updated": "2026-11-09T20:08:05+0000"
+    },
+    {
+      "id": "aws-console-mobile-application",
+      "name": "AWS Management Console Mobile Application",
+      "category": "Management Governance",
+      "url": "https://aws.amazon.com/console/mobile/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Access resources on the go",
+      "updated": "2026-11-09T20:08:10+0000"
+    },
+    {
+      "id": "aws-migration-hub",
+      "name": "AWS Migration Hub",
+      "category": "Migration",
+      "url": "https://aws.amazon.com/migration-hub/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/migrationhub/",
+      "description": "Track migrations from a single place",
+      "updated": "2025-10-17T22:21:47+0000"
+    },
+    {
+      "id": "aws-network-firewall",
+      "name": "AWS Network Firewall",
+      "category": "Uncategorized",
+      "url": "https://aws.amazon.com/network-firewall/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Deploy network security across your Amazon VPCs with just a few clicks",
+      "updated": "2025-05-23T10:05:10+0000"
+    },
+    {
+      "id": "aws-organizations",
+      "name": "AWS Organizations",
+      "category": "Management Governance",
+      "url": "https://aws.amazon.com/organizations/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Central governance and management across AWS accounts",
+      "updated": "2025-10-08T22:20:18+0000"
+    },
+    {
+      "id": "aws-outposts",
+      "name": "AWS Outposts",
+      "category": "Compute",
+      "url": "https://aws.amazon.com/outposts/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Run AWS infrastructure on-premises",
+      "updated": "2025-10-29T20:49:39+0000"
+    },
+    {
+      "id": "aws-personal-health-dashboard",
+      "name": "AWS Personal Health Dashboard",
+      "category": "Management Governance",
+      "url": "https://aws.amazon.com/premiumsupport/technology/personal-health-dashboard/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Personalized view of AWS service health",
+      "updated": "2026-11-09T20:07:24+0000"
+    },
+    {
+      "id": "aws-privatelink",
+      "name": "AWS PrivateLink",
+      "category": "Networking",
+      "url": "https://aws.amazon.com/privatelink/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/vpc/latest/privatelink/what-is-privatelink.html",
+      "description": "Securely access services hosted on AWS",
+      "updated": "2025-10-29T20:49:58+0000"
+    },
+    {
+      "id": "aws-proton",
+      "name": "AWS Proton",
+      "category": "Management Governance",
+      "url": "https://aws.amazon.com/proton/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Automate management for container and serverless deployments",
+      "updated": "2025-10-08T22:20:46+0000"
+    },
+    {
+      "id": "amazon-quick",
+      "name": "AWS Quick",
+      "category": "Business Applications",
+      "url": "https://aws.amazon.com/quick/",
+      "docs_url": "",
+      "description": "AI-powered workspace for work with research, business insights, automation, and no-code app building",
+      "updated": "2026-11-09T20:13:04+0000"
+    },
+    {
+      "id": "aws-resilience-hub",
+      "name": "AWS Resilience Hub",
+      "category": "Management Governance",
+      "url": "https://aws.amazon.com/resilience-hub/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Prepare and protect your applications from disruptions",
+      "updated": "2025-10-08T22:20:25+0000"
+    },
+    {
+      "id": "aws-resource-access-manager",
+      "name": "AWS Resource Access Manager",
+      "category": "Security, Identity & Compliance",
+      "url": "https://aws.amazon.com/ram/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Simple, secure service to share AWS resources",
+      "updated": "2025-10-08T22:20:45+0000"
+    },
+    {
+      "id": "aws-rtb-fabric",
+      "name": "AWS RTB Fabric",
+      "category": "Networking",
+      "url": "https://aws.amazon.com/rtb-fabric/",
+      "docs_url": "https://docs.aws.amazon.com/rtb-fabric",
+      "description": "Run real-time bidding workloads with your AdTech partners on a dedicated network in the cloud",
+      "updated": "2026-11-09T20:08:36+0000"
+    },
+    {
+      "id": "aws-secrets-manager",
+      "name": "AWS Secrets Manager",
+      "category": "Security, Identity & Compliance",
+      "url": "https://aws.amazon.com/secrets-manager/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Rotate, manage, and retrieve secrets",
+      "updated": "2025-10-08T22:20:43+0000"
+    },
+    {
+      "id": "aws-security-agent-",
+      "name": "AWS Security Agent",
+      "category": "Security & Identity",
+      "url": "https://aws.amazon.com/security-agent/",
+      "docs_url": "",
+      "description": "Proactively secure your applications throughout the development lifecycle with a frontier agent",
+      "updated": "2026-11-09T20:08:48+0000"
+    },
+    {
+      "id": "aws-security-hub",
+      "name": "AWS Security Hub",
+      "category": "Security, Identity & Compliance",
+      "url": "https://aws.amazon.com/security-hub/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Unified security and compliance center",
+      "updated": "2025-10-08T22:20:33+0000"
+    },
+    {
+      "id": "aws-serverless-application-repository",
+      "name": "AWS Serverless Application Repository",
+      "category": "Compute",
+      "url": "https://aws.amazon.com/serverless/serverlessrepo/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Discover, deploy, and publish serverless applications",
+      "updated": "2025-10-17T22:21:48+0000"
+    },
+    {
+      "id": "aws-service-catalog",
+      "name": "AWS Service Catalog",
+      "category": "Uncategorized",
+      "url": "https://aws.amazon.com/servicecatalog/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Create and use standardized products",
+      "updated": "2025-06-17T15:18:38+0000"
+    },
+    {
+      "id": "aws-service-management-connector",
+      "name": "AWS Service Management Connector",
+      "category": "Management Governance",
+      "url": "https://aws.amazon.com/service-management-connector/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Provision, manage and operate AWS resources within Service Management Tools",
+      "updated": "2026-11-09T19:58:02+0000"
+    },
+    {
+      "id": "aws-shield",
+      "name": "AWS Shield",
+      "category": "Security, Identity & Compliance",
+      "url": "https://aws.amazon.com/shield/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/shield/",
+      "description": "DDoS protection",
+      "updated": "2025-11-18T19:14:12+0000"
+    },
+    {
+      "id": "aws-snow-family-compute",
+      "name": "AWS Snow Family",
+      "category": "Compute",
+      "url": "https://aws.amazon.com/snow/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Physical devices to aggregate and process data in edge locations, then transer to AWS",
+      "updated": "2025-10-17T22:21:43+0000"
+    },
+    {
+      "id": "aws-step-functions",
+      "name": "AWS Step Functions",
+      "category": "Application Integration",
+      "url": "https://aws.amazon.com/step-functions/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/step-functions/",
+      "description": "Coordination for distributed applications",
+      "updated": "2025-11-18T19:13:31+0000"
+    },
+    {
+      "id": "aws-storage-gateway",
+      "name": "AWS Storage Gateway",
+      "category": "Storage",
+      "url": "https://aws.amazon.com/storagegateway/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/storagegateway/",
+      "description": "Hybrid storage integration",
+      "updated": "2025-10-29T20:50:01+0000"
+    },
+    {
+      "id": "aws-supply-chain",
+      "name": "AWS Supply Chain",
+      "category": "Supply Chain",
+      "url": "https://aws.amazon.com/aws-supply-chain/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/aws-supply-chain/",
+      "description": "Mitigate risks and lower costs with an ML-powered supply chain application",
+      "updated": "2026-11-09T20:08:39+0000"
+    },
+    {
+      "id": "aws-systems-manager",
+      "name": "AWS Systems Manager",
+      "category": "Management Governance",
+      "url": "https://aws.amazon.com/systems-manager/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Gain operational insights and take action",
+      "updated": "2025-10-08T22:20:47+0000"
+    },
+    {
+      "id": "aws-tools-and-sdks",
+      "name": "AWS Tools and SDKs",
+      "category": "Developer Tools",
+      "url": "https://aws.amazon.com/getting-started/tools-sdks/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Tools and SDKs for AWS",
+      "updated": "2026-11-09T20:07:46+0000"
+    },
+    {
+      "id": "aws-transfer-family",
+      "name": "AWS Transfer Family",
+      "category": "Migration",
+      "url": "https://aws.amazon.com/aws-transfer-family/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/transfer/",
+      "description": "Fully managed SFTP, FTPS, and FTP service",
+      "updated": "2025-11-18T19:14:01+0000"
+    },
+    {
+      "id": "aws-transform",
+      "name": "AWS Transform",
+      "category": "Migration",
+      "url": "https://aws.amazon.com/transform/",
+      "docs_url": "https://docs.aws.amazon.com/transform/",
+      "description": "The first agentic AI service to accelerate the transformation of Windows, mainframe, VMware, and more.",
+      "updated": "2026-11-09T20:02:48+0000"
+    },
+    {
+      "id": "aws-transit-gateway",
+      "name": "AWS Transit Gateway",
+      "category": "Networking",
+      "url": "https://aws.amazon.com/transit-gateway/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/vpc/latest/tgw/what-is-transit-gateway.html",
+      "description": "Easily scale VPC and account connections",
+      "updated": "2025-10-29T20:48:09+0000"
+    },
+    {
+      "id": "aws-trusted-advisor",
+      "name": "AWS Trusted Advisor",
+      "category": "Management Governance",
+      "url": "https://aws.amazon.com/premiumsupport/technology/trusted-advisor/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Optimize performance and security",
+      "updated": "2025-10-08T22:20:11+0000"
+    },
+    {
+      "id": "aws-user-notifications",
+      "name": "AWS User Notifications",
+      "category": "Management Governance",
+      "url": "https://aws.amazon.com/notifications/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Configure and view notifications from AWS services",
+      "updated": "2026-11-09T20:08:07+0000"
+    },
+    {
+      "id": "aws-verified-access",
+      "name": "AWS Verified Access",
+      "category": "Networking",
+      "url": "https://aws.amazon.com/verified-access/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/verified-access/",
+      "description": "Provide secure access to corporate applications without a VPN",
+      "updated": "2025-10-17T22:21:44+0000"
+    },
+    {
+      "id": "aws-vpn",
+      "name": "AWS VPN",
+      "category": "Networking",
+      "url": "https://aws.amazon.com/vpn/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/vpn/",
+      "description": "Securely access your network resources",
+      "updated": "2025-11-18T19:13:47+0000"
+    },
+    {
+      "id": "aws-waf",
+      "name": "AWS WAF",
+      "category": "Security, Identity & Compliance",
+      "url": "https://aws.amazon.com/waf/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Filter malicious web traffic",
+      "updated": "2025-10-08T22:20:09+0000"
+    },
+    {
+      "id": "aws-wavelength",
+      "name": "AWS Wavelength",
+      "category": "Compute",
+      "url": "https://aws.amazon.com/wavelength/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/wavelength/",
+      "description": "Deliver ultra-low latency applications for 5G devices",
+      "updated": "2025-10-29T20:49:45+0000"
+    },
+    {
+      "id": "aws-well-architected-tool",
+      "name": "AWS Well-Architected Tool",
+      "category": "Architecture Strategy",
+      "url": "https://aws.amazon.com/well-architected-tool/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Review and improve your workloads",
+      "updated": "2026-11-09T20:00:19+0000"
+    },
+    {
+      "id": "aws-wickr",
+      "name": "AWS Wickr",
+      "category": "Business Applications",
+      "url": "https://aws.amazon.com/wickr/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/wickr/",
+      "description": "Protect enterprise communications with end-to-end encryption",
+      "updated": "2025-11-18T19:14:34+0000"
+    },
+    {
+      "id": "aws-x-ray",
+      "name": "AWS X-Ray",
+      "category": "Developer Tools",
+      "url": "https://aws.amazon.com/xray/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/xray/",
+      "description": "Analyze and debug your applications",
+      "updated": "2025-11-18T19:14:15+0000"
+    },
+    {
+      "id": "b2b-data-interchange",
+      "name": "B2B Data Interchange",
+      "category": "Application Integration",
+      "url": "https://aws.amazon.com/b2b-data-interchange/?did=ap_card&trk=ap_card&nc2=hp",
+      "docs_url": "",
+      "description": "AWS B2B Data Interchange automates the transformation of EDI documents into common data representations such as JSON and XML at scale",
+      "updated": "2026-11-09T20:08:38+0000"
+    },
+    {
+      "id": "elastic-load-balancing-elb",
+      "name": "Elastic Load Balancing (ELB)",
+      "category": "Networking-Content-Delivery",
+      "url": "https://aws.amazon.com/elasticloadbalancing/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Distribute incoming traffic across multiple targets",
+      "updated": "2026-11-09T20:02:00+0000"
+    },
+    {
+      "id": "amazon-freertos",
+      "name": "FreeRTOS",
+      "category": "Internet of Things",
+      "url": "https://aws.amazon.com/freertos/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Real-time operating system for microcontrollers",
+      "updated": "2026-11-09T20:04:30+0000"
+    },
+    {
+      "id": "aws-kiro",
+      "name": "Kiro",
+      "category": "Artificial Intelligence (AI)",
+      "url": "https://kiro.dev/",
+      "docs_url": "",
+      "description": "Bring engineering rigor to agentic development",
+      "updated": "2026-05-11T21:12:28+0000"
+    },
+    {
+      "id": "migration-evaluator-formerly-tso-logic",
+      "name": "Migration Evaluator (formerly TSO Logic)",
+      "category": "Migration",
+      "url": "https://aws.amazon.com/migration-evaluator/?did=ap_card&trk=ap_card",
+      "docs_url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/migration-tools/business-case-migration-evaluator.html",
+      "description": "Create a business case for cloud migration",
+      "updated": "2025-10-29T20:48:31+0000"
+    },
+    {
+      "id": "nova-act",
+      "name": "Nova Act",
+      "category": "Artificial Intelligence (AI)",
+      "url": "https://aws.amazon.com/nova/act/",
+      "docs_url": "https://docs.aws.amazon.com/nova-act/latest/userguide/what-is-nova-act.html",
+      "description": "Build fleets of reliable agents to automate production UI workflows at scale",
+      "updated": "2026-11-09T20:00:51+0000"
+    },
+    {
+      "id": "nova-forge",
+      "name": "Nova Forge",
+      "category": "Artificial Intelligence (AI)",
+      "url": "https://aws.amazon.com/nova/forge/",
+      "docs_url": "https://docs.aws.amazon.com/sagemaker/latest/dg/nova-forge.html?refid=ft_ec2",
+      "description": "Build your own frontier models using Nova",
+      "updated": "2026-11-09T19:59:06+0000"
+    },
+    {
+      "id": "red-hat-openshift-service-aws",
+      "name": "Red Hat OpenShift Service on AWS",
+      "category": "Containers",
+      "url": "https://aws.amazon.com/rosa/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Managed OpenShift in the cloud",
+      "updated": "2026-11-09T20:01:36+0000"
+    },
+    {
+      "id": "vmware-cloud-on-aws",
+      "name": "VMware Cloud on AWS",
+      "category": "Compute",
+      "url": "https://aws.amazon.com/vmware/?did=ap_card&trk=ap_card",
+      "docs_url": "",
+      "description": "Build a hybrid cloud without custom hardware",
+      "updated": "2026-11-09T19:59:38+0000"
+    }
+  ]
+}

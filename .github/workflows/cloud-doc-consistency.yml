@@ -7,6 +7,9 @@ on:
       - "scripts/check_cloud_consistency.py"
       - "scripts/check_cloudflare_catalog.py"
       - "scripts/check_aws_service_catalog.py"
+      - "scripts/check_aws_marketing_products.py"
+      - "scripts/refresh_aws_marketing_products.py"
+      - ".github/workflows/refresh-aws-marketing-products.yml"
       - "scripts/refresh_aws_service_catalog.py"
       - ".github/workflows/refresh-aws-service-catalog.yml"
       - "scripts/refresh_cloudflare_directory.py"
@@ -18,6 +21,9 @@ on:
       - "scripts/check_cloud_consistency.py"
       - "scripts/check_cloudflare_catalog.py"
       - "scripts/check_aws_service_catalog.py"
+      - "scripts/check_aws_marketing_products.py"
+      - "scripts/refresh_aws_marketing_products.py"
+      - ".github/workflows/refresh-aws-marketing-products.yml"
       - "scripts/refresh_aws_service_catalog.py"
       - ".github/workflows/refresh-aws-service-catalog.yml"
       - "scripts/refresh_cloudflare_directory.py"
@@ -43,8 +49,12 @@ jobs:
           python -m py_compile scripts/check_cloudflare_catalog.py
           python -m py_compile scripts/refresh_aws_service_catalog.py
           python -m py_compile scripts/check_aws_service_catalog.py
+          python -m py_compile scripts/refresh_aws_marketing_products.py
+          python -m py_compile scripts/check_aws_marketing_products.py
           python -m py_compile scripts/check_cloud_consistency.py
       - name: Validate Cloudflare official catalogs
         run: python scripts/check_cloudflare_catalog.py
       - name: Validate AWS General Reference and lifecycle catalogs
         run: python scripts/check_aws_service_catalog.py
+      - name: Validate complete AWS marketing Products and 269-reference diff
+        run: python scripts/check_aws_marketing_products.py

@@ -1,0 +1,57 @@
+name: Propose AWS marketing Products refresh
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: aws-marketing-products-refresh
+  cancel-in-progress: false
+
+jobs:
+  propose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Fetch all official AWS Products cards and regenerate diff
+        run: python scripts/refresh_aws_marketing_products.py
+      - name: Validate snapshot and existing inventories BEFORE PR
+        run: |
+          python -m py_compile scripts/refresh_aws_marketing_products.py scripts/check_aws_marketing_products.py
+          python scripts/check_aws_marketing_products.py
+          python scripts/check_aws_service_catalog.py
+          python scripts/check_cloud_consistency.py
+          python scripts/check_cloudflare_catalog.py
+      - name: Open review pull request (never push directly to main)
+        uses: peter-evans/create-pull-request@v8
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: automation/aws-marketing-products-audit
+          delete-branch: true
+          add-paths: |
+            cloud/aws/products-source.json
+            cloud/aws/products.md
+            cloud/aws/products-coverage.md
+            cloud/aws/README.md
+            cloud/README.md
+          commit-message: "docs(aws): refresh marketing Products and General Reference audit"
+          title: "docs(aws): refresh AWS official Products marketing catalog"
+          body: |
+            This PR proposes a source-scoped AWS Products catalog refresh.
+            The official API totalHits must exactly match downloaded service-tag
+            cards. Mapping aliases are manually reviewed in products-mapping.json.
+            If an old mapping becomes invalid, the generator fails rather than
+            silently removing or creating matches.
+            All cloud consistency checks are run BEFORE creating this PR, since
+            GITHUB_TOKEN-created PRs do not start the standard PR workflow.
+            Review new products, category shifts, renamed products, and statuses.
+            AWS Products card presence does not establish GA or contractability.
