@@ -67,7 +67,7 @@ for i,section in enumerate(sections):
                                else product_md.find("## 同一表示名の別カード",section.end())
                                if "## 同一表示名の別カード" in product_md[section.end():]
                                else len(product_md))]
-    rows=[line for line in span.splitlines() if line.startswith("| ")]
+    rows=[line for line in span.splitlines() if line.startswith("|")]
     check(len(rows)>=2 and rows[0]=="| 公式Products名 | 製品ページ | Docs（掲載分） | ディレクトリID |" and
           rows[1]=="|---|---|---|---|", "Invalid product table heading/divider: "+group)
     actual=rows[2:] if len(rows)>=2 else []
