@@ -30,7 +30,7 @@
 
 ## Storage（9件）
 
-| 公式Products掲載名 | Docs索引との対応 | 判定 |
+| 公式Products掲載名 | 対応Docs・ソースYAML | 分類 | 補足 |
 |---|---|---|---|
 | Artifacts | [公式](https://developers.cloudflare.com/artifacts/) `artifacts.yaml` | 同名 | — |
 | Cache Reserve | [公式](https://developers.cloudflare.com/cache/advanced-configuration/cache-reserve/) `cache-reserve.yaml` | 同名 | — |
@@ -44,7 +44,7 @@
 
 ## AI（6件）
 
-| 公式Products掲載名 | Docs索引との対応 | 判定 |
+| 公式Products掲載名 | 対応Docs・ソースYAML | 分類 | 補足 |
 |---|---|---|---|
 | Agents | [公式](https://developers.cloudflare.com/agents/) `agents.yaml` | 同名 | — |
 | AI Gateway | [公式](https://developers.cloudflare.com/ai-gateway/) `ai-gateway.yaml` | 同名 | — |
@@ -55,7 +55,7 @@
 
 ## Media（3件）
 
-| 公式Products掲載名 | Docs索引との対応 | 判定 |
+| 公式Products掲載名 | 対応Docs・ソースYAML | 分類 | 補足 |
 |---|---|---|---|
 | Images | [公式](https://developers.cloudflare.com/images/) `images.yaml` | 表記ゆれ | Docs側と名称の接頭辞/表記が異なる |
 | RealtimeKit | [公式](https://developers.cloudflare.com/realtime/realtimekit/) `realtime-kit.yaml` | 同名 | — |
@@ -63,7 +63,7 @@
 
 ## Security（9件）
 
-| 公式Products掲載名 | Docs索引との対応 | 判定 |
+| 公式Products掲載名 | 対応Docs・ソースYAML | 分類 | 補足 |
 |---|---|---|---|
 | Bot Management | [公式](https://developers.cloudflare.com/bots/) `bots.yaml` | 機能・製品群 | DocsではBots |
 | Client-Side Security | [公式](https://developers.cloudflare.com/client-side-security/) `client-side-security.yaml` | 同名 | — |
@@ -77,7 +77,7 @@
 
 ## Network（21件）
 
-| 公式Products掲載名 | Docs索引との対応 | 判定 |
+| 公式Products掲載名 | 対応Docs・ソースYAML | 分類 | 補足 |
 |---|---|---|---|
 | Advanced Certificate Manager | [公式](https://developers.cloudflare.com/ssl/) `ssl.yaml` | 機能・製品群 | SSL/TLSの機能・プラン |
 | Analytics | [公式](https://developers.cloudflare.com/analytics/) `analytics.yaml` | 同名 | — |
@@ -103,7 +103,7 @@
 
 ## SASE / Zero Trust（10件）
 
-| 公式Products掲載名 | Docs索引との対応 | 判定 |
+| 公式Products掲載名 | 対応Docs・ソースYAML | 分類 | 補足 |
 |---|---|---|---|
 | Access | [公式](https://developers.cloudflare.com/cloudflare-one/access-controls/policies/) `access.yaml` | 同名 | — |
 | AI Security for Apps | [公式](https://developers.cloudflare.com/waf/detections/ai-security-for-apps/) `ai-security-for-apps.yaml` | 機能・製品群 | 公式ソースYAMLはディレクトリ非表示 |
