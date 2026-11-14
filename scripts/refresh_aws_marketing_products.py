@@ -64,11 +64,11 @@ def get_products():
             "description": unescape(re.sub(r"<[^>]*>", " ", fields.get("body",""))).strip(),
             "updated": item.get("dateUpdated","")
         })
-    if len({p["id"] for p in products}) != total or len({p["name"] for p in products}) != total:
-        from collections import Counter
-        dup_names=[(name,n) for name,n in Counter(p["name"] for p in products).items() if n>1]
-        dup_ids=[(name,n) for name,n in Counter(p["id"] for p in products).items() if n>1]
-        raise ValueError("Duplicate official marketing IDs or names: names="+str(dup_names)+" IDs="+str(dup_ids))
+    if len({p["id"] for p in products}) != total:
+        raise ValueError("Duplicate official marketing card IDs")
+    duplicated={name:n for name,n in Counter(p["name"] for p in products).items() if n>1}
+    if duplicated:
+        print("WARN: distinct official product cards share display names: "+repr(duplicated))
     return api_url, total, sorted(products, key=lambda p:(p["name"].casefold(),p["id"]))
 
 def get_general_reference():
@@ -147,7 +147,7 @@ def generate(products, references, config, day):
         else:
             key=None;kind="目録外・未対応";note="General Referenceの該当項目は未確定"
         classes[kind]+=1
-        coverage.append("| ["+esc(name)+"]("+p["url"]+") | "+kind+" | "+
+        coverage.append("| ["+esc(name)+"]("+p["url"]+") ("+esc(p["id"])+") | "+kind+" | "+
             ("["+esc(key)+"]("+byref[key]["url"]+")" if key else "—")+
             " | "+esc(note)+" |")
     coverage+=["","## 照合サマリー","",
@@ -175,6 +175,15 @@ def main():
     config=json.loads((DIR/"products-mapping.json").read_text(encoding="utf-8"))
     day=datetime.now(timezone.utc).strftime("%Y-%m-%d")
     products_md,coverage_md,classes,matched=generate(products,refs,config,day)
+    dups={name:n for name,n in Counter(p["name"] for p in products).items() if n>1}
+    if dups:
+        additions=["", "## 同一表示名の別カード（公式原票のまま保持）", "",
+                   "表示名が同じでもカードIDが異なるため集計から除外しません。"]
+        for title in sorted(dups):
+            ids=[p["id"] for p in products if p["name"]==title]
+            additions.append("- "+title+": "+", ".join(ids))
+        products_md += "\n".join(additions)+"\n"
+        coverage_md += "\n".join(additions)+"\n"
     snapshot={"retrieved_utc":day,"source_page":PAGE,"api_url":api,
               "source_total_hits":total,"products":products}
     (DIR/"products-source.json").write_text(
