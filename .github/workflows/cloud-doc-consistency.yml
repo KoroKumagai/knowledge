@@ -5,11 +5,13 @@ on:
     paths:
       - "cloud/**"
       - "scripts/check_cloud_consistency.py"
+      - "scripts/check_cloudflare_catalog.py"
       - ".github/workflows/cloud-doc-consistency.yml"
   push:
     paths:
       - "cloud/**"
       - "scripts/check_cloud_consistency.py"
+      - "scripts/check_cloudflare_catalog.py"
       - ".github/workflows/cloud-doc-consistency.yml"
 
 permissions:
@@ -25,3 +27,5 @@ jobs:
           python-version: "3.12"
       - name: Validate tables, moved products, excluded features, and counts
         run: python scripts/check_cloud_consistency.py
+      - name: Validate Cloudflare official catalogs
+        run: python scripts/check_cloudflare_catalog.py
