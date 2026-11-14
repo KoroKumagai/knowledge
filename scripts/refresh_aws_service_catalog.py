@@ -32,7 +32,7 @@ LIFECYCLE_LABELS = {
     "shutdown": "Full Shutdown（終了済）",
 }
 # Exact overrides ONLY, after manual inspection. Not fuzzy matches.
-INDEX_TO_LIFECYCLE = {"App Mesh": "AWS AppMesh",
+INDEX_TO_LIFECYCLE = {"App Mesh": "AWS App Mesh",
                       "DevOps Guru": "Amazon DevOps Guru",
                       "Forecast": "Amazon Forecast",
                       "Lookout for Equipment": "Amazon Lookout for Equipment",
