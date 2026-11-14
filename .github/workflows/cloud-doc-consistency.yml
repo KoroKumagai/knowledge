@@ -1,0 +1,27 @@
+name: Validate cloud comparison consistency
+
+on:
+  pull_request:
+    paths:
+      - "cloud/**"
+      - "scripts/check_cloud_consistency.py"
+      - ".github/workflows/cloud-doc-consistency.yml"
+  push:
+    paths:
+      - "cloud/**"
+      - "scripts/check_cloud_consistency.py"
+      - ".github/workflows/cloud-doc-consistency.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate tables, moved products, excluded features, and counts
+        run: python scripts/check_cloud_consistency.py
