@@ -189,8 +189,8 @@ def synchronize_documented_counts(total, categories, classes, matched, reference
                  str(classes["確認済み別名"])+"件、関連・別粒度"+
                  str(classes["関連・別粒度（非同等）"])+"件、目録外・未対応"+
                  str(classes["目録外・未対応"])+"件", "AWS classifications")
-    aws = change(aws, r"General Reference側の未対応は\d+件",
-                 "General Reference側の未対応は"+str(reference_total-matched)+"件",
+    aws = change(aws, r"(?<=側の未対応は)\d+件",
+                 str(reference_total-matched)+"件",
                  "AWS reference remainder")
     aws = change(aws, r"未対応\d+カード",
                  "未対応"+str(classes["目録外・未対応"])+"カード",
