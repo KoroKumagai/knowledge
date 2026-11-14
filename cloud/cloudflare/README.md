@@ -21,17 +21,9 @@
 
 **掲載区分:** [products.md](products.md)では同名／改称／表記ゆれ／機能・製品群を分けています。機能の対応付けは同じ独立製品があることの証明ではありません。
 
-## 2026年の重要差分
+## 提供状況・改称履歴の参照先
 
-- **AI Search:** 2026-10-01 GA。[公式](https://developers.cloudflare.com/changelog/post/2026-10-01-ai-search-generally-available/)
-- **Cloudflare CLI（cf）:** 2026-09-28にbeta公開。[公式](https://developers.cloudflare.com/changelog/post/2026-09-28-cloudflare-cli-beta/)
-- **Basin:** 2026-10-01 GA。旧 Data Platform、Pipelines、R2 Data Catalog、R2 SQL は Basin、Basin Pipelines、Basin Catalog、Basin SQL に改称。[公式](https://developers.cloudflare.com/changelog/post/2026-10-01-basin-ga/)
-- **Agent Memory:** private beta。[公式](https://developers.cloudflare.com/agent-memory/)
-- **K2:** public beta。[公式](https://developers.cloudflare.com/k2/platform/pricing/)
-- **Artifacts:** open beta。[公式](https://developers.cloudflare.com/changelog/product/artifacts/)
-- **Email Service:** Email Sendingはpublic beta。[公式](https://developers.cloudflare.com/email-service/)
-- **Workers VPC:** beta。[公式](https://developers.cloudflare.com/workers-vpc/get-started/)
-- **Cloudflare Wallets:** 現時点ではウォレット名の予約のみ。[公式](https://developers.cloudflare.com/wallets/)
+2026年の重要な変更と確認済みの提供段階は、[catalog.md の「提供状況・改称の確認履歴」](catalog.md) と [catalog-status.json](catalog-status.json) に一元化しています。READMEでは重複掲載せず、根拠URLと検証日を含む元データを更新してください。
 
 ## 更新・チェック
 
