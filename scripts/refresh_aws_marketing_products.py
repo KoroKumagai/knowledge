@@ -184,37 +184,45 @@ def generate(products, references, config, day):
         "**取得日 (UTC):** "+day+" / **Products:** "+str(len(products))+
         "件 / **General Reference:** "+str(len(references))+"件","",
         "この表は**掲載名・掲載粒度の差分**です。目録外を製品不存在と解釈しません。",
-        "別名対応は明示的に検証したものだけ。関連・別粒度は同一サービスと数えません。",
-        "",
-        "| Products掲載名 | 分類 | General Reference名 | 判定理由 |",
-        "|---|---|---|---|"]
+        "**分類:** 同名＝名称一致（サービス同等・GAの証明ではない）、確認済み別名＝明示的な名称の対応、関連・別粒度＝関連はあるが非同等、目録外・未対応＝対応先未確定。",
+        "理由欄は例外事項のみ記載します。原本のカードIDは[全件一覧](products.md)と[取得データ](products-source.json)で確認できます。",
+        "同名の別カードはその行だけIDを併記します。",""]
+    display_rows=[]
     matched=set()
     classes=Counter()
+    repeated=Counter(p["name"] for p in products)
     for p in products:
         name=p["name"]
         if name in aliases:
-            key=aliases[name];kind="確認済み別名";note="対応名を手動確認。機能範囲・GAは別途検証"
+            key=aliases[name];kind="確認済み別名";note=config.get("alias_notes",{}).get(name,"")
             matched.add(key)
         elif name in byref:
-            key=name;kind="同名";note="名称一致。製品とエンドポイントは同じ粒度とは限らない"
+            key=name;kind="同名";note=""
             matched.add(key)
         elif name in related:
             key=related[name]["reference"];kind="関連・別粒度（非同等）"
             note=related[name]["reason"]
         else:
-            key=None;kind="目録外・未対応";note="General Referenceの該当項目は未確定"
+            key=None;kind="目録外・未対応";note=""
         classes[kind]+=1
-        coverage.append("| ["+esc(name)+"]("+p["url"]+") ("+esc(p["id"])+") | "+kind+" | "+
+        link="["+esc(name)+"]("+p["url"]+")"
+        if repeated[name]>1:
+            link+="（ID: "+esc(p["id"])+"）"
+        display_rows.append("| "+link+" | "+kind+" | "+
             ("["+esc(key)+"]("+byref[key]["url"]+")" if key else "—")+
-            " | "+esc(note)+" |")
-    coverage+=["","## 照合サマリー","",
+            " | "+(esc(note) if note else "—")+" |")
+    coverage+=["## 照合サマリー","",
         "- 同名: "+str(classes["同名"])+"件",
         "- 確認済み別名: "+str(classes["確認済み別名"])+"件",
         "- 関連・別粒度（非同等）: "+str(classes["関連・別粒度（非同等）"])+"件",
         "- 目録外・未対応: "+str(classes["目録外・未対応"])+"件",
         "- General Referenceで対応したユニーク項目: "+str(len(matched))+"件",
         "- General Reference側の未対応: "+str(len(references)-len(matched))+"件",
-        "","## General Reference側の未対応項目","",
+        "", "## Products側の全件照合", "",
+        "| Products掲載名 | 分類 | General Reference名 | 例外・補足 |",
+        "|---|---|---|---|",
+        *display_rows,
+        "", "## General Reference側の未対応項目","",
         "未対応にはAPI・内部機能・旧名称・マーケティングに掲載されない製品も含まれます。",
         "","| General Reference名 | 公式出典 | ライフサイクル |",
         "|---|---|---|"]
@@ -224,6 +232,11 @@ def generate(products, references, config, day):
                             item["lifecycle"]+" |")
     coverage+=["","**注意:** どちらのリストにもないことを理由に製品不在とは判断しない。",
                "区分変更は手動でproducts-mapping.jsonに根拠付きで記録する。",""]
+    shutdown_cards=sum(
+        any(row["stage"]=="shutdown" for row in product_lifecycle(p["name"],config,byname)[1])
+        for p in products)
+    lines.insert(lines.index("[269項目との差分](products-coverage.md) / [手動対応定義](products-mapping.json)"),
+                 "**公式Full Shutdown台帳でサービス本体の終了を確認: "+str(shutdown_cards)+"カード**")
     return "\n".join(lines).rstrip()+"\n","\n".join(coverage).rstrip()+"\n",classes,len(matched)
 
 def synchronize_documented_counts(total, categories, classes, matched, reference_total):
