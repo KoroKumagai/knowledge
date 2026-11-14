@@ -13,7 +13,7 @@
 
 ## 網羅性の定義
 
-- **Docs全件監査:** upstreamの `cloudflare/cloudflare-docs` の `production/src/content/directory/*.yaml` を固定コミットで全件取得。195件を漏れなく一覧化。ただしこれにはDocs集、設定機能、公開非表示のメタデータも含まれ、195個の独立した商用サービスを意味しません。
+- **Docs全件監査:** upstreamの `cloudflare/cloudflare-docs` の `production` ブランチの `src/content/directory/*.yaml` を固定コミットで全件取得。195件を漏れなく一覧化。ただしこれにはDocs集、設定機能、公開非表示のメタデータも含まれ、195個の独立した商用サービスを意味しません。
 - **商用製品カタログとの比較:** 別途公式Productsの68項目を抽出し、Docsの現行名/類似製品群と1件ずつ突合しました。19件の別名・機能名との対応は同一サービスという主張ではなく、検証・保守用の案内です。
 - **提供状況:** GAやベータの根拠が確認できた製品のみ状態と公式リンクを記載しています。非表示メタデータは廃止済みを意味しません。全製品の地域・プラン・SLA・GAの網羅的検証は未完了です。
 
@@ -32,7 +32,7 @@
 ## 更新・チェック
 
 - `python scripts/refresh_cloudflare_directory.py`: 公式GitHubの新しい固定コミットから `catalog.md` を全件再生成。標準ライブラリのみで実行できます。
-- `python scripts/check_cloudflare_catalog.py`: 195件/67件など、ソース単位の欠落、重複、READMEの件数を検査。
+- `python scripts/check_cloudflare_catalog.py`: 195件/68件など、ソース単位の欠落、重複、READMEの件数を検査。
 - GitHub ActionsでCIを実施し、公式索引の更新は手動実行で再取得します。
 
 **今後:** 新旧名称と独立サービス/機能の分類をさらに確認し、GA・リージョン・料金・プランについて、利用判断に必要な優先製品から検証。Cloudflareが更新できたら他4社も同じ方式を検討します。
