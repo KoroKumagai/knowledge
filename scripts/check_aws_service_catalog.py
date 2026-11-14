@@ -44,7 +44,7 @@ def table(text, header, sep, cols):
     return data
 
 catalog_rows = table(catalog,
-    "| # | 公式参照名 | エンドポイント・クォータ | 公式ライフサイクル掲載（完全一致・手動別名のみ） |",
+    "| # | 公式参照名 | エンドポイント・クォータ | 公式ライフサイクル掲載（本体と機能を区別） |",
     "|---:|---|---|---|", 4)
 official = [row[1] for row in catalog_rows]
 check(len(official) >= 220, "Unreasonably small AWS General Reference snapshot")
@@ -58,15 +58,28 @@ check(bool(n) and int(n.group(1)) == len(catalog_rows),
       "Catalog stated total does not equal rows")
 check(all(row[2].startswith("[公式](https://docs.aws.amazon.com/") for row in catalog_rows),
       "Catalog entries must link to AWS official reference")
-check(all(("該当記載なし（GA判定不可）" in row[3]) or
-          (row[3].startswith("[") and "docs.aws.amazon.com/" in row[3])
-          for row in catalog_rows), "Lifecycle status must link its official source")
+check(all(
+    ("該当記載なし（GA判定不可）" in row[3])
+    or ("機能単位の掲載あり" in row[3] and
+        "](lifecycle.md)" in row[3] and "本体のGA判定不可" in row[3])
+    or (row[3].startswith("[") and "docs.aws.amazon.com/" in row[3])
+    for row in catalog_rows), "Lifecycle status must link to its official source")
+for feature_name in ("SageMaker AI", "CloudTrail", "AWS Glue",
+                     "AWS Service Catalog endpoints and quotas"):
+    feature_match = [row for row in catalog_rows if row[1] == feature_name]
+    check(len(feature_match) == 1 and "機能単位の掲載あり" in feature_match[0][3],
+          "Missing parent-service feature lifecycle warning: " + feature_name)
+check("機能だけがMaintenance" in catalog,
+      "Catalog must distinguish parent service and feature lifecycle")
 for note in ("商用製品一覧", "新規導入可能"):
     check(note in catalog, "Reference scope warning missing: "+note)
 
 groups = {}
 for key in ("maintenance", "sunset", "shutdown"):
-    m = re.search(r"^## " + key + r"（(\d+)件）$", lifecycle, re.M)
+    title = {"maintenance": "Maintenance（新規受付停止・継続提供）",
+             "sunset": "Sunset（終了予定）",
+             "shutdown": "Full Shutdown（終了済み）"}[key]
+    m = re.search(r"^## " + re.escape(title) + r" — (\d+)件$", lifecycle, re.M)
     check(bool(m), "Missing lifecycle section: "+key)
     if not m:
         continue
@@ -83,10 +96,14 @@ for key in ("maintenance", "sunset", "shutdown"):
           "Duplicate lifecycle entries: "+key)
     check(all(row[3].startswith("[公式](https://") for row in trows),
           "Missing lifecycle source URLs: "+key)
+    check(all(re.fullmatch(r"\d{4}-\d{2}-\d{2}|—", field)
+              for row in trows for field in row[1:3]),
+          "Lifecycle dates must be ISO-8601 or dash: " + key)
     groups[key] = trows
 check(set(groups) == {"maintenance", "sunset", "shutdown"},
       "Lifecycle three stages not fully represented")
-check("製品と個別機能" in lifecycle and "Full Shutdown" in lifecycle,
+check("製品と個別機能" in lifecycle and "Full Shutdown" in lifecycle and
+      "発表日 ≠ 新規受付停止日" in lifecycle and "2026-04-30" in lifecycle,
       "Lifecycle scope warnings missing")
 
 curated = [cells(line)[0] for line in
@@ -105,7 +122,7 @@ for name, reference, result in mapped:
     if result == "照合済み":
         check(reference in official, "Verified coverage ref absent from catalog: "+name)
     else:
-        check("別のAWS公式製品資料で確認が必要" in result,
+        check("General Referenceの範囲外（公式資料で確認済み）" in result,
               "Unknown coverage classification: "+name)
 check(f"個別一覧との照合:** " in coverage, "Coverage summary missing")
 check(f"**{len(catalog_rows)}件**" in readme,
@@ -113,6 +130,18 @@ check(f"**{len(catalog_rows)}件**" in readme,
 check("公式カタログ網羅性の進捗" in root_readme and
       "[調査結果](aws/README.md)" in root_readme,
       "Global README lacks AWS progress")
+comparison = (ROOT / "service-comparison.md").read_text(encoding="utf-8")
+check("2026-04-30以降、新規顧客利用不可（2026-03-31発表）" in comparison and
+      comparison.count("2026-04-30以降、新規顧客利用不可（2026-03-31発表）") == 2,
+      "AWS App Runner effective date must appear correctly in both comparison rows")
+check("Amazon Quick Suiteを移行候補" not in comparison and
+      "AWS Quick（旧Amazon Quick / Quick Suite）" in comparison,
+      "AWS Quick rebrand must be consistent across comparison and individual list")
+check("SageMaker AIの一部機能" in comparison and
+      "(aws/lifecycle.md)" in comparison,
+      "MLOps row must point to feature lifecycle limitations")
+check("Application Registry機能はMaintenance" in services,
+      "Service Catalog subordinate feature maintenance warning missing")
 check("AWS Quick" in services and "Amazon Quick Suite" not in services,
       "AWS Quick 2026 branding not updated")
 
