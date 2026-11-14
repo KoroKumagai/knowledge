@@ -11,7 +11,7 @@
 - [Oracle Cloud 個別サービス](oracle/services.md)
 - [Cloudflare 個別サービス](cloudflare/services.md)
 
-## 比較可能な機能の横断表（48項目）
+## 比較可能な機能の横断表（50項目）
 
 **選定基準:** 2社以上で同じ目的のサービスが提供され、構成方式の検討が可能な機能に限定します。直接該当しない場合は「対象外」と明示し、他社製品や組合せを無理に代入しません。「対象外」はその事業者が別方式で用途を実現できないという意味ではありません。**全5社で同等のサービスがあるという意味ではありません。** API・SLA・価格の完全互換はありません。
 
@@ -20,8 +20,9 @@
 | コンテナ | Kubernetes | EKS | AKS | GKE | OKE | 対象外 | Cloudflare ContainersはKubernetesではない |
 | コンテナ | サーバーレスコンテナ | ECS on Fargate / App Runner | Azure Container Apps | Cloud Run | Container Instances | Containers | 実行制約・起動/スケール特性は異なる |
 | サーバーレス | 関数実行 | Lambda | Azure Functions | Cloud Run functions | Functions | Workers | Workersの実行制限に注意 |
-| メッセージング | 非同期メッセージ/ジョブキュー | Amazon SQS | Azure Service Bus Queue / Queue Storage | Cloud Tasks | OCI Queue | Cloudflare Queues | Cloud Tasksはタスク配送型。再試行・順序保証などの差に注意 |
-| ワークフロー | ワークフローオーケストレーション | AWS Step Functions | Azure Logic Apps / Durable Functions | Google Cloud Workflows | OCI Process Automation | Cloudflare Workflows | 業務フロー・コード実行・永続化モデルで差がある |
+| メッセージング | 非同期メッセージ/ジョブキュー | Amazon SQS | Azure Service Bus Queue / Queue Storage | Pub/Sub（pullサブスクリプション） / Cloud Tasks | OCI Queue | Cloudflare Queues | Pub/Subはサブスクライバーによるpull取得、Cloud Tasksは指定先へタスクを配送。再試行・配信順序・購読モデルを比較 |
+| ワークフロー | コード・サービス実行のオーケストレーション | AWS Step Functions | Azure Durable Functions | Google Cloud Workflows | 対象外 | Cloudflare Workflows | 処理の分岐・再試行・永続化を管理。OCI Process AutomationはBPM製品のため含めない |
+| ワークフロー | 業務プロセス・アプリケーション連携 | 対象外 | Azure Logic Apps | Google Cloud Application Integration | OCI Process Automation | 対象外 | Logic Appsはアプリ連携、Application IntegrationはiPaaS、OCI Process Automationは人の承認を含むBPMが中心 |
 | ネットワーク | L4ロードバランシング | Network Load Balancer | Azure Load Balancer | Cloud Load Balancing | Network Load Balancer | Spectrum | Spectrumはプロトコル対応範囲が異なる |
 | ネットワーク | L7ロードバランシング | Application Load Balancer | Application Gateway / Front Door | Cloud Load Balancing | Load Balancer | Load Balancing | レイヤー・リバースプロキシ構成が異なる |
 | ネットワーク | CDN | CloudFront | Front Door | Cloud CDN / Media CDN | 対象外 | CDN | OCIのWeb Application Accelerationは同種の汎用CDNではない |
@@ -63,7 +64,8 @@
 | IoT・ゲーム | デジタルツイン | AWS IoT TwinMaker | Azure Digital Twins | 対象外 | 対象外 | 対象外 | 同種の用途でもデータモデルを要比較 |
 | IoT・ゲーム | ゲームバックエンド | Amazon GameLift Servers | Azure PlayFab | 対象外 | 対象外 | 対象外 | サーバー運用とBaaSで機能範囲が違う |
 | 位置情報 | 地図・位置情報API | Amazon Location Service | Azure Maps | Google Maps Platform | 対象外 | 対象外 | SDK・課金・地図データ範囲が異なる |
-| メディア | マネージド動画配信・ストリーミング | Amazon IVS | 対象外 | 対象外 | 対象外 | Cloudflare Stream | ライブ/オンデマンドの対応範囲に差。Media CDNは配信CDNで別の比較軸 |
+| メディア | ライブ動画の取り込み・変換・配信 | Amazon IVS / AWS Elemental MediaLive | 対象外 | Live Stream API | 対象外 | Cloudflare Stream | Live Stream APIはライブ変換とCloud Storage出力が中心。配信にはMedia CDNなどを別途構成。Azure Media Servicesは2024年に終了 |
+| メディア | オンデマンド動画の変換・パッケージング・配信 | AWS Elemental MediaConvert / AWS Elemental MediaPackage | 対象外 | Transcoder API | OCI Media Services（Media Flow / Media Streams） | Cloudflare Stream | OCIはMedia Flowで変換、Media StreamsでVOD配信。Transcoder API単独では配信機能はないため処理範囲に差 |
 | 移行 | サーバー移行 | AWS Application Migration Service | Azure Migrate | Google Cloud Migrate to Virtual Machines | OCI Cloud Migrations | 対象外 | 支援対象と移行方式が異なる |
 
 ## サービスの廃止・改称・変更履歴
@@ -91,6 +93,14 @@
 
 ## 一次資料
 
+- [AWS: Amazon IVS公式ドキュメント](https://docs.aws.amazon.com/ivs/)
+- [Google Cloud: Live Stream API](https://docs.cloud.google.com/livestream/docs/overview)
+- [Google Cloud: Transcoder API](https://docs.cloud.google.com/transcoder/docs/concepts/overview)
+- [OCI: Media Services（Media Flow / Media Streams）](https://docs.oracle.com/en-us/iaas/Content/media-services/overview.htm)
+- [Microsoft: Azure Media Servicesサポート終了（2024-06-30）](https://learn.microsoft.com/en-us/lifecycle/end-of-support/end-of-support-2024)
+- [Microsoft: Durable FunctionsとLogic Appsの比較](https://learn.microsoft.com/en-us/azure/azure-functions/functions-compare-logic-apps-ms-flow-webjobs)
+- [Google Cloud: WorkflowsとApplication Integrationの使い分け](https://docs.cloud.google.com/application-integration/docs/choose-application-integration-or-workflows)
+- [Google Cloud: Pub/SubとCloud Tasksの違い](https://docs.cloud.google.com/tasks/docs/comp-pub-sub)
 - [Google Cloud: 製品ディレクトリ](https://docs.cloud.google.com/docs/product-list)
 - [Google Cloud: 製品一覧](https://cloud.google.com/products)
 - [Google Cloud: 公式変更履歴](https://cloud.google.com/legal-change-log)
@@ -100,11 +110,10 @@
 - [AWS: CodeCommit変更履歴](https://docs.aws.amazon.com/codecommit/latest/userguide/history.html)
 - [Google Cloud: Vertex AI製品の名称変更（Vector Search等）](https://docs.cloud.google.com/gemini-enterprise-agent-platform/vertex-ai-name-changes)
 - [Cloudflare: Stream公式](https://developers.cloudflare.com/stream/)
-- [Azure: Managed Redisへの移行](https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/retirement-faq)
 - [Google Cloud: Agent Platform後継説明](https://cloud.google.com/blog/products/ai-machine-learning/introducing-gemini-enterprise-agent-platform)
 - [AWS: 製品一覧](https://aws.amazon.com/products/)
 - [Microsoft Azure: 製品一覧](https://azure.microsoft.com/en-us/products/)
-- [Microsoft Learn: Azure Cache for Redis廃止FAQ](https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/retirement-faq)
+- [Microsoft Learn: Azure Cache for Redisの廃止とManaged Redisへの移行](https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/retirement-faq)
 - [OCI: 全サービス公式ドキュメント](https://docs.oracle.com/en-us/iaas/Content/)
 - [Cloudflare: 開発者向け製品](https://developers.cloudflare.com/)
 - [Cloudflare: Containers更新履歴](https://developers.cloudflare.com/changelog/product/containers/)
