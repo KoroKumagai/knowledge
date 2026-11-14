@@ -127,6 +127,16 @@ def product_lifecycle(name,config,byname):
     rows=sorted(byname.get(alias,[]),key=lambda r:
                 {"shutdown":0,"sunset":1,"maintenance":2}[r["stage"]])
     if not rows:
+        # A dependency retirement is not the Product's own lifecycle state.
+        # Never place the related service in lifecycle_aliases.
+        related=config.get("lifecycle_related",{}).get(name)
+        if related:
+            dependency=related["service"]
+            records=byname[dependency]
+            shutdown=next((r for r in records if r["stage"]=="shutdown"),None)
+            if shutdown:
+                return ("[関連サービスが終了済み："+dependency+"](lifecycle.md)"
+                        +"（"+shutdown["end"]+"。ボタン本体の終了を意味しない）"),[]
         return "本体の該当記載なし（GA未確認）",[]
     terms=[]
     for row in rows:
@@ -153,6 +163,13 @@ def generate(products, references, config, day):
     whole_aliases=config.get("lifecycle_aliases",{})
     if not set(whole_aliases).issubset(prod_names) or not set(whole_aliases.values()).issubset(byname):
         raise ValueError("Invalid product-level lifecycle alias map")
+    related_lifecycle=config.get("lifecycle_related",{})
+    if (not set(related_lifecycle).issubset(prod_names)
+        or set(related_lifecycle)&set(whole_aliases)
+        or not all(isinstance(v,dict) and v.get("service") in byname
+                   and v.get("reason") and v["service"]!=k
+                   for k,v in related_lifecycle.items())):
+        raise ValueError("Invalid separate lifecycle-related service mapping")
     note_names=config.get("alias_notes",{})
     if not set(note_names).issubset(set(aliases)):
         raise ValueError("Alias notes must refer to an exact alias")
@@ -204,6 +221,18 @@ def generate(products, references, config, day):
             note=related[name]["reason"]
         else:
             key=None;kind="目録外・未対応";note=""
+            _,service_statuses=product_lifecycle(name,config,byname)
+            closed=next((r for r in service_statuses if r["stage"]=="shutdown"),None)
+            if closed:
+                note="Full Shutdown済み（"+closed["end"]+"）"
+            elif name in related_lifecycle:
+                dependency=related_lifecycle[name]
+                ended=next((r for r in byname[dependency["service"]]
+                            if r["stage"]=="shutdown"),None)
+                if ended:
+                    note=(dependency["service"]+"（関連サービス）"
+                          +"はFull Shutdown（"+ended["end"]+"）。"
+                          +"ボタン本体の終了状態とは区別")
         classes[kind]+=1
         link="["+esc(name)+"]("+p["url"]+")"
         if repeated[name]>1:
@@ -235,8 +264,9 @@ def generate(products, references, config, day):
     shutdown_cards=sum(
         any(row["stage"]=="shutdown" for row in product_lifecycle(p["name"],config,byname)[1])
         for p in products)
-    lines.insert(lines.index("[269項目との差分](products-coverage.md) / [手動対応定義](products-mapping.json)"),
-                 "**公式Full Shutdown台帳でサービス本体の終了を確認: "+str(shutdown_cards)+"カード**")
+    status_index=lines.index("[269項目との差分](products-coverage.md) / [手動対応定義](products-mapping.json)")
+    lines.insert(status_index,"**公式Full Shutdown台帳でサービス本体の終了を確認: "+str(shutdown_cards)+"カード**")
+    lines.insert(status_index+1,"")
     return "\n".join(lines).rstrip()+"\n","\n".join(coverage).rstrip()+"\n",classes,len(matched)
 
 def synchronize_documented_counts(total, categories, classes, matched, reference_total):
