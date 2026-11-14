@@ -17,8 +17,6 @@
 | Hyperdrive | 外部DBへの接続最適化 |
 | Cache Reserve | キャッシュ長期保持 |
 | Argo Smart Routing | ネットワーク経路最適化 |
-| Workers Static Assets | 静的サイト配信 |
-| Pages | 静的/フロントエンド開発基盤 |
 | Browser Rendering | ヘッドレスブラウザ |
 
 ## セキュリティ・ネットワーク
@@ -43,7 +41,6 @@
 |---|---|
 | AI Gateway | AI APIの監視・制御 |
 | AI Search | RAG検索 |
-| Agents SDK | エージェント実装フレームワーク |
 | Agent Memory | エージェントのメモリ機能（private beta。一般提供ではない） |
 | Cloudflare Images | 画像保存・変換 |
 | Cloudflare Realtime | SFU / STUN / TURN / RealtimeKit を含むリアルタイム通信製品群（旧Calls） |
@@ -60,6 +57,9 @@
 
 ## 横断比較へ移動した項目
 
+- Agents SDK
+- Pages
+- Workers Static Assets
 - Bot Management
 - Cloudflare Stream
 - Containers
