@@ -13,7 +13,7 @@
 | AWS Service Catalog | AWS Service Catalog endpoints and quotas | 照合済み |
 | AWS Resource Access Manager (RAM) | AWS RAM | 照合済み |
 | AWS Audit Manager | Audit Manager | 照合済み |
-| AWS Artifact | 対象カタログに記載なし | 別のAWS公式製品資料で確認が必要 |
+| AWS Artifact | 対象カタログに記載なし | General Referenceの範囲外（公式資料で確認済み） |
 | AWS Well-Architected Tool | AWS Well-Architected | 照合済み |
 | Amazon Route 53 Application Recovery Controller | ARC | 照合済み |
 | AWS Resilience Hub | Resilience Hub | 照合済み |
@@ -24,12 +24,12 @@
 | Amazon Braket | Braket | 照合済み |
 | AWS Ground Station | AWS Ground Station | 照合済み |
 | AWS IoT Greengrass | AWS IoT Greengrass V2 | 照合済み |
-| Amazon Connect | 対象カタログに記載なし | 別のAWS公式製品資料で確認が必要 |
+| Amazon Connect | 対象カタログに記載なし | General Referenceの範囲外（公式資料で確認済み） |
 | AWS Deadline Cloud | AWS Deadline Cloud | 照合済み |
 | AWS HealthImaging | HealthImaging | 照合済み |
 | AWS Clean Rooms | AWS Clean Rooms | 照合済み |
-| AWS Quick | 対象カタログに記載なし | 別のAWS公式製品資料で確認が必要 |
-| Amazon Nova | 対象カタログに記載なし | 別のAWS公式製品資料で確認が必要 |
+| AWS Quick | 対象カタログに記載なし | General Referenceの範囲外（公式資料で確認済み） |
+| Amazon Nova | 対象カタログに記載なし | General Referenceの範囲外（公式資料で確認済み） |
 
 **個別一覧との照合:** 18 / 22件
 
