@@ -35,7 +35,7 @@ cloud/
 
 | 区分 | ファイル | 備考 |
 |---|---|---|
-| 複数社比較 | [機能比較](service-comparison.md) | 比較可能な48項目 |
+| 複数社比較 | [機能比較](service-comparison.md) | 比較可能な50項目 |
 | AWS | [個別一覧](aws/services.md) | 採録候補22件 |
 | Azure | [個別一覧](azure/services.md) | 採録候補16件 |
 | Google Cloud | [個別一覧](google/services.md) | 採録候補15件 |
