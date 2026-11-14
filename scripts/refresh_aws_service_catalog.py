@@ -26,37 +26,17 @@ SOURCES = {
     "sunset": BASE + "sunset_services.html",
     "shutdown": BASE + "full_shutdown_services.html",
 }
-FEATURE_PARENT_PREFIXES = {
-    # Explicit mappings for parent services, not generic fuzzy matching.
-    "SageMaker AI": "Amazon SageMaker AI",
-    "CloudTrail": "AWS CloudTrail",
-    "AWS Glue": "AWS Glue",
-    "AWS Service Catalog endpoints and quotas": "AWS Service Catalog",
-}
+# Source-of-truth aliases are curated and reviewed separately.
+MAPPING = json.loads((ROOT / "cloud/aws/lifecycle-mapping.json").read_text(encoding="utf-8"))
+INDEX_TO_LIFECYCLE = MAPPING["direct_service_names"]
+FEATURE_PARENT_PREFIXES = MAPPING["feature_prefixes"]
+FEATURE_PARENT_EXACT = MAPPING["feature_exact"]
 
 LIFECYCLE_LABELS = {
     "maintenance": "Maintenance（新規利用制限あり）",
     "sunset": "Sunset（終了日を確認）",
     "shutdown": "Full Shutdown（終了済）",
 }
-# Exact overrides ONLY, after manual inspection. Not fuzzy matches.
-INDEX_TO_LIFECYCLE = {"App Mesh": "AWS App Mesh",
-                      "DevOps Guru": "Amazon DevOps Guru",
-                      "Forecast": "Amazon Forecast",
-                      "Lookout for Equipment": "Amazon Lookout for Equipment",
-                      "Managed Blockchain": "Amazon Managed Blockchain",
-                      "Migration Hub": "AWS Migration Hub",
-                      "App Runner": "AWS App Runner",
-                      "Audit Manager": "AWS Audit Manager",
-                      "Cloud Directory": "Amazon Cloud Directory",
-                      "CloudSearch": "Amazon CloudSearch",
-                      "CodeGuru Reviewer": "Amazon CodeGuru Reviewer",
-                      "AWS IoT Greengrass V1": "AWS IoT Greengrass V1",
-                      "FinSpace": "Amazon FinSpace",
-                      "Amazon Pinpoint": "Amazon Pinpoint",
-                      "AWS Proton": "AWS Proton",
-                      "AWS WAF Classic": "AWS WAF Classic",
-                      "AWS Panorama": "AWS Panorama"}
 CURATED_MAP = {
     "AWS Organizations": "Organizations",
     "AWS Control Tower": "AWS Control Tower",
@@ -162,9 +142,11 @@ def iso_date(value: str) -> str:
 
 def feature_lifecycle(index_name: str, rows):
     """Only explicit service parents and an exact feature-name boundary."""
-    prefix = FEATURE_PARENT_PREFIXES.get(index_name, index_name)
-    return [r for r in rows
-            if r["name"].startswith((prefix + " – ", prefix + " - "))]
+    prefixes = [index_name] + FEATURE_PARENT_PREFIXES.get(index_name, [])
+    exact = set(FEATURE_PARENT_EXACT.get(index_name, []))
+    return [r for r in rows if r["name"] in exact
+            or any(r["name"].startswith((prefix + " – ", prefix + " - "))
+                   for prefix in prefixes)]
 
 
 def date_state(row, today):
@@ -265,6 +247,37 @@ def main():
         changes.append("")
     (out / "lifecycle.md").write_text("\n".join(changes)+"\n",encoding="utf-8")
 
+    # All lifecycle rows should be visible even when the official endpoints
+    # directory has no parent. Matching is deliberately conservative.
+    linked = set()
+    for name, _ in services:
+        exact_service = INDEX_TO_LIFECYCLE.get(name, name)
+        for key in ("maintenance", "sunset", "shutdown"):
+            if exact_service in stages[key]:
+                linked.add((key, exact_service))
+        for row in feature_lifecycle(name, lifecycle_rows):
+            linked.add((row["stage"], row["name"]))
+    unmatched = [row for row in lifecycle_rows
+                 if (row["stage"], row["name"]) not in linked]
+    unmatched_doc = [
+        "# AWSライフサイクル：General Referenceと紐付かない項目", "",
+        f"**取得日 (UTC):** {today}  ",
+        f"**未対応:** **{len(unmatched)} / {len(lifecycle_rows)}件**", "",
+        "照合は [lifecycle-mapping.json](lifecycle-mapping.json) の明示的な別名と、"
+        "サービス名＋区切り記号（– / -）による機能名だけを対象にしています。",
+        "未対応は**製品が存在しない・終了したという意味ではありません**。"
+        "AWSが目録とは別名称で案内する機能や、別の商用製品が含まれます。",
+        "分類を追加する場合は推測で前方一致を広げず、マッピングを手動で確認してください。", "",
+        "| 公式ステータス | ライフサイクル記載名 | 公式出典 |",
+        "|---|---|---|"
+    ]
+    for row in unmatched:
+        unmatched_doc.append(
+            f"| {LIFECYCLE_LABELS[row['stage']]} | {esc(row['name'])} | "
+            f"[AWS公式]({row['resources']}) |")
+    (out / "lifecycle-unmatched.md").write_text(
+        "\n".join(unmatched_doc)+"\n", encoding="utf-8")
+
     coverage = [
         "# AWS個別一覧と公式エンドポイント目録の対応", "",
         f"**取得日:** {today} / [公式目録](catalog.md) / [既存の個別サービス一覧](services.md) / [横断比較](../service-comparison.md)", "",
@@ -306,6 +319,7 @@ def main():
         "| ファイル | 役割 |", "|---|---|",
         f"| [catalog.md](catalog.md) | General Referenceの **{len(services)}件**（サービスエンドポイント/クォータ一覧）の全件採録 |",
         f"| [lifecycle.md](lifecycle.md) | Maintenance **{len(lists['maintenance'])}件**、Sunset **{len(lists['sunset'])}件**、Full Shutdown **{len(lists['shutdown'])}件** の公式表を全件採録 |",
+        f"| [lifecycle-unmatched.md](lifecycle-unmatched.md) | 未対応 **{len(unmatched)} / {len(lifecycle_rows)}件** の明示的な照合残と一次資料。マッピングは [lifecycle-mapping.json](lifecycle-mapping.json) で管理 |",
         f"| [coverage.md](coverage.md) | 既存[個別一覧](services.md)22件と公式参照名の突合。移動済みの項目は[横断表](../service-comparison.md)で管理 |",
         "| [services.md](services.md) | AWS独自・個別扱いの人手で編集した一覧（全製品カタログとは別） |", "",
         "## スコープの境界", "",
@@ -313,6 +327,7 @@ def main():
         "- 公式の[マーケティング用製品ページ](https://aws.amazon.com/products/)は検索と絞り込みで掲載内容が変わるため、そこにある全製品の収録を確認したものではありません。",
         "- 製品のサブ機能・API・マーケットプレイス商品・リージョン・SKUと、エンドポイント・クォータの掲載項目は同じ粒度ではありません。",
         "- AWSのライフサイクル表は**サービスと機能の両方**を含みます。終了日を過ぎたSunset掲載項目も、正式なFull Shutdown掲載がなければ推測で改分類しません。",
+        "- ライフサイクルの個別機能を本体に結び付ける際は、明示的な別名/完全一致/境界付き接頭辞のみを使います。未照合は別表で可視化し、製品本体の新規提供を保証しません。",
         "- 出典に掲載されていないサービスや、新しい製品名への移行があっても、そのサービスが存在しないとは判断できません。", "",
         "## 現行名称の注意（2026-11時点）", "",
         "- **AWS Quick** は2026-11-09に旧Amazon Quickから改称。AWS Quick SightはそのBI機能。既存QuickSight APIと概念上別のため、公式参照表の名称を強制的に置換しません。",
@@ -323,7 +338,7 @@ def main():
         "  [AWS公式ライフサイクル](https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html)", "",
         "## 更新手順", "",
         "- `python -m pip install beautifulsoup4` で依存ライブラリを導入。",
-        "- `python scripts/refresh_aws_service_catalog.py` で4つのAWS公式参照ページを読み、4つのMarkdownを再生成。",
+        "- `python scripts/refresh_aws_service_catalog.py` で4つのAWS公式参照ページを読み、未照合一覧を含む5つのMarkdownを再生成。",
         "- `python scripts/check_aws_service_catalog.py` で件数・重複・ライフサイクル参照・22件対応表を検証。",
         "- GitHub Actions `Propose AWS official service catalog refresh` の手動実行では、生成後の2本の検証を通して**レビュー用PR**を作ります。mainには直接pushしません。",
         "- `GITHUB_TOKEN`で作られたPRでは通常のPRトリガーが起動しないため、生成Workflow内で事前に整合性を検証します。PR作成を許可するリポジトリ設定が必要です。",
