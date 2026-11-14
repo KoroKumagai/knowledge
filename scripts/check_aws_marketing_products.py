@@ -123,6 +123,8 @@ check("**"+str(total)+"カード**" in overview and
       "AWS README official Products counts are stale")
 check("service区分"+str(total)+"カード" in global_overview,
       "Root cloud README Products progress is stale")
+check("General Reference側"+str(len(refs)-matched)+"項目" in overview,
+      "AWS README unmatched unique reference count stale")
 check("GA" in overview and "同一" in overview,
       "AWS README must not conflate Products, availability and endpoints")
 check(mapping.get("aliases",{}).get("Amazon QuickSight")=="AWS Quick Sight",
