@@ -1,0 +1,56 @@
+name: Propose Cloudflare docs directory refresh
+
+# Intentionally no push trigger. Only explicit dispatch can propose a change.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: cloudflare-catalog-refresh
+  cancel-in-progress: false
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout default branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Refresh source-pinned Docs inventory and Products references
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/refresh_cloudflare_directory.py
+      - name: Validate generated snapshot BEFORE creating the pull request
+        run: |
+          python scripts/check_cloudflare_catalog.py
+          python scripts/check_cloud_consistency.py
+      # A PR generated with GITHUB_TOKEN does not trigger other PR workflows.
+      # The validation above is mandatory; a reviewer must still examine changes.
+      - name: Open review pull request (never push to main)
+        uses: peter-evans/create-pull-request@v8
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: automation/cloudflare-docs-catalog
+          delete-branch: true
+          add-paths: |
+            cloud/cloudflare/catalog.md
+            cloud/cloudflare/products.md
+            cloud/cloudflare/README.md
+            cloud/README.md
+          commit-message: "docs(cloudflare): refresh pinned official directory"
+          title: "docs(cloudflare): update official Docs directory snapshot"
+          body: |
+            This is a **review request**, not an automatic merge.
+            The generator has refreshed the upstream pinned commit in the Docs
+            catalog and the corresponding Products source pin.
+            Both cloud consistency and Cloudflare catalog checks passed in
+            the proposing workflow (GITHUB_TOKEN PRs do not start other CI).
+            Review product-name mappings, new/removed YAML, and curated statuses.

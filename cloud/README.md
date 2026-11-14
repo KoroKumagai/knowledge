@@ -18,6 +18,10 @@ cloud/
 ├── oracle/
 │   └── services.md          # OCI独自・個別扱い
 ├── cloudflare/
+│   ├── README.md            # Cloudflareの監査概要
+│   ├── catalog.md           # 公式Docs目録の全件スナップショット
+│   ├── products.md          # 公式Productsとの照合表
+│   ├── catalog-status.json  # 提供状況の検証日・根拠URL
 │   └── services.md          # Cloudflare独自・個別扱い
 └── oracle-cloud.md          # OCIの運用メモ（既存ファイル・変更なし）
 ```
@@ -42,6 +46,12 @@ cloud/
 | OCI | [個別一覧](oracle/services.md) | 採録候補25件 |
 | Cloudflare | [個別一覧](cloudflare/services.md) | 採録候補27件 |
 
+## 公式カタログ網羅性の進捗
+
+- **Cloudflare（公式Docs/Productsの掲載単位）:** [調査結果](cloudflare/README.md) に収録済み（公式Docs索引195件・公式Products68件）。提供状況の全件検証は未完了。
+- **AWS / Azure / Google Cloud / OCI:** 現時点では公式カタログとの全件照合が未完了。
+- 共通比較表・個別一覧の行数は全製品数ではありません。公式目録の採録件数と、実務上の機能比較件数を分けて管理します。
+
 ## 全製品の確認元
 
 - AWS: [Service endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html) / [全製品](https://aws.amazon.com/products/)
@@ -57,7 +67,7 @@ cloud/
 3. 「実行モデル」「ステートの扱い」「SQL・API互換性」「認証・権限」「リージョン・SLA」「価格」「IaC対応」を比較する。単純なサービス名の類似で結論を出さない。
 4. 見直した日付と参照先を更新し、可能なら変更の根拠をコミットまたはPRに記載する。
 
-> 全サービスカタログとの自動突合、完全なGA/終了ステータスの検証は別途必要。上記件数は今回の**採録件数**であり、各社の総サービス数ではない。
+> 全サービスの完全なGA/終了ステータス検証は別途必要。Cloudflareの公式目録については195件の監査スナップショットを作成しましたが、上記の個別一覧件数は各社の総サービス数ではありません。
 
 ## 更新時の確認事項（TODO）
 

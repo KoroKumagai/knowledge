@@ -1,0 +1,98 @@
+{
+  "verified_on": "2026-11-14",
+  "purpose": "手動確認した提供段階の情報。再生成では日付・GAを更新しない。新しい一次資料で再検証して更新すること。",
+  "statuses": {
+    "agent-memory": {
+      "status": "private beta",
+      "source": "https://developers.cloudflare.com/agent-memory/",
+      "verified_on": "2026-11-14"
+    },
+    "ai-search": {
+      "status": "GA（2026-10-01）",
+      "source": "https://developers.cloudflare.com/changelog/post/2026-10-01-ai-search-generally-available/",
+      "verified_on": "2026-11-14"
+    },
+    "cf": {
+      "status": "beta（2026-09-28）",
+      "source": "https://developers.cloudflare.com/changelog/post/2026-09-28-cloudflare-cli-beta/",
+      "verified_on": "2026-11-14"
+    },
+    "artifacts": {
+      "status": "open beta",
+      "source": "https://developers.cloudflare.com/changelog/product/artifacts/",
+      "verified_on": "2026-11-14"
+    },
+    "k2": {
+      "status": "public beta",
+      "source": "https://developers.cloudflare.com/k2/platform/pricing/",
+      "verified_on": "2026-11-14"
+    },
+    "email-service": {
+      "status": "メール送信: public beta",
+      "source": "https://developers.cloudflare.com/email-service/",
+      "verified_on": "2026-11-14"
+    },
+    "workers-vpc": {
+      "status": "beta",
+      "source": "https://developers.cloudflare.com/workers-vpc/get-started/",
+      "verified_on": "2026-11-14"
+    },
+    "basin": {
+      "status": "GA（2026-10-01）",
+      "source": "https://developers.cloudflare.com/changelog/post/2026-10-01-basin-ga/",
+      "verified_on": "2026-11-14"
+    },
+    "basin-pipelines": {
+      "status": "GA（2026-10-01）",
+      "source": "https://developers.cloudflare.com/changelog/post/2026-10-01-basin-ga/",
+      "verified_on": "2026-11-14"
+    },
+    "basin-catalog": {
+      "status": "GA（2026-10-01）",
+      "source": "https://developers.cloudflare.com/changelog/post/2026-10-01-basin-ga/",
+      "verified_on": "2026-11-14"
+    },
+    "basin-sql": {
+      "status": "GA（2026-10-01）",
+      "source": "https://developers.cloudflare.com/changelog/post/2026-10-01-basin-ga/",
+      "verified_on": "2026-11-14"
+    },
+    "wallets": {
+      "status": "名称予約のみ（機能利用は未提供）",
+      "source": "https://developers.cloudflare.com/wallets/",
+      "verified_on": "2026-11-14"
+    }
+  },
+  "change_notes": [
+    {
+      "date": "2026-10-01",
+      "product": "Basin",
+      "summary": "Basin（旧Data Platform、Pipelines、R2 Data Catalog、R2 SQLを含む）を一般提供開始",
+      "source": "https://developers.cloudflare.com/changelog/post/2026-10-01-basin-ga/"
+    },
+    {
+      "date": "2026-10-01",
+      "product": "AI Search",
+      "summary": "AI Searchを一般提供開始",
+      "source": "https://developers.cloudflare.com/changelog/post/2026-10-01-ai-search-generally-available/"
+    },
+    {
+      "date": "2026-09-28",
+      "product": "Cloudflare CLI",
+      "summary": "Cloudflare CLIのベータ公開",
+      "source": "https://developers.cloudflare.com/changelog/post/2026-09-28-cloudflare-cli-beta/"
+    },
+    {
+      "date": "2026-04-15",
+      "product": "Browser Run",
+      "summary": "Browser RenderingからBrowser Runに改称",
+      "source": "https://developers.cloudflare.com/changelog/post/2026-04-15-br-rename/"
+    },
+    {
+      "date": "2026-02-17",
+      "product": "Cloudflare One",
+      "summary": "Magic WAN→Cloudflare WAN、Magic Firewall→Cloudflare Network Firewall等に改称",
+      "source": "https://developers.cloudflare.com/changelog/post/2026-02-17-product-name-updates/"
+    }
+  ]
+}
