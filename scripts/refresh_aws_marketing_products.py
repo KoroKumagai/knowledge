@@ -169,6 +169,39 @@ def generate(products, references, config, day):
                "区分変更は手動でproducts-mapping.jsonに根拠付きで記録する。",""]
     return "\n".join(lines).rstrip()+"\n","\n".join(coverage).rstrip()+"\n",classes,len(matched)
 
+def synchronize_documented_counts(total, categories, classes, matched, reference_total):
+    """Keep human overview totals aligned with the official refreshed snapshot."""
+    aws_path = DIR / "README.md"
+    global_path = ROOT / "cloud/README.md"
+    aws = aws_path.read_text(encoding="utf-8")
+    general = global_path.read_text(encoding="utf-8")
+    def change(text, pattern, replacement, label):
+        updated, count = re.subn(pattern, replacement, text)
+        if not count:
+            raise ValueError("README count marker missing: " + label)
+        return updated
+    aws = change(aws, r"\*\*\d+カード\*\*", "**"+str(total)+"カード**", "AWS cards")
+    aws = change(aws, r"\d+カテゴリ", str(categories)+"カテゴリ", "AWS categories")
+    aws = change(aws, r"serviceタグ付きカード\d+件",
+                 "serviceタグ付きカード"+str(total)+"件", "AWS service-tag scope")
+    aws = change(aws, r"同名\d+件、確認済み別名\d+件、関連・別粒度\d+件、目録外・未対応\d+件",
+                 "同名"+str(classes["同名"])+"件、確認済み別名"+
+                 str(classes["確認済み別名"])+"件、関連・別粒度"+
+                 str(classes["関連・別粒度（非同等）"])+"件、目録外・未対応"+
+                 str(classes["目録外・未対応"])+"件", "AWS classifications")
+    aws = change(aws, r"General Reference側の未対応は\d+件",
+                 "General Reference側の未対応は"+str(reference_total-matched)+"件",
+                 "AWS reference remainder")
+    aws = change(aws, r"未対応\d+カード",
+                 "未対応"+str(classes["目録外・未対応"])+"カード",
+                 "AWS review queue")
+    general = change(general, r"AWS公式Products \d+カード",
+                     "AWS公式Products "+str(total)+"カード", "global tree")
+    general = change(general, r"service区分\d+カード",
+                     "service区分"+str(total)+"カード", "global progress")
+    aws_path.write_text(aws,encoding="utf-8")
+    global_path.write_text(general,encoding="utf-8")
+
 def main():
     api,total,products=get_products()
     refs=get_general_reference()
@@ -190,6 +223,8 @@ def main():
         json.dumps(snapshot,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     (DIR/"products.md").write_text(products_md,encoding="utf-8")
     (DIR/"products-coverage.md").write_text(coverage_md,encoding="utf-8")
+    synchronize_documented_counts(total,len({p["category"] for p in products}),
+                                   classes,matched,len(refs))
     print(json.dumps({"products":total,"generalReference":len(refs),
                       "categories":len({p["category"] for p in products}),
                       "classifications":classes,"matched":matched},ensure_ascii=False))
