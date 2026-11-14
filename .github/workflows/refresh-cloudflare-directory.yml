@@ -1,35 +1,54 @@
-name: Refresh Cloudflare docs directory inventory
+name: Propose Cloudflare docs directory refresh
+
+# Intentionally no push trigger. Only explicit dispatch can propose a change.
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - docs/cloudflare-catalog-audit-20261114
-    paths:
-      - scripts/refresh_cloudflare_directory.py
-      - .github/workflows/refresh-cloudflare-directory.yml
+
 permissions:
   contents: write
+  pull-requests: write
+
+concurrency:
+  group: cloudflare-catalog-refresh
+  cancel-in-progress: false
+
 jobs:
   snapshot:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout default branch
+        uses: actions/checkout@v4
         with:
-          ref: ${{ github.ref_name }}
-          persist-credentials: true
+          ref: main
+          persist-credentials: false
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Get all official Cloudflare docs directory YAML
+      - name: Refresh source-pinned Docs inventory and Products references
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/refresh_cloudflare_directory.py
-      - name: Commit catalog snapshot
+      - name: Validate generated snapshot BEFORE creating the pull request
         run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add cloud/cloudflare/catalog.md
-          if ! git diff --cached --quiet; then
-            git commit -m 'docs(cloudflare): refresh official docs directory snapshot'
-            git push
-          fi
+          python scripts/check_cloudflare_catalog.py
+          python scripts/check_cloud_consistency.py
+      # A PR generated with GITHUB_TOKEN does not trigger other PR workflows.
+      # The validation above is mandatory; a reviewer must still examine changes.
+      - name: Open review pull request (never push to main)
+        uses: peter-evans/create-pull-request@v8
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: automation/cloudflare-docs-catalog
+          delete-branch: true
+          add-paths: |
+            cloud/cloudflare/catalog.md
+            cloud/cloudflare/products.md
+          commit-message: "docs(cloudflare): refresh pinned official directory"
+          title: "docs(cloudflare): update official Docs directory snapshot"
+          body: |
+            This is a **review request**, not an automatic merge.
+            The generator has refreshed the upstream pinned commit in the Docs
+            catalog and the corresponding Products source pin.
+            Both cloud consistency and Cloudflare catalog checks passed in
+            the proposing workflow (GITHUB_TOKEN PRs do not start other CI).
+            Review product-name mappings, new/removed YAML, and curated statuses.
