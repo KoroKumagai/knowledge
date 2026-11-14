@@ -40,11 +40,11 @@ cloud/
 | Azure | [個別一覧](azure/services.md) | 採録候補16件 |
 | Google Cloud | [個別一覧](google/services.md) | 採録候補15件 |
 | OCI | [個別一覧](oracle/services.md) | 採録候補25件 |
-| Cloudflare | [個別一覧](cloudflare/services.md) / [公式全件監査](cloudflare/README.md) | 個別候補27件。公式Docs索引195件・公式Products67件を別途全件照合 |
+| Cloudflare | [個別一覧](cloudflare/services.md) | 採録候補27件 |
 
 ## 公式カタログ網羅性の進捗
 
-- **Cloudflare（公式Docs/Productsの掲載単位）:** [調査結果](cloudflare/README.md) に収録済み。提供状況の全件検証は未完了。
+- **Cloudflare（公式Docs/Productsの掲載単位）:** [調査結果](cloudflare/README.md) に収録済み（公式Docs索引195件・公式Products67件）。提供状況の全件検証は未完了。
 - **AWS / Azure / Google Cloud / OCI:** 現時点では公式カタログとの全件照合が未完了。
 - 共通比較表・個別一覧の行数は全製品数ではありません。公式目録の採録件数と、実務上の機能比較件数を分けて管理します。
 
