@@ -113,9 +113,10 @@ check(classes == {"同名": 49, "改称": 1, "表記ゆれ": 5, "機能・製品
 check("Page Shield" in product_names and
       any(line.startswith("| Page Shield |") and "| 改称 |" in line for line in product_rows),
       "Page Shield must be classified as legacy naming")
-check("195エントリ" in index and "68項目" in index,
+check(str(len(catalog_files)) + "エントリ" in index and "68項目" in index,
       "Cloudflare README catalog counts stale")
-check("公式Products68件" in root_index and "公式Docs索引195件" in root_index,
+check("公式Products68件" in root_index and
+      "公式Docs索引" + str(len(catalog_files)) + "件" in root_index,
       "Global cloud README counts stale")
 check("網羅的検証は未完了" in index and "GA、プラン、地域" in catalog,
       "Limitations about GA and regional availability must remain explicit")
