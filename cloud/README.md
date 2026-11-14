@@ -13,6 +13,8 @@ cloud/
 │   ├── README.md            # AWS公式カタログ監査概要
 │   ├── catalog.md           # エンドポイント/クォータの全件台帳
 │   ├── lifecycle.md         # Maintenance / Sunset / Full Shutdown
+│   ├── lifecycle-unmatched.md  # 公式エンドポイントと未対応のライフサイクル項目
+│   ├── lifecycle-mapping.json  # 手動確認した製品名と機能の対応表
 │   ├── coverage.md          # 個別一覧と公式参照項目との照合
 │   └── services.md          # AWS独自・個別扱い
 ├── azure/
