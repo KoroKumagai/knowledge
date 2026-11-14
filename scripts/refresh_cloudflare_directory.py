@@ -79,6 +79,32 @@ def main():
     if missing:
         raise RuntimeError("products.md references removed upstream YAML: "+str(sorted(missing)))
     updated_products=old_products.replace(pin.group(1),commit,1)
+    count=len(all_entries)
+    visible=sum(bool(x["url"]) and not x["hidden"] for x in all_entries)
+    hidden=sum(x["hidden"] for x in all_entries)
+    cf_readme_path=ROOT/"cloud/cloudflare/README.md"
+    root_readme_path=ROOT/"cloud/README.md"
+    cf_readme=cf_readme_path.read_text(encoding="utf-8")
+    root_readme=root_readme_path.read_text(encoding="utf-8")
+
+    def substitute(pattern, new, text, description):
+        result, matches=re.subn(pattern, new, text)
+        if not matches:
+            raise RuntimeError("Cannot update documented count: "+description)
+        return result
+
+    updated_products=substitute(r"の\\d+エントリのどれに対応",
+        "の"+str(count)+"エントリのどれに対応",updated_products,"products Docs count")
+    cf_readme=substitute(
+        r"\\*\\*\\d+エントリ\\*\\*全件。公開\\d+、非表示\\d+",
+        "**"+str(count)+"エントリ**全件。公開"+str(visible)+"、非表示"+str(hidden),
+        cf_readme,"Cloudflare README summary")
+    cf_readme=substitute(r"\\d+件を漏れなく一覧化",
+        str(count)+"件を漏れなく一覧化",cf_readme,"Cloudflare README total")
+    root_readme=substitute(r"公式Docs索引\\d+件","公式Docs索引"+str(count)+"件",
+        root_readme,"global README Docs inventory")
+    root_readme=substitute(r"公式目録については\\d+件",
+        "公式目録については"+str(count)+"件",root_readme,"global README audit note")
     now=datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d")
     visible=sum(bool(x["url"]) and not x["hidden"] for x in all_entries)
     hidden=sum(x["hidden"] for x in all_entries)
@@ -124,9 +150,11 @@ def main():
     additions=["- "+event["date"]+" ["+event["product"]+"]("+event["source"]+"): "+event["summary"]
                for event in curated.get("change_notes",[])]
     lines[marker:marker]=additions+[""]
-    # Complete both artifacts only after all upstream and mapping checks pass.
+    # Complete all related documents only after upstream and mapping checks.
     CATALOG_FILE.write_text("\n".join(lines),encoding="utf-8")
     PRODUCT_FILE.write_text(updated_products,encoding="utf-8")
+    cf_readme_path.write_text(cf_readme,encoding="utf-8")
+    root_readme_path.write_text(root_readme,encoding="utf-8")
     print("OK",len(all_entries),"source entries,",visible,"visible,",hidden,"hidden; pinned source",commit)
 
 if __name__=="__main__":
