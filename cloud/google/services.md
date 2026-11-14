@@ -14,7 +14,7 @@ Google独自のデータ・AI・地理情報・Firebaseなどの製品体系を�
 |---|---|
 | BigQuery Omni | 他クラウド上のBigQuery分析 |
 | BigQuery Data Transfer Service | BigQueryへのデータ取り込み |
-| BigLake | レイクハウス管理 |
+| Lakehouse（旧BigLake） | データレイクとDWHを統合するレイクハウス管理 |
 | Looker | セマンティックモデルを持つBI |
 | Knowledge Catalog | データ資産カタログ・ガバナンス |
 | Earth Engine | 地理空間・地球観測分析 |
