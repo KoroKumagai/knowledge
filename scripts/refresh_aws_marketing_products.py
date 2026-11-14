@@ -56,8 +56,8 @@ def get_products():
         category = categories[0] if categories else "Uncategorized"
         url = urljoin(PAGE, fields.get("ctaLink") or "")
         docs_url = urljoin(PAGE, fields["secondaryCTALink"]) if fields.get("secondaryCTALink") else ""
-        if urlsplit(url).netloc not in ("aws.amazon.com", "www.aws.amazon.com"):
-            raise ValueError("Unexpected product link: " + url)
+        if urlsplit(url).scheme != "https" or not urlsplit(url).netloc:
+            raise ValueError("Unsafe official catalog product link: " + url)
         products.append({
             "id": identifier, "name": name, "category": category,
             "url": url, "docs_url": docs_url,
@@ -106,7 +106,7 @@ def generate(products, references, config, day):
         "**AWS公式:** [Products]("+PAGE+") / [公式検索API]("+API+") / [取得データ](products-source.json)", "",
         "**API totalHits:** "+str(len(products))+"件 / **収録:** "+str(len(products))+"件", "",
         "> この件数は公式Productsページのserviceタグを持つカード数。独立課金サービス数やGA数とは限りません。",
-        "> 廃止済み製品が表示される場合もあります。提供可能性はライフサイクル台帳で個別確認してください。", "",
+        "> 廃止済み製品が表示される場合もあります。提供可能性はライフサイクル台帳で個別確認してください。AWS公式APIが案内する外部ドメインの公式製品サイトもあります。", "",
         "[269項目との差分](products-coverage.md) / [手動対応定義](products-mapping.json)", ""
     ]
     for category in sorted(groups,key=str.casefold):
