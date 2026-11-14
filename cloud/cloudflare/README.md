@@ -17,6 +17,10 @@
 - **商用製品カタログとの比較:** 別途公式Productsの68項目を抽出し、Docsの現行名/類似製品群と1件ずつ突合しました。19件の別名・機能名との対応は同一サービスという主張ではなく、検証・保守用の案内です。
 - **提供状況:** GAやベータの根拠が確認できた製品のみ状態と公式リンクを記載しています。非表示メタデータは廃止済みを意味しません。全製品の地域・プラン・SLA・GAの網羅的検証は未完了です。
 
+**検証済み提供段階の保守:** [`catalog-status.json`](catalog-status.json) は一次資料URLと確認日を手動保守するデータです。Docs索引の再生成ではGA/ベータの判定を自動更新しません。確認日が古くなった項目は個別再確認が必要です。
+
+**掲載区分:** [products.md](products.md)では同名／改称／表記ゆれ／機能・製品群を分けています。機能の対応付けは同じ独立製品があることの証明ではありません。
+
 ## 2026年の重要差分
 
 - **AI Search:** 2026-10-01 GA。[公式](https://developers.cloudflare.com/changelog/post/2026-10-01-ai-search-generally-available/)
@@ -31,8 +35,8 @@
 
 ## 更新・チェック
 
-- `python scripts/refresh_cloudflare_directory.py`: 公式GitHubの新しい固定コミットから `catalog.md` を全件再生成。標準ライブラリのみで実行できます。
-- `python scripts/check_cloudflare_catalog.py`: 195件/68件など、ソース単位の欠落、重複、READMEの件数を検査。
-- GitHub ActionsでCIを実施し、公式索引の更新は手動実行で再取得します。
+- `python scripts/refresh_cloudflare_directory.py`: 公式GitHubの新しい固定コミットから `catalog.md` と `products.md` のソースSHAを同期し、READMEのDocs件数も更新。標準ライブラリのみで実行できます。
+- `python scripts/check_cloudflare_catalog.py`: Docs / Productsのコミット一致、Productsが参照する全YAMLの存在、個別一覧の名称、分類、件数を検査。
+- `Propose Cloudflare docs directory refresh` を手動起動すると、カタログ再生成と2本の整合性テストを実施して**レビュー用PRを作成**します。`main`には直接pushしません。`GITHUB_TOKEN` が作成したPRはGitHubの通常のPRチェックを自動起動しないため、**PR作成前のWorkflow内テストを必須**にしています。リポジトリのActions設定で「Allow GitHub Actions to create and approve pull requests」の有効化が必要です。
 
 **今後:** 新旧名称と独立サービス/機能の分類をさらに確認し、GA・リージョン・料金・プランについて、利用判断に必要な優先製品から検証。Cloudflareが更新できたら他4社も同じ方式を検討します。
