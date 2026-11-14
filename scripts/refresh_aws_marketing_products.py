@@ -65,7 +65,10 @@ def get_products():
             "updated": item.get("dateUpdated","")
         })
     if len({p["id"] for p in products}) != total or len({p["name"] for p in products}) != total:
-        raise ValueError("Duplicate official marketing IDs or names")
+        from collections import Counter
+        dup_names=[(name,n) for name,n in Counter(p["name"] for p in products).items() if n>1]
+        dup_ids=[(name,n) for name,n in Counter(p["id"] for p in products).items() if n>1]
+        raise ValueError("Duplicate official marketing IDs or names: names="+str(dup_names)+" IDs="+str(dup_ids))
     return api_url, total, sorted(products, key=lambda p:(p["name"].casefold(),p["id"]))
 
 def get_general_reference():
