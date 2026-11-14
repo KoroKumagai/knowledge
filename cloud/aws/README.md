@@ -29,7 +29,7 @@ Cloudflareで採用した「全件の公式目録」と「編集された独自�
 
 - AWS Products：**237カード**。同名でもIDが異なるカードがあります（AWS DevOps Agent、Amazon SageMaker AIが各2枚）。
 - General Reference：**269参照項目**。両者は同じ単位ではなく、マーケティング製品の一部はエンドポイントとして独立していません。
-- 突合：[products-coverage.md](products-coverage.md) に**同名75件、確認済み別名101件、関連・別粒度28件、目録外・未対応33件**を記録。269項目側の未対応は94件。
+- 突合：[products-coverage.md](products-coverage.md) に**同名75件、確認済み別名101件、関連・別粒度28件、目録外・未対応33件**を記録。269項目側の未対応は95件。
 - AWS公式Productsに残る旧名称「AWS Personal Health Dashboard」は、2022年の[AWS Health Dashboardへの改称](https://docs.aws.amazon.com/health/latest/ug/doc-history.html)に基づきGeneral ReferenceのAWS Healthへ対応。
 - Amazon DocumentDBの製品名に含まれる `compatability` は公式掲載の誤字をそのまま収録（原文ママ）。
 - AWS公式のマーケティング分類（badge）をそのまま採録。分類名に不自然なものがあっても独自の推測で書き換えません。
