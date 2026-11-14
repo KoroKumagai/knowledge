@@ -26,6 +26,14 @@ SOURCES = {
     "sunset": BASE + "sunset_services.html",
     "shutdown": BASE + "full_shutdown_services.html",
 }
+FEATURE_PARENT_PREFIXES = {
+    # Explicit mappings for parent services, not generic fuzzy matching.
+    "SageMaker AI": "Amazon SageMaker AI",
+    "CloudTrail": "AWS CloudTrail",
+    "AWS Glue": "AWS Glue",
+    "AWS Service Catalog endpoints and quotas": "AWS Service Catalog",
+}
+
 LIFECYCLE_LABELS = {
     "maintenance": "Maintenance（新規利用制限あり）",
     "sunset": "Sunset（終了日を確認）",
@@ -146,12 +154,25 @@ def lifecycle(soup: BeautifulSoup, stage: str):
 def esc(s: str) -> str:
     return s.replace("|", r"\|").replace("\n", " ")
 
+def iso_date(value: str) -> str:
+    if not value:
+        return "—"
+    return datetime.strptime(value, "%B %d, %Y").date().isoformat()
+
+
+def feature_lifecycle(index_name: str, rows):
+    """Only explicit service parents and an exact feature-name boundary."""
+    prefix = FEATURE_PARENT_PREFIXES.get(index_name, index_name)
+    return [r for r in rows
+            if r["name"].startswith((prefix + " – ", prefix + " - "))]
+
+
 def date_state(row, today):
     stage = row["stage"]
     if stage != "sunset":
         return LIFECYCLE_LABELS[stage]
     try:
-        expires = datetime.strptime(row["end_of_support"], "%B %d, %Y").date()
+        expires = datetime.fromisoformat(iso_date(row["end_of_support"])).date()
     except ValueError:
         return LIFECYCLE_LABELS[stage]
     if expires <= today:
@@ -201,7 +222,8 @@ def main():
         "> 提供中の商用製品一覧、GA製品数、全SKU、すべてのAWS機能と同義ではありません。",
         "> 終了済みのサービスも出典に残るため、掲載されているだけで新規導入可能とは判断できません。", "",
         "[ライフサイクル台帳](lifecycle.md) / [既存独自一覧との突合](coverage.md) / [AWS公式Products](https://aws.amazon.com/products/)", "",
-        "| # | 公式参照名 | エンドポイント・クォータ | 公式ライフサイクル掲載（完全一致・手動別名のみ） |",
+        "機能だけがMaintenance/Sunset/終了済みであっても、サービス本体の終了とは断定しません。", "",
+        "| # | 公式参照名 | エンドポイント・クォータ | 公式ライフサイクル掲載（本体と機能を区別） |",
         "|---:|---|---|---|"
     ]
     for i, (name, url) in enumerate(services, 1):
@@ -209,7 +231,14 @@ def main():
         if row:
             status = f"[{row['state']}]({SOURCES[row['stage']]})"
         else:
-            status = "該当記載なし（GA判定不可）"
+            sub_features = feature_lifecycle(name, lifecycle_rows)
+            if sub_features:
+                stages_found = sorted({x["stage"] for x in sub_features},
+                                      key=("maintenance", "sunset", "shutdown").index)
+                labels = " / ".join(LIFECYCLE_LABELS[s] for s in stages_found)
+                status = f"[機能単位の掲載あり（{labels}）](lifecycle.md)（本体のGA判定不可）"
+            else:
+                status = "該当記載なし（GA判定不可）"
         catalog.append(f"| {i} | {esc(name)} | [公式]({url}) | {status} |")
     (out / "catalog.md").write_text("\n".join(catalog)+"\n",encoding="utf-8")
 
@@ -218,17 +247,22 @@ def main():
         f"**取得日 (UTC):** {today}", "",
         "公式のMaintenance/Sunset/Full Shutdownページの各表を全件収録。",
         "**状態はライフサイクル表への掲載であり、製品と個別機能が混在**しています。",
-        "終了日を過ぎていてもSunset表に残る場合は、Full Shutdownと推測せず公式の掲載分類を残します。", "",
+        "終了日を過ぎていてもSunset表に残る場合は、Full Shutdownと推測せず公式の掲載分類を残します。",
+        "**発表日 ≠ 新規受付停止日。** App Runnerは2026-03-31発表、2026-04-30から新規顧客利用不可。[AWS公式](https://aws.amazon.com/about-aws/whats-new/2026/03/aws-service-availability/)。
+        この台帳の発表日は受付停止の実効日ではありません。", "",
         f"- [Maintenance]({SOURCES['maintenance']}): **{len(lists['maintenance'])}件**",
         f"- [Sunset]({SOURCES['sunset']}): **{len(lists['sunset'])}件**",
         f"- [Full Shutdown]({SOURCES['shutdown']}): **{len(lists['shutdown'])}件**",""]
     for stage in ("maintenance", "sunset", "shutdown"):
-        changes += [f"## {stage}（{len(lists[stage])}件）", "",
+        titles = {"maintenance": "Maintenance（新規受付停止・継続提供）",
+                  "sunset": "Sunset（終了予定）",
+                  "shutdown": "Full Shutdown（終了済み）"}
+        changes += [f"## {titles[stage]} — {len(lists[stage])}件", "",
                     "| AWS公式掲載名（サービス・機能） | 発表日 | サポート終了日 | 公式根拠 |",
                     "|---|---|---|---|"]
         for row in lists[stage]:
-            changes.append(f"| {esc(row['name'])} | {esc(row['announcement']) or '—'} | "
-                           f"{esc(row['end_of_support']) or '—'} | [公式]({row['resources']}) |")
+            changes.append(f"| {esc(row['name'])} | {iso_date(row['announcement'])} | "
+                           f"{iso_date(row['end_of_support'])} | [公式]({row['resources']}) |")
         changes.append("")
     (out / "lifecycle.md").write_text("\n".join(changes)+"\n",encoding="utf-8")
 
@@ -247,7 +281,7 @@ def main():
         if present:
             matched.add(reference)
         coverage.append(f"| {esc(name)} | {esc(reference) if present else '対象カタログに記載なし'} | "
-                        f"{'照合済み' if present else '別のAWS公式製品資料で確認が必要'} |")
+                        f"{'照合済み' if present else 'General Referenceの範囲外（公式資料で確認済み）'} |")
     coverage += ["", f"**個別一覧との照合:** {len(matched)} / {len(curated)}件", "",
                  "## 独立サービスかどうか・横断比較への振り分けの残課題", "",
                  "公式エンドポイント目録の各項目は**API/機能群**を含みます。"
@@ -299,7 +333,7 @@ def main():
         "- マーケティング用AWS Productsの全件を別ソースで取得し、サービスエンドポイント目録と差集合を作る。",
         "- 公式参照項目のうち独立サービス・機能・旧製品を区別し、横断表と個別一覧の分類漏れをなくす。",
         "- 主要サービスの地域、GA、価格、契約条件を別途確認する。",""]
-    (out / "README.md").write_text("\n".join(overview)+"\n",encoding="utf-8")
+    (out / "README.md").write_text("\n".join(overview).rstrip()+"\n",encoding="utf-8")
     # Update the shared progress counter from the official snapshot rather
     # than allowing the next monthly refresh to leave an outdated README.
     global_path = ROOT / "cloud/README.md"
