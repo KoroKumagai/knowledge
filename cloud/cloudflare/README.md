@@ -7,18 +7,20 @@
 | ファイル | 用途 |
 |---|---|
 | [catalog.md](catalog.md) | Cloudflare公式DocsのYAMLディレクトリ **195エントリ**全件。公開138、非表示57。出典YAMLとステータス確認済み分の根拠あり |
-| [products.md](products.md) | 公式Cloudflare Productsに掲載された**67項目**をDocs索引と照合。同名47、別名・機能名20 |
+| [products.md](products.md) | 公式Cloudflare Productsに掲載された**68項目**をDocs索引と照合。同名49、別名・機能名19 |
 | [services.md](services.md) | 5社横断比較へ移しにくい個別サービスを整理した編集済み一覧（**27件**） |
 | [../service-comparison.md](../service-comparison.md) | 2社以上で比較できる用途・サービスの横断表 |
 
 ## 網羅性の定義
 
 - **Docs全件監査:** upstreamの `cloudflare/cloudflare-docs` の `production/src/content/directory/*.yaml` を固定コミットで全件取得。195件を漏れなく一覧化。ただしこれにはDocs集、設定機能、公開非表示のメタデータも含まれ、195個の独立した商用サービスを意味しません。
-- **商用製品カタログとの比較:** 別途公式Productsの67項目を抽出し、Docsの現行名/類似製品群と1件ずつ突合しました。20件の別名・機能名との対応は同一サービスという主張ではなく、検証・保守用の案内です。
+- **商用製品カタログとの比較:** 別途公式Productsの68項目を抽出し、Docsの現行名/類似製品群と1件ずつ突合しました。19件の別名・機能名との対応は同一サービスという主張ではなく、検証・保守用の案内です。
 - **提供状況:** GAやベータの根拠が確認できた製品のみ状態と公式リンクを記載しています。非表示メタデータは廃止済みを意味しません。全製品の地域・プラン・SLA・GAの網羅的検証は未完了です。
 
 ## 2026年の重要差分
 
+- **AI Search:** 2026-10-01 GA。[公式](https://developers.cloudflare.com/changelog/post/2026-10-01-ai-search-generally-available/)
+- **Cloudflare CLI（cf）:** 2026-09-28にbeta公開。[公式](https://developers.cloudflare.com/changelog/post/2026-09-28-cloudflare-cli-beta/)
 - **Basin:** 2026-10-01 GA。旧 Data Platform、Pipelines、R2 Data Catalog、R2 SQL は Basin、Basin Pipelines、Basin Catalog、Basin SQL に改称。[公式](https://developers.cloudflare.com/changelog/post/2026-10-01-basin-ga/)
 - **Agent Memory:** private beta。[公式](https://developers.cloudflare.com/agent-memory/)
 - **K2:** public beta。[公式](https://developers.cloudflare.com/k2/platform/pricing/)
