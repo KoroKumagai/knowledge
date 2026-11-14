@@ -12,20 +12,16 @@ from urllib.request import Request, urlopen
 ROOT = Path(__file__).resolve().parent.parent
 API = "https://api.github.com/repos/cloudflare/cloudflare-docs"
 DOCS = "https://developers.cloudflare.com"
-KNOWN = {
- "agent-memory": ("private beta", "/agent-memory/"),
- "ai-search": ("GA (2026-10-01)", "/changelog/post/2026-10-01-ai-search-generally-available/"),
- "cf": ("beta (2026-09-28)", "/changelog/post/2026-09-28-cloudflare-cli-beta/"),
- "artifacts": ("open beta", "/changelog/product/artifacts/"),
- "k2": ("public beta", "/k2/platform/pricing/"),
- "email-service": ("sending: public beta", "/email-service/"),
- "workers-vpc": ("beta", "/workers-vpc/get-started/"),
- "basin": ("GA (2026-10-01)", "/changelog/post/2026-10-01-basin-ga/"),
- "basin-pipelines": ("GA (2026-10-01)", "/changelog/post/2026-10-01-basin-ga/"),
- "basin-catalog": ("GA (2026-10-01)", "/changelog/post/2026-10-01-basin-ga/"),
- "basin-sql": ("GA (2026-10-01)", "/changelog/post/2026-10-01-basin-ga/"),
- "wallets": ("name reservation only", "/wallets/"),
-}
+STATUS_FILE = ROOT / "cloud/cloudflare/catalog-status.json"
+PRODUCT_FILE = ROOT / "cloud/cloudflare/products.md"
+CATALOG_FILE = ROOT / "cloud/cloudflare/catalog.md"
+
+def read_curated():
+    data = json.loads(STATUS_FILE.read_text(encoding="utf-8"))
+    if not data.get("verified_on") or not isinstance(data.get("statuses"), dict):
+        raise RuntimeError("Missing curated status metadata")
+    return data
+
 def fetch(url, api=False):
     headers={"User-Agent":"knowledge-cloudflare-audit/1.0"}
     if api:
@@ -51,7 +47,7 @@ def get_one(meta, commit):
                 group=field(raw,"  group") or "未分類",
                 hidden=bool(re.search(r"^  show:\s*false\s*$",raw,re.M)),
                 url=urljoin(DOCS+"/", relative) if relative else "",
-                source="https://github.com/cloudflare/cloudflare-docs/blob/"+commit+"/"+path)
+                source_filename=meta["name"])
 def esc(s):
     return s.replace("|",r"\|").replace("\n"," ").replace("\r"," ")
 
@@ -65,6 +61,24 @@ def main():
         all_entries=list(pool.map(lambda x:get_one(x,commit),source))
     if len(all_entries)!=len(source) or len({x["slug"] for x in all_entries})!=len(source):
         raise RuntimeError("Incomplete YAML retrieval")
+    curated=read_curated()
+    statuses=curated["statuses"]
+    unknown=set(statuses)-{x["slug"] for x in all_entries}
+    if unknown:
+        raise RuntimeError("Curated status refers to removed directory YAML: "+str(sorted(unknown)))
+    # Both documents share one source revision. Product/YAML mapping remains
+    # curated: fail rather than silently accept removed source entries.
+    old_products=PRODUCT_FILE.read_text(encoding="utf-8")
+    pin=re.search(r"\*\*Docs照合元コミット:\*\* `([a-f0-9]{40})`",old_products)
+    if not pin:
+        raise RuntimeError("products.md must include a pinned Docs source commit")
+    referenced=set(re.findall(r"`([a-z0-9.-]+\.yaml)` \| (?:同名|改称|表記ゆれ|機能・製品群) \|",old_products))
+    if len(referenced)<50:
+        raise RuntimeError("Cannot parse enough referenced Products YAML entries")
+    missing=referenced-{x["source_filename"] for x in all_entries}
+    if missing:
+        raise RuntimeError("products.md references removed upstream YAML: "+str(sorted(missing)))
+    updated_products=old_products.replace(pin.group(1),commit,1)
     now=datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d")
     visible=sum(bool(x["url"]) and not x["hidden"] for x in all_entries)
     hidden=sum(x["hidden"] for x in all_entries)
@@ -73,7 +87,8 @@ def main():
       "# Cloudflare公式Docsディレクトリ全件スナップショット","",
       "**取得日 (UTC):** "+now+"  ",
       "**固定ソース:** [cloudflare-docs "+commit[:12]+"](https://github.com/cloudflare/cloudflare-docs/commit/"+commit+")  ",
-      "**対象:** src/content/directory/*.yaml の全件（"+str(len(all_entries))+"件）","",
+      "**対象:** src/content/directory/*.yaml の全件（"+str(len(all_entries))+"件）  ",
+      "**ソースYAMLの位置:** `https://github.com/cloudflare/cloudflare-docs/blob/"+commit+"/src/content/directory/<filename>`（一覧にはファイル名のみ掲載。コミットは上記リンクで固定）","",
       "- Docs公開目録相当: **"+str(visible)+"件**（URLあり、show:false指定なし）",
       "- Docs非表示エントリ: **"+str(hidden)+"件**",
       "- URL未指定エントリ: **"+str(sum(not x["url"] for x in all_entries))+"件**","",
@@ -85,35 +100,34 @@ def main():
     ]
     for group in groups:
         items=sorted([x for x in all_entries if x["group"]==group],key=lambda x:(x["name"].casefold(),x["slug"]))
-        lines += ["### "+group+"（"+str(len(items))+"件）","","| 名前 | Docs索引 | 提供段階 | 公式Docs | メタデータ |","|---|---|---|---|---|"]
+        lines += ["### "+group+"（"+str(len(items))+"件）","","| 名前 | Docs索引 | 提供段階 | 公式Docs | ソースYAML |","|---|---|---|---|---|"]
         for x in items:
-            known=KNOWN.get(x["slug"])
-            stage=("["+known[0]+"]("+DOCS+known[1]+")") if known else "未個別確認"
+            known=statuses.get(x["slug"])
+            stage=("["+known["status"]+"]("+known["source"]+")") if known else "未個別確認"
             visibility="非表示" if x["hidden"] else "公開" if x["url"] else "URLなし"
             doc="[公式]("+x["url"]+")" if x["url"] else "—"
-            lines.append("| "+" | ".join([esc(x["name"]),visibility,stage,doc,"["+x["slug"]+".yaml]("+x["source"]+")"])+" |")
+            lines.append("| "+" | ".join([esc(x["name"]),visibility,stage,doc,"`"+x["source_filename"]+"`"])+" |")
         lines.append("")
     lines += [
      "## 使い分け","",
      "- [個別サービス一覧](services.md) は他社と単純比較しにくいものを厳選した編集済み一覧です。",
      "- [横断比較](../service-comparison.md) は2社以上で比較するものです。",
      "- この全件スナップショットは公式Docs索引を追跡するものであり、両方のリストと重複します。","",
-     "## 2026年の変更例","",
-     "- [Basinは2026-10-01にGA](https://developers.cloudflare.com/changelog/post/2026-10-01-basin-ga/)。旧Data Platform、Pipelines、R2 Data Catalog、R2 SQLの改称に注意。",
-     "- [Agent Memoryはprivate beta](https://developers.cloudflare.com/agent-memory/)。",
-     "- [K2はpublic beta](https://developers.cloudflare.com/k2/platform/pricing/)。",
-     "- [Email Service送信はpublic beta](https://developers.cloudflare.com/email-service/)。",
-     "- [Artifactsはopen beta](https://developers.cloudflare.com/changelog/product/artifacts/)。",
-     "- [Workers VPCはbeta](https://developers.cloudflare.com/workers-vpc/get-started/)。",
-     "- [Cloudflare Walletsはハンドル予約のみ](https://developers.cloudflare.com/wallets/)。","",
+     "## 提供状況・改称の確認履歴（手動管理データ）","",
+     "この節は [`catalog-status.json`](catalog-status.json) から生成されます。**取得日と提供段階の検証日は異なる**ため、ソース一覧を再生成しても提供状況は自動で最新化されません。","",
      "## 再生成","",
      "リポジトリルートで python scripts/refresh_cloudflare_directory.py を実行。Cloudflare公式GitHub productionのコミットを固定し、YAMLを全件取得します。失敗時はファイルを上書きしません。","",
-     "**残課題:** 正式なProductsページとの全件照合、独立製品とDocs機能の分類、GA/リージョン/契約条件の全製品確認。",""
+     "**残課題:** 公式Products側との別名対応の詳細確認、独立製品とDocs機能の分類、GA/リージョン/契約条件の全製品確認。",""
     ]
-    out=ROOT/"cloud/cloudflare/catalog.md"
-    out.parent.mkdir(parents=True,exist_ok=True)
-    out.write_text("\n".join(lines),encoding="utf-8")
-    print("OK",len(all_entries),"source entries,",visible,"visible,",hidden,"hidden; wrote",out)
+    # Place the verified changes immediately before the regeneration section.
+    marker=lines.index("## 再生成")
+    additions=["- "+event["date"]+" ["+event["product"]+"]("+event["source"]+"): "+event["summary"]
+               for event in curated.get("change_notes",[])]
+    lines[marker:marker]=additions+[""]
+    # Complete both artifacts only after all upstream and mapping checks pass.
+    CATALOG_FILE.write_text("\n".join(lines),encoding="utf-8")
+    PRODUCT_FILE.write_text(updated_products,encoding="utf-8")
+    print("OK",len(all_entries),"source entries,",visible,"visible,",hidden,"hidden; pinned source",commit)
 
 if __name__=="__main__":
     main()
