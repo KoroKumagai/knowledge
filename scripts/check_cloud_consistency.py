@@ -43,12 +43,40 @@ def bullets(text):
     return [x[2:].strip().strip("*") for x in text.splitlines() if x.startswith("- ") and x != "- なし"]
 
 def service_terms(cell):
-    """Match full service entries separated by ' / '; never match partial names.
+    """Return whole product names; split ' / ' only outside parentheses.
 
-    e.g. Workers must not match Workers AI, Microsoft Entra ID must not
-    match Microsoft Entra External ID. ALIASES bridge display-name differences.
+    A trailing parenthesized explanation also contributes the base product
+    name (e.g. OCI Media Services（Media Flow / Media Streams）).
+    Partial matches like Workers vs Workers AI are never accepted.
     """
-    return {part.strip() for part in re.split(r"\s+/\s+", cell) if part.strip()}
+    parts = []
+    buffer = []
+    depth = 0
+    index = 0
+    while index < len(cell):
+        char = cell[index]
+        if char in "(（":
+            depth += 1
+        elif char in ")）":
+            depth = max(0, depth - 1)
+        if depth == 0 and cell.startswith(" / ", index):
+            parts.append("".join(buffer).strip())
+            buffer = []
+            index += 3
+            continue
+        buffer.append(char)
+        index += 1
+    parts.append("".join(buffer).strip())
+    names = set()
+    for part in parts:
+        if not part:
+            continue
+        names.add(part)
+        # A parenthesized suffix documents a variant, not another service.
+        base = re.sub(r"\s*[（(][^()（）]*[)）]$", "", part).strip()
+        if base:
+            names.add(base)
+    return names
 
 def product_rows(text):
     return [(pieces[0], pieces[1]) for line in text.splitlines()
@@ -118,6 +146,12 @@ check("Microsoft Entra ID" not in service_terms("Microsoft Entra External ID"),
       "Whole-name matching broken (Entra ID)")
 check("Workers" in service_terms("Agents SDK / Workers"),
       "Slash-separated comparison matching broken")
+check("OCI Media Services" in service_terms("OCI Media Services（Media Flow / Media Streams）"),
+      "Parenthetical description should preserve base product name")
+check("Media Streams）" not in service_terms("OCI Media Services（Media Flow / Media Streams）"),
+      "Slash inside parentheses must not split product names")
+check("Workers" not in service_terms("Workers AI（GPU / CPU）"),
+      "Bracket-aware parsing created a partial product match")
 check("## レビュー反映（2026-11-14）" not in readme, "PR-only notes in README")
 check("同じ役割の5社製品" not in readme, "Obsolete 5-company comparison wording")
 
