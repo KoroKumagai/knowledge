@@ -37,9 +37,9 @@ product_lines = [line for line in product_lines if line.count("|") == 4 and
                  not line.startswith("|---")]
 product_names = [line.split("|")[1].strip() for line in product_lines]
 check(len(product_names) == len(set(product_names)), "Duplicate marketing product rows")
-check(len(product_names) == 67, "Expected 67 marketing products in frozen snapshot")
-check("公式Products67件" in root_index, "Global README marketing count mismatch")
-check("195エントリ" in index and "67項目" in index, "Cloudflare README count mismatch")
+check(len(product_names) == 68, "Expected 68 marketing products in frozen snapshot")
+check("公式Products68件" in root_index, "Global README marketing count mismatch")
+check("195エントリ" in index and "68項目" in index, "Cloudflare README count mismatch")
 check("網羅的検証は未完了" in index, "GA/region audit limitation must remain explicit")
 
 # Visible/hidden are documentation flags and must never be conflated with GA.
