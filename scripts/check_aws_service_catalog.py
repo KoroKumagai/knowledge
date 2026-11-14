@@ -86,7 +86,7 @@ for key in ("maintenance", "sunset", "shutdown"):
     groups[key] = trows
 check(set(groups) == {"maintenance", "sunset", "shutdown"},
       "Lifecycle three stages not fully represented")
-check("サービスと機能" in lifecycle and "Full Shutdown" in lifecycle,
+check("製品と個別機能" in lifecycle and "Full Shutdown" in lifecycle,
       "Lifecycle scope warnings missing")
 
 curated = [cells(line)[0] for line in
