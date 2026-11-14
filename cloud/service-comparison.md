@@ -18,7 +18,7 @@
 | 領域 | 機能 | AWS | Azure | Google Cloud | OCI | Cloudflare | 比較上の注意 |
 |---|---|---|---|---|---|---|---|
 | コンテナ | Kubernetes | EKS | AKS | GKE | OKE | 対象外 | Cloudflare ContainersはKubernetesではない |
-| コンテナ | サーバーレスコンテナ | ECS on Fargate / App Runner | Azure Container Apps | Cloud Run | Container Instances | Containers | 実行制約・起動/スケール特性は異なる |
+| コンテナ | サーバーレスコンテナ | ECS on Fargate / App Runner | Azure Container Apps | Cloud Run | Container Instances | Containers | 実行制約・起動/スケール特性は異なる。AWS App Runnerは2026-03-31からMaintenance（新規顧客利用不可） |
 | サーバーレス | 関数実行 | Lambda | Azure Functions | Cloud Run functions | Functions | Workers | Workersの実行制限に注意 |
 | メッセージング | 非同期メッセージ/ジョブキュー | Amazon SQS | Azure Service Bus Queue / Queue Storage | Pub/Sub（pullサブスクリプション） / Cloud Tasks | OCI Queue | Cloudflare Queues | Pub/Subはサブスクライバーによるpull取得、Cloud Tasksは指定先へタスクを配送。再試行・配信順序・購読モデルを比較 |
 | ワークフロー | コード・サービス実行のオーケストレーション | AWS Step Functions | Azure Durable Functions | Google Cloud Workflows | 対象外 | Cloudflare Workflows | 処理の分岐・再試行・永続化を管理。OCI Process AutomationはBPM製品のため含めない |
@@ -43,7 +43,7 @@
 | 開発 | シークレット管理 | Secrets Manager | Key Vault | Secret Manager | OCI Vault | Secrets Store / Workers Secrets | 自動更新・権限・管理粒度に差 |
 | 開発 | 開発環境・クラウドシェル | AWS CloudShell | Azure Cloud Shell / Dev Box | Cloud Shell / Cloud Workstations | OCI Cloud Shell | 対象外 | Workers Playgroundは一般用途のCloud Shellではない |
 | 開発 | ソースコード管理 | AWS CodeCommit | Azure Repos | Secure Source Manager | OCI DevOps Code Repositories | 対象外 | Gitリポジトリの管理機能・認可モデルに差 |
-| 開発 | Webアプリホスティング | AWS Amplify Hosting / App Runner | Azure App Service | Firebase App Hosting / Cloud Run | 対象外 | Cloudflare Pages / Workers Static Assets | SSRの実行方式・デプロイ仕様は異なる |
+| 開発 | Webアプリホスティング | AWS Amplify Hosting / App Runner | Azure App Service | Firebase App Hosting / Cloud Run | 対象外 | Cloudflare Pages / Workers Static Assets | SSRの実行方式・デプロイ仕様は異なる。AWS App RunnerはMaintenance（新規顧客利用不可） |
 | セキュリティ | クラウド設定・姿勢管理 | Security Hub / AWS Config | Defender for Cloud / Azure Policy | Security Command Center | Cloud Guard | 対象外 | Cloudflare Security Centerはエッジ中心 |
 | セキュリティ | 顧客向け認証（CIAM） | Amazon Cognito | Microsoft Entra External ID | Identity Platform / Firebase Authentication | OCI Identity Domains | 対象外 | Cloudflare Accessは限定ユーザー/社内アプリ向け。一般消費者向けCIAMとは別 |
 | 運用 | ログ | CloudWatch Logs | Azure Monitor Logs | Cloud Logging | OCI Logging | Workers Logs / Logpush | ログ対象と保持方式が異なる |
