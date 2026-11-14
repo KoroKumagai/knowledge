@@ -43,6 +43,8 @@ jobs:
           add-paths: |
             cloud/cloudflare/catalog.md
             cloud/cloudflare/products.md
+            cloud/cloudflare/README.md
+            cloud/README.md
           commit-message: "docs(cloudflare): refresh pinned official directory"
           title: "docs(cloudflare): update official Docs directory snapshot"
           body: |
