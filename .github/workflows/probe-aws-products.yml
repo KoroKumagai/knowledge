@@ -16,18 +16,17 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Inspect official AWS Products HTML and search config
+      - name: Inspect AWS Products HTML embedded data
         run: |
           python -m pip install requests beautifulsoup4
           python - <<'PY'
           import requests,re
           from bs4 import BeautifulSoup
           url="https://aws.amazon.com/products/?nc2=h_prod"
-          try:
-              r=requests.get(url,headers={"User-Agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/131.0.0.0 Safari/537.36","Accept-Language":"en-US,en;q=0.9"},timeout=35)
-              print("HTTP",r.status_code,"bytes",len(r.content),"final",r.url)
-              html=r.text
-              for term in ("itemTitle","itemCTALink","dataSource","directory","ams#c5","productNameLowercase","filterOptions","searchFields"):
+          r=requests.get(url,headers={"User-Agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/131.0.0.0 Safari/537.36","Accept-Language":"en-US,en;q=0.9"},timeout=35)
+          print("HTTP",r.status_code,"bytes",len(r.content),"final",r.url)
+          html=r.text
+          for term in ("itemTitle","itemCTALink","dataSource","directory","ams#c5","productNameLowercase","filterOptions","searchFields"):
               print("TERM",term,html.count(term))
               hit=re.search(re.escape(term),html)
               if hit: print("EXAMPLE",term,repr(html[max(0,hit.start()-280):hit.start()+380])[:650])
@@ -44,6 +43,4 @@ jobs:
                   if ("directory" in val.lower() or "dataSource" in val or "itemTitle" in val) and len(val)>500:
                       print("ATTR",element.name,key,"len",len(val),"start",repr(val[:800]))
                       break
-          except Exception as e:
-              print("PROBE ERROR",type(e).__name__,str(e)[:300]);raise
           PY
