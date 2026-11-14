@@ -24,6 +24,11 @@ check(len(names) == len(set(names)), "Duplicated upstream YAML filenames")
 check(all(filename == path.split("/")[-1] for filename, _, path in source_rows),
       "Filename differs from upstream source")
 check(len(commits) == 1, "Multiple upstream commits; snapshot must be immutable")
+visible_match = re.search(r"Docs公開目録相当: \*\*(\d+)件\*\*", catalog)
+hidden_match = re.search(r"Docs非表示エントリ: \*\*(\d+)件\*\*", catalog)
+check(bool(visible_match and hidden_match) and
+      int(visible_match.group(1)) + int(hidden_match.group(1)) == len(source_rows),
+      "Docs visibility groups must reconcile to the complete YAML count")
 count = re.search(r"の全件（(\d+)件）", catalog)
 check(bool(count) and int(count.group(1)) == len(source_rows),
       "Docs YAML entry count mismatch")
@@ -38,6 +43,7 @@ product_lines = [line for line in product_lines if line.count("|") == 4 and
 product_names = [line.split("|")[1].strip() for line in product_lines]
 check(len(product_names) == len(set(product_names)), "Duplicate marketing product rows")
 check(len(product_names) == 68, "Expected 68 marketing products in frozen snapshot")
+check("Basin" in product_names and "K2" in product_names, "Missing current Basin / K2 marketing products")
 check("公式Products68件" in root_index, "Global README marketing count mismatch")
 check("195エントリ" in index and "68項目" in index, "Cloudflare README count mismatch")
 check("網羅的検証は未完了" in index, "GA/region audit limitation must remain explicit")
