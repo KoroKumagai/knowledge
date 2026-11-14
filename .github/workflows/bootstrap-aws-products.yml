@@ -1,0 +1,35 @@
+name: Bootstrap AWS Products snapshot (temporary PR branch only)
+
+on:
+  pull_request:
+    paths:
+      - .github/workflows/bootstrap-aws-products.yml
+      - scripts/refresh_aws_marketing_products.py
+      - cloud/aws/products-mapping.json
+
+permissions:
+  contents: write
+
+jobs:
+  bootstrap:
+    if: github.head_ref == 'docs/aws-marketing-products-audit-20261115'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Fetch complete AWS marketing Products service directory
+        run: python scripts/refresh_aws_marketing_products.py
+      - name: Commit official snapshot to review branch only
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add cloud/aws/products-source.json cloud/aws/products.md cloud/aws/products-coverage.md
+          if ! git diff --cached --quiet; then
+            git commit -m 'docs(aws): snapshot official Products catalog'
+            git push origin HEAD:refs/heads/docs/aws-marketing-products-audit-20261115
+          fi
