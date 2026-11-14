@@ -19,7 +19,7 @@
 | 5 | AWS AppConfig | [公式](https://docs.aws.amazon.com/general/latest/gr/appconfig.html) | 該当記載なし（GA判定不可） |
 | 6 | AppFabric | [公式](https://docs.aws.amazon.com/general/latest/gr/appfabric.html) | 該当記載なし（GA判定不可） |
 | 7 | ARC | [公式](https://docs.aws.amazon.com/general/latest/gr/arc.html) | 該当記載なし（GA判定不可） |
-| 8 | App Mesh | [公式](https://docs.aws.amazon.com/general/latest/gr/appmesh.html) | 該当記載なし（GA判定不可） |
+| 8 | App Mesh | [公式](https://docs.aws.amazon.com/general/latest/gr/appmesh.html) | [Full Shutdown（終了済）](https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html) |
 | 9 | App Runner | [公式](https://docs.aws.amazon.com/general/latest/gr/apprunner.html) | [Maintenance（新規利用制限あり）](https://docs.aws.amazon.com/general/latest/gr/maintenance_services.html) |
 | 10 | Amazon AppFlow | [公式](https://docs.aws.amazon.com/general/latest/gr/appflow.html) | 該当記載なし（GA判定不可） |
 | 11 | Application Auto Scaling | [公式](https://docs.aws.amazon.com/general/latest/gr/as-app.html) | 該当記載なし（GA判定不可） |
