@@ -17,7 +17,7 @@
 | Hyperdrive | 外部DBへの接続最適化 |
 | Cache Reserve | キャッシュ長期保持 |
 | Argo Smart Routing | ネットワーク経路最適化 |
-| Browser Rendering | ヘッドレスブラウザ |
+| Browser Run | ブラウザ自動化・ヘッドレス実行（旧Browser Rendering） |
 
 ## セキュリティ・ネットワーク
 
@@ -27,9 +27,9 @@
 | Cloudflare Tunnel | 外部へ公開するトンネル |
 | Cloudflare Gateway | DNS/HTTPネットワーク保護 |
 | Cloudflare WARP | 端末からCloudflareネットワークに接続 |
-| Magic WAN | 企業WAN |
+| Cloudflare WAN | 企業WAN（旧Magic WAN） |
 | Magic Transit | ネットワークDDoS保護 |
-| Magic Firewall | ネットワークファイアウォール |
+| Cloudflare Network Firewall | ネットワークファイアウォール（旧Magic Firewall） |
 | Turnstile | CAPTCHA代替の検証 |
 | API Shield | API保護 |
 | Cloudflare One | Zero Trust/SASE製品群 |
