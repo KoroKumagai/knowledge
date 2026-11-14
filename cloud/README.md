@@ -10,6 +10,12 @@ cloud/
 ├── README.md
 ├── service-comparison.md   # 2社以上で用途を比較できるサービス
 ├── aws/
+│   ├── README.md            # AWS公式カタログ監査概要
+│   ├── catalog.md           # エンドポイント/クォータの全件台帳
+│   ├── lifecycle.md         # Maintenance / Sunset / Full Shutdown
+│   ├── lifecycle-unmatched.md  # 公式エンドポイントと未対応のライフサイクル項目
+│   ├── lifecycle-mapping.json  # 手動確認した製品名と機能の対応表
+│   ├── coverage.md          # 個別一覧と公式参照項目との照合
 │   └── services.md          # AWS独自・個別扱い
 ├── azure/
 │   └── services.md          # Azure独自・個別扱い
@@ -49,7 +55,8 @@ cloud/
 ## 公式カタログ網羅性の進捗
 
 - **Cloudflare（公式Docs/Productsの掲載単位）:** [調査結果](cloudflare/README.md) に収録済み（公式Docs索引195件・公式Products68件）。提供状況の全件検証は未完了。
-- **AWS / Azure / Google Cloud / OCI:** 現時点では公式カタログとの全件照合が未完了。
+- **AWS（General Reference掲載単位）:** [調査結果](aws/README.md) に、エンドポイント/クォータ参照269項目、Maintenance 56件、Sunset 16件、Full Shutdown 62件の公式台帳を収録。公式Products全件との照合は別課題。
+- **Azure / Google Cloud / OCI:** 現時点では公式カタログとの全件照合が未完了。
 - 共通比較表・個別一覧の行数は全製品数ではありません。公式目録の採録件数と、実務上の機能比較件数を分けて管理します。
 
 ## 全製品の確認元

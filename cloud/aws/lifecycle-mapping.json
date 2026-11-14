@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "note": "Manually reviewed exact name and prefix relationships between AWS General Reference directory entries and lifecycle rows. A feature relationship never implies retirement of the parent service. CloudSearch / AWS Panorama are absent from this version of the endpoint directory and remain reviewable in the lifecycle unmatched report.",
+  "direct_service_names": {
+    "App Mesh": "AWS App Mesh",
+    "DevOps Guru": "Amazon DevOps Guru",
+    "Forecast": "Amazon Forecast",
+    "Lookout for Equipment": "Amazon Lookout for Equipment",
+    "Managed Blockchain": "Amazon Managed Blockchain",
+    "Migration Hub": "AWS Migration Hub",
+    "App Runner": "AWS App Runner",
+    "Audit Manager": "AWS Audit Manager",
+    "Cloud Directory": "Amazon Cloud Directory",
+    "CodeGuru Reviewer": "Amazon CodeGuru Reviewer",
+    "AWS IoT Greengrass V1": "AWS IoT Greengrass V1",
+    "FinSpace": "Amazon FinSpace",
+    "Amazon Pinpoint": "Amazon Pinpoint",
+    "AWS Proton": "AWS Proton",
+    "AWS WAF Classic": "AWS WAF Classic"
+  },
+  "feature_prefixes": {
+    "SageMaker AI": [
+      "Amazon SageMaker AI"
+    ],
+    "CloudTrail": [
+      "AWS CloudTrail"
+    ],
+    "AWS Glue": [
+      "AWS Glue"
+    ],
+    "AWS Service Catalog endpoints and quotas": [
+      "AWS Service Catalog"
+    ],
+    "Amazon SNS": [
+      "Amazon Simple Notification Service (Amazon SNS)",
+      "Amazon Simple Notification Service"
+    ],
+    "Systems Manager": [
+      "AWS Systems Manager"
+    ]
+  },
+  "feature_exact": {
+    "Amazon RDS": [
+      "Amazon RDS Custom for Oracle"
+    ],
+    "AWS Direct Connect": [
+      "AWS Direct Connect (Shenzhen Region)"
+    ],
+    "Amazon Chime SDK": [
+      "Amazon Chime SDK SIP Media Application"
+    ],
+    "Systems Manager": [
+      "AWS Systems Manager Change Manager",
+      "AWS Systems Manager Incident Manager"
+    ]
+  }
+}

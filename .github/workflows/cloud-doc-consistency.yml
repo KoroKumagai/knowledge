@@ -6,6 +6,9 @@ on:
       - "cloud/**"
       - "scripts/check_cloud_consistency.py"
       - "scripts/check_cloudflare_catalog.py"
+      - "scripts/check_aws_service_catalog.py"
+      - "scripts/refresh_aws_service_catalog.py"
+      - ".github/workflows/refresh-aws-service-catalog.yml"
       - "scripts/refresh_cloudflare_directory.py"
       - ".github/workflows/refresh-cloudflare-directory.yml"
       - ".github/workflows/cloud-doc-consistency.yml"
@@ -14,6 +17,9 @@ on:
       - "cloud/**"
       - "scripts/check_cloud_consistency.py"
       - "scripts/check_cloudflare_catalog.py"
+      - "scripts/check_aws_service_catalog.py"
+      - "scripts/refresh_aws_service_catalog.py"
+      - ".github/workflows/refresh-aws-service-catalog.yml"
       - "scripts/refresh_cloudflare_directory.py"
       - ".github/workflows/refresh-cloudflare-directory.yml"
       - ".github/workflows/cloud-doc-consistency.yml"
@@ -35,6 +41,10 @@ jobs:
         run: |
           python -m py_compile scripts/refresh_cloudflare_directory.py
           python -m py_compile scripts/check_cloudflare_catalog.py
+          python -m py_compile scripts/refresh_aws_service_catalog.py
+          python -m py_compile scripts/check_aws_service_catalog.py
           python -m py_compile scripts/check_cloud_consistency.py
       - name: Validate Cloudflare official catalogs
         run: python scripts/check_cloudflare_catalog.py
+      - name: Validate AWS General Reference and lifecycle catalogs
+        run: python scripts/check_aws_service_catalog.py
