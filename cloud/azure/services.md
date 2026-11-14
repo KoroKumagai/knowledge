@@ -18,12 +18,12 @@ Microsoft製品群・ID・業務基盤との結合度が強く、AWSなどの単
 | Azure Virtual Desktop | 仮想デスクトップ |
 | Windows 365 | クラウドPC（Azureとの関係を区別） |
 | Azure Update Manager | サーバー更新管理 |
-| Azure Copilot | Azureリソースの運用支援 |
 
-## ID・統制
+## ID・統制・運用
 
 | サービス | 用途 |
 |---|---|
+| Azure Copilot | Azureリソースの運用支援 |
 | Microsoft Entra ID | Microsoft ID基盤 |
 | Microsoft Entra Private Access | ZTNA |
 | Microsoft Entra Internet Access | インターネットアクセス保護 |
