@@ -52,10 +52,18 @@ Cloudflareで採用した「全件の公式目録」と「編集された独自�
 
 - `python scripts/refresh_aws_marketing_products.py` でAWS公式Productsのservice区分カードを再取得し、差分表を再生成（標準ライブラリのみ）。
 - `python scripts/check_aws_marketing_products.py` でAPI全件・ID・分類・269参照項目との差分・マッピングを検証。
+- GitHub Actions の **Propose AWS marketing Products refresh** を手動実行すると、公式APIの全件取得・差分生成・既存3社分の整合性検証を実施し、結果をレビュー用PRとして提案します。`main`に直接pushせず、自動マージもしません。
+- GitHubの`GITHUB_TOKEN`が作るPRは通常のPRトリガーで別のWorkflowを起動しないため、**PR作成前の検証**を必須にしています。実運用にはリポジトリのActions設定でPR作成権限が必要です。この新Workflowの手動起動からPR生成までのE2E動作確認は未実施です。
 - `python -m pip install beautifulsoup4` で従来のGeneral Reference解析用ライブラリを導入。
 - `python scripts/refresh_aws_service_catalog.py` で4つのAWS公式参照ページを読み、未照合一覧を含む5つのMarkdownを再生成。
 - `python scripts/check_aws_service_catalog.py` で件数・重複・ライフサイクル参照・22件対応表を検証。
 - 生成結果は**必ずレビュー用PR**で確認。公式ページのレイアウトが変わった場合は最低件数・必須サービス名の検査で失敗させます。
+
+## 公式Products照合の残課題
+
+- 未対応40カード／General Reference側95項目は、公式カタログの掲載粒度や終了製品を調べながら、手動対応を継続する対象です。**対応先未確定とAWS製品の不存在・利用不可は同義ではありません。**
+- 掲載製品すべてのGA、プレビュー、提供リージョン、契約条件、価格を一件ずつ検証したわけではありません。
+- 公式Productsが今後改称・増減した場合は取得データを差分レビューし、[明示的な対応マップ](products-mapping.json)と根拠を更新してください。
 
 ## 次の段階
 
