@@ -281,12 +281,28 @@ def main():
         "- `python -m pip install beautifulsoup4` で依存ライブラリを導入。",
         "- `python scripts/refresh_aws_service_catalog.py` で4つのAWS公式参照ページを読み、4つのMarkdownを再生成。",
         "- `python scripts/check_aws_service_catalog.py` で件数・重複・ライフサイクル参照・22件対応表を検証。",
-        "- 生成結果は**必ずレビュー用PR**で確認。公式ページのレイアウトが変わった場合は最低件数・必須サービス名の検査で失敗させます。", "",
+        "- GitHub Actions `Propose AWS official service catalog refresh` の手動実行では、生成後の2本の検証を通して**レビュー用PR**を作ります。mainには直接pushしません。",
+        "- `GITHUB_TOKEN`で作られたPRでは通常のPRトリガーが起動しないため、生成Workflow内で事前に整合性を検証します。PR作成を許可するリポジトリ設定が必要です。",
+        "- 公式ページのレイアウトが変わった場合は最低件数・必須サービス名の検査で失敗させます。", "",
         "## 次の段階", "",
         "- マーケティング用AWS Productsの全件を別ソースで取得し、サービスエンドポイント目録と差集合を作る。",
         "- 公式参照項目のうち独立サービス・機能・旧製品を区別し、横断表と個別一覧の分類漏れをなくす。",
         "- 主要サービスの地域、GA、価格、契約条件を別途確認する。",""]
     (out / "README.md").write_text("\n".join(overview)+"\n",encoding="utf-8")
+    # Update the shared progress counter from the official snapshot rather
+    # than allowing the next monthly refresh to leave an outdated README.
+    global_path = ROOT / "cloud/README.md"
+    original = global_path.read_text(encoding="utf-8")
+    dynamic = (f"エンドポイント/クォータ参照{len(services)}項目、"
+               f"Maintenance {len(lists['maintenance'])}件、"
+               f"Sunset {len(lists['sunset'])}件、"
+               f"Full Shutdown {len(lists['shutdown'])}件")
+    updated, occurrences = re.subn(
+        r"エンドポイント/クォータ参照\d+項目、Maintenance \d+件、"
+        r"Sunset \d+件、Full Shutdown \d+件", dynamic, original)
+    if occurrences != 1:
+        raise RuntimeError("Cannot locate AWS audit counts in cloud/README.md")
+    global_path.write_text(updated,encoding="utf-8")
     print(json.dumps({"reference": len(services),
                       "lifecycle": {key: len(value) for key, value in lists.items()},
                       "curated_matched": len(matched), "curated_total": len(curated)},
