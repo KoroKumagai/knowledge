@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "note": "Manually reviewed exact name and prefix relationships between AWS General Reference directory entries and lifecycle rows. A feature relationship never implies retirement of the parent service.",
+  "note": "Manually reviewed exact name and prefix relationships between AWS General Reference directory entries and lifecycle rows. A feature relationship never implies retirement of the parent service. CloudSearch / AWS Panorama are absent from this version of the endpoint directory and remain reviewable in the lifecycle unmatched report.",
   "direct_service_names": {
     "App Mesh": "AWS App Mesh",
     "DevOps Guru": "Amazon DevOps Guru",
@@ -11,14 +11,12 @@
     "App Runner": "AWS App Runner",
     "Audit Manager": "AWS Audit Manager",
     "Cloud Directory": "Amazon Cloud Directory",
-    "CloudSearch": "Amazon CloudSearch",
     "CodeGuru Reviewer": "Amazon CodeGuru Reviewer",
     "AWS IoT Greengrass V1": "AWS IoT Greengrass V1",
     "FinSpace": "Amazon FinSpace",
     "Amazon Pinpoint": "Amazon Pinpoint",
     "AWS Proton": "AWS Proton",
-    "AWS WAF Classic": "AWS WAF Classic",
-    "AWS Panorama": "AWS Panorama"
+    "AWS WAF Classic": "AWS WAF Classic"
   },
   "feature_prefixes": {
     "SageMaker AI": [
