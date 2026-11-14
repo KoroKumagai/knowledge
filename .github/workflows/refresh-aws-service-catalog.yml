@@ -43,6 +43,7 @@ jobs:
           add-paths: |
             cloud/aws/catalog.md
             cloud/aws/lifecycle.md
+            cloud/aws/lifecycle-unmatched.md
             cloud/aws/coverage.md
             cloud/aws/README.md
             cloud/README.md
