@@ -53,7 +53,7 @@ cloud/
 ## 公式カタログ網羅性の進捗
 
 - **Cloudflare（公式Docs/Productsの掲載単位）:** [調査結果](cloudflare/README.md) に収録済み（公式Docs索引195件・公式Products68件）。提供状況の全件検証は未完了。
-- **AWS（General Reference掲載単位）:** [調査結果](aws/README.md) に、エンドポイント/クォータの公式全件台帳と3段階のライフサイクル記録を収録。公式Products全件との照合は別課題。
+- **AWS（General Reference掲載単位）:** [調査結果](aws/README.md) に、エンドポイント/クォータ参照269項目、Maintenance 56件、Sunset 16件、Full Shutdown 62件の公式台帳を収録。公式Products全件との照合は別課題。
 - **Azure / Google Cloud / OCI:** 現時点では公式カタログとの全件照合が未完了。
 - 共通比較表・個別一覧の行数は全製品数ではありません。公式目録の採録件数と、実務上の機能比較件数を分けて管理します。
 
