@@ -1,22 +1,21 @@
 name: Bootstrap AWS official catalog snapshot (temporary review branch only)
 
 on:
-  push:
+  pull_request:
     branches:
-      - docs/aws-official-service-audit-20261114
-    paths:
-      - .github/workflows/bootstrap-aws-catalog.yml
+      - main
 
 permissions:
   contents: write
 
 jobs:
   bootstrap:
-    if: github.ref == 'refs/heads/docs/aws-official-service-audit-20261114'
+    if: github.head_ref == 'docs/aws-official-service-audit-20261114'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: ${{ github.head_ref }}
           persist-credentials: true
       - uses: actions/setup-python@v5
         with:
