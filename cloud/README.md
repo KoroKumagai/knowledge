@@ -18,6 +18,10 @@ cloud/
 ├── oracle/
 │   └── services.md          # OCI独自・個別扱い
 ├── cloudflare/
+│   ├── README.md            # Cloudflareの監査概要
+│   ├── catalog.md           # 公式Docs目録の全件スナップショット
+│   ├── products.md          # 公式Productsとの照合表
+│   ├── catalog-status.json  # 提供状況の検証日・根拠URL
 │   └── services.md          # Cloudflare独自・個別扱い
 └── oracle-cloud.md          # OCIの運用メモ（既存ファイル・変更なし）
 ```
