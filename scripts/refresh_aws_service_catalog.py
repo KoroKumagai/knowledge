@@ -248,8 +248,7 @@ def main():
         "公式のMaintenance/Sunset/Full Shutdownページの各表を全件収録。",
         "**状態はライフサイクル表への掲載であり、製品と個別機能が混在**しています。",
         "終了日を過ぎていてもSunset表に残る場合は、Full Shutdownと推測せず公式の掲載分類を残します。",
-        "**発表日 ≠ 新規受付停止日。** App Runnerは2026-03-31発表、2026-04-30から新規顧客利用不可。[AWS公式](https://aws.amazon.com/about-aws/whats-new/2026/03/aws-service-availability/)。
-        この台帳の発表日は受付停止の実効日ではありません。", "",
+        "**発表日 ≠ 新規受付停止日。** App Runnerは2026-03-31発表、2026-04-30から新規顧客利用不可。[AWS公式](https://aws.amazon.com/about-aws/whats-new/2026/03/aws-service-availability/)。この台帳の発表日は受付停止の実効日ではありません。", "",
         f"- [Maintenance]({SOURCES['maintenance']}): **{len(lists['maintenance'])}件**",
         f"- [Sunset]({SOURCES['sunset']}): **{len(lists['sunset'])}件**",
         f"- [Full Shutdown]({SOURCES['shutdown']}): **{len(lists['shutdown'])}件**",""]
