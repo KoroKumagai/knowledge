@@ -1,6 +1,6 @@
 {
-  "version": 1,
-  "note": "Explicit marketing Product -> General Reference relations. Add only after checking official names and scopes. Related-but-not-equivalent entries do not count as matches.",
+  "version": 2,
+  "note": "Explicit marketing Product -> General Reference relations. Add only after checking official names and scopes. Related-but-not-equivalent entries do not count as matches. Lifecycle statuses must match exact official lifecycle item names; only explicitly reviewed lifecycle_aliases are applied to whole-product status. A feature-only shutdown never implies a product shutdown.",
   "aliases": {
     "Amazon API Gateway": "API Gateway",
     "Amazon Athena": "Athena",
@@ -100,7 +100,8 @@
     "AWS Verified Access": "Verified Access",
     "AWS Well-Architected Tool": "AWS Well-Architected",
     "AWS X-Ray": "X-Ray",
-    "Elastic Load Balancing (ELB)": "Elastic Load Balancing"
+    "Elastic Load Balancing (ELB)": "Elastic Load Balancing",
+    "AWS Personal Health Dashboard": "AWS Health"
   },
   "related_not_equivalent": {
     "Amazon CodeGuru": {
@@ -189,7 +190,38 @@
     },
     "VMware Cloud on AWS": {
       "reference": "Amazon EVS",
-      "reason": "旧VMware Cloud on AWSとAmazon EVSは異なる製品・提供形態"
+      "reason": "VMware Cloud on AWS（Broadcom提供）とAmazon EVS（AWS提供）は別製品。後者が前者を終了・置換したと断定しない"
+    },
+    "AWS Local Zones": {
+      "reference": "Amazon EC2",
+      "reason": "EC2のリージョン近接ロケーション提供形態。独立したEC2 APIサービスではない"
+    },
+    "AWS Inferentia": {
+      "reference": "Amazon EC2",
+      "reason": "EC2 Inf系インスタンスで利用する推論用チップ。EC2サービスそのものと同等ではない"
+    },
+    "AWS PrivateLink": {
+      "reference": "Amazon VPC",
+      "reason": "VPCエンドポイントによるプライベート接続機能。VPC全体と同一ではない"
+    },
+    "AWS Transit Gateway": {
+      "reference": "Amazon VPC",
+      "reason": "VPC接続向け中継ネットワーク機能。VPC API等を使用するがVPC全体とは別"
+    },
+    "AWS VPN": {
+      "reference": "Amazon VPC",
+      "reason": "Site-to-Site VPN等のVPCネットワーク機能。VPC全体ではない"
+    },
+    "Amazon Q": {
+      "reference": "Amazon Q Business",
+      "reason": "Q Business / Q Developer等を含む製品群の総称。Q Business単独とは異なる"
     }
+  },
+  "lifecycle_aliases": {
+    "Amazon Quantum Ledger Database (QLDB)": "Amazon Quantum Ledger Database (Amazon QLDB)"
+  },
+  "alias_notes": {
+    "AWS Personal Health Dashboard": "2022年にAWS Health Dashboardへ名称変更（[AWS Health文書履歴](https://docs.aws.amazon.com/health/latest/ug/doc-history.html)）",
+    "Amazon QuickSight": "AWS Quick Sightへの改称。AWS Quick（AIワークスペース全体）とは別"
   }
 }
