@@ -78,9 +78,37 @@ if visible and hidden:
 else:
     check(False, "Catalog missing visibility counts")
 
-product_rows = [line for line in products.splitlines()
-                if line.startswith("| ") and not line.startswith("| 公式Products掲載名 |")
-                and line.count("|") == 5]
+# Validate every rendered Markdown table, not only data rows. A mismatched
+# header/delimiter silently breaks GitHub Flavored Markdown table rendering.
+# Group headings include their own expected row counts, so catch missing rows.
+def md_cells(line):
+    return [x.strip() for x in re.split(r"(?<!\\)\|", line.strip())[1:-1]]
+
+table_sections = re.findall(
+    r"^## (.+?)（(\d+)件）\n\n((?:\|[^\n]*\n)+)",
+    products, re.M)
+check(len(table_sections) == 7, "Expected seven Products Markdown tables")
+parsed_product_lines = []
+for group, expected_count, table_text in table_sections:
+    table_lines = [line for line in table_text.splitlines() if line.strip()]
+    check(len(table_lines) >= 3, group + ": expected header, separator and data")
+    if len(table_lines) < 3:
+        continue
+    header, divider, *data = table_lines
+    header_cells, divider_cells = md_cells(header), md_cells(divider)
+    expected_header = ["公式Products掲載名", "対応Docs・ソースYAML", "分類", "補足"]
+    check(header_cells == expected_header, group + ": unexpected table header")
+    check(len(divider_cells) == 4 and
+          all(re.fullmatch(r":?-{3,}:?", cell) for cell in divider_cells),
+          group + ": table divider must have four Markdown columns")
+    for line in data:
+        check(len(md_cells(line)) == 4,
+              group + ": data row must have four Markdown columns: " + line[:95])
+    check(len(data) == int(expected_count),
+          group + ": group heading count does not match rows")
+    parsed_product_lines.extend(data)
+
+product_rows = parsed_product_lines
 product_files = []
 product_names = []
 classes = Counter()
@@ -108,8 +136,17 @@ check({"K2", "Basin"}.issubset(set(product_names)),
 check(set(product_files).issubset(set(catalog_files)),
       "Products refers to upstream YAML absent from catalog: " +
       str(sorted(set(product_files) - set(catalog_files))))
-check(classes == {"同名": 49, "改称": 1, "表記ゆれ": 5, "機能・製品群": 13},
-      "Unexpected classification totals: " + str(classes))
+# The summary in products.md is the declared classification count; compare
+# it with actual rows rather than repeating four counters in this script.
+expected_classes = {}
+for klass in ("同名", "改称", "表記ゆれ", "機能・製品群"):
+    summary = re.search(r"^- " + re.escape(klass) + r": \*\*(\d+)件\*\*$",
+                        products, re.M)
+    check(bool(summary), "Products summary missing class: " + klass)
+    if summary:
+        expected_classes[klass] = int(summary.group(1))
+check(classes == expected_classes, "Products classification totals differ: " +
+      str(dict(classes)) + " vs " + str(expected_classes))
 check("Page Shield" in product_names and
       any(line.startswith("| Page Shield |") and "| 改称 |" in line for line in product_rows),
       "Page Shield must be classified as legacy naming")
@@ -136,7 +173,11 @@ DISPLAY_ALIASES = {
 primary = services.split("## 横断比較へ移動した項目")[0]
 names = [line.split("|")[1].strip() for line in primary.splitlines()
          if line.startswith("| ") and not line.startswith("| サービス |")]
-check(len(names) == 27, "Expected 27 provider-specific curated entries")
+standalone_count = re.search(r"\[services\.md\]\(services\.md\)[^\n]*?（\*\*(\d+)件\*\*）", index)
+check(bool(standalone_count), "Cloudflare README is missing standalone service count")
+if standalone_count:
+    check(len(names) == int(standalone_count.group(1)),
+          "Provider-specific service count differs from Cloudflare README")
 check(len(names) == len(set(names)), "Duplicate provider-specific service")
 for name in names:
     target = DISPLAY_ALIASES.get(name, name)
