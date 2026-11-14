@@ -7,7 +7,7 @@ Cloudflareで採用した「全件の公式目録」と「編集された独自�
 | ファイル | 役割 |
 |---|---|
 | [products.md](products.md) | 公式Products検索のサービス区分 **237カード** を全件収録（2026-11-14 UTC、32カテゴリ） |
-| [products-source.json](products-source.json) | 公式APIの totalHits・取得日・製品ID・掲載名・URL・カテゴリの取得記録 |
+| [products-source.json](products-source.json) | 公式サイト内部の検索エンドポイントの totalHits・取得日・製品ID・掲載名・URL・カテゴリの取得記録 |
 | [products-coverage.md](products-coverage.md) | Products **237カード** とGeneral Reference **269項目**を相互照合。未対応を残す |
 | [products-mapping.json](products-mapping.json) | 同一名称でない場合の手動確認済み別名／非同等の製品群・機能の分類 |
 | [catalog.md](catalog.md) | General Referenceの **269件**（サービスエンドポイント/クォータ一覧）の全件採録 |
@@ -19,7 +19,7 @@ Cloudflareで採用した「全件の公式目録」と「編集された独自�
 ## スコープの境界
 
 - **全件の範囲はGeneral Reference「Service endpoints and quotas」ページのServices節です。**
-- **公式Productsのserviceタグ付きカード237件**も収録済み。AWS公式検索APIの totalHits と実取得件数の一致を確認しています。ただしAWS公式の全機能・全SKU・Marketplace製品・全GAサービスの総数ではありません。
+- **公式Productsのserviceタグ付きカード237件**も収録済み。Productsページが使用する**非公開・仕様保証のない検索エンドポイント**から取得し、`totalHits`と取得件数の一致を検証しています。ただしAWS公式の全機能・全SKU・Marketplace製品・全GAサービスの総数ではありません。
 - 製品のサブ機能・API・マーケットプレイス商品・リージョン・SKUと、エンドポイント・クォータの掲載項目は同じ粒度ではありません。
 - AWSのライフサイクル表は**サービスと機能の両方**を含みます。終了日を過ぎたSunset掲載項目も、正式なFull Shutdown掲載がなければ推測で改分類しません。
 - ライフサイクルの個別機能を本体に結び付ける際は、明示的な別名/完全一致/境界付き接頭辞のみを使います。未照合は別表で可視化し、製品本体の新規提供を保証しません。
@@ -29,10 +29,14 @@ Cloudflareで採用した「全件の公式目録」と「編集された独自�
 
 - AWS Products：**237カード**。同名でもIDが異なるカードがあります（AWS DevOps Agent、Amazon SageMaker AIが各2枚）。
 - General Reference：**269参照項目**。両者は同じ単位ではなく、マーケティング製品の一部はエンドポイントとして独立していません。
-- 突合：[products-coverage.md](products-coverage.md) に**同名75件、確認済み別名100件、関連・別粒度22件、目録外・未対応40件**を記録。269項目側の未対応は95件。
+- 突合：[products-coverage.md](products-coverage.md) に**同名75件、確認済み別名101件、関連・別粒度28件、目録外・未対応33件**を記録。269項目側の未対応は94件。
+- AWS公式Productsに残る旧名称「AWS Personal Health Dashboard」は、2022年の[AWS Health Dashboardへの改称](https://docs.aws.amazon.com/health/latest/ug/doc-history.html)に基づきGeneral ReferenceのAWS Healthへ対応。
+- Amazon DocumentDBの製品名に含まれる `compatability` は公式掲載の誤字をそのまま収録（原文ママ）。
 - AWS公式のマーケティング分類（badge）をそのまま採録。分類名に不自然なものがあっても独自の推測で書き換えません。
-- AWS公式APIには [Kiro](https://kiro.dev/) のような外部ドメインの製品ページも登録されています。ドメインだけで除外せず、発見元の公式データと製品IDを保持します。
+- AWS公式サイト内部の検索エンドポイントには [Kiro](https://kiro.dev/) のような外部ドメインの製品ページも登録されています。ドメインだけで除外せず、発見元の公式データと製品IDを保持します。
 - **Productsへの掲載は新規利用可能・GAの証明ではありません。** 停止品の採用判断は[lifecycle.md](lifecycle.md)と個別の公式発表を確認します。
+- [products.md](products.md)ではライフサイクルの列を追加し、**サービス本体に完全一致（または明示的別名）したMaintenance・Sunset・Full Shutdown**を表示。SageMakerなどの一部機能の終了を、親サービス全体の終了とは扱いません。
+- **QLDBの正式名称差**も手動別名で照合。[AWS Full Shutdown一覧](https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html)に掲載されています。
 
 ## 現行名称の注意（2026-11時点）
 
@@ -50,23 +54,28 @@ Cloudflareで採用した「全件の公式目録」と「編集された独自�
 
 ## 更新手順
 
-- `python scripts/refresh_aws_marketing_products.py` でAWS公式Productsのservice区分カードを再取得し、差分表を再生成（標準ライブラリのみ）。
-- `python scripts/check_aws_marketing_products.py` でAPI全件・ID・分類・269参照項目との差分・マッピングを検証。
-- GitHub Actions の **Propose AWS marketing Products refresh** を手動実行すると、公式APIの全件取得・差分生成・既存3社分の整合性検証を実施し、結果をレビュー用PRとして提案します。`main`に直接pushせず、自動マージもしません。
-- GitHubの`GITHUB_TOKEN`が作るPRは通常のPRトリガーで別のWorkflowを起動しないため、**PR作成前の検証**を必須にしています。実運用にはリポジトリのActions設定でPR作成権限が必要です。この新Workflowの手動起動からPR生成までのE2E動作確認は未実施です。
-- `python -m pip install beautifulsoup4` で従来のGeneral Reference解析用ライブラリを導入。
-- `python scripts/refresh_aws_service_catalog.py` で4つのAWS公式参照ページを読み、未照合一覧を含む5つのMarkdownを再生成。
-- `python scripts/check_aws_service_catalog.py` で件数・重複・ライフサイクル参照・22件対応表を検証。
-- 生成結果は**必ずレビュー用PR**で確認。公式ページのレイアウトが変わった場合は最低件数・必須サービス名の検査で失敗させます。
+### Productsの製品カードと差分表
+
+- `python scripts/refresh_aws_marketing_products.py`：AWS公式Productsページで使われる**内部検索エンドポイント（非公開・仕様保証なし）**の `service` 区分全件を取得。形式・件数・IDが一致しなければ失敗させ、取得不完全なデータを正常扱いしない。
+- `python scripts/check_aws_marketing_products.py`：公式取得記録、各製品のライフサイクル、General Reference差分、対応定義、README件数を検証。
+- GitHub Actions **Propose AWS marketing Products refresh**：手動実行で取得・検証し、結果をレビュー用PRにする。mainへの直接push・自動マージなし。
+- `GITHUB_TOKEN`によるPR作成では別のPR CIが自動起動しないため、**PR作成前に全チェックを実行**。リポジトリのPR作成権限が必要。Workflowの手動起動～PR生成までのE2Eテストは未実施。
+
+### General Reference・ライフサイクル
+
+- `python -m pip install beautifulsoup4`：AWS General Reference HTML解析用の依存ライブラリ。
+- `python scripts/refresh_aws_service_catalog.py`：エンドポイント・クォータとライフサイクルのAWS公式4ページを取得し、既存台帳を再生成。
+- `python scripts/check_aws_service_catalog.py`：公式参照269項目、Maintenance・Sunset・Full Shutdown、未対応台帳と個別一覧との整合性を検証。
+- GitHub Actions **Propose AWS official service catalog refresh**：手動実行でレビュー用PRを提案。提供状態や構造が変わった場合には公式根拠をレビューし、無条件に提供中とみなさない。
 
 ## 公式Products照合の残課題
 
-- 未対応40カード／General Reference側95項目は、公式カタログの掲載粒度や終了製品を調べながら、手動対応を継続する対象です。**対応先未確定とAWS製品の不存在・利用不可は同義ではありません。**
+- 未対応33カード／General Reference側94項目は、公式カタログの掲載粒度や終了製品を調べながら、手動対応を継続する対象です。**対応先未確定とAWS製品の不存在・利用不可は同義ではありません。**
 - 掲載製品すべてのGA、プレビュー、提供リージョン、契約条件、価格を一件ずつ検証したわけではありません。
 - 公式Productsが今後改称・増減した場合は取得データを差分レビューし、[明示的な対応マップ](products-mapping.json)と根拠を更新してください。
 
 ## 次の段階
 
-- **公式Productsのservice区分237カードとGeneral Reference269項目との全件取得・差分化は完了。** 未対応40カードおよびGeneral Reference側95項目について、製品群・独立サービス・旧製品の単位を追加確認する。
+- **公式Productsのservice区分237カードとGeneral Reference269項目との全件取得・差分化は完了。** 未対応33カードおよびGeneral Reference側94項目について、製品群・独立サービス・旧製品の単位を追加確認する。
 - 公式参照項目のうち独立サービス・機能・旧製品を区別し、横断表と個別一覧の分類漏れをなくす。
 - 主要サービスの地域、GA、価格、契約条件を別途確認する。
