@@ -4,6 +4,8 @@
 
 参照: [公式サービスディレクトリ](https://aws.amazon.com/products/)（2026-11-14時点の参照）
 
+[公式General Reference全件台帳](catalog.md)と[ライフサイクル](lifecycle.md)、[既存個別22件との照合](coverage.md)も参照。公式製品一覧の代替ではありません。
+
 AWS固有の設計モデル、AWSが強みを持つ統合サービスや他社と1対1対応しないサービスを収録。
 
 **区分の注意:** 比較表と重複する製品は原則として掲載しません。このリストに載る製品でも、部分的な競合・他社での複合構成はあり得ます。製品の存否と採用可否は個別に確認してください。
@@ -47,7 +49,7 @@ AWS固有の設計モデル、AWSが強みを持つ統合サービスや他社�
 | AWS Deadline Cloud | レンダリングファーム |
 | AWS HealthImaging | 医療画像 |
 | AWS Clean Rooms | データクリーンルーム |
-| Amazon Quick Suite | 業務データの分析とAI支援。Q Businessの移行候補（対応機能の検証が必要） |
+| AWS Quick | 業務データの分析とAI支援。旧Amazon Quick / Quick Suite。Q Businessからの移行は機能要件の確認が必要 |
 | Amazon Nova | AWSのモデルファミリー |
 
 ## 横断比較へ移動した項目
