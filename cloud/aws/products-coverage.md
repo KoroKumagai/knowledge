@@ -54,7 +54,7 @@
 | [Amazon Elastic Container Service (ECS)](https://aws.amazon.com/ecs/?did=ap_card&trk=ap_card) | 確認済み別名 | [Amazon ECS](https://docs.aws.amazon.com/general/latest/gr/ecs-service.html) | — |
 | [Amazon Elastic File System (EFS)](https://aws.amazon.com/efs/?did=ap_card&trk=ap_card) | 確認済み別名 | [Amazon EFS](https://docs.aws.amazon.com/general/latest/gr/elasticfilesystem.html) | — |
 | [Amazon Elastic Kubernetes Service (EKS)](https://aws.amazon.com/eks/?did=ap_card&trk=ap_card) | 確認済み別名 | [Amazon EKS](https://docs.aws.amazon.com/general/latest/gr/eks.html) | — |
-| [Amazon Elastic Transcoder](https://aws.amazon.com/elastictranscoder/?did=ap_card&trk=ap_card) | 目録外・未対応 | — | — |
+| [Amazon Elastic Transcoder](https://aws.amazon.com/elastictranscoder/?did=ap_card&trk=ap_card) | 目録外・未対応 | — | Full Shutdown済み（2025-11-13） |
 | [Amazon ElastiCache](https://aws.amazon.com/elasticache/?did=ap_card&trk=ap_card) | 確認済み別名 | [ElastiCache](https://docs.aws.amazon.com/general/latest/gr/elasticache-service.html) | — |
 | [Amazon EMR](https://aws.amazon.com/emr/?did=ap_card&trk=ap_card) | 同名 | [Amazon EMR](https://docs.aws.amazon.com/general/latest/gr/emr.html) | — |
 | [Amazon EventBridge](https://aws.amazon.com/eventbridge/?did=ap_card&trk=ap_card) | 確認済み別名 | [EventBridge](https://docs.aws.amazon.com/general/latest/gr/ev.html) | — |
@@ -75,8 +75,8 @@
 | [Amazon Lightsail](https://aws.amazon.com/lightsail/?did=ap_card&trk=ap_card) | 確認済み別名 | [Lightsail](https://docs.aws.amazon.com/general/latest/gr/lightsail.html) | — |
 | [Amazon Location Service](https://aws.amazon.com/location/?did=ap_card&trk=ap_card) | 同名 | [Amazon Location Service](https://docs.aws.amazon.com/general/latest/gr/location.html) | — |
 | [Amazon Lookout for Equipment](https://aws.amazon.com/lookout-for-equipment/?did=ap_card&trk=ap_card) | 確認済み別名 | [Lookout for Equipment](https://docs.aws.amazon.com/general/latest/gr/lookoutequipment.html) | — |
-| [Amazon Lookout for Metrics](https://aws.amazon.com/lookout-for-metrics/?did=ap_card&trk=ap_card) | 目録外・未対応 | — | — |
-| [Amazon Lookout for Vision](https://aws.amazon.com/lookout-for-vision/?did=ap_card&trk=ap_card) | 目録外・未対応 | — | — |
+| [Amazon Lookout for Metrics](https://aws.amazon.com/lookout-for-metrics/?did=ap_card&trk=ap_card) | 目録外・未対応 | — | Full Shutdown済み（2025-10-10） |
+| [Amazon Lookout for Vision](https://aws.amazon.com/lookout-for-vision/?did=ap_card&trk=ap_card) | 目録外・未対応 | — | Full Shutdown済み（2025-10-31） |
 | [Amazon Macie](https://aws.amazon.com/macie/?did=ap_card&trk=ap_card) | 確認済み別名 | [Macie](https://docs.aws.amazon.com/general/latest/gr/macie.html) | — |
 | [Amazon Managed Blockchain](https://aws.amazon.com/managed-blockchain/?did=ap_card&trk=ap_card) | 確認済み別名 | [Managed Blockchain](https://docs.aws.amazon.com/general/latest/gr/managedblockchain.html) | — |
 | [Amazon Managed Grafana](https://aws.amazon.com/grafana/?did=ap_card&trk=ap_card) | 同名 | [Amazon Managed Grafana](https://docs.aws.amazon.com/general/latest/gr/grafana-service.html) | — |
@@ -87,7 +87,7 @@
 | [Amazon Monitron](https://aws.amazon.com/monitron/?did=ap_card&trk=ap_card) | 同名 | [Amazon Monitron](https://docs.aws.amazon.com/general/latest/gr/monitron.html) | — |
 | [Amazon MQ](https://aws.amazon.com/amazon-mq/?did=ap_card&trk=ap_card) | 同名 | [Amazon MQ](https://docs.aws.amazon.com/general/latest/gr/amazon-mq.html) | — |
 | [Amazon Neptune](https://aws.amazon.com/neptune/?did=ap_card&trk=ap_card) | 確認済み別名 | [Neptune](https://docs.aws.amazon.com/general/latest/gr/neptune.html) | — |
-| [Amazon Nimble Studio](https://aws.amazon.com/nimble-studio/?did=ap_card&trk=ap_card) | 目録外・未対応 | — | — |
+| [Amazon Nimble Studio](https://aws.amazon.com/nimble-studio/?did=ap_card&trk=ap_card) | 目録外・未対応 | — | Full Shutdown済み（2024-06-30） |
 | [Amazon Nova](https://aws.amazon.com/nova/?hp=fa&trk=c6553eb9-60f2-436a-b294-162bda8a1ebb) | 目録外・未対応 | — | — |
 | [Amazon OpenSearch Service](https://aws.amazon.com/opensearch-service/?did=ap_card&trk=ap_card) | 確認済み別名 | [OpenSearch Service](https://docs.aws.amazon.com/general/latest/gr/opensearch-service.html) | — |
 | [Amazon Personalize](https://aws.amazon.com/personalize/?did=ap_card&trk=ap_card) | 同名 | [Amazon Personalize](https://docs.aws.amazon.com/general/latest/gr/personalize.html) | — |
@@ -163,8 +163,8 @@
 | [AWS Deadline Cloud](https://aws.amazon.com/deadline-cloud/?did=ap_card&trk=ap_card) | 同名 | [AWS Deadline Cloud](https://docs.aws.amazon.com/general/latest/gr/deadlinecloud.html) | — |
 | [AWS Deep Learning AMIs](https://aws.amazon.com/machine-learning/amis/?did=ap_card&trk=ap_card) | 関連・別粒度（非同等） | [Amazon EC2](https://docs.aws.amazon.com/general/latest/gr/ec2-service.html) | 機械学習用AMIの配布。EC2全体とは別 |
 | [AWS Deep Learning Containers](https://aws.amazon.com/machine-learning/containers/?did=ap_card&trk=ap_card) | 目録外・未対応 | — | — |
-| [AWS DeepComposer](https://aws.amazon.com/deepcomposer/?did=ap_card&trk=ap_card) | 目録外・未対応 | — | — |
-| [AWS DeepLens](https://aws.amazon.com/deeplens/?did=ap_card&trk=ap_card) | 目録外・未対応 | — | — |
+| [AWS DeepComposer](https://aws.amazon.com/deepcomposer/?did=ap_card&trk=ap_card) | 目録外・未対応 | — | Full Shutdown済み（2025-09-17） |
+| [AWS DeepLens](https://aws.amazon.com/deeplens/?did=ap_card&trk=ap_card) | 目録外・未対応 | — | Full Shutdown済み（2024-01-31） |
 | [AWS DeepRacer](https://aws.amazon.com/deepracer/?did=ap_card&trk=ap_card) | 同名 | [AWS DeepRacer](https://docs.aws.amazon.com/general/latest/gr/deepracer.html) | — |
 | [AWS Device Farm](https://aws.amazon.com/device-farm/?did=ap_card&trk=ap_card) | 確認済み別名 | [Device Farm](https://docs.aws.amazon.com/general/latest/gr/devicefarm.html) | — |
 | [AWS DevOps Agent](https://aws.amazon.com/devops-agent/)（ID: aws-devops-agent-(preview)） | 目録外・未対応 | — | — |
@@ -179,7 +179,7 @@
 | [AWS Elemental MediaConvert](https://aws.amazon.com/mediaconvert/?did=ap_card&trk=ap_card) | 確認済み別名 | [MediaConvert](https://docs.aws.amazon.com/general/latest/gr/mediaconvert.html) | — |
 | [AWS Elemental MediaLive](https://aws.amazon.com/medialive/?did=ap_card&trk=ap_card) | 確認済み別名 | [MediaLive](https://docs.aws.amazon.com/general/latest/gr/medialive_region.html) | — |
 | [AWS Elemental MediaPackage](https://aws.amazon.com/mediapackage/?did=ap_card&trk=ap_card) | 確認済み別名 | [MediaPackage](https://docs.aws.amazon.com/general/latest/gr/mediapackage.html) | — |
-| [AWS Elemental MediaStore](https://aws.amazon.com/mediastore/?did=ap_card&trk=ap_card) | 目録外・未対応 | — | — |
+| [AWS Elemental MediaStore](https://aws.amazon.com/mediastore/?did=ap_card&trk=ap_card) | 目録外・未対応 | — | Full Shutdown済み（2025-11-12） |
 | [AWS Elemental MediaTailor](https://aws.amazon.com/mediatailor/?did=ap_card&trk=ap_card) | 確認済み別名 | [MediaTailor](https://docs.aws.amazon.com/general/latest/gr/mediatailor.html) | — |
 | [AWS End User Messaging](https://aws.amazon.com/end-user-messaging/?refid=ap_card) | 同名 | [AWS End User Messaging](https://docs.aws.amazon.com/general/latest/gr/end-user-messaging.html) | — |
 | [AWS Fargate](https://aws.amazon.com/fargate/?did=ap_card&trk=ap_card) | 関連・別粒度（非同等） | [Amazon ECS](https://docs.aws.amazon.com/general/latest/gr/ecs-service.html) | コンテナ実行モデル。ECS以外にもEKSから利用可能 |
