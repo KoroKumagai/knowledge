@@ -40,7 +40,7 @@ cloud/
 | Azure | [個別一覧](azure/services.md) | 採録候補16件 |
 | Google Cloud | [個別一覧](google/services.md) | 採録候補15件 |
 | OCI | [個別一覧](oracle/services.md) | 採録候補25件 |
-| Cloudflare | [個別一覧](cloudflare/services.md) | 採録候補30件 |
+| Cloudflare | [個別一覧](cloudflare/services.md) | 採録候補27件 |
 
 ## 全製品の確認元
 
