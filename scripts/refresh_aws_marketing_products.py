@@ -265,6 +265,9 @@ def synchronize_documented_counts(total, categories, classes, matched, reference
     aws = change(aws, r"未対応\d+カード",
                  "未対応"+str(classes["目録外・未対応"])+"カード",
                  "AWS review queue")
+    aws = change(aws, r"General Reference側\d+項目",
+                 "General Reference側"+str(reference_total-matched)+"項目",
+                 "AWS ref unmatched mentions")
     general = change(general, r"AWS公式Products \d+カード",
                      "AWS公式Products "+str(total)+"カード", "global tree")
     general = change(general, r"service区分\d+カード",
