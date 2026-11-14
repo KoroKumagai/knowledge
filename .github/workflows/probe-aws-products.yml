@@ -27,17 +27,23 @@ jobs:
               r=requests.get(url,headers={"User-Agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/131.0.0.0 Safari/537.36","Accept-Language":"en-US,en;q=0.9"},timeout=35)
               print("HTTP",r.status_code,"bytes",len(r.content),"final",r.url)
               html=r.text
-              for term in ("aws-products-all","Search All AWS Products","productNameLowercase","data-awsui","amazon-cloudsearch","searchApi","react-search","AWS App Studio"):
-                  print("LOOKUP",term,"count",html.lower().count(term.lower()))
-                  for m in list(re.finditer(re.escape(term),html,re.I))[:2]:
-                      print("CONTEXT",term,repr(html[max(0,m.start()-300):m.end()+350])[:730])
-              soup=BeautifulSoup(html,"html.parser")
-              print("SCRIPTS",len(soup.find_all("script")))
-              for s in soup.find_all("script"):
-                  src=s.get("src")
-                  if src and any(k in src.lower() for k in ["search","product","cloud","assets","global"]):
-                      print("SCRIPT",src[:240])
-              print("DOM_IDS",[(t.name,t.get("id"),str(t.get("class",""))[:100]) for t in soup.select("[id]") if any(x in (t.get("id") or "").lower() for x in ["aws","search","product","filter"])][:55])
+              for term in ("itemTitle","itemCTALink","dataSource","directory","ams#c5","productNameLowercase","filterOptions","searchFields"):
+              print("TERM",term,html.count(term))
+              hit=re.search(re.escape(term),html)
+              if hit: print("EXAMPLE",term,repr(html[max(0,hit.start()-280):hit.start()+380])[:650])
+          soup=BeautifulSoup(html,"html.parser")
+          for s in soup.find_all("script"):
+              txt=s.string or s.get_text() or ""
+              if "itemTitle" in txt or "dataSource" in txt or "aws-technology-categories" in txt:
+                  print("EMBEDDED SCRIPT",s.get("type"),s.get("id"),"length",len(txt), "itemTitles",txt.count("itemTitle"))
+                  print("SCRIPT START",repr(txt[:1000]))
+                  print("SCRIPT END",repr(txt[-400:]))
+          for element in soup.find_all(True):
+              for key,value in element.attrs.items():
+                  val=str(value)
+                  if ("directory" in val.lower() or "dataSource" in val or "itemTitle" in val) and len(val)>500:
+                      print("ATTR",element.name,key,"len",len(val),"start",repr(val[:800]))
+                      break
           except Exception as e:
               print("PROBE ERROR",type(e).__name__,str(e)[:300]);raise
           PY
