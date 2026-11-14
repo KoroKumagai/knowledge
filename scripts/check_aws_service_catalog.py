@@ -5,6 +5,7 @@ The checks prove consistency WITHIN the frozen AWS General Reference scope,
 not that every AWS product, API or SKU is represented.
 """
 from collections import Counter
+import json
 from pathlib import Path
 import re
 import sys
@@ -17,6 +18,8 @@ coverage = (AWS / "coverage.md").read_text(encoding="utf-8")
 readme = (AWS / "README.md").read_text(encoding="utf-8")
 services = (AWS / "services.md").read_text(encoding="utf-8")
 root_readme = (ROOT / "README.md").read_text(encoding="utf-8")
+mapping = json.loads((AWS / "lifecycle-mapping.json").read_text(encoding="utf-8"))
+unmatched_doc = (AWS / "lifecycle-unmatched.md").read_text(encoding="utf-8")
 errors = []
 
 def check(ok, message):
@@ -65,7 +68,9 @@ check(all(
     or (row[3].startswith("[") and "docs.aws.amazon.com/" in row[3])
     for row in catalog_rows), "Lifecycle status must link to its official source")
 for feature_name in ("SageMaker AI", "CloudTrail", "AWS Glue",
-                     "AWS Service Catalog endpoints and quotas"):
+                     "AWS Service Catalog endpoints and quotas",
+                     "Amazon SNS", "Systems Manager", "Amazon RDS",
+                     "AWS Direct Connect", "Amazon Chime SDK"):
     feature_match = [row for row in catalog_rows if row[1] == feature_name]
     check(len(feature_match) == 1 and "機能単位の掲載あり" in feature_match[0][3],
           "Missing parent-service feature lifecycle warning: " + feature_name)
@@ -105,6 +110,71 @@ check(set(groups) == {"maintenance", "sunset", "shutdown"},
 check("製品と個別機能" in lifecycle and "Full Shutdown" in lifecycle and
       "発表日 ≠ 新規受付停止日" in lifecycle and "2026-04-30" in lifecycle,
       "Lifecycle scope warnings missing")
+
+# The same manually reviewed mapping is consumed by the generator and checker.
+# Every lifecycle row not attached to an endpoint is intentionally a WARN and
+# remains inspectable in lifecycle-unmatched.md, not silently dropped.
+check(mapping.get("version") == 1, "Unknown AWS lifecycle mapping format")
+direct_aliases = mapping.get("direct_service_names", {})
+prefix_aliases = mapping.get("feature_prefixes", {})
+exact_aliases = mapping.get("feature_exact", {})
+for group_name, values in (("direct", direct_aliases),
+                           ("prefixes", prefix_aliases),
+                           ("exact", exact_aliases)):
+    check(isinstance(values, dict) and set(values).issubset(set(official)),
+          "Lifecycle mapping contains unknown catalog entries in " + group_name)
+
+source_entries = []
+for stage in ("maintenance", "sunset", "shutdown"):
+    source_entries.extend((stage, row[0], row[3]) for row in groups.get(stage, []))
+
+def feature_of(parent, lifecycle_name):
+    prefixes = [parent] + prefix_aliases.get(parent, [])
+    return lifecycle_name in exact_aliases.get(parent, []) or any(
+        lifecycle_name.startswith((prefix + " – ", prefix + " - "))
+        for prefix in prefixes)
+
+for parent, explicit in exact_aliases.items():
+    for feature in explicit:
+        check(any(name == feature for _, name, _ in source_entries),
+              "Exact alias no longer present in lifecycle: " + parent + " -> " + feature)
+
+linked = set()
+for row in catalog_rows:
+    parent = row[1]
+    canonical = direct_aliases.get(parent, parent)
+    direct = [entry for entry in source_entries if entry[1] == canonical]
+    related = [entry for entry in source_entries if feature_of(parent, entry[1])]
+    linked.update((entry[0], entry[1]) for entry in direct + related)
+    if related and not direct:
+        check("機能単位の掲載あり" in row[3],
+              "Unlabeled feature lifecycle for: " + parent)
+
+unmatched = [entry for entry in source_entries
+             if (entry[0], entry[1]) not in linked]
+unmatched_lines = [line for line in unmatched_doc.splitlines()
+                   if line.startswith("| ") and not line.startswith("| 公式ステータス |")]
+unmatched_rows = [cells(line) for line in unmatched_lines]
+check(all(len(row) == 3 for row in unmatched_rows),
+      "Unmatched lifecycle report must have three Markdown columns")
+stage_labels = {"maintenance": "Maintenance（新規利用制限あり）",
+                "sunset": "Sunset（終了日を確認）",
+                "shutdown": "Full Shutdown（終了済）"}
+expected_unmatched = [
+    [stage_labels[stage], name, source.replace("[公式]", "[AWS公式]")]
+    for stage, name, source in unmatched]
+check(unmatched_rows == expected_unmatched,
+      "Unmatched lifecycle report differs from official records or aliases")
+expected_summary = f"**未対応:** **{len(unmatched)} / {len(source_entries)}件**"
+check(expected_summary in unmatched_doc, "Unmatched lifecycle count mismatch")
+check(f"未対応 **{len(unmatched)} / {len(source_entries)}件**" in readme,
+      "AWS README unresolved lifecycle count mismatch")
+check("未対応は**製品が存在しない" in unmatched_doc,
+      "Unmatched lifecycle items must not imply a product is unavailable")
+if unmatched:
+    print(f"WARN: {len(unmatched)} / {len(source_entries)} AWS lifecycle rows "
+          "not linked to a General Reference service; review cloud/aws/lifecycle-unmatched.md")
+
 
 curated = [cells(line)[0] for line in
            services.split("## 横断比較へ移動した項目")[0].splitlines()
