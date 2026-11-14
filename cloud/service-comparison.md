@@ -65,7 +65,7 @@
 | IoT・ゲーム | ゲームバックエンド | Amazon GameLift Servers | Azure PlayFab | 対象外 | 対象外 | 対象外 | サーバー運用とBaaSで機能範囲が違う |
 | 位置情報 | 地図・位置情報API | Amazon Location Service | Azure Maps | Google Maps Platform | 対象外 | 対象外 | SDK・課金・地図データ範囲が異なる |
 | メディア | ライブ動画の取り込み・変換・配信 | Amazon IVS / AWS Elemental MediaLive | 対象外 | Live Stream API | 対象外 | Cloudflare Stream | Live Stream APIはライブ変換とCloud Storage出力が中心。配信にはMedia CDNなどを別途構成。Azure Media Servicesは2024年に終了 |
-| メディア | オンデマンド動画の変換・パッケージング・配信 | AWS Elemental MediaConvert / AWS Elemental MediaPackage v1（VOD） | 対象外 | Transcoder API | OCI Media Services（Media Flow / Media Streams） | Cloudflare Stream | OCIはMedia Flowで変換、Media StreamsでVOD配信。MediaPackage v2はVOD未対応。Transcoder API単独では配信機能がないため処理範囲に差 |
+| メディア | オンデマンド動画の変換・パッケージング・配信 | AWS Elemental MediaConvert / AWS Elemental MediaPackage v1（VOD） | 対象外 | Transcoder API | OCI Media Services（Media Flow / Media Streams） | Cloudflare Stream | OCIはMedia Flowで変換、Media StreamsでVOD配信。MediaPackage v2は通常のVODワークフローに非対応（ライブ映像からのlive-to-VOD切り出しは対応）。Transcoder API単独では配信機能がないため処理範囲に差 |
 | 移行 | サーバー移行 | AWS Application Migration Service | Azure Migrate | Google Cloud Migrate to Virtual Machines | OCI Cloud Migrations | 対象外 | 支援対象と移行方式が異なる |
 
 ## サービスの廃止・改称・変更履歴
@@ -94,7 +94,8 @@
 ## 一次資料
 
 - [AWS: Amazon IVS公式ドキュメント](https://docs.aws.amazon.com/ivs/)
-- [AWS: MediaPackage v2のVOD非対応](https://docs.aws.amazon.com/mediapackage/latest/userguide/vod-content.html)
+- [AWS: MediaPackage v2のVODワークフロー](https://docs.aws.amazon.com/mediapackage/latest/userguide/vod-content.html)
+- [AWS: MediaPackage v2 live-to-VOD（Harvest job）](https://docs.aws.amazon.com/mediapackage/latest/userguide/live-to-vod.html)
 - [Google Cloud: Live Stream API](https://docs.cloud.google.com/livestream/docs/overview)
 - [Google Cloud: Transcoder API](https://docs.cloud.google.com/transcoder/docs/concepts/overview)
 - [OCI: Media Services（Media Flow / Media Streams）](https://docs.oracle.com/en-us/iaas/Content/media-services/overview.htm)
