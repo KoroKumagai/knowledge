@@ -1,0 +1,35 @@
+name: Refresh Cloudflare docs directory inventory
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - docs/cloudflare-catalog-audit-20261114
+    paths:
+      - scripts/refresh_cloudflare_directory.py
+      - .github/workflows/refresh-cloudflare-directory.yml
+permissions:
+  contents: write
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Get all official Cloudflare docs directory YAML
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/refresh_cloudflare_directory.py
+      - name: Commit catalog snapshot
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add cloud/cloudflare/catalog.md
+          if ! git diff --cached --quiet; then
+            git commit -m 'docs(cloudflare): refresh official docs directory snapshot'
+            git push
+          fi
