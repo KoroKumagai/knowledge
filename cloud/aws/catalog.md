@@ -10,7 +10,9 @@
 
 [ライフサイクル台帳](lifecycle.md) / [既存独自一覧との突合](coverage.md) / [AWS公式Products](https://aws.amazon.com/products/)
 
-| # | 公式参照名 | エンドポイント・クォータ | 公式ライフサイクル掲載（完全一致・手動別名のみ） |
+機能だけがMaintenance/Sunset/終了済みであっても、サービス本体の終了とは断定しません。
+
+| # | 公式参照名 | エンドポイント・クォータ | 公式ライフサイクル掲載（本体と機能を区別） |
 |---:|---|---|---|
 | 1 | Account access management | [公式](https://docs.aws.amazon.com/general/latest/gr/account-access.html) | 該当記載なし（GA判定不可） |
 | 2 | Amazon AI Operations | [公式](https://docs.aws.amazon.com/general/latest/gr/aiops_region.html) | 該当記載なし（GA判定不可） |
@@ -45,7 +47,7 @@
 | 31 | Braket | [公式](https://docs.aws.amazon.com/general/latest/gr/braket.html) | 該当記載なし（GA判定不可） |
 | 32 | AWS Certificate Manager | [公式](https://docs.aws.amazon.com/general/latest/gr/acm.html) | 該当記載なし（GA判定不可） |
 | 33 | Amazon Chime | [公式](https://docs.aws.amazon.com/general/latest/gr/chime.html) | [Full Shutdown（終了済）](https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html) |
-| 34 | Amazon Chime SDK | [公式](https://docs.aws.amazon.com/general/latest/gr/chime-sdk.html) | 該当記載なし（GA判定不可） |
+| 34 | Amazon Chime SDK | [公式](https://docs.aws.amazon.com/general/latest/gr/chime-sdk.html) | [機能単位の掲載あり（Full Shutdown（終了済））](lifecycle.md)（本体のGA判定不可） |
 | 35 | AWS Clean Rooms | [公式](https://docs.aws.amazon.com/general/latest/gr/clean-rooms.html) | 該当記載なし（GA判定不可） |
 | 36 | AWS Clean Rooms ML | [公式](https://docs.aws.amazon.com/general/latest/gr/clean-rooms-ml.html) | 該当記載なし（GA判定不可） |
 | 37 | Cloud Control API | [公式](https://docs.aws.amazon.com/general/latest/gr/cloudcontrolapi.html) | 該当記載なし（GA判定不可） |
@@ -60,7 +62,7 @@
 | 46 | CloudShell | [公式](https://docs.aws.amazon.com/general/latest/gr/cloudshell.html) | 該当記載なし（GA判定不可） |
 | 47 | Amazon CodeCatalyst | [公式](https://docs.aws.amazon.com/general/latest/gr/codecatalyst.html) | [Maintenance（新規利用制限あり）](https://docs.aws.amazon.com/general/latest/gr/maintenance_services.html) |
 | 48 | AWS Control Catalog | [公式](https://docs.aws.amazon.com/general/latest/gr/controlcatalog.html) | 該当記載なし（GA判定不可） |
-| 49 | CloudTrail | [公式](https://docs.aws.amazon.com/general/latest/gr/ct.html) | 該当記載なし（GA判定不可） |
+| 49 | CloudTrail | [公式](https://docs.aws.amazon.com/general/latest/gr/ct.html) | [機能単位の掲載あり（Maintenance（新規利用制限あり））](lifecycle.md)（本体のGA判定不可） |
 | 50 | CloudWatch | [公式](https://docs.aws.amazon.com/general/latest/gr/cw_region.html) | 該当記載なし（GA判定不可） |
 | 51 | CloudWatch Application Insights | [公式](https://docs.aws.amazon.com/general/latest/gr/applicationinsights.html) | 該当記載なし（GA判定不可） |
 | 52 | CloudWatch Application Signals | [公式](https://docs.aws.amazon.com/general/latest/gr/cwApplicationSignals_region.html) | 該当記載なし（GA判定不可） |
@@ -85,7 +87,7 @@
 | 71 | AWS CodeStar Connections | [公式](https://docs.aws.amazon.com/general/latest/gr/codestar_connections.html) | 該当記載なし（GA判定不可） |
 | 72 | AWS CodeStar Notifications | [公式](https://docs.aws.amazon.com/general/latest/gr/codestar_notifications.html) | 該当記載なし（GA判定不可） |
 | 73 | Amazon Cognito | [公式](https://docs.aws.amazon.com/general/latest/gr/cognito.html) | 該当記載なし（GA判定不可） |
-| 74 | Amazon Comprehend | [公式](https://docs.aws.amazon.com/general/latest/gr/comprehend.html) | 該当記載なし（GA判定不可） |
+| 74 | Amazon Comprehend | [公式](https://docs.aws.amazon.com/general/latest/gr/comprehend.html) | [機能単位の掲載あり（Maintenance（新規利用制限あり））](lifecycle.md)（本体のGA判定不可） |
 | 75 | Amazon Comprehend Medical | [公式](https://docs.aws.amazon.com/general/latest/gr/comprehend-med_region.html) | 該当記載なし（GA判定不可） |
 | 76 | Compute Optimizer | [公式](https://docs.aws.amazon.com/general/latest/gr/compute-optimizer.html) | 該当記載なし（GA判定不可） |
 | 77 | AWS Config | [公式](https://docs.aws.amazon.com/general/latest/gr/awsconfig.html) | 該当記載なし（GA判定不可） |
@@ -143,7 +145,7 @@
 | 129 | Amazon GameLift Streams | [公式](https://docs.aws.amazon.com/general/latest/gr/gameliftstreams.html) | 該当記載なし（GA判定不可） |
 | 130 | Global Accelerator | [公式](https://docs.aws.amazon.com/general/latest/gr/global_accelerator.html) | 該当記載なし（GA判定不可） |
 | 131 | Global Networks for Transit Gateways | [公式](https://docs.aws.amazon.com/general/latest/gr/network_manager.html) | 該当記載なし（GA判定不可） |
-| 132 | AWS Glue | [公式](https://docs.aws.amazon.com/general/latest/gr/glue.html) | 該当記載なし（GA判定不可） |
+| 132 | AWS Glue | [公式](https://docs.aws.amazon.com/general/latest/gr/glue.html) | [機能単位の掲載あり（Maintenance（新規利用制限あり））](lifecycle.md)（本体のGA判定不可） |
 | 133 | DataBrew | [公式](https://docs.aws.amazon.com/general/latest/gr/gluedatabrew.html) | 該当記載なし（GA判定不可） |
 | 134 | Amazon Managed Grafana | [公式](https://docs.aws.amazon.com/general/latest/gr/grafana-service.html) | 該当記載なし（GA判定不可） |
 | 135 | AWS Ground Station | [公式](https://docs.aws.amazon.com/general/latest/gr/gs.html) | 該当記載なし（GA判定不可） |
@@ -159,7 +161,7 @@
 | 145 | Incident Manager | [公式](https://docs.aws.amazon.com/general/latest/gr/incident-manager.html) | 該当記載なし（GA判定不可） |
 | 146 | Amazon Inspector | [公式](https://docs.aws.amazon.com/general/latest/gr/inspector2.html) | 該当記載なし（GA判定不可） |
 | 147 | AWS IoT Core | [公式](https://docs.aws.amazon.com/general/latest/gr/iot-core.html) | 該当記載なし（GA判定不可） |
-| 148 | AWS IoT Device Defender | [公式](https://docs.aws.amazon.com/general/latest/gr/iot_device_defender.html) | 該当記載なし（GA判定不可） |
+| 148 | AWS IoT Device Defender | [公式](https://docs.aws.amazon.com/general/latest/gr/iot_device_defender.html) | [機能単位の掲載あり（Maintenance（新規利用制限あり））](lifecycle.md)（本体のGA判定不可） |
 | 149 | AWS IoT Device Management | [公式](https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html) | 該当記載なし（GA判定不可） |
 | 150 | AWS IoT FleetWise | [公式](https://docs.aws.amazon.com/general/latest/gr/iotfleetwise.html) | [Maintenance（新規利用制限あり）](https://docs.aws.amazon.com/general/latest/gr/maintenance_services.html) |
 | 151 | AWS IoT Wireless | [公式](https://docs.aws.amazon.com/general/latest/gr/iot-lorawan.html) | 該当記載なし（GA判定不可） |
@@ -182,12 +184,12 @@
 | 168 | Amazon Location Service | [公式](https://docs.aws.amazon.com/general/latest/gr/location.html) | 該当記載なし（GA判定不可） |
 | 169 | Lookout for Equipment | [公式](https://docs.aws.amazon.com/general/latest/gr/lookoutequipment.html) | [Full Shutdown（終了済）](https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html) |
 | 170 | Macie | [公式](https://docs.aws.amazon.com/general/latest/gr/macie.html) | 該当記載なし（GA判定不可） |
-| 171 | AWS Mainframe Modernization | [公式](https://docs.aws.amazon.com/general/latest/gr/m2.html) | 該当記載なし（GA判定不可） |
+| 171 | AWS Mainframe Modernization | [公式](https://docs.aws.amazon.com/general/latest/gr/m2.html) | [機能単位の掲載あり（Maintenance（新規利用制限あり））](lifecycle.md)（本体のGA判定不可） |
 | 172 | Amazon ML | [公式](https://docs.aws.amazon.com/general/latest/gr/machinelearning.html) | 該当記載なし（GA判定不可） |
 | 173 | Managed Blockchain | [公式](https://docs.aws.amazon.com/general/latest/gr/managedblockchain.html) | [Sunset（終了予定）](https://docs.aws.amazon.com/general/latest/gr/sunset_services.html) |
 | 174 | Managed Service for Apache Flink | [公式](https://docs.aws.amazon.com/general/latest/gr/ka.html) | 該当記載なし（GA判定不可） |
 | 175 | AWS Managed Services | [公式](https://docs.aws.amazon.com/general/latest/gr/managedservices.html) | 該当記載なし（GA判定不可） |
-| 176 | AWS Management Console | [公式](https://docs.aws.amazon.com/general/latest/gr/mgmt-console.html) | 該当記載なし（GA判定不可） |
+| 176 | AWS Management Console | [公式](https://docs.aws.amazon.com/general/latest/gr/mgmt-console.html) | [機能単位の掲載あり（Maintenance（新規利用制限あり））](lifecycle.md)（本体のGA判定不可） |
 | 177 | Amazon MWAA | [公式](https://docs.aws.amazon.com/general/latest/gr/mwaa.html) | 該当記載なし（GA判定不可） |
 | 178 | AWS Marketplace | [公式](https://docs.aws.amazon.com/general/latest/gr/aws-marketplace.html) | 該当記載なし（GA判定不可） |
 | 179 | Amazon MSK | [公式](https://docs.aws.amazon.com/general/latest/gr/msk.html) | 該当記載なし（GA判定不可） |
@@ -225,7 +227,7 @@
 | 211 | AWS RAM | [公式](https://docs.aws.amazon.com/general/latest/gr/ram.html) | 該当記載なし（GA判定不可） |
 | 212 | Recycle Bin | [公式](https://docs.aws.amazon.com/general/latest/gr/rbin.html) | 該当記載なし（GA判定不可） |
 | 213 | Amazon Redshift | [公式](https://docs.aws.amazon.com/general/latest/gr/redshift-service.html) | 該当記載なし（GA判定不可） |
-| 214 | Amazon Rekognition | [公式](https://docs.aws.amazon.com/general/latest/gr/rekognition.html) | 該当記載なし（GA判定不可） |
+| 214 | Amazon Rekognition | [公式](https://docs.aws.amazon.com/general/latest/gr/rekognition.html) | [機能単位の掲載あり（Maintenance（新規利用制限あり））](lifecycle.md)（本体のGA判定不可） |
 | 215 | Amazon RDS | [公式](https://docs.aws.amazon.com/general/latest/gr/rds-service.html) | 該当記載なし（GA判定不可） |
 | 216 | AWS re:Post Private | [公式](https://docs.aws.amazon.com/general/latest/gr/repostprivate.html) | [Sunset（終了予定）](https://docs.aws.amazon.com/general/latest/gr/sunset_services.html) |
 | 217 | Resilience Hub | [公式](https://docs.aws.amazon.com/general/latest/gr/resiliencehub.html) | 該当記載なし（GA判定不可） |
@@ -233,14 +235,14 @@
 | 219 | Resource Groups and Tagging | [公式](https://docs.aws.amazon.com/general/latest/gr/arg.html) | 該当記載なし（GA判定不可） |
 | 220 | Red Hat OpenShift Service on AWS | [公式](https://docs.aws.amazon.com/general/latest/gr/rosa.html) | 該当記載なし（GA判定不可） |
 | 221 | Route 53 | [公式](https://docs.aws.amazon.com/general/latest/gr/r53.html) | 該当記載なし（GA判定不可） |
-| 222 | SageMaker AI | [公式](https://docs.aws.amazon.com/general/latest/gr/sagemaker.html) | 該当記載なし（GA判定不可） |
+| 222 | SageMaker AI | [公式](https://docs.aws.amazon.com/general/latest/gr/sagemaker.html) | [機能単位の掲載あり（Maintenance（新規利用制限あり） / Sunset（終了日を確認） / Full Shutdown（終了済））](lifecycle.md)（本体のGA判定不可） |
 | 223 | Secrets Manager | [公式](https://docs.aws.amazon.com/general/latest/gr/asm.html) | 該当記載なし（GA判定不可） |
 | 224 | Security Lake | [公式](https://docs.aws.amazon.com/general/latest/gr/securitylake.html) | 該当記載なし（GA判定不可） |
 | 225 | Security Hub CSPM | [公式](https://docs.aws.amazon.com/general/latest/gr/sechub.html) | 該当記載なし（GA判定不可） |
 | 226 | AWS Security Incident Response | [公式](https://docs.aws.amazon.com/general/latest/gr/securityir.html) | 該当記載なし（GA判定不可） |
 | 227 | Service Quotas | [公式](https://docs.aws.amazon.com/general/latest/gr/servicequotas.html) | 該当記載なし（GA判定不可） |
 | 228 | AWS Serverless Application Repository | [公式](https://docs.aws.amazon.com/general/latest/gr/serverlessrepo.html) | 該当記載なし（GA判定不可） |
-| 229 | AWS Service Catalog endpoints and quotas | [公式](https://docs.aws.amazon.com/general/latest/gr/servicecatalog.html) | 該当記載なし（GA判定不可） |
+| 229 | AWS Service Catalog endpoints and quotas | [公式](https://docs.aws.amazon.com/general/latest/gr/servicecatalog.html) | [機能単位の掲載あり（Maintenance（新規利用制限あり））](lifecycle.md)（本体のGA判定不可） |
 | 230 | Shield Advanced | [公式](https://docs.aws.amazon.com/general/latest/gr/shield.html) | 該当記載なし（GA判定不可） |
 | 231 | Amazon S3 | [公式](https://docs.aws.amazon.com/general/latest/gr/s3.html) | 該当記載なし（GA判定不可） |
 | 232 | Amazon Glacier | [公式](https://docs.aws.amazon.com/general/latest/gr/s3glacier.html) | 該当記載なし（GA判定不可） |
@@ -277,7 +279,7 @@
 | 263 | AWS Well-Architected | [公式](https://docs.aws.amazon.com/general/latest/gr/wellarchitected.html) | 該当記載なし（GA判定不可） |
 | 264 | AWS Wickr | [公式](https://docs.aws.amazon.com/general/latest/gr/wickr.html) | 該当記載なし（GA判定不可） |
 | 265 | Amazon WorkMail | [公式](https://docs.aws.amazon.com/general/latest/gr/workmail.html) | [Sunset（終了予定）](https://docs.aws.amazon.com/general/latest/gr/sunset_services.html) |
-| 266 | Amazon WorkSpaces | [公式](https://docs.aws.amazon.com/general/latest/gr/wsp.html) | 該当記載なし（GA判定不可） |
+| 266 | Amazon WorkSpaces | [公式](https://docs.aws.amazon.com/general/latest/gr/wsp.html) | [機能単位の掲載あり（Maintenance（新規利用制限あり） / Sunset（終了日を確認））](lifecycle.md)（本体のGA判定不可） |
 | 267 | Amazon WorkSpaces Instances | [公式](https://docs.aws.amazon.com/general/latest/gr/wsp-instances.html) | 該当記載なし（GA判定不可） |
 | 268 | Amazon WorkSpaces Secure Browser | [公式](https://docs.aws.amazon.com/general/latest/gr/workspacesweb.html) | [Maintenance（新規利用制限あり）](https://docs.aws.amazon.com/general/latest/gr/maintenance_services.html) |
 | 269 | X-Ray | [公式](https://docs.aws.amazon.com/general/latest/gr/xray.html) | 該当記載なし（GA判定不可） |
