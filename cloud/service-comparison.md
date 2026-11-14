@@ -18,7 +18,7 @@
 | 領域 | 機能 | AWS | Azure | Google Cloud | OCI | Cloudflare | 比較上の注意 |
 |---|---|---|---|---|---|---|---|
 | コンテナ | Kubernetes | EKS | AKS | GKE | OKE | 対象外 | Cloudflare ContainersはKubernetesではない |
-| コンテナ | サーバーレスコンテナ | ECS on Fargate / App Runner | Azure Container Apps | Cloud Run | Container Instances | Containers | 実行制約・起動/スケール特性は異なる。AWS App Runnerは2026-03-31からMaintenance（新規顧客利用不可） |
+| コンテナ | サーバーレスコンテナ | ECS on Fargate / App Runner | Azure Container Apps | Cloud Run | Container Instances | Containers | 実行制約・起動/スケール特性は異なる。AWS App Runnerは2026-04-30以降、新規顧客利用不可（2026-03-31発表） |
 | サーバーレス | 関数実行 | Lambda | Azure Functions | Cloud Run functions | Functions | Workers | Workersの実行制限に注意 |
 | メッセージング | 非同期メッセージ/ジョブキュー | Amazon SQS | Azure Service Bus Queue / Queue Storage | Pub/Sub（pullサブスクリプション） / Cloud Tasks | OCI Queue | Cloudflare Queues | Pub/Subはサブスクライバーによるpull取得、Cloud Tasksは指定先へタスクを配送。再試行・配信順序・購読モデルを比較 |
 | ワークフロー | コード・サービス実行のオーケストレーション | AWS Step Functions | Azure Durable Functions | Google Cloud Workflows | 対象外 | Cloudflare Workflows | 処理の分岐・再試行・永続化を管理。OCI Process AutomationはBPM製品のため含めない |
@@ -43,7 +43,7 @@
 | 開発 | シークレット管理 | Secrets Manager | Key Vault | Secret Manager | OCI Vault | Secrets Store / Workers Secrets | 自動更新・権限・管理粒度に差 |
 | 開発 | 開発環境・クラウドシェル | AWS CloudShell | Azure Cloud Shell / Dev Box | Cloud Shell / Cloud Workstations | OCI Cloud Shell | 対象外 | Workers Playgroundは一般用途のCloud Shellではない |
 | 開発 | ソースコード管理 | AWS CodeCommit | Azure Repos | Secure Source Manager | OCI DevOps Code Repositories | 対象外 | Gitリポジトリの管理機能・認可モデルに差 |
-| 開発 | Webアプリホスティング | AWS Amplify Hosting / App Runner | Azure App Service | Firebase App Hosting / Cloud Run | 対象外 | Cloudflare Pages / Workers Static Assets | SSRの実行方式・デプロイ仕様は異なる。AWS App RunnerはMaintenance（新規顧客利用不可） |
+| 開発 | Webアプリホスティング | AWS Amplify Hosting / App Runner | Azure App Service | Firebase App Hosting / Cloud Run | 対象外 | Cloudflare Pages / Workers Static Assets | SSRの実行方式・デプロイ仕様は異なる。AWS App Runnerは2026-04-30以降、新規顧客利用不可（2026-03-31発表） |
 | セキュリティ | クラウド設定・姿勢管理 | Security Hub / AWS Config | Defender for Cloud / Azure Policy | Security Command Center | Cloud Guard | 対象外 | Cloudflare Security Centerはエッジ中心 |
 | セキュリティ | 顧客向け認証（CIAM） | Amazon Cognito | Microsoft Entra External ID | Identity Platform / Firebase Authentication | OCI Identity Domains | 対象外 | Cloudflare Accessは限定ユーザー/社内アプリ向け。一般消費者向けCIAMとは別 |
 | 運用 | ログ | CloudWatch Logs | Azure Monitor Logs | Cloud Logging | OCI Logging | Workers Logs / Logpush | ログ対象と保持方式が異なる |
@@ -55,7 +55,7 @@
 | 運用 | マネージドGrafana | Amazon Managed Grafana | Azure Managed Grafana | 対象外 | 対象外 | 対象外 | 自己管理のGrafanaとは区別 |
 | AI・ML | 基盤モデル推論API | Bedrock | Microsoft Foundry / Azure OpenAI | Gemini Enterprise Agent Platform / Gemini API | OCI Generative AI | Workers AI | 対応モデルとデプロイ方式が異なる |
 | AI・ML | AIエージェント構築・運用 | Bedrock AgentCore | Microsoft Foundry Agent Service | Gemini Enterprise Agent Platform | OCI Generative AI Agents | Agents SDK / Workers | AgentCoreは従来のBedrock Agents Classicと別 |
-| AI・ML | モデル学習・MLOps | SageMaker AI | Azure Machine Learning | Gemini Enterprise Agent Platform（旧Vertex AI） | OCI Data Science | 対象外 | Workers AIは汎用モデル学習基盤ではない |
+| AI・ML | モデル学習・MLOps | SageMaker AI | Azure Machine Learning | Gemini Enterprise Agent Platform（旧Vertex AI） | OCI Data Science | 対象外 | Workers AIは汎用モデル学習基盤ではない。SageMaker AIの一部機能（Ground Truth、Model Monitor等）はMaintenance／終了。詳細は[AWSライフサイクル台帳](aws/lifecycle.md)を参照 |
 | AI・ML | ベクトル検索 | OpenSearch / Aurora pgvector | Azure AI Search / PostgreSQL pgvector | Vector Search on Gemini Enterprise Agent Platform / AlloyDB | Oracle AI Database AI Vector Search | Vectorize | DB統合機能・単体サービスの差 |
 | AI・ML | 音声認識 | Amazon Transcribe | Azure AI Speech | Speech-to-Text | OCI Speech | 対象外 | 言語・文字起こしの仕様は異なる |
 | AI・ML | 音声合成 | Amazon Polly | Azure AI Speech | Text-to-Speech | OCI Speech | 対象外 | モデル/言語/合成品質に差 |
@@ -74,7 +74,7 @@
 |---|---|---|
 | AWS | **AWS App Mesh** は 2026-09-30 にサポート終了。**AWS Proton** と **AWS WAF Classic** は 2026-10-07 にサポート終了。**Amazon Pinpoint** は 2026-10-30 にサポート終了。 | これらを新規構築の推奨先から除外。ECS Service Connect / AWS WAF 等を機能別に参照（Pinpointは用途別に別途移行設計）。 |
 | AWS | **Amazon Q Developer IDE plugins** は 2027-04-30 サポート終了予定（2026-11時点）。**Amazon DevOps Guru** は 2027-09-29 サポート終了予定。 | 「現存」と「新規採用推奨」を明確に分ける。 |
-| AWS | **Amazon Bedrock Agents Classic**（旧Amazon Bedrock Agents）、**Amazon Kendra**、**Amazon Q Business** は2026-06-30にメンテナンス移行、2026-07-30以降新規顧客利用不可。 | AgentCoreを新規エージェント開発の中心として検討。Q BusinessについてはAmazon Quick Suiteを移行候補として検証。[AWS告知](https://aws.amazon.com/about-aws/whats-new/2026/06/aws-service-availability/) |
+| AWS | **Amazon Bedrock Agents Classic**（旧Amazon Bedrock Agents）、**Amazon Kendra**、**Amazon Q Business** は2026-06-30にメンテナンス移行、2026-07-30以降新規顧客利用不可。 | AgentCoreを新規エージェント開発の中心として検討。Q BusinessについてはAWS Quick（旧Amazon Quick / Quick Suite）を移行候補として検証。[AWS告知](https://aws.amazon.com/about-aws/whats-new/2026/06/aws-service-availability/) |
 | AWS | **AWS CodeCommit** は2025-11-25から新規顧客に再提供。 | 旧「新規利用条件注意」を削除。[変更履歴](https://docs.aws.amazon.com/codecommit/latest/userguide/history.html) |
 | Azure | **Azure Cache for Redis** は廃止予定。Enterprise/Enterprise Flash: **2027-03-31**、Basic/Standard/Premium: **2028-09-30**。 | 新規比較は **Azure Managed Redis** を優先。 |
 | Google Cloud | 現行製品一覧に **Gemini Enterprise Agent Platform**、**Knowledge Catalog**、**Managed Service for Apache Spark**、**Managed Lustre**、**Spanner Omni** などが掲載。 | 旧名称や旧製品表の行をそのまま踏襲しない。 |
