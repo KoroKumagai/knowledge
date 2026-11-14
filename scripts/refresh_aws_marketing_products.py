@@ -89,6 +89,52 @@ def get_general_reference():
         raise ValueError("Incomplete General Reference or duplicate name")
     return result
 
+def read_product_lifecycle():
+    """Load WHOLE-service statuses; never propagate sub-feature retirements."""
+    content=(DIR/"lifecycle.md").read_text(encoding="utf-8")
+    stage=None
+    byname=defaultdict(list)
+    totals={}
+    for line in content.splitlines():
+        header=re.match(r"^## (Maintenance|Sunset|Full Shutdown).*?(\d+)件$",line)
+        if header:
+            stage={"Maintenance":"maintenance","Sunset":"sunset",
+                   "Full Shutdown":"shutdown"}[header.group(1)]
+            totals[stage]=int(header.group(2))
+            continue
+        if not stage or not line.startswith("| ") or line.startswith("| AWS公式掲載名"):
+            continue
+        cells=[v.strip() for v in line.strip("|").split("|")]
+        if len(cells)!=4 or not cells[3].startswith("[公式](https://"):
+            raise ValueError("Malformed official lifecycle entry: "+line)
+        byname[cells[0]].append({"stage":stage,"end":cells[2],"source":cells[3]})
+    if set(totals)!={"maintenance","sunset","shutdown"}:
+        raise ValueError("Missing an official lifecycle category")
+    for status,total in totals.items():
+        actual=sum(v["stage"]==status for entries in byname.values() for v in entries)
+        if actual!=total:
+            raise ValueError("Lifecycle table section count mismatch: "+status)
+    return byname
+
+LIFECYCLE_LABELS={
+    "maintenance":"Maintenance（新規利用に制限）",
+    "sunset":"Sunset（終了予定）",
+    "shutdown":"Full Shutdown（終了済み）"
+}
+
+def product_lifecycle(name,config,byname):
+    alias=config.get("lifecycle_aliases",{}).get(name,name)
+    rows=sorted(byname.get(alias,[]),key=lambda r:
+                {"shutdown":0,"sunset":1,"maintenance":2}[r["stage"]])
+    if not rows:
+        return "本体の該当記載なし（GA未確認）",[]
+    terms=[]
+    for row in rows:
+        term="["+LIFECYCLE_LABELS[row["stage"]]+"](lifecycle.md)"
+        if row["end"]!="—":term+="（"+row["end"]+"）"
+        terms.append(term)
+    return " / ".join(terms),rows
+
 def esc(x):
     return str(x).replace("|",r"\|").replace("\n"," ").strip()
 
@@ -103,26 +149,35 @@ def generate(products, references, config, day):
         raise ValueError("Invalid related-but-different mapping")
     if not all(isinstance(r,dict) and r.get("reference") in byref and r.get("reason") for r in related.values()):
         raise ValueError("Related mapping needs a real reference and a reason")
+    byname=read_product_lifecycle()
+    whole_aliases=config.get("lifecycle_aliases",{})
+    if not set(whole_aliases).issubset(prod_names) or not set(whole_aliases.values()).issubset(byname):
+        raise ValueError("Invalid product-level lifecycle alias map")
+    note_names=config.get("alias_notes",{})
+    if not set(note_names).issubset(set(aliases)):
+        raise ValueError("Alias notes must refer to an exact alias")
     groups=defaultdict(list)
     for p in products: groups[p["category"]].append(p)
     lines=[
         "# AWS公式Productsの全サービス区分カード", "",
         "**取得日 (UTC):** "+day+"  ",
-        "**AWS公式:** [Products]("+PAGE+") / [公式検索API]("+API+") / [取得データ](products-source.json)", "",
+        "**AWS公式:** [Products]("+PAGE+") / [Productsページ内部の検索エンドポイント（非公開・仕様保証なし）]("+API+") / [取得データ](products-source.json)", "",
         "**API totalHits:** "+str(len(products))+"件 / **収録:** "+str(len(products))+"件", "",
         "> この件数は公式Productsページのserviceタグを持つカード数。独立課金サービス数やGA数とは限りません。",
-        "> 廃止済み製品が表示される場合もあります。提供可能性はライフサイクル台帳で個別確認してください。AWS公式APIが案内する外部ドメインの公式製品サイトもあります。", "",
+        "> 廃止済み製品の掲載もあります。列の表示は[公式ライフサイクル台帳](lifecycle.md)のサービス本体名との完全一致・手動別名による照合であり、機能単位の終了を本体の終了とみなしません。検索エンドポイントは非公開・仕様保証がなく、件数が一致しなければ更新を停止します。", "",
+        "公式の Amazon DocumentDB (with MongoDB compatability) は綴り誤りを含む掲載名をそのまま記録（原文ママ）。", "",
         "[269項目との差分](products-coverage.md) / [手動対応定義](products-mapping.json)", ""
     ]
     for category in sorted(groups,key=str.casefold):
         subset=sorted(groups[category],key=lambda x:x["name"].casefold())
         lines+=["## "+esc(category)+"（"+str(len(subset))+"件）","",
-                "| 公式Products名 | 製品ページ | Docs（掲載分） | ディレクトリID |",
-                "|---|---|---|---|"]
+                "| 公式Products名 | 製品ページ | Docs（掲載分） | ライフサイクル（本体） | ディレクトリID |",
+                "|---|---|---|---|---|"]
         for p in subset:
+            lifecycle_state,_=product_lifecycle(p["name"],config,byname)
             lines.append("| "+esc(p["name"])+" | [公式]("+p["url"]+") | "+
               ("[Docs]("+p["docs_url"]+")" if p["docs_url"] else "—")+
-              " | "+esc(p["id"])+" |")
+              " | "+lifecycle_state+" | "+esc(p["id"])+" |")
         lines.append("")
     coverage=[
         "# AWS ProductsとGeneral Referenceの差分照合","",
