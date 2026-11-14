@@ -8,9 +8,9 @@ updated: 2026-11-14
 
 ## 結論：まず押さえる3点
 
-1. **環境は検証目的で決める。** Dev／Staging／QA・UAT／本番の4分類は現場の共通言語として残すが、4つの独立環境を必須とはしない。
+1. **環境は何を確かめるかで決める。** Dev／Staging／QA・UAT／本番の4分類は現場の共通言語として残すが、4つの独立環境を必須とはしない。
 2. **ブランチは短命PR＋mainへの頻繁な統合を第一候補とする。** 複数のリリース系列を保守するならreleaseブランチやGitFlow系も選択できる。
-3. **成果物の昇格と公開承認を分ける。** 同じ成果物を段階的に検証し、必要な全員承認を記録する。通常のリリースが塞がれる場合に備え、Hotfix専用経路も設計する。
+3. **成果物の昇格と公開承認を分ける。** 同じ成果物を段階的に検証し、必要な承認を記録する。通常のリリースが塞がれる場合に備え、Hotfix専用経路も設計する。
 
 この文書では、筆者が日本企業・SES案件で経験した「現状の記録」と、新規構築・改善時の「推奨」を分ける。現場の実例をすべての案件に当てはめる意図はない。
 
@@ -43,7 +43,7 @@ QA／UATは本来テスト活動の名前だが、現場では独立環境の呼
 
 「誰が、どの変更を、どの依存関係とデータで確認するか」から環境数を決める。並行UATにはPRプレビューや一時環境が有効で、独立QA環境は分離が必要な場合に設ける。
 
-本番との差分はIaC・設定管理で可視化する。本番データを利用する場合は個人情報を保護し、外部送信・秘密情報を隔離する。
+本番との差分はIaC・設定管理で可視化する。本番データを利用する場合は原則として匿名化・マスキングし、外部送信・秘密情報を隔離する。
 
 ## 3. ブランチ戦略の選択
 
@@ -75,6 +75,8 @@ TBDを新規案件の第一候補とするが、「世界的な主流」との�
 
 ### 通常経路と緊急Hotfix経路
 
+右側は本番版から先に修正する例外の流れ。Hotfixでも通常は`main`で先に修正する（§6）。
+
 ```mermaid
 flowchart LR
   subgraph Normal["通常リリース"]
@@ -104,7 +106,7 @@ flowchart LR
 
 契約・規程・関係者が変更単位の承認を認めるなら、A機能だけ公開し、B機能は非公開にする運用も可能である。業務UATの承認者と本番デプロイ承認者は分けて記録する。
 
-Feature FlagをOFFにしても、共有DB、共通API、バッチ、副作用、認可の変更まで隔離できるわけではない。[4] 必要なら一時環境や短期releaseブランチで分離する。
+Feature FlagをOFFにしても、共有DB、共通API、バッチ、副作用、認可の変更まで隔離できるわけではない。[4] 変更者・承認者・履歴・廃止期限を管理する。必要なら一時環境や短期releaseブランチで分離する。
 
 全員一括承認が必須なら省略しない。承認する変更セット、担当者、検証結果、保留理由を明確にして待つ。
 
@@ -117,15 +119,15 @@ Feature FlagをOFFにしても、共有DB、共通API、バッチ、副作用、
 
 ## 6. 緊急Hotfixの専用経路
 
-通常の修正は `main` に先に取り込む（trunk-first／upstream-first）。本番版への個別配布が必要なら、同じ修正を本番稼働版から切った `hotfix/*` にcherry-pickする。
+Hotfixでは、**修正をどのブランチで先行実装するか**と、**どの経路で検証・デプロイするか**を別々に決める。
 
-ただし、緊急性が高く`main`での先行修正が現実的でない場合は、**本番稼働版から直接Hotfixを作り、後からmainへ確実に反映**する。共有Stagingが未承認機能で塞がる現場では、短命の独立Hotfixパイプラインが有効である。[8]
+修正は原則として`main`へ先に取り込む（trunk-first／upstream-first）。未承認変更を含む`main`をそのまま本番へ出せない場合は、本番稼働版から切った`hotfix/*`に必要な修正だけをcherry-pickし、専用経路で検証する。緊急性から`main`先行が難しければ、本番版を直接修正してから`main`へ反映する。[8]
 
 1. 本番稼働版のコミットSHA、成果物digest、設定・DB互換性を特定する。
-2. `main` で修正可能なら先行して修正・検証し、必要な差分を `hotfix/*` に移す。緊急時は本番版から直接修正する。
-3. 通常の未承認変更とは分離したCIと検証環境で、修正だけをテストする。
-4. 事前合意した緊急承認を取得し、検証済みの同一成果物を本番へ配置して監視する。
-5. `main` と保守中の系列への反映を確認し、専用パイプライン・環境・ブランチを終了する。
+2. 修正の先行ブランチを決め、`hotfix/*`には必要な差分だけを入れる。
+3. 通常の未承認変更とは分離したCIと環境でテストする。
+4. 緊急承認を取得し、検証済み成果物を本番へ配置して監視する。
+5. `main`と保守系列への反映を確認し、一時的なパイプライン・環境・ブランチを終了する。
 
 **専用経路はテストや承認を省く抜け道ではない。** ロールバック時はDB変更、データ更新、外部送信、旧版との互換性も確認する。スキーマ変更にはexpand → migrate → contractなどの段階的な方式を検討する。[9]
 
@@ -149,7 +151,7 @@ Feature FlagをOFFにしても、共有DB、共通API、バッチ、副作用、
 ## 参考資料（2026-11-14確認）
 
 1. [Trunk-Based Development — Introduction](https://trunkbaseddevelopment.com/)
-2. [AWS Builder Center — CI/CD Strategy Patterns and Common Pitfalls（Build Once, Deploy Many）](https://builder.aws.com/content/3CRE0sUkv7aQTimJ695xwuSMzOZ/ci-cd-strategy-patterns-and-common-pitfalls)
+2. [AWS Well-Architected DevOps Guidance — Anti-patterns for continuous delivery（Build once, deploy many）](https://docs.aws.amazon.com/wellarchitected/latest/devops-guidance/anti-patterns-for-continuous-delivery.html)
 3. [GitHub Docs — Immutable releases](https://docs.github.com/en/code-security/concepts/supply-chain-security/immutable-releases)
 4. [Martin Fowler — Feature Toggles](https://martinfowler.com/articles/feature-toggles.html)
 5. [GitHub Docs — Deployments and environments](https://docs.github.com/en/actions/reference/workflows-and-actions/deployments-and-environments)
