@@ -18,6 +18,7 @@ Microsoft製品群・ID・業務基盤との結合度が強く、AWSなどの単
 | Azure Virtual Desktop | 仮想デスクトップ |
 | Windows 365 | クラウドPC（Azureとの関係を区別） |
 | Azure Update Manager | サーバー更新管理 |
+| Azure Copilot | Azureリソースの運用支援 |
 
 ## ID・統制
 
@@ -37,12 +38,6 @@ Microsoft製品群・ID・業務基盤との結合度が強く、AWSなどの単
 | Azure Communication Services | 通信API |
 | Azure SignalR Service | リアルタイム通信 |
 | Azure Fluid Relay | 共同編集状態の同期 |
-
-## AI・開発・運用
-
-| サービス | 用途 |
-|---|---|
-| Azure Copilot | Azure運用支援 |
 
 ## 横断比較へ移動した項目
 
