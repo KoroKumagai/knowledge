@@ -3,7 +3,7 @@
 **対象:** AWS / Azure / Google Cloud / OCI / Cloudflare  
 **確認基準日:** 2026-11-14（JST）
 
-> **比較の方針:** 5社でほぼ同じ役割として検討できるサービスのみを横断表へ掲載しています。完全互換という意味ではありません。各社独自・部分的類似・複数サービス構成のサービスは、各社ディレクトリで独立して整理しています。現行カタログの全件網羅はまだ未完了です。
+> **比較の方針:** 2社以上で同じ用途として検討できるサービスのみを横断表へ掲載しています。完全互換という意味ではありません。比較不能なサービスや独自の製品体系は、各社ディレクトリで独立して整理しています。現行カタログの全件網羅はまだ未完了です。
 
 - [AWS 個別サービス](aws/services.md)
 - [Azure 個別サービス](azure/services.md)
@@ -11,51 +11,50 @@
 - [Oracle Cloud 個別サービス](oracle/services.md)
 - [Cloudflare 個別サービス](cloudflare/services.md)
 
-## 5社の機能横断表（39項目）
+## 比較可能な機能の横断表（38項目）
 
-比較可能とは機能の検討軸が共通であることを意味し、API・動作・SLA・価格・リージョン・IAMモデルが同一であることを保証しません。
+**選定基準:** 2社以上で同じ目的のサービスが提供され、構成方式の検討が可能な機能に限定します。直接該当しない場合は「対象外」と明示し、他社製品や組合せを無理に代入しません。「対象外」はその事業者が別方式で用途を実現できないという意味ではありません。**全5社で同等のサービスがあるという意味ではありません。** API・SLA・価格の完全互換はありません。
 
 | 領域 | 機能 | AWS | Azure | Google Cloud | OCI | Cloudflare | 比較上の注意 |
 |---|---|---|---|---|---|---|---|
-| コンテナ | オーケストレーション | ECS | Container Apps / AKS | Cloud Run / GKE | OKE / Container Instances | Containers（小規模・用途別） | オートスケールとサービス発見に差 |
-| コンテナ | サーバーレスコンテナ | ECS Fargate / App Runner | Azure Container Apps | Cloud Run | Container Instances | Containers | 実行モデルは同一ではない |
-| サーバーレス | 関数実行 | Lambda | Azure Functions | Cloud Run functions | Functions | Workers | Workersはエッジ系ランタイム |
-| ネットワーク | L4負荷分散 | Network Load Balancer | Azure Load Balancer | Cloud Load Balancing | Network Load Balancer | Spectrum（対応プロトコル限定） | — |
-| ネットワーク | L7負荷分散 | Application Load Balancer | Application Gateway / Front Door | Cloud Load Balancing | Load Balancer | Load Balancing | — |
-| ネットワーク | CDN | CloudFront | Front Door | Cloud CDN / Media CDN | Web Application Acceleration（用途による） | CDN | OCIは一般CDNとの機能差を確認 |
-| ネットワーク | 権威DNS | Route 53 | Azure DNS | Cloud DNS | DNS | DNS | — |
-| ネットワーク | 専用線 | Direct Connect | ExpressRoute | Cloud Interconnect | FastConnect | Cloudflare Network Interconnect | — |
-| ネットワーク | WAF | AWS WAF | Web Application Firewall | Cloud Armor | Web Application Firewall | WAF | AWS WAF Classicは終了 |
-| ネットワーク | DDoS対策 | Shield | DDoS Protection | Cloud Armor | DDoS Protection | DDoS Protection | — |
-| ネットワーク | 外向け接続トンネル | —（別構成） | —（別構成） | —（別構成） | —（別構成） | Cloudflare Tunnel | トンネルはVPNではない |
-| ネットワーク | DNS・Webエッジ最適化 | Route 53 + CloudFront | Front Door | Cloud DNS + Cloud CDN | DNS + Web Application Acceleration | Argo Smart Routing / DNS | — |
-| ネットワーク | ボット対策 | WAF Bot Control | Front Door WAF Bot Protection | Google Cloud Fraud Defense / Cloud Armor | WAF Bot Management | Bot Management / Turnstile | 旧reCAPTCHA Enterpriseの名称変更に注意 |
-| ストレージ | オブジェクト | S3 | Blob Storage | Cloud Storage | Object Storage | R2 | R2はS3 API互換（非完全） |
-| ストレージ | アーカイブ | S3 Glacier | Blob Archive | Cloud Storage Archive | Archive Storage | R2（アーカイブ階層同等なし） | 保存単価だけでなく復旧時間比較 |
-| データベース | PostgreSQL | RDS PostgreSQL / Aurora | Database for PostgreSQL | Cloud SQL / AlloyDB | OCI Database with PostgreSQL | 外部DB + Hyperdrive | HyperdriveはDBサービスではない |
-| データベース | MySQL | RDS MySQL / Aurora | Database for MySQL | Cloud SQL | MySQL HeatWave | 外部DB + Hyperdrive | — |
-| データベース | サーバーレスRDB | Aurora Serverless | Azure SQL Database serverless | Spanner / AlloyDB（異種モデル） | Autonomous AI Database | D1（SQLite） | SQL互換性は一律ではない |
-| データベース | Key-Value NoSQL | DynamoDB | Cosmos DB | Bigtable / Firestore | NoSQL Database | Workers KV | Workers KVは結果整合性 |
-| 開発 | CI/CD | CodeBuild / CodePipeline / CodeDeploy | Azure DevOps / GitHub Actions | Cloud Build / Cloud Deploy | DevOps | Workers Builds / GitHub Actions | — |
-| 開発 | ソースコード管理 | CodeCommit（新規利用条件注意） | Azure Repos / GitHub | Secure Source Manager | DevOps Code Repositories | 外部Gitプロバイダー | — |
-| 開発 | IaC | CloudFormation / CDK / Terraform | ARM / Bicep / Terraform | Infra Manager / Config Connector | Resource Manager（Terraform） | Terraform Provider / Wrangler | Cloudflare Wranglerは汎用Terraformの代わりではない |
-| 開発 | CLI | AWS CLI | Azure CLI | gcloud CLI | OCI CLI | Wrangler / cf CLI（導入状況確認） | — |
-| 開発 | Webアプリホスティング | Amplify Hosting / App Runner | App Service / Static Web Apps | Firebase App Hosting / Cloud Run | Compute / OKE | Workers / Containers | Node.js・SSR互換性検証が必要 |
-| 開発 | シークレット | Secrets Manager | Key Vault | Secret Manager | Vault / Secret Management Service | Workers Secrets / Secrets Store | 権限とローテーション要件を確認 |
-| 開発 | 開発環境 | Cloud9（既存利用中心）/ CloudShell | Dev Box / Cloud Shell | Cloud Workstations / Cloud Shell | Cloud Shell | Workers Playground / ローカルWrangler | 製品の新規提供条件を確認 |
-| 開発 | アーティファクト保管 | CodeArtifact / ECR | Azure Artifacts / ACR | Artifact Registry | Artifact Registry / OCIR | 外部レジストリ | — |
-| セキュリティ | クラウドIAM | IAM / IAM Identity Center | Azure RBAC / Microsoft Entra ID | Cloud IAM / Cloud Identity | OCI IAM / Identity Domains | Cloudflare IAM / Access（別レイヤー） | Cloudflare AccessはクラウドIAMそのものではない |
-| セキュリティ | 顧客向け認証 | Cognito | Entra External ID | Identity Platform | Identity Domains（要件次第） | Access（従業員・限定利用向け） | 一般消費者向けCIAMとは差がある |
-| セキュリティ | セキュリティ姿勢管理 | Security Hub / Config | Defender for Cloud / Azure Policy | Security Command Center | Cloud Guard / Security Zones | Security Center（エッジ中心） | — |
-| 運用 | ログ | CloudWatch Logs | Azure Monitor Logs | Cloud Logging | Logging / Log Analytics | Workers Logs / Logpush | — |
-| 運用 | 分散トレース | X-Ray / Application Signals | Application Insights | Cloud Trace | Application Performance Monitoring | Workers Traces | — |
-| 運用 | バックアップ | AWS Backup | Azure Backup | Backup and DR | Autonomous Recovery Service / Backup | D1 / R2の個別機能 | 包括的バックアップ製品と違う |
-| 運用 | コスト管理 | Cost Explorer / Budgets | Cost Management | Cloud Billing / Recommender | Cost Management / FinOps Hub | Billing / Analytics | — |
-| AI・ML | 基盤モデルAPI | Bedrock | Microsoft Foundry / Azure OpenAI | Gemini Enterprise Agent Platform / Gemini API | Generative AI | Workers AI | モデル・エンドポイント・規約差 |
-| AI・ML | AIエージェント基盤 | Bedrock Agents / AgentCore | Microsoft Foundry Agent Service | Gemini Enterprise Agent Platform | Generative AI Agents | Agents SDK / Workers / Workflows | 実行権限・状態管理に差 |
-| AI・ML | モデル学習・MLOps | SageMaker AI | Azure Machine Learning | Vertex AI（既存製品）/ Gemini Enterprise Agent Platform | Data Science | Workers AI（推論中心） | Cloudflareは汎用学習基盤ではない |
-| AI・ML | ベクトル検索 | OpenSearch / Aurora pgvector | Azure AI Search / PostgreSQL pgvector | Vector Search / AlloyDB | AI Vector Search / Oracle AI Database | Vectorize | — |
-| エッジ | 動画配信 | MediaConvert / MediaPackage | Front Door + 外部配信構成 | Transcoder API / Media CDN | Media Services | Stream | 動画処理・DRMを比較 |
+| コンテナ | Kubernetes | EKS | AKS | GKE | OKE | 対象外 | Cloudflare ContainersはKubernetesではない |
+| コンテナ | サーバーレスコンテナ | ECS on Fargate / App Runner | Azure Container Apps | Cloud Run | Container Instances | Containers | 実行制約・起動/スケール特性は異なる |
+| サーバーレス | 関数実行 | Lambda | Azure Functions | Cloud Run functions | Functions | Workers | Workersの実行制限に注意 |
+| ネットワーク | L4ロードバランシング | Network Load Balancer | Azure Load Balancer | Cloud Load Balancing | Network Load Balancer | Spectrum | Spectrumはプロトコル対応範囲が異なる |
+| ネットワーク | L7ロードバランシング | Application Load Balancer | Application Gateway / Front Door | Cloud Load Balancing | Load Balancer | Load Balancing | レイヤー・リバースプロキシ構成が異なる |
+| ネットワーク | CDN | CloudFront | Front Door | Cloud CDN / Media CDN | 対象外 | CDN | OCIのWeb Application Accelerationは同種の汎用CDNではない |
+| ネットワーク | 権威DNS | Route 53 | Azure DNS | Cloud DNS | DNS | DNS | 権威DNSが対象 |
+| ネットワーク | 専用接続 | Direct Connect | ExpressRoute | Cloud Interconnect | FastConnect | Cloudflare Network Interconnect | 接続先・契約・構成が異なる |
+| ネットワーク | WAF | AWS WAF | Azure Web Application Firewall | Cloud Armor | Web Application Firewall | WAF | AWS WAF Classicはサポート終了 |
+| ネットワーク | DDoS対策 | AWS Shield | Azure DDoS Protection | Cloud Armor | OCI DDoS Protection | DDoS Protection | 保護対象・課金範囲を比較 |
+| ネットワーク | Bot対策 | AWS WAF Bot Control | Front Door WAF Bot Protection | Cloud Armor / Google Cloud Fraud Defense | OCI WAF Bot Management | Bot Management | Cloudflare Turnstileは別途ボット判定フローを構成 |
+| ストレージ | オブジェクトストレージ | S3 | Blob Storage | Cloud Storage | Object Storage | R2 | R2はS3 APIと完全互換ではない |
+| ストレージ | アーカイブストレージ | S3 Glacier | Blob Archive | Cloud Storage Archive | Archive Storage | 対象外 | R2に同等の独立したアーカイブ階層なし |
+| データベース | マネージドPostgreSQL | RDS PostgreSQL / Aurora PostgreSQL | Azure Database for PostgreSQL | Cloud SQL PostgreSQL / AlloyDB | OCI Database with PostgreSQL | 対象外 | Hyperdriveは外部DB接続製品 |
+| データベース | マネージドMySQL | RDS MySQL / Aurora MySQL | Azure Database for MySQL | Cloud SQL MySQL | MySQL HeatWave | 対象外 | HyperdriveはDBではない |
+| データベース | マネージドKey-Value / NoSQL | DynamoDB | Cosmos DB | Bigtable / Firestore | OCI NoSQL Database | Workers KV | Workers KVは結果整合性やクエリ機能が異なる |
+| 開発 | CI/CD | CodeBuild / CodePipeline | Azure Pipelines | Cloud Build / Cloud Deploy | OCI DevOps | Workers Builds | Workers BuildsはWorkers向け |
+| 開発 | IaC | CloudFormation / CDK | ARM / Bicep | Infrastructure Manager | Resource Manager（Terraform） | Terraform Provider / Wrangler | Terraform利用可否と管理対象リソースを区別 |
+| 開発 | CLI | AWS CLI | Azure CLI | gcloud CLI | OCI CLI | Wrangler | WranglerはCloudflareの開発・管理CLI |
+| 開発 | シークレット管理 | Secrets Manager | Key Vault | Secret Manager | OCI Vault | Secrets Store / Workers Secrets | 自動更新・権限・管理粒度に差 |
+| 開発 | 開発環境・クラウドシェル | AWS CloudShell | Azure Cloud Shell / Dev Box | Cloud Shell / Cloud Workstations | OCI Cloud Shell | 対象外 | Workers Playgroundは一般用途のCloud Shellではない |
+| セキュリティ | クラウド設定・姿勢管理 | Security Hub / AWS Config | Defender for Cloud / Azure Policy | Security Command Center | Cloud Guard | 対象外 | Cloudflare Security Centerはエッジ中心 |
+| 運用 | ログ | CloudWatch Logs | Azure Monitor Logs | Cloud Logging | OCI Logging | Workers Logs / Logpush | ログ対象と保持方式が異なる |
+| 運用 | 分散トレース | AWS X-Ray | Application Insights | Cloud Trace | Application Performance Monitoring | Workers Traces | 対応トレース形式に差 |
+| 運用 | バックアップ管理 | AWS Backup | Azure Backup | Backup and DR | Autonomous Recovery Service | 対象外 | D1 / R2個別機能は統合バックアップ製品ではない |
+| 運用 | コスト管理 | Cost Explorer / Budgets | Cost Management | Cloud Billing / Recommender | Cost Management | Billing / Analytics | 機能・配賦単位が異なる |
+| AI・ML | 基盤モデル推論API | Bedrock | Microsoft Foundry / Azure OpenAI | Gemini Enterprise Agent Platform / Gemini API | OCI Generative AI | Workers AI | 対応モデルとデプロイ方式が異なる |
+| AI・ML | AIエージェント構築・運用 | Bedrock AgentCore | Microsoft Foundry Agent Service | Gemini Enterprise Agent Platform | OCI Generative AI Agents | Agents SDK / Workers | AgentCoreは従来のBedrock Agents Classicと別 |
+| AI・ML | モデル学習・MLOps | SageMaker AI | Azure Machine Learning | Gemini Enterprise Agent Platform（旧Vertex AI） | OCI Data Science | 対象外 | Workers AIは汎用モデル学習基盤ではない |
+| AI・ML | ベクトル検索 | OpenSearch / Aurora pgvector | Azure AI Search / PostgreSQL pgvector | Vertex AI Vector Search / AlloyDB | Oracle AI Database AI Vector Search | Vectorize | DB統合機能・単体サービスの差 |
+| 運用 | カオスエンジニアリング | AWS Fault Injection Service | Azure Chaos Studio | 対象外 | 対象外 | 対象外 | AWSとAzureは同種の障害注入サービス |
+| IoT・ゲーム | デジタルツイン | AWS IoT TwinMaker | Azure Digital Twins | 対象外 | 対象外 | 対象外 | 同種の用途でもデータモデルを要比較 |
+| IoT・ゲーム | ゲームバックエンド | Amazon GameLift Servers | Azure PlayFab | 対象外 | 対象外 | 対象外 | サーバー運用とBaaSで機能範囲が違う |
+| 移行 | サーバー移行 | AWS Application Migration Service | Azure Migrate | Google Cloud Migrate to Virtual Machines | OCI Cloud Migrations | 対象外 | 支援対象と移行方式を要確認 |
+| AI・ML | 音声認識 | Amazon Transcribe | Azure AI Speech | Speech-to-Text | OCI Speech | 対象外 | 言語・文字起こしの仕様は異なる |
+| AI・ML | 音声合成 | Amazon Polly | Azure AI Speech | Text-to-Speech | OCI Speech | 対象外 | モデル/言語/合成品質に差 |
+| AI・ML | 機械翻訳 | Amazon Translate | Azure AI Translator | Translation AI | OCI Language | 対象外 | OCR等との統合度は異なる |
+| AI・ML | 文書理解 | Amazon Textract | Azure AI Document Intelligence | Document AI | OCI Document Understanding | 対象外 | 帳票・OCR・抽出モデルの提供範囲に差 |
 
 ## サービスの廃止・改称・変更履歴
 
@@ -63,6 +62,8 @@
 |---|---|---|
 | AWS | **AWS App Mesh** は 2026-09-30 にサポート終了。**AWS Proton** と **AWS WAF Classic** は 2026-10-07 にサポート終了。**Amazon Pinpoint** は 2026-10-30 にサポート終了。 | これらを新規構築の推奨先から除外。ECS Service Connect / AWS WAF 等を機能別に参照（Pinpointは用途別に別途移行設計）。 |
 | AWS | **Amazon Q Developer IDE plugins** は 2027-04-30 サポート終了予定（2026-11時点）。**Amazon DevOps Guru** は 2027-09-29 サポート終了予定。 | 「現存」と「新規採用推奨」を明確に分ける。 |
+| AWS | **Amazon Bedrock Agents Classic**（旧Amazon Bedrock Agents）、**Amazon Kendra**、**Amazon Q Business** は2026-06-30にメンテナンス移行、2026-07-30以降新規顧客利用不可。 | AgentCoreを新規エージェント開発の中心として検討。Q BusinessについてはAmazon Quick Suiteを移行候補として検証。[AWS告知](https://aws.amazon.com/about-aws/whats-new/2026/06/aws-service-availability/) |
+| AWS | **AWS CodeCommit** は2025-11-25から新規顧客に再提供。 | 旧「新規利用条件注意」を削除。[変更履歴](https://docs.aws.amazon.com/codecommit/latest/userguide/history.html) |
 | Azure | **Azure Cache for Redis** は廃止予定。Enterprise/Enterprise Flash: **2027-03-31**、Basic/Standard/Premium: **2028-09-30**。 | 新規比較は **Azure Managed Redis** を優先。 |
 | Google Cloud | 現行製品一覧に **Gemini Enterprise Agent Platform**、**Knowledge Catalog**、**Managed Service for Apache Spark**、**Managed Lustre**、**Spanner Omni** などが掲載。 | 旧名称や旧製品表の行をそのまま踏襲しない。 |
 | Google Cloud | **reCAPTCHA Enterprise** は **Google Cloud Fraud Defense** に改称（2026-07-16の変更履歴）。旧Datastoreの製品概要記載はFirestoreへ集約。 | 新しい名称を基本とし、元の用途が異なる場合は注意。 |
@@ -85,6 +86,9 @@
 - [Google Cloud: 公式変更履歴](https://cloud.google.com/legal-change-log)
 - [Google Cloud: 旧3社比較（2024-12-03更新）](https://docs.cloud.google.com/docs/get-started/aws-azure-gcp-service-comparison?hl=ja)
 - [AWS: Services in Sunset（廃止・終了予定）](https://docs.aws.amazon.com/general/latest/gr/sunset_services.html)
+- [AWS: 2026年サービス提供変更](https://aws.amazon.com/about-aws/whats-new/2026/06/aws-service-availability/)
+- [AWS: CodeCommit変更履歴](https://docs.aws.amazon.com/codecommit/latest/userguide/history.html)
+- [Google Cloud: Agent Platform後継説明](https://cloud.google.com/blog/products/ai-machine-learning/introducing-gemini-enterprise-agent-platform)
 - [AWS: 製品一覧](https://aws.amazon.com/products/)
 - [Microsoft Azure: 製品一覧](https://azure.microsoft.com/en-us/products/)
 - [Microsoft Learn: Azure Cache for Redis廃止FAQ](https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/retirement-faq)
