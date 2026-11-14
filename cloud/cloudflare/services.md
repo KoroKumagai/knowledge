@@ -49,7 +49,7 @@
 
 | サービス | 用途 |
 |---|---|
-| Email Routing | メールの受信転送 |
+| Email Routing | Email Serviceの受信・転送機能（送信用Email Sendingとは区別） |
 | Web Analytics | プライバシー配慮のWeb計測 |
 | Cloudflare Radar | ネットワーク/インターネット可視化 |
 | Cloudflare Zaraz | タグ管理 |
