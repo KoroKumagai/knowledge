@@ -26,7 +26,6 @@ Google独自のデータ・AI・地理情報・Firebaseなどの製品体系を�
 | Gemini Code Assist | 開発者向けAI |
 | Cloud TPU | Google独自MLアクセラレータ |
 
-
 ## アプリ・開発
 
 | サービス | 用途 |
