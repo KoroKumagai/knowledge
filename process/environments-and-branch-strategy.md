@@ -87,7 +87,7 @@ flowchart LR
     F["本番稼働版"] --> G["hotfix/*"]
     G --> H["専用CI・検証・緊急承認"]
     H --> I["本番"]
-    G --> J["mainへ修正を反映"]
+    I --> J["mainへ修正を反映"]
   end
 ```
 
@@ -133,7 +133,7 @@ Feature FlagをOFFにしても、共有DB、共通API、バッチ、副作用、
 
 - `main` への直接pushを制限し、PRレビュー・自動テスト・必要なチェックを通す。
 - CI/CDのトークンを最小権限にし、クラウド認証には長命キーよりOIDCなどの短命認証を優先する。[10]
-- GitHub.comでは**2026年7月15日より後に新規作成されたリポジトリ**のOIDC `sub` は、所有者・リポジトリの不変IDを含む形式が既定となった。**同日以降の名前変更・移管**も対象。以前からあるリポジトリは自動変更されず、明示的にオプトインできる。信頼ポリシーは実際のclaimを確認して設定する（GitHub Enterprise Serverは対象外）。[11]
+- GitHub.comでは**2026年7月15日以降に新規作成されたリポジトリ**のOIDC `sub` は、所有者・リポジトリの不変IDを含む形式が既定となった。**同日以降の名前変更・移管**も対象。以前からあるリポジトリは自動変更されず、明示的にオプトインできる。信頼ポリシーは実際のclaimを確認して設定する（GitHub Enterprise Serverは対象外）。[11]
 - デプロイの排他制御、権限分離、監視、切り戻し条件と責任者を決める。
 
 ## 8. 選定チェック
@@ -156,6 +156,6 @@ Feature FlagをOFFにしても、共有DB、共通API、バッチ、副作用、
 6. [GitHub Docs — Available rules for rulesets](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets)
 7. [GitHub Docs — Managing a merge queue](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue)
 8. [AWS Prescriptive Guidance — Automate dynamic pipeline management for deploying hotfix solutions](https://docs.aws.amazon.com/prescriptive-guidance/latest/patterns/automate-dynamic-pipeline-management-for-deploying-hotfix-solutions.html)
-9. [AWS Prescriptive Guidance — Releases in CI/CD processes](https://docs.aws.amazon.com/prescriptive-guidance/latest/strategy-cicd-litmus/releases.html)
+9. [Prisma Data Guide — Using the expand and contract pattern](https://www.prisma.io/dataguide/types/relational/expand-and-contract-pattern)
 10. [GitHub Docs — Secure use reference](https://docs.github.com/en/actions/reference/security/secure-use)
 11. [GitHub Docs — OpenID Connect reference](https://docs.github.com/en/actions/reference/security/oidc)
