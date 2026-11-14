@@ -112,8 +112,10 @@ check(mapping.get("aliases",{}).get("Amazon QuickSight")=="AWS Quick Sight",
       "AWS Quick Sight current brand alias missing")
 check(mapping.get("related_not_equivalent",{}).get("AWS Quick",{}).get("reference")=="AWS Quick Sight",
       "AWS Quick must not be equated with its Quick Sight BI capability")
-check(len(duplicates)>=2 and duplicate["Amazon SageMaker AI"]==2 and
-      duplicate["AWS DevOps Agent"]==2, "Unexpected product duplicate display-name baseline")
+for display_name, repeat_count in duplicates.items():
+    check(display_name in overview or display_name in product_md,
+          "Duplicated marketing display name not documented: "+display_name)
+    check(repeat_count>=2, "Duplicate count inconsistent")
 
 if errors:
     for e in errors:
