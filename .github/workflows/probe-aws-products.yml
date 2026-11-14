@@ -16,40 +16,19 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Install Chromium for source discovery
+      - name: Inspect AWS official Products API totals and pagination
         run: |
-          python -m pip install playwright
-          python -m playwright install chromium
-      - name: Inspect official AWS Products component network
-        run: |
+          python -m pip install requests
           python - <<'PY'
-          import re
-          from playwright.sync_api import sync_playwright
-          urls=[]
-          def record(response):
-              url=response.url
-              if any(k in url.lower() for k in ("directory","search","api/","products","cards","graphql","query")):
-                  ct=response.headers.get("content-type","")
-                  urls.append((response.status,ct,url))
-                  print("NET",response.status,ct[:65],url[:310])
-                  if any(k in ct for k in ("json","graphql")) and len(urls)<80:
-                      try:
-                          obj=response.json()
-                          if isinstance(obj,dict):
-                              print("NET_JSON_KEYS",list(obj)[:22])
-                              print("NET_JSON_PREVIEW",repr(str(obj)[:650]))
-                      except Exception: pass
-          with sync_playwright() as p:
-              browser=p.chromium.launch(headless=True,args=["--no-sandbox"])
-              page=browser.new_page(viewport={"width":1440,"height":900},locale="en-US")
-              page.on("response",record)
-              page.goto("https://aws.amazon.com/products/?nc2=h_prod",wait_until="domcontentloaded",timeout=55000)
-              page.wait_for_timeout(15000)
-              print("TITLE",page.title())
-              print("BODY TEXT START",repr(page.locator("body").inner_text()[:1100]))
-              print("DISPLAYING",re.findall(r"Displaying[^\\n]{0,110}",page.locator("body").inner_text())[:8])
-              print("BUTTONS",page.get_by_role("button").all_text_contents()[:45])
-              print("INPUTS",page.locator("input").evaluate_all("(els)=>els.map(x=>[x.placeholder,x.id,x.type])")[:15])
-              print("NETWORK MATCHES",len(urls))
-              browser.close()
+          import requests
+          url="https://aws.amazon.com/api/dirs/items/search"
+          base={"item.directoryId":"products-cards-interactive-aws-products-ams","item.locale":"en_US","tags.id":"GLOBAL#local-tags-aws-products-type#service","sort_by":"item.additionalFields.title","sort_order":"asc"}
+          for size in (1,15,100,500):
+              r=requests.get(url,params={**base,"size":size},headers={"User-Agent":"Mozilla/5.0","Accept":"application/json"},timeout=40)
+              print("SAMPLE",size,r.status_code,"BYTES",len(r.content),"URL",r.url[:270])
+              r.raise_for_status()
+              obj=r.json()
+              print("META",repr(obj.get("metadata"))[:3500])
+              items=obj.get("items",[])
+              print("ITEMCOUNT",len(items),"FIRST",repr(items[0] if items else None)[:1800],"LAST",repr(items[-1] if items else None)[:1100])
           PY
