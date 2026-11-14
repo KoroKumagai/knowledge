@@ -40,7 +40,7 @@ check(len(product_names) == len(set(product_names)), "Duplicate marketing produc
 check(len(product_names) == 67, "Expected 67 marketing products in frozen snapshot")
 check("公式Products67件" in root_index, "Global README marketing count mismatch")
 check("195エントリ" in index and "67項目" in index, "Cloudflare README count mismatch")
-check("全件検証は未完了" in index, "GA/region audit limitation must remain explicit")
+check("網羅的検証は未完了" in index, "GA/region audit limitation must remain explicit")
 
 # Visible/hidden are documentation flags and must never be conflated with GA.
 check("Docs非表示エントリ:" in catalog, "Missing docs visibility tracking")
