@@ -6,6 +6,7 @@
 **分類:** 同名＝名称一致（サービス同等・GAの証明ではない）、確認済み別名＝明示的な名称の対応、関連・別粒度＝関連はあるが非同等、目録外・未対応＝対応先未確定。
 理由欄は例外事項のみ記載します。原本のカードIDは[全件一覧](products.md)と[取得データ](products-source.json)で確認できます。
 同名の別カードはその行だけIDを併記します。
+この差分表でも**Maintenance・Sunset・Full Shutdownの本体ステータス**を表示します。関連サービスの状態は本体と区別して記載します。
 
 ## 照合サマリー
 
@@ -30,9 +31,9 @@
 | [Amazon Braket](https://aws.amazon.com/braket/?did=ap_card&trk=ap_card) | 確認済み別名 | [Braket](https://docs.aws.amazon.com/general/latest/gr/braket.html) | — |
 | [Amazon Chime](https://aws.amazon.com/chime/?did=ap_card&trk=ap_card) | 同名 | [Amazon Chime](https://docs.aws.amazon.com/general/latest/gr/chime.html) | Full Shutdown済み（2026-02-20） |
 | [Amazon CloudFront](https://aws.amazon.com/cloudfront/?did=ap_card&trk=ap_card) | 確認済み別名 | [CloudFront](https://docs.aws.amazon.com/general/latest/gr/cf_region.html) | — |
-| [Amazon CloudSearch](https://aws.amazon.com/cloudsearch/?did=ap_card&trk=ap_card) | 同名 | [Amazon CloudSearch](https://docs.aws.amazon.com/general/latest/gr/cloudsearch.html) | — |
+| [Amazon CloudSearch](https://aws.amazon.com/cloudsearch/?did=ap_card&trk=ap_card) | 同名 | [Amazon CloudSearch](https://docs.aws.amazon.com/general/latest/gr/cloudsearch.html) | Maintenance（新規利用に制限） |
 | [Amazon CloudWatch](https://aws.amazon.com/cloudwatch/?did=ap_card&trk=ap_card) | 確認済み別名 | [CloudWatch](https://docs.aws.amazon.com/general/latest/gr/cw_region.html) | — |
-| [Amazon CodeCatalyst](https://aws.amazon.com/codecatalyst/?did=ap_card&trk=ap_card) | 同名 | [Amazon CodeCatalyst](https://docs.aws.amazon.com/general/latest/gr/codecatalyst.html) | — |
+| [Amazon CodeCatalyst](https://aws.amazon.com/codecatalyst/?did=ap_card&trk=ap_card) | 同名 | [Amazon CodeCatalyst](https://docs.aws.amazon.com/general/latest/gr/codecatalyst.html) | Maintenance（新規利用に制限） |
 | [Amazon CodeGuru](https://aws.amazon.com/codeguru/?did=ap_card&trk=ap_card) | 関連・別粒度（非同等） | [CodeGuru Reviewer](https://docs.aws.amazon.com/general/latest/gr/codeguru-reviewer.html) | CodeGuruは複数機能を含む製品群。Reviewerとは完全に同等でない |
 | [Amazon Cognito](https://aws.amazon.com/cognito/?did=ap_card&trk=ap_card) | 同名 | [Amazon Cognito](https://docs.aws.amazon.com/general/latest/gr/cognito.html) | — |
 | [Amazon Comprehend](https://aws.amazon.com/comprehend/?did=ap_card&trk=ap_card) | 同名 | [Amazon Comprehend](https://docs.aws.amazon.com/general/latest/gr/comprehend.html) | — |
@@ -59,15 +60,15 @@
 | [Amazon EMR](https://aws.amazon.com/emr/?did=ap_card&trk=ap_card) | 同名 | [Amazon EMR](https://docs.aws.amazon.com/general/latest/gr/emr.html) | — |
 | [Amazon EventBridge](https://aws.amazon.com/eventbridge/?did=ap_card&trk=ap_card) | 確認済み別名 | [EventBridge](https://docs.aws.amazon.com/general/latest/gr/ev.html) | — |
 | [Amazon FinSpace](https://aws.amazon.com/finspace/?did=ap_card&trk=ap_card) | 確認済み別名 | [FinSpace](https://docs.aws.amazon.com/general/latest/gr/finspace.html) | Full Shutdown済み（2026-10-07） |
-| [Amazon Forecast](https://aws.amazon.com/forecast/?did=ap_card&trk=ap_card) | 確認済み別名 | [Forecast](https://docs.aws.amazon.com/general/latest/gr/forecast.html) | — |
-| [Amazon Fraud Detector](https://aws.amazon.com/fraud-detector/?did=ap_card&trk=ap_card) | 同名 | [Amazon Fraud Detector](https://docs.aws.amazon.com/general/latest/gr/fraud-detector.html) | — |
+| [Amazon Forecast](https://aws.amazon.com/forecast/?did=ap_card&trk=ap_card) | 確認済み別名 | [Forecast](https://docs.aws.amazon.com/general/latest/gr/forecast.html) | Maintenance（新規利用に制限） |
+| [Amazon Fraud Detector](https://aws.amazon.com/fraud-detector/?did=ap_card&trk=ap_card) | 同名 | [Amazon Fraud Detector](https://docs.aws.amazon.com/general/latest/gr/fraud-detector.html) | Maintenance（新規利用に制限） |
 | [Amazon FSx](https://aws.amazon.com/fsx/?did=ap_card&trk=ap_card) | 同名 | [Amazon FSx](https://docs.aws.amazon.com/general/latest/gr/fsxn.html) | — |
 | [Amazon GameLift Servers](https://aws.amazon.com/gamelift/?did=ap_card&trk=ap_card) | 同名 | [Amazon GameLift Servers](https://docs.aws.amazon.com/general/latest/gr/gamelift.html) | — |
 | [Amazon GuardDuty](https://aws.amazon.com/guardduty/?did=ap_card&trk=ap_card) | 確認済み別名 | [GuardDuty](https://docs.aws.amazon.com/general/latest/gr/guardduty.html) | — |
 | [Amazon HealthLake](https://aws.amazon.com/healthlake/?did=ap_card&trk=ap_card) | 確認済み別名 | [HealthLake](https://docs.aws.amazon.com/general/latest/gr/Amazon-HealthLake.html) | — |
 | [Amazon Inspector](https://aws.amazon.com/inspector/?did=ap_card&trk=ap_card) | 同名 | [Amazon Inspector](https://docs.aws.amazon.com/general/latest/gr/inspector2.html) | — |
 | [Amazon Interactive Video Service](https://aws.amazon.com/ivs/?did=ap_card&trk=ap_card) | 確認済み別名 | [Amazon IVS](https://docs.aws.amazon.com/general/latest/gr/ivs.html) | — |
-| [Amazon Kendra](https://aws.amazon.com/kendra/?did=ap_card&trk=ap_card) | 同名 | [Amazon Kendra](https://docs.aws.amazon.com/general/latest/gr/kendra.html) | — |
+| [Amazon Kendra](https://aws.amazon.com/kendra/?did=ap_card&trk=ap_card) | 同名 | [Amazon Kendra](https://docs.aws.amazon.com/general/latest/gr/kendra.html) | Maintenance（新規利用に制限） |
 | [Amazon Keyspaces (for Apache Cassandra)](https://aws.amazon.com/keyspaces/?did=ap_card&trk=ap_card) | 確認済み別名 | [Amazon Keyspaces](https://docs.aws.amazon.com/general/latest/gr/keyspaces.html) | — |
 | [Amazon Kinesis](https://aws.amazon.com/kinesis/?did=ap_card&trk=ap_card) | 関連・別粒度（非同等） | [Kinesis Data Streams](https://docs.aws.amazon.com/general/latest/gr/ak.html) | Kinesisはビデオ・データストリーム等を含む製品群 |
 | [Amazon Kinesis Video Streams](https://aws.amazon.com/kinesis/video-streams/?did=ap_card&trk=ap_card) | 確認済み別名 | [Kinesis Video Streams](https://docs.aws.amazon.com/general/latest/gr/akv.html) | — |
@@ -78,13 +79,13 @@
 | [Amazon Lookout for Metrics](https://aws.amazon.com/lookout-for-metrics/?did=ap_card&trk=ap_card) | 目録外・未対応 | — | Full Shutdown済み（2025-10-10） |
 | [Amazon Lookout for Vision](https://aws.amazon.com/lookout-for-vision/?did=ap_card&trk=ap_card) | 目録外・未対応 | — | Full Shutdown済み（2025-10-31） |
 | [Amazon Macie](https://aws.amazon.com/macie/?did=ap_card&trk=ap_card) | 確認済み別名 | [Macie](https://docs.aws.amazon.com/general/latest/gr/macie.html) | — |
-| [Amazon Managed Blockchain](https://aws.amazon.com/managed-blockchain/?did=ap_card&trk=ap_card) | 確認済み別名 | [Managed Blockchain](https://docs.aws.amazon.com/general/latest/gr/managedblockchain.html) | — |
+| [Amazon Managed Blockchain](https://aws.amazon.com/managed-blockchain/?did=ap_card&trk=ap_card) | 確認済み別名 | [Managed Blockchain](https://docs.aws.amazon.com/general/latest/gr/managedblockchain.html) | Sunset（2027-09-29終了予定） |
 | [Amazon Managed Grafana](https://aws.amazon.com/grafana/?did=ap_card&trk=ap_card) | 同名 | [Amazon Managed Grafana](https://docs.aws.amazon.com/general/latest/gr/grafana-service.html) | — |
 | [Amazon Managed Service for Prometheus](https://aws.amazon.com/prometheus/?did=ap_card&trk=ap_card) | 同名 | [Amazon Managed Service for Prometheus](https://docs.aws.amazon.com/general/latest/gr/prometheus-service.html) | — |
 | [Amazon Managed Streaming for Apache Kafka (MSK)](https://aws.amazon.com/msk/?did=ap_card&trk=ap_card) | 確認済み別名 | [Amazon MSK](https://docs.aws.amazon.com/general/latest/gr/msk.html) | — |
 | [Amazon Managed Workflows for Apache Airflow (MWAA)](https://aws.amazon.com/managed-workflows-for-apache-airflow/?did=ap_card&trk=ap_card) | 確認済み別名 | [Amazon MWAA](https://docs.aws.amazon.com/general/latest/gr/mwaa.html) | — |
 | [Amazon MemoryDB](https://aws.amazon.com/memorydb/?did=ap_card&trk=ap_card) | 同名 | [Amazon MemoryDB](https://docs.aws.amazon.com/general/latest/gr/memorydb-service.html) | — |
-| [Amazon Monitron](https://aws.amazon.com/monitron/?did=ap_card&trk=ap_card) | 同名 | [Amazon Monitron](https://docs.aws.amazon.com/general/latest/gr/monitron.html) | — |
+| [Amazon Monitron](https://aws.amazon.com/monitron/?did=ap_card&trk=ap_card) | 同名 | [Amazon Monitron](https://docs.aws.amazon.com/general/latest/gr/monitron.html) | Maintenance（新規利用に制限） |
 | [Amazon MQ](https://aws.amazon.com/amazon-mq/?did=ap_card&trk=ap_card) | 同名 | [Amazon MQ](https://docs.aws.amazon.com/general/latest/gr/amazon-mq.html) | — |
 | [Amazon Neptune](https://aws.amazon.com/neptune/?did=ap_card&trk=ap_card) | 確認済み別名 | [Neptune](https://docs.aws.amazon.com/general/latest/gr/neptune.html) | — |
 | [Amazon Nimble Studio](https://aws.amazon.com/nimble-studio/?did=ap_card&trk=ap_card) | 目録外・未対応 | — | Full Shutdown済み（2024-06-30） |
@@ -116,21 +117,21 @@
 | [Amazon Translate](https://aws.amazon.com/translate/?did=ap_card&trk=ap_card) | 同名 | [Amazon Translate](https://docs.aws.amazon.com/general/latest/gr/translate-service.html) | — |
 | [Amazon Verified Permissions](https://aws.amazon.com/verified-permissions/?did=ap_card&trk=ap_card) | 確認済み別名 | [Verified Permissions](https://docs.aws.amazon.com/general/latest/gr/verifiedpermissions.html) | — |
 | [Amazon VPC](https://aws.amazon.com/vpc/?did=ap_card&trk=ap_card) | 同名 | [Amazon VPC](https://docs.aws.amazon.com/general/latest/gr/vpc-service.html) | — |
-| [Amazon WorkMail](https://aws.amazon.com/workmail/?did=ap_card&trk=ap_card) | 同名 | [Amazon WorkMail](https://docs.aws.amazon.com/general/latest/gr/workmail.html) | — |
+| [Amazon WorkMail](https://aws.amazon.com/workmail/?did=ap_card&trk=ap_card) | 同名 | [Amazon WorkMail](https://docs.aws.amazon.com/general/latest/gr/workmail.html) | Sunset（2027-03-31終了予定） |
 | [Amazon WorkSpaces Applications](https://aws.amazon.com/appstream2/?did=ap_card&trk=ap_card) | 確認済み別名 | [WorkSpaces Applications](https://docs.aws.amazon.com/general/latest/gr/aas2.html) | — |
 | [Amazon WorkSpaces Family](https://aws.amazon.com/workspaces/?did=ap_card&trk=ap_card) | 関連・別粒度（非同等） | [Amazon WorkSpaces](https://docs.aws.amazon.com/general/latest/gr/wsp.html) | WorkSpacesの複数製品群・クライアントをまとめた名称 |
-| [Amazon WorkSpaces Thin Client](https://aws.amazon.com/workspaces/thin-client/?did=ap_card&trk=ap_card) | 目録外・未対応 | — | — |
+| [Amazon WorkSpaces Thin Client](https://aws.amazon.com/workspaces/thin-client/?did=ap_card&trk=ap_card) | 目録外・未対応 | — | Sunset（2027-03-31終了予定） |
 | [AWS Amplify](https://aws.amazon.com/amplify/?did=ap_card&trk=ap_card) | 確認済み別名 | [Amplify](https://docs.aws.amazon.com/general/latest/gr/amplify.html) | — |
 | [AWS App Mesh](https://aws.amazon.com/app-mesh/?did=ap_card&trk=ap_card) | 確認済み別名 | [App Mesh](https://docs.aws.amazon.com/general/latest/gr/appmesh.html) | Full Shutdown済み（2026-09-30） |
-| [AWS App Runner](https://aws.amazon.com/apprunner/?did=ap_card&trk=ap_card) | 確認済み別名 | [App Runner](https://docs.aws.amazon.com/general/latest/gr/apprunner.html) | — |
+| [AWS App Runner](https://aws.amazon.com/apprunner/?did=ap_card&trk=ap_card) | 確認済み別名 | [App Runner](https://docs.aws.amazon.com/general/latest/gr/apprunner.html) | Maintenance（新規利用に制限） |
 | [AWS App Studio](https://aws.amazon.com/appstudio/) | 同名 | [AWS App Studio](https://docs.aws.amazon.com/general/latest/gr/appstudio.html) | — |
 | [AWS App2Container](https://aws.amazon.com/app2container/?did=ap_card&trk=ap_card) | 目録外・未対応 | — | — |
 | [AWS AppFabric](https://aws.amazon.com/appfabric/) | 確認済み別名 | [AppFabric](https://docs.aws.amazon.com/general/latest/gr/appfabric.html) | — |
-| [AWS Application Discovery Service](https://aws.amazon.com/application-discovery/?did=ap_card&trk=ap_card) | 確認済み別名 | [Application Discovery Service](https://docs.aws.amazon.com/general/latest/gr/appdiscserv.html) | — |
+| [AWS Application Discovery Service](https://aws.amazon.com/application-discovery/?did=ap_card&trk=ap_card) | 確認済み別名 | [Application Discovery Service](https://docs.aws.amazon.com/general/latest/gr/appdiscserv.html) | Maintenance（新規利用に制限） |
 | [AWS Application Migration Service (MGN)](https://aws.amazon.com/application-migration-service/?did=ap_card&trk=ap_card) | 確認済み別名 | [MGN](https://docs.aws.amazon.com/general/latest/gr/mgn.html) | — |
 | [AWS AppSync](https://aws.amazon.com/appsync/?did=ap_card&trk=ap_card) | 同名 | [AWS AppSync](https://docs.aws.amazon.com/general/latest/gr/appsync.html) | — |
 | [AWS Artifact](https://aws.amazon.com/artifact/?did=ap_card&trk=ap_card) | 目録外・未対応 | — | — |
-| [AWS Audit Manager](https://aws.amazon.com/audit-manager/?did=ap_card&trk=ap_card) | 確認済み別名 | [Audit Manager](https://docs.aws.amazon.com/general/latest/gr/audit-manager.html) | — |
+| [AWS Audit Manager](https://aws.amazon.com/audit-manager/?did=ap_card&trk=ap_card) | 確認済み別名 | [Audit Manager](https://docs.aws.amazon.com/general/latest/gr/audit-manager.html) | Maintenance（新規利用に制限） |
 | [AWS Auto Scaling](https://aws.amazon.com/autoscaling/?did=ap_card&trk=ap_card) | 同名 | [AWS Auto Scaling](https://docs.aws.amazon.com/general/latest/gr/autoscaling_region.html) | — |
 | [AWS Backup](https://aws.amazon.com/backup/?did=ap_card&trk=ap_card) | 同名 | [AWS Backup](https://docs.aws.amazon.com/general/latest/gr/bk.html) | — |
 | [AWS Batch](https://aws.amazon.com/batch/?did=ap_card&trk=ap_card) | 同名 | [AWS Batch](https://docs.aws.amazon.com/general/latest/gr/batch.html) | — |
@@ -140,7 +141,7 @@
 | [AWS Cloud Development Kit (CDK)](https://aws.amazon.com/cdk/?did=ap_card&trk=ap_card) | 関連・別粒度（非同等） | [CloudFormation](https://docs.aws.amazon.com/general/latest/gr/cfn.html) | CDKはIaC構成ツール。CloudFormationはリソース管理基盤 |
 | [AWS Cloud Map](https://aws.amazon.com/cloud-map/?did=ap_card&trk=ap_card) | 同名 | [AWS Cloud Map](https://docs.aws.amazon.com/general/latest/gr/cloud_map.html) | — |
 | [AWS Cloud WAN](https://aws.amazon.com/cloud-wan/?did=ap_card&trk=ap_card) | 確認済み別名 | [Cloud WAN](https://docs.aws.amazon.com/general/latest/gr/cloudwan.html) | — |
-| [AWS Cloud9](https://aws.amazon.com/cloud9/?did=ap_card&trk=ap_card) | 同名 | [AWS Cloud9](https://docs.aws.amazon.com/general/latest/gr/cloud9.html) | — |
+| [AWS Cloud9](https://aws.amazon.com/cloud9/?did=ap_card&trk=ap_card) | 同名 | [AWS Cloud9](https://docs.aws.amazon.com/general/latest/gr/cloud9.html) | Maintenance（新規利用に制限） |
 | [AWS CloudFormation](https://aws.amazon.com/cloudformation/?did=ap_card&trk=ap_card) | 確認済み別名 | [CloudFormation](https://docs.aws.amazon.com/general/latest/gr/cfn.html) | — |
 | [AWS CloudHSM](https://aws.amazon.com/cloudhsm/?did=ap_card&trk=ap_card) | 同名 | [AWS CloudHSM](https://docs.aws.amazon.com/general/latest/gr/cloudhsm.html) | — |
 | [AWS CloudTrail](https://aws.amazon.com/cloudtrail/?did=ap_card&trk=ap_card) | 確認済み別名 | [CloudTrail](https://docs.aws.amazon.com/general/latest/gr/ct.html) | — |
@@ -193,12 +194,12 @@
 | [AWS IAM Identity Center](https://aws.amazon.com/iam/identity-center/) | 確認済み別名 | [IAM Identity Center](https://docs.aws.amazon.com/general/latest/gr/sso.html) | — |
 | [AWS Identity and Access Management](https://aws.amazon.com/iam/?did=ap_card&trk=ap_card) | 確認済み別名 | [IAM](https://docs.aws.amazon.com/general/latest/gr/iam-service.html) | — |
 | [AWS Inferentia](https://aws.amazon.com/machine-learning/inferentia/?did=ap_card&trk=ap_card) | 関連・別粒度（非同等） | [Amazon EC2](https://docs.aws.amazon.com/general/latest/gr/ec2-service.html) | EC2 Inf系インスタンスで利用する推論用チップ。EC2サービスそのものと同等ではない |
-| [AWS Infrastructure Composer](https://aws.amazon.com/infrastructure-composer/?did=ap_card&trk=ap_card) | 関連・別粒度（非同等） | [CloudFormation](https://docs.aws.amazon.com/general/latest/gr/cfn.html) | 構成可視化・編集ツールとIaCリソース管理サービスは別 |
-| [AWS IoT Button](https://aws.amazon.com/iotbutton/?did=ap_card&trk=ap_card) | 目録外・未対応 | — | AWS IoT 1-Click（関連サービス）はFull Shutdown（終了済み）（2025-01-29）。製品本体の提供状態とは区別 |
+| [AWS Infrastructure Composer](https://aws.amazon.com/infrastructure-composer/?did=ap_card&trk=ap_card) | 関連・別粒度（非同等） | [CloudFormation](https://docs.aws.amazon.com/general/latest/gr/cfn.html) | 構成可視化・編集ツールとIaCリソース管理サービスは別。Sunset（2027-09-29終了予定） |
+| [AWS IoT Button](https://aws.amazon.com/iotbutton/?did=ap_card&trk=ap_card) | 目録外・未対応 | — | AWS IoT 1-Click（関連サービス）はFull Shutdown済み（2025-01-29）。製品本体の提供状態とは区別 |
 | [AWS IoT Core](https://aws.amazon.com/iot-core/?did=ap_card&trk=ap_card) | 同名 | [AWS IoT Core](https://docs.aws.amazon.com/general/latest/gr/iot-core.html) | — |
 | [AWS IoT Device Defender](https://aws.amazon.com/iot-device-defender/?did=ap_card&trk=ap_card) | 同名 | [AWS IoT Device Defender](https://docs.aws.amazon.com/general/latest/gr/iot_device_defender.html) | — |
 | [AWS IoT Device Management](https://aws.amazon.com/iot-device-management/?did=ap_card&trk=ap_card) | 同名 | [AWS IoT Device Management](https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html) | — |
-| [AWS IoT FleetWise](https://aws.amazon.com/iot-fleetwise/?did=ap_card&trk=ap_card) | 同名 | [AWS IoT FleetWise](https://docs.aws.amazon.com/general/latest/gr/iotfleetwise.html) | — |
+| [AWS IoT FleetWise](https://aws.amazon.com/iot-fleetwise/?did=ap_card&trk=ap_card) | 同名 | [AWS IoT FleetWise](https://docs.aws.amazon.com/general/latest/gr/iotfleetwise.html) | Maintenance（新規利用に制限） |
 | [AWS IoT Greengrass](https://aws.amazon.com/greengrass/?did=ap_card&trk=ap_card) | 関連・別粒度（非同等） | [AWS IoT Greengrass V2](https://docs.aws.amazon.com/general/latest/gr/greengrassv2.html) | Greengrass製品群とV2のAPI参照は粒度が異なる |
 | [AWS IoT SiteWise](https://aws.amazon.com/iot-sitewise/?did=ap_card&trk=ap_card) | 同名 | [AWS IoT SiteWise](https://docs.aws.amazon.com/general/latest/gr/iot-sitewise.html) | — |
 | [AWS IoT TwinMaker](https://aws.amazon.com/iot-twinmaker/?did=ap_card&trk=ap_card) | 同名 | [AWS IoT TwinMaker](https://docs.aws.amazon.com/general/latest/gr/iot-twinmaker.html) | — |
@@ -212,7 +213,7 @@
 | [AWS Managed Services](https://aws.amazon.com/managed-services/?did=ap_card&trk=ap_card) | 同名 | [AWS Managed Services](https://docs.aws.amazon.com/general/latest/gr/managedservices.html) | — |
 | [AWS Management Console](https://aws.amazon.com/console/?did=ap_card&trk=ap_card) | 同名 | [AWS Management Console](https://docs.aws.amazon.com/general/latest/gr/mgmt-console.html) | — |
 | [AWS Management Console Mobile Application](https://aws.amazon.com/console/mobile/?did=ap_card&trk=ap_card) | 関連・別粒度（非同等） | [AWS Management Console](https://docs.aws.amazon.com/general/latest/gr/mgmt-console.html) | クラウド管理画面のモバイルアプリであり同一エンドポイントではない |
-| [AWS Migration Hub](https://aws.amazon.com/migration-hub/?did=ap_card&trk=ap_card) | 確認済み別名 | [Migration Hub](https://docs.aws.amazon.com/general/latest/gr/migrationhubn.html) | — |
+| [AWS Migration Hub](https://aws.amazon.com/migration-hub/?did=ap_card&trk=ap_card) | 確認済み別名 | [Migration Hub](https://docs.aws.amazon.com/general/latest/gr/migrationhubn.html) | Maintenance（新規利用に制限） |
 | [AWS Network Firewall](https://aws.amazon.com/network-firewall/?did=ap_card&trk=ap_card) | 確認済み別名 | [Network Firewall](https://docs.aws.amazon.com/general/latest/gr/network-firewall.html) | — |
 | [AWS Organizations](https://aws.amazon.com/organizations/?did=ap_card&trk=ap_card) | 確認済み別名 | [Organizations](https://docs.aws.amazon.com/general/latest/gr/ao.html) | — |
 | [AWS Outposts](https://aws.amazon.com/outposts/?did=ap_card&trk=ap_card) | 同名 | [AWS Outposts](https://docs.aws.amazon.com/general/latest/gr/outposts_region.html) | — |
@@ -228,7 +229,7 @@
 | [AWS Security Hub](https://aws.amazon.com/security-hub/?did=ap_card&trk=ap_card) | 関連・別粒度（非同等） | [Security Hub CSPM](https://docs.aws.amazon.com/general/latest/gr/sechub.html) | Security Hubの統合機能群とCSPM機能は同じ粒度ではない |
 | [AWS Serverless Application Repository](https://aws.amazon.com/serverless/serverlessrepo/?did=ap_card&trk=ap_card) | 同名 | [AWS Serverless Application Repository](https://docs.aws.amazon.com/general/latest/gr/serverlessrepo.html) | — |
 | [AWS Service Catalog](https://aws.amazon.com/servicecatalog/?did=ap_card&trk=ap_card) | 確認済み別名 | [AWS Service Catalog endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/servicecatalog.html) | — |
-| [AWS Service Management Connector](https://aws.amazon.com/service-management-connector/?did=ap_card&trk=ap_card) | 目録外・未対応 | — | — |
+| [AWS Service Management Connector](https://aws.amazon.com/service-management-connector/?did=ap_card&trk=ap_card) | 目録外・未対応 | — | Sunset（2027-03-31終了予定） |
 | [AWS Shield](https://aws.amazon.com/shield/?did=ap_card&trk=ap_card) | 関連・別粒度（非同等） | [Shield Advanced](https://docs.aws.amazon.com/general/latest/gr/shield.html) | Shield Standardを含む製品群と有料のAdvancedは別 |
 | [AWS Snow Family](https://aws.amazon.com/snow/?did=ap_card&trk=ap_card) | 確認済み別名 | [Snow Family](https://docs.aws.amazon.com/general/latest/gr/snowball.html) | — |
 | [AWS Step Functions](https://aws.amazon.com/step-functions/?did=ap_card&trk=ap_card) | 確認済み別名 | [Step Functions](https://docs.aws.amazon.com/general/latest/gr/step-functions.html) | — |
