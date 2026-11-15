@@ -133,6 +133,9 @@ def render():
         raise ValueError("Legacy Amazon Glacier vaults must be classified as restricted")
     if phase(refs["Amazon Glacier"][1])!="Maintenance（公式台帳）":
         raise ValueError("Legacy Glacier General Reference must show Maintenance")
+    amazon_ml_kind=next(x["kind"] for x in reference if x["name"]=="Amazon ML")
+    if amazon_ml_kind!="終了予定・提供制限の製品":
+        raise ValueError("Amazon ML new-user freeze must be classified as restricted")
     kinesis_kind=next(x["kind"] for x in reference if x["name"]=="Kinesis Data Streams")
     if kinesis_kind!="独立サービス・専門サービス候補":
         raise ValueError("Kinesis Data Streams independent billable service classification regressed")
