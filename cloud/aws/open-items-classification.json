@@ -342,8 +342,8 @@
     },
     {
       "name": "DevOps Guru",
-      "kind": "詳細分類保留",
-      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+      "kind": "独立サービス・専門サービス候補",
+      "basis": "AWS公式General ReferenceのDevOps Guru参照。Sunsetは公式ライフサイクルに別記。提供中を意味しない"
     },
     {
       "name": "EC2 Image Builder",
