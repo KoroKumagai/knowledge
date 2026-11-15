@@ -74,6 +74,9 @@ def selftest_retirement():
                       ("App Mesh","reference"),
                       ("Amazon Quantum Ledger Database (QLDB)","product")):
         check_retired_service(name,names,aliases[kind])
+    # Negative cases: child-feature shutdown, alias use across Product/General
+    # Reference groups, and related-service shutdown (AWS IoT 1-Click is added to
+    # the shutdown set so that adding "AWS IoT Button" to lifecycle_aliases fails).
     for name,kind in (("Amazon Chime SDK","reference"),
                       ("Amazon Chime SDK SIP Media Application","reference"),
                       ("Amazon Chime SDK","product"),
@@ -85,7 +88,8 @@ def selftest_retirement():
         except ValueError:
             pass
         else:
-            raise AssertionError("Partial feature shutdown wrongly retires "+name)
+            raise AssertionError("Non-service-level shutdown wrongly retires "+name+
+                                 " (alias group: "+kind+")")
     # The real lifecycle table must contain both parent app and separate features.
     real=official_shutdown_names((AWS/"lifecycle.md").read_text(encoding="utf-8"))
     assert "Amazon Chime" in real
