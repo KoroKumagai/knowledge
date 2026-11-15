@@ -70,6 +70,43 @@
         "https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html"
       ],
       "notes": "AWS公式のFull Shutdown台帳に掲載。最新AWS WAFとは異なる旧製品。"
+    },
+    {
+      "type": "product",
+      "key": "aws-rtb-fabric",
+      "ga": "GA（2025-10-23確認）",
+      "tokyo": "サービス提供確認（2026-09-18公式発表）",
+      "osaka": "2026-09-18のAWS公式提供リージョン一覧に記載なし（最新状況要確認）",
+      "contract": "事前コミットメント不要（AWS公式発表）。詳細契約・利用条件は個別確認",
+      "sources": [
+        "https://aws.amazon.com/about-aws/whats-new/2025/10/aws-rtb-fabric-generally-available/",
+        "https://aws.amazon.com/about-aws/whats-new/2026/09/aws-rtb-fabric-configurable-availability-zone-affinity/"
+      ],
+      "notes": "公式GA発表と2026-09-18時点の6リージョン一覧。東京は列挙。大阪は列挙なしだが、不提供と断定せず要再確認。"
+    },
+    {
+      "type": "product",
+      "key": "nova-act",
+      "ga": "GA（2025-12-02公式発表）",
+      "tokyo": "未確認（2025-12-02 GA発表時は米国東部のみ）",
+      "osaka": "未確認（2025-12-02 GA発表時は米国東部のみ）",
+      "contract": "未確認",
+      "sources": [
+        "https://aws.amazon.com/about-aws/whats-new/2025/12/build-automate-production-ui-workflows-nova-act/"
+      ],
+      "notes": "GA時点で米国東部（バージニア北部）を提供。2026-11時点の東京・大阪や個別契約条件までは確定していない。"
+    },
+    {
+      "type": "product",
+      "key": "amazon-workspaces-thin-client",
+      "ga": "Sunset（2027-03-31終了予定）",
+      "tokyo": "対象地域・販売国の確認が必要（物理端末）",
+      "osaka": "対象地域・販売国の確認が必要（物理端末）",
+      "contract": "新規顧客受付停止。既存登録端末は終了日まで月額6米ドル/台（公式文書の開始日表記に差があるため要確認）",
+      "sources": [
+        "https://docs.aws.amazon.com/workspaces-thin-client/latest/ug/workspacesthinclient-end-of-support.html"
+      ],
+      "notes": "公式文書に2026-03-31と2026-04-20の新規受付停止日に関する表記差あり。物理端末の販売地域をAWSリージョン対応と同一視しない。"
     }
   ]
 }
