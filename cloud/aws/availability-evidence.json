@@ -123,14 +123,15 @@
       "ga": "Sunset（2027-03-31終了予定）",
       "tokyo": "対象地域・販売国の確認が必要（物理端末）",
       "osaka": "対象地域・販売国の確認が必要（物理端末）",
-      "contract": "新規顧客受付停止。既存登録端末は終了日まで月額6米ドル/台（公式文書の開始日表記に差があるため要確認）",
+      "contract": "新規顧客受付停止。既存登録デバイスの管理料・ハードウェア購入価格は公式料金ページを参照。販売はAmazon Business等、対象国・既存顧客向けの個別条件を要確認",
       "sources": [
-        "https://docs.aws.amazon.com/workspaces-thin-client/latest/ug/workspacesthinclient-end-of-support.html"
+        "https://docs.aws.amazon.com/workspaces-thin-client/latest/ug/workspacesthinclient-end-of-support.html",
+        "https://aws.amazon.com/workspaces/thin-client/pricing/"
       ],
-      "notes": "公式文書に2026-03-31と2026-04-20の新規受付停止日に関する表記差あり。物理端末の販売地域をAWSリージョン対応と同一視しない。",
+      "notes": "公式文書に2026-03-31と2026-04-20の新規受付停止日に関する表記差あり。物理端末の販売地域をAWSリージョン対応と同一視しない。 金額は台帳へ転記しない。販売経路はAWS公式料金ページでAmazon Businessを確認。",
       "verified_on": "2026-11-15",
       "scope": "記載する各値はリンク先の公式資料で明示的に確認できる範囲。未確認の次元はGA・新規契約可否を推定しない。",
-      "pricing_url": null
+      "pricing_url": "https://aws.amazon.com/workspaces/thin-client/pricing/"
     },
     {
       "type": "reference",
@@ -173,14 +174,14 @@
       "ga": "サービス運用を公式文書で確認（最新GA状態は未確認）",
       "tokyo": "APIエンドポイント掲載のみ（サービス提供の全機能は未確認）",
       "osaka": "APIエンドポイント掲載のみ（サービス提供の全機能は未確認）",
-      "contract": "データ処理量ベースの課金、最低利用料・初期設定費なし（2024年公式発表）。新規受付・販売チャネル等は未確認",
+      "contract": "公式料金ページで初期費用・事前コミットメントなしと明記。新規顧客受付・販売チャネル制限は別途未確認",
       "sources": [
         "https://aws.amazon.com/about-aws/whats-new/2024/02/amazon-data-firehose-formerly-kinesis-data-firehose/",
         "https://docs.aws.amazon.com/general/latest/gr/fh.html",
         "https://aws.amazon.com/firehose/pricing/"
       ],
       "pricing_url": "https://aws.amazon.com/firehose/pricing/",
-      "notes": "Amazon Kinesis Data Firehose→Amazon Data Firehoseの改称を公式2024-02-09発表で確認。東京/大阪は公式General Reference APIエンドポイントに掲載（新規契約可否・各ソース連携の提供保証ではない）。",
+      "notes": "Amazon Kinesis Data Firehose→Amazon Data Firehoseの改称を公式2024-02-09発表で確認。東京/大阪は公式General Reference APIエンドポイントに掲載（新規契約可否・各ソース連携の提供保証ではない）。 AWS公式料金ページにno upfront commitments明記。",
       "verified_on": "2026-11-15",
       "scope": "2026-11-15時点で閲覧したAWS公式の記述。地域はサービスとエンドポイントを区別。契約条件は新規受付、プラン、事前コミットメント、販売チャネルのみ対象。"
     },
@@ -239,13 +240,14 @@
       "ga": "GA・現行の新規利用条件は未確認（古いFAQでは利用開始案内あり）",
       "tokyo": "旧FAQでは東京での利用を記載。2026-11の新規提供は未確認",
       "osaka": "確認したFAQに大阪の記載なし。未提供とは判断しない",
-      "contract": "旧FAQではセットアップ料・事前コミットメント不要と記載。現行新規顧客受付は未確認",
+      "contract": "公式Pricingは最低利用料なし、FAQは事前コミットメントなしと説明。2026年現在の新規アカウント受付は未確認",
       "sources": [
         "https://aws.amazon.com/simpledb/faqs/",
-        "https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/Endpoints.html"
+        "https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/Endpoints.html",
+        "https://aws.amazon.com/simpledb/pricing/"
       ],
       "pricing_url": "https://aws.amazon.com/simpledb/pricing/",
-      "notes": "AWS公式FAQは『AWSアカウントがあれば利用開始可能』と記すが更新日不明で2026年の新規顧客受付保証にはならない。終了・受付停止を示す明示的な公式告知は今回の確認範囲で見つかっていない。",
+      "notes": "AWS公式FAQは『AWSアカウントがあれば利用開始可能』と記すが更新日不明で2026年の新規顧客受付保証にはならない。終了・受付停止を示す明示的な公式告知は今回の確認範囲で見つかっていない。 料金ページは最低利用料なしを明記。FAQにno commitmentsとあるが将来保証ではない。",
       "verified_on": "2026-11-15",
       "scope": "2026-11-15時点で閲覧したAWS公式の記述。地域はサービスとエンドポイントを区別。契約条件は新規受付、プラン、事前コミットメント、販売チャネルのみ対象。"
     }
