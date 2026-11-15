@@ -73,5 +73,7 @@ jobs:
         run: python scripts/render_aws_open_items.py --check
       - name: Validate all AWS availability decisions and source freshness
         run: python scripts/check_aws_audit_decisions.py --check
+      - name: Verify expired evidence warns without failing CI
+        run: python scripts/check_aws_audit_decisions.py --as-of 2027-06-01
       - name: Test SSM public parameter pagination without AWS credentials
         run: python scripts/probe_aws_ssm_regions.py --self-test
