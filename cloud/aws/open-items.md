@@ -26,11 +26,11 @@
 | ツール・SDK・配布物 | 8 |
 | ポータル・移行支援サービス | 2 |
 | 共通管理・基盤API候補 | 12 |
-| 提供終了の旧製品 | 10 |
 | 業務アプリ・専門マネージドサービス候補 | 7 |
-| 独立サービス・専門サービス候補 | 30 |
+| 終了予定・提供制限の製品 | 4 |
 | 端末・アプライアンス | 3 |
-| 終了予定・提供制限の製品 | 3 |
+| 提供終了の旧製品 | 10 |
+| 独立サービス・専門サービス候補 | 29 |
 
 ## Products側の未対応33カード
 
@@ -42,36 +42,36 @@ GA・リージョン・契約条件は下段の検証済み記録だけに示し
 | Amazon Nova (ID: amazon-nova) | AIモデル・モデル構築/操作機能 | 本体の該当記載なし（GA未確認） | [AWS Products](https://aws.amazon.com/nova/?hp=fa&trk=c6553eb9-60f2-436a-b294-162bda8a1ebb) |
 | Nova Act (ID: nova-act) | AIモデル・モデル構築/操作機能 | 本体の該当記載なし（GA未確認） | [AWS Products](https://aws.amazon.com/nova/act/) |
 | Nova Forge (ID: nova-forge) | AIモデル・モデル構築/操作機能 | 本体の該当記載なし（GA未確認） | [AWS Products](https://aws.amazon.com/nova/forge/) |
+| Amazon Corretto (ID: amazon-corretto) | ツール・SDK・配布物 | 本体の該当記載なし（GA未確認） | [AWS Products](https://aws.amazon.com/corretto/?did=ap_card&trk=ap_card) |
 | AWS App2Container (ID: aws-app2container) | ツール・SDK・配布物 | 本体の該当記載なし（GA未確認） | [AWS Products](https://aws.amazon.com/app2container/?did=ap_card&trk=ap_card) |
 | AWS Command Line Interface (CLI) (ID: aws-command-line-interface) | ツール・SDK・配布物 | 本体の該当記載なし（GA未確認） | [AWS Products](https://aws.amazon.com/cli/?did=ap_card&trk=ap_card) |
 | AWS Copilot (ID: aws-copilot) | ツール・SDK・配布物 | 本体の該当記載なし（GA未確認） | [AWS Products](https://aws.amazon.com/containers/copilot/?did=ap_card&trk=ap_card) |
 | AWS Deep Learning Containers (ID: aws-deep-learning-containers) | ツール・SDK・配布物 | 本体の該当記載なし（GA未確認） | [AWS Products](https://aws.amazon.com/machine-learning/containers/?did=ap_card&trk=ap_card) |
 | AWS Distro for OpenTelemetry (ID: aws-distro-open-telemetry) | ツール・SDK・配布物 | 本体の該当記載なし（GA未確認） | [AWS Products](https://aws.amazon.com/otel/?did=ap_card&trk=ap_card) |
 | AWS Tools and SDKs (ID: aws-tools-and-sdks) | ツール・SDK・配布物 | 本体の該当記載なし（GA未確認） | [AWS Products](https://aws.amazon.com/getting-started/tools-sdks/?did=ap_card&trk=ap_card) |
-| Amazon Corretto (ID: amazon-corretto) | ツール・SDK・配布物 | 本体の該当記載なし（GA未確認） | [AWS Products](https://aws.amazon.com/corretto/?did=ap_card&trk=ap_card) |
 | Kiro (ID: aws-kiro) | ツール・SDK・配布物 | 本体の該当記載なし（GA未確認） | [AWS Products](https://kiro.dev/) |
 | AWS Artifact (ID: aws-artifact) | ポータル・移行支援サービス | 本体の該当記載なし（GA未確認） | [AWS Products](https://aws.amazon.com/artifact/?did=ap_card&trk=ap_card) |
 | Migration Evaluator (formerly TSO Logic) (ID: migration-evaluator-formerly-tso-logic) | ポータル・移行支援サービス | 本体の該当記載なし（GA未確認） | [AWS Products](https://aws.amazon.com/migration-evaluator/?did=ap_card&trk=ap_card) |
+| Amazon Connect Decisions (ID: amazon-connect-decisions) | 業務アプリ・専門マネージドサービス候補 | 本体の該当記載なし（GA未確認） | [AWS Products](https://aws.amazon.com/products/connect/decisions/) |
+| Amazon Connect Talent (ID: amazon-connect-talent) | 業務アプリ・専門マネージドサービス候補 | 本体の該当記載なし（GA未確認） | [AWS Products](https://aws.amazon.com/products/connect/talent/) |
 | AWS DevOps Agent (ID: aws-devops-agent-(preview)) | 業務アプリ・専門マネージドサービス候補 | 本体の該当記載なし（GA未確認） | [AWS Products](https://aws.amazon.com/devops-agent/) |
 | AWS DevOps Agent (ID: aws-devops-agent-preview) | 業務アプリ・専門マネージドサービス候補 | 本体の該当記載なし（GA未確認） | [AWS Products](https://aws.amazon.com/devops-agent/) |
 | AWS RTB Fabric (ID: aws-rtb-fabric) | 業務アプリ・専門マネージドサービス候補 | 本体の該当記載なし（GA未確認） | [AWS Products](https://aws.amazon.com/rtb-fabric/) |
 | AWS Security Agent (ID: aws-security-agent-) | 業務アプリ・専門マネージドサービス候補 | 本体の該当記載なし（GA未確認） | [AWS Products](https://aws.amazon.com/security-agent/) |
 | AWS Supply Chain (ID: aws-supply-chain) | 業務アプリ・専門マネージドサービス候補 | 本体の該当記載なし（GA未確認） | [AWS Products](https://aws.amazon.com/aws-supply-chain/?did=ap_card&trk=ap_card) |
-| Amazon Connect Decisions (ID: amazon-connect-decisions) | 業務アプリ・専門マネージドサービス候補 | 本体の該当記載なし（GA未確認） | [AWS Products](https://aws.amazon.com/products/connect/decisions/) |
-| Amazon Connect Talent (ID: amazon-connect-talent) | 業務アプリ・専門マネージドサービス候補 | 本体の該当記載なし（GA未確認） | [AWS Products](https://aws.amazon.com/products/connect/talent/) |
+| Amazon WorkSpaces Thin Client (ID: amazon-workspaces-thin-client) | 終了予定・提供制限の製品 | [Sunset（終了予定）](lifecycle.md)（2027-03-31） | [AWS Products](https://aws.amazon.com/workspaces/thin-client/?did=ap_card&trk=ap_card) |
+| AWS Service Management Connector (ID: aws-service-management-connector) | 終了予定・提供制限の製品 | [Sunset（終了予定）](lifecycle.md)（2027-03-31） | [AWS Products](https://aws.amazon.com/service-management-connector/?did=ap_card&trk=ap_card) |
+| Amazon Dash Cart (ID: amazon-dash-cart) | 端末・アプライアンス | 本体の該当記載なし（GA未確認） | [AWS Products](https://aws.amazon.com/dash-cart/?did=ap_card&trk=ap_card) |
 | AWS Elemental Appliances & Software (ID: aws-elemental-appliances-software) | 端末・アプライアンス | 本体の該当記載なし（GA未確認） | [AWS Products](https://aws.amazon.com/elemental-appliances-software/?did=ap_card&trk=ap_card) |
 | AWS IoT Button (ID: aws-iot-button) | 端末・アプライアンス | [関連サービスが終了済み：AWS IoT 1-Click](lifecycle.md)（2025-01-29終了）。製品本体の提供状態とは区別 | [AWS Products](https://aws.amazon.com/iotbutton/?did=ap_card&trk=ap_card) |
-| Amazon Dash Cart (ID: amazon-dash-cart) | 端末・アプライアンス | 本体の該当記載なし（GA未確認） | [AWS Products](https://aws.amazon.com/dash-cart/?did=ap_card&trk=ap_card) |
-| AWS Service Management Connector (ID: aws-service-management-connector) | 終了予定・提供制限の製品 | [Sunset（終了予定）](lifecycle.md)（2027-03-31） | [AWS Products](https://aws.amazon.com/service-management-connector/?did=ap_card&trk=ap_card) |
-| Amazon WorkSpaces Thin Client (ID: amazon-workspaces-thin-client) | 終了予定・提供制限の製品 | [Sunset（終了予定）](lifecycle.md)（2027-03-31） | [AWS Products](https://aws.amazon.com/workspaces/thin-client/?did=ap_card&trk=ap_card) |
-| AWS DeepComposer (ID: aws-deepcomposer) | 提供終了の旧製品 | [Full Shutdown（終了済み）](lifecycle.md)（2025-09-17） | [AWS Products](https://aws.amazon.com/deepcomposer/?did=ap_card&trk=ap_card) |
-| AWS DeepLens (ID: aws-deeplens) | 提供終了の旧製品 | [Full Shutdown（終了済み）](lifecycle.md)（2024-01-31） | [AWS Products](https://aws.amazon.com/deeplens/?did=ap_card&trk=ap_card) |
-| AWS Elemental MediaStore (ID: aws-elemental-mediastore) | 提供終了の旧製品 | [Full Shutdown（終了済み）](lifecycle.md)（2025-11-12） | [AWS Products](https://aws.amazon.com/mediastore/?did=ap_card&trk=ap_card) |
 | Amazon Elastic Transcoder (ID: amazon-elastic-transcoder) | 提供終了の旧製品 | [Full Shutdown（終了済み）](lifecycle.md)（2025-11-13） | [AWS Products](https://aws.amazon.com/elastictranscoder/?did=ap_card&trk=ap_card) |
 | Amazon Lookout for Metrics (ID: amazon-lookout-for-metrics) | 提供終了の旧製品 | [Full Shutdown（終了済み）](lifecycle.md)（2025-10-10） | [AWS Products](https://aws.amazon.com/lookout-for-metrics/?did=ap_card&trk=ap_card) |
 | Amazon Lookout for Vision (ID: amazon-lookout-for-vision) | 提供終了の旧製品 | [Full Shutdown（終了済み）](lifecycle.md)（2025-10-31） | [AWS Products](https://aws.amazon.com/lookout-for-vision/?did=ap_card&trk=ap_card) |
 | Amazon Nimble Studio (ID: amazon-nimble-studio) | 提供終了の旧製品 | [Full Shutdown（終了済み）](lifecycle.md)（2024-06-30） | [AWS Products](https://aws.amazon.com/nimble-studio/?did=ap_card&trk=ap_card) |
 | Amazon Quantum Ledger Database (QLDB) (ID: amazon-quantum-ledger-database-qldb) | 提供終了の旧製品 | [Full Shutdown（終了済み）](lifecycle.md)（2025-07-31） | [AWS Products](https://aws.amazon.com/qldb/?did=ap_card&trk=ap_card) |
+| AWS DeepComposer (ID: aws-deepcomposer) | 提供終了の旧製品 | [Full Shutdown（終了済み）](lifecycle.md)（2025-09-17） | [AWS Products](https://aws.amazon.com/deepcomposer/?did=ap_card&trk=ap_card) |
+| AWS DeepLens (ID: aws-deeplens) | 提供終了の旧製品 | [Full Shutdown（終了済み）](lifecycle.md)（2024-01-31） | [AWS Products](https://aws.amazon.com/deeplens/?did=ap_card&trk=ap_card) |
+| AWS Elemental MediaStore (ID: aws-elemental-mediastore) | 提供終了の旧製品 | [Full Shutdown（終了済み）](lifecycle.md)（2025-11-12） | [AWS Products](https://aws.amazon.com/mediastore/?did=ap_card&trk=ap_card) |
 
 ## General Reference側の未対応95項目
 
@@ -79,6 +79,12 @@ GA・リージョン・契約条件は下段の検証済み記録だけに示し
 
 | 公式General Reference | 暫定分類 | 公式ライフサイクル | 出典 |
 |---|---|---|---|
+| Amazon Comprehend Medical | サブ機能・専門API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/comprehend-med_region.html) |
+| Amazon Data Lifecycle Manager | サブ機能・専門API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/dlm.html) |
+| Amazon ECR Public | サブ機能・専門API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/ecr-public.html) |
+| Amazon MSK Connect | サブ機能・専門API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/msk-connect.html) |
+| Amazon WorkSpaces Instances | サブ機能・専門API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/wsp-instances.html) |
+| Application Auto Scaling | サブ機能・専門API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/as-app.html) |
 | ARC | サブ機能・専門API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/arc.html) |
 | AWS AppConfig | サブ機能・専門API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/appconfig.html) |
 | AWS Clean Rooms ML | サブ機能・専門API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/clean-rooms-ml.html) |
@@ -89,12 +95,6 @@ GA・リージョン・契約条件は下段の検証済み記録だけに示し
 | AWS Signer | サブ機能・専門API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/signer.html) |
 | AWS Systems Manager for SAP | サブ機能・専門API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/ssm-sap.html) |
 | AWS User Experience Customization | サブ機能・専門API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/uxc.html) |
-| Amazon Comprehend Medical | サブ機能・専門API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/comprehend-med_region.html) |
-| Amazon Data Lifecycle Manager | サブ機能・専門API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/dlm.html) |
-| Amazon ECR Public | サブ機能・専門API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/ecr-public.html) |
-| Amazon MSK Connect | サブ機能・専門API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/msk-connect.html) |
-| Amazon WorkSpaces Instances | サブ機能・専門API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/wsp-instances.html) |
-| Application Auto Scaling | サブ機能・専門API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/as-app.html) |
 | CloudWatch Application Insights | サブ機能・専門API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/applicationinsights.html) |
 | CloudWatch Application Signals | サブ機能・専門API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/cwApplicationSignals_region.html) |
 | CloudWatch Events | サブ機能・専門API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/cwe_region.html) |
@@ -129,39 +129,40 @@ GA・リージョン・契約条件は下段の検証済み記録だけに示し
 | Security Hub CSPM | サブ機能・専門API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/sechub.html) |
 | Shield Advanced | サブ機能・専門API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/shield.html) |
 | Trusted Advisor API | サブ機能・専門API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/trustedadvisor-pas.html) |
+| Account access management | 共通管理・基盤API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/account-access.html) |
 | AWS Billing Conductor | 共通管理・基盤API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/billingconductor.html) |
 | AWS CodeConnections | 共通管理・基盤API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/codeconnections.html) |
 | AWS Control Catalog | 共通管理・基盤API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/controlcatalog.html) |
 | AWS Marketplace | 共通管理・基盤API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/aws-marketplace.html) |
-| AWS STS | 共通管理・基盤API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/sts.html) |
 | AWS Sign-In | 共通管理・基盤API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/signin-service.html) |
-| Account access management | 共通管理・基盤API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/account-access.html) |
+| AWS STS | 共通管理・基盤API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/sts.html) |
 | Billing and Cost Management | 共通管理・基盤API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/billing.html) |
 | Cloud Control API | 共通管理・基盤API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/cloudcontrolapi.html) |
 | CloudShell | 共通管理・基盤API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/cloudshell.html) |
 | Service Quotas | 共通管理・基盤API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/servicequotas.html) |
 | Support | 共通管理・基盤API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/awssupport.html) |
-| AWS Entity Resolution | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/entity-resolution.html) |
-| AWS IoT Wireless | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/iot-lorawan.html) |
-| AWS MCP Server | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/aws-mcp.html) |
-| AWS PCS | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/pcs.html) |
-| AWS Payment Cryptography | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/payment-cryptography.html) |
-| AWS Private CA | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/pca.html) |
-| AWS Security Incident Response | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/securityir.html) |
-| AWS TNB | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/tnb.html) |
-| AWS re:Post Private | 独立サービス・専門サービス候補 | [Sunset（終了予定）](https://docs.aws.amazon.com/general/latest/gr/sunset_services.html) | [公式参照](https://docs.aws.amazon.com/general/latest/gr/repostprivate.html) |
+| Amazon Glacier | 終了予定・提供制限の製品 | [Maintenance（新規利用制限あり）](https://docs.aws.amazon.com/general/latest/gr/maintenance_services.html) | [公式参照](https://docs.aws.amazon.com/general/latest/gr/s3glacier.html) |
+| Amazon ML | 終了予定・提供制限の製品 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/machinelearning.html) |
 | Amazon AI Operations | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/aiops_region.html) |
 | Amazon Chime SDK | 独立サービス・専門サービス候補 | [機能単位の掲載あり（Maintenance（新規利用制限あり） / Full Shutdown（終了済））](lifecycle.md)（本体のGA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/chime-sdk.html) |
 | Amazon EVS | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/evs.html) |
 | Amazon GameLift Streams | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/gameliftstreams.html) |
-| Amazon ML | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/machinelearning.html) |
 | Amazon Q Business | 独立サービス・専門サービス候補 | [Maintenance（新規利用制限あり）](https://docs.aws.amazon.com/general/latest/gr/maintenance_services.html) | [公式参照](https://docs.aws.amazon.com/general/latest/gr/amazonq.html) |
 | Amazon Q Developer | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/amazonqdev.html) |
-| Amazon SWF | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/swf-service.html) |
 | Amazon SimpleDB | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/sdb.html) |
+| Amazon SWF | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/swf-service.html) |
 | Amazon WorkSpaces | 独立サービス・専門サービス候補 | [機能単位の掲載あり（Maintenance（新規利用制限あり） / Sunset（終了日を確認））](lifecycle.md)（本体のGA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/wsp.html) |
 | Amazon WorkSpaces Secure Browser | 独立サービス・専門サービス候補 | [Maintenance（新規利用制限あり）](https://docs.aws.amazon.com/general/latest/gr/maintenance_services.html) | [公式参照](https://docs.aws.amazon.com/general/latest/gr/workspacesweb.html) |
 | Aurora DSQL | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/dsql.html) |
+| AWS Entity Resolution | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/entity-resolution.html) |
+| AWS IoT Wireless | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/iot-lorawan.html) |
+| AWS MCP Server | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/aws-mcp.html) |
+| AWS Payment Cryptography | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/payment-cryptography.html) |
+| AWS PCS | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/pcs.html) |
+| AWS Private CA | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/pca.html) |
+| AWS re:Post Private | 独立サービス・専門サービス候補 | [Sunset（終了予定）](https://docs.aws.amazon.com/general/latest/gr/sunset_services.html) | [公式参照](https://docs.aws.amazon.com/general/latest/gr/repostprivate.html) |
+| AWS Security Incident Response | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/securityir.html) |
+| AWS TNB | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/tnb.html) |
 | Cloud Directory | 独立サービス・専門サービス候補 | [Maintenance（新規利用制限あり）](https://docs.aws.amazon.com/general/latest/gr/maintenance_services.html) | [公式参照](https://docs.aws.amazon.com/general/latest/gr/clouddirectory.html) |
 | DevOps Guru | 独立サービス・専門サービス候補 | [Sunset（終了予定）](https://docs.aws.amazon.com/general/latest/gr/sunset_services.html) | [公式参照](https://docs.aws.amazon.com/general/latest/gr/devops-guru.html) |
 | Firehose | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/fh.html) |
@@ -171,7 +172,6 @@ GA・リージョン・契約条件は下段の検証済み記録だけに示し
 | Network Security Manager | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/network-security-manager.html) |
 | Oracle Database@AWS | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/odb-service.html) |
 | VPC Lattice | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/vpc-lattice-service.html) |
-| Amazon Glacier | 終了予定・提供制限の製品 | [Maintenance（新規利用制限あり）](https://docs.aws.amazon.com/general/latest/gr/maintenance_services.html) | [公式参照](https://docs.aws.amazon.com/general/latest/gr/s3glacier.html) |
 | AWS IoT Greengrass V1 | 提供終了の旧製品 | [Full Shutdown（終了済）](https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html) | [公式参照](https://docs.aws.amazon.com/general/latest/gr/greengrass.html) |
 | AWS WAF Classic | 提供終了の旧製品 | [Full Shutdown（終了済）](https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html) | [公式参照](https://docs.aws.amazon.com/general/latest/gr/waf-classic.html) |
 
@@ -192,9 +192,9 @@ Full Shutdownの製品について、リージョン別の新規利用可否は�
 | Amazon WorkSpaces Thin Client | Sunset（2027-03-31終了予定） | 対象地域・販売国の確認が必要（物理端末） | 対象地域・販売国の確認が必要（物理端末） | 新規顧客受付停止。既存登録デバイスの管理料・ハードウェア購入価格は公式料金ページを参照。販売はAmazon Business等、対象国・既存顧客向けの個別条件を要確認 | 公式文書に2026-03-31と2026-04-20の新規受付停止日に関する表記差あり。物理端末の販売地域をAWSリージョン対応と同一視しない。 金額は台帳へ転記しない。販売経路はAWS公式料金ページでAmazon Businessを確認。 | [AWS 1](https://docs.aws.amazon.com/workspaces-thin-client/latest/ug/workspacesthinclient-end-of-support.html) / [AWS 2](https://aws.amazon.com/workspaces/thin-client/pricing/) |
 | Amazon Glacier | Maintenance（旧vault型の新規顧客受付停止） | 未確認（旧顧客向けの利用条件・地域を個別確認） | 未確認（旧顧客向けの利用条件・地域を個別確認） | Amazon Glacier旧vault APIは2025-12-15から新規顧客の受付を停止。既存顧客データはアクセス可能、S3 Glacierのストレージクラスは別の現行製品 | AWS公式Pricingが旧vault型Amazon Glacierの2025-12-15新規受付停止を明記。Product LifecycleはAmazon S3 Glacier DirectとしてMaintenance、AWS Storage Blogは旧Glacier Direct APIとの同一性を説明。S3 Glacier Flexible/Deep ArchiveなどのS3ストレージクラスをMaintenance扱いしない。 | [AWS 1](https://aws.amazon.com/s3/glacier/pricing/) / [AWS 2](https://docs.aws.amazon.com/amazonglacier/latest/dev/intro.html) / [AWS 3](https://docs.aws.amazon.com/general/latest/gr/maintenance_services.html) / [AWS 4](https://aws.amazon.com/blogs/storage/how-reuters-built-easily-accessible-large-scale-news-archives-on-aws/) |
 | VPC Lattice | GA（2023-03-31 AWS公式発表） | 提供確認（公式FAQに明記） | 提供確認（公式FAQに明記） | 使用量に基づく課金。新規受付・別途契約・必要サポートプランは未確認 | 2023-03-31 GA発表。現在のAWS公式FAQは東京・大阪の両方を提供リージョンとして列挙。料金ページに利用量課金あり。新規受付・サポート・販売チャネルの制限を否定する根拠は未確認。 | [AWS 1](https://aws.amazon.com/about-aws/whats-new/2023/03/general-availability-amazon-vpc-lattice/) / [AWS 2](https://aws.amazon.com/vpc/lattice/faqs/) / [AWS 3](https://aws.amazon.com/vpc/lattice/pricing/) |
-| Firehose | サービス運用を公式文書で確認（最新GA状態は未確認） | APIエンドポイント掲載のみ（サービス提供の全機能は未確認） | APIエンドポイント掲載のみ（サービス提供の全機能は未確認） | 公式料金ページで初期費用・事前コミットメントなしと明記。新規顧客受付・販売チャネル制限は別途未確認 | Amazon Kinesis Data Firehose→Amazon Data Firehoseの改称を公式2024-02-09発表で確認。東京/大阪は公式General Reference APIエンドポイントに掲載（新規契約可否・各ソース連携の提供保証ではない）。 AWS公式料金ページにno upfront commitments明記。 | [AWS 1](https://aws.amazon.com/about-aws/whats-new/2024/02/amazon-data-firehose-formerly-kinesis-data-firehose/) / [AWS 2](https://docs.aws.amazon.com/general/latest/gr/fh.html) / [AWS 3](https://aws.amazon.com/firehose/pricing/) |
-| AWS Private CA | 地域型のマネージド認証局（GA発表日未確認） | 公式VPCエンドポイント対応地域（CAの提供確認は要追加調査） | 公式VPCエンドポイント対応地域（CAの提供確認は要追加調査） | CAの運用・証明書発行で課金。事前契約・新規顧客受付・販売経路は未確認 | 公式ユーザーガイドでCAはRegionリソースと記載、VPCエンドポイント提供地域に東京・大阪を確認。ただしPrivateLink利用可能＝サービス全機能提供とは扱わない。 | [AWS 1](https://docs.aws.amazon.com/privateca/latest/userguide/) / [AWS 2](https://docs.aws.amazon.com/privateca/latest/userguide/vpc-endpoints.html) / [AWS 3](https://aws.amazon.com/private-ca/pricing/) |
-| Kinesis Data Streams | サービスドキュメント・課金体系確認（GA発表日未確認） | APIエンドポイント掲載・VPCエンドポイント機能対応（サービス全体は要追加確認） | APIエンドポイント掲載・VPCエンドポイント機能対応（サービス全体は要追加確認） | 従量/プロビジョンド等の課金モード。On-demand Advantageには最低利用容量の課金あり。事前契約が必要という意味ではない | 東京・大阪のAPIエンドポイントおよびVPC endpoint policyの対象リージョンをAWS公式文書で確認。GA/新規受付/コミットメントはAPIがあるだけでは判断しない。 | [AWS 1](https://docs.aws.amazon.com/general/latest/gr/ak.html) / [AWS 2](https://docs.aws.amazon.com/streams/latest/dev/vpc.html) / [AWS 3](https://aws.amazon.com/kinesis/data-streams/pricing/) |
+| Firehose | GA確認（AWS SLAの一般提供サービス一覧。2015-10-07にAWS公式がサービス導入を発表） | サービス利用可能（公式Firehoseクォータでリージョン別ストリーム数を確認） | サービス利用可能（公式Firehoseクォータでリージョン別ストリーム数を確認） | 公式料金ページで初期費用・事前コミットメントなしと明記。新規顧客受付・販売チャネル制限は別途未確認 | AWS SLAは有償の一般提供サービス一覧にAmazon Data Firehoseを掲載。2015-10-07の公式導入発表と2024-02-09の改称を確認。現行Firehoseクォータは東京・大阪の各リージョンについてFirehose stream数とCreateDeliveryStream時の制限を明記しており、APIエンドポイント掲載だけに依存せずサービス利用可能と判断。料金ページに初期費用・事前コミットメントなしを明記。 | [AWS 1](https://aws.amazon.com/legal/service-level-agreements/) / [AWS 2](https://aws.amazon.com/about-aws/whats-new/2015/10/introducing-amazon-kinesis-firehose/) / [AWS 3](https://aws.amazon.com/about-aws/whats-new/2024/02/amazon-data-firehose-formerly-kinesis-data-firehose/) / [AWS 4](https://docs.aws.amazon.com/firehose/latest/dev/limits.html) / [AWS 5](https://aws.amazon.com/firehose/pricing/) |
+| AWS Private CA | GA確認（AWS SLAの一般提供サービス一覧。2018-04-04にAWS公式がPrivate CAの提供開始を発表） | サービス利用可能（AWS公式が全商用リージョンでの提供を明記） | サービス利用可能（AWS公式が全商用リージョンでの提供を明記） | CAの運用・証明書発行で課金。事前契約・新規顧客受付・販売経路は未確認 | AWS SLAは有償の一般提供サービス一覧にAWS Private Certificate Authorityを掲載。2018-04-04のAWS公式ブログはPrivate CAを「Available Now」として東京を含む提供地域を列挙。2025-07のAWS公式発表はAWS Private CAが全商用AWSリージョンで利用可能と明記しているため、東京・大阪のサービス提供を確認。個別コネクタ等の機能差は別途確認。 | [AWS 1](https://aws.amazon.com/legal/service-level-agreements/) / [AWS 2](https://aws.amazon.com/blogs/aws/aws-certificate-manager-launches-private-certificate-authority/) / [AWS 3](https://aws.amazon.com/about-aws/whats-new/2025/07/aws-private-ca-issuing-100-million-certificates-ca/) / [AWS 4](https://docs.aws.amazon.com/privateca/latest/userguide/) / [AWS 5](https://aws.amazon.com/private-ca/pricing/) |
+| Kinesis Data Streams | GA確認（AWS SLAの一般提供サービス一覧。旧Amazon KinesisからKinesis Streamsへの名称継承を公式発表で確認） | サービス利用可能（現行Kinesis Data Streams公式資料で東京を確認） | サービス利用可能（現行Kinesis Data Streams公式資料で大阪を確認） | 従量/プロビジョンド等の課金モード。On-demand Advantageには最低利用容量の課金あり。事前契約が必要という意味ではない | AWS SLAは有償の一般提供サービス一覧にAmazon Kinesisを掲載。2015-10の公式発表でAmazon KinesisがAmazon Kinesis Streamsへ改称されたことを確認。2026-09のKinesis Data Streams公式発表は対象機能を全AWS商用リージョンで提供とし、現行Data Streamsの公式リージョン表にも東京・大阪を明記。APIエンドポイント掲載だけに依存せずサービス利用可能と判断。最低利用量の課金は事前契約/コミットメントと別の意味。 | [AWS 1](https://aws.amazon.com/legal/service-level-agreements/) / [AWS 2](https://aws.amazon.com/about-aws/whats-new/2015/10/amazon-kinesis-extended-data-retention/) / [AWS 3](https://aws.amazon.com/about-aws/whats-new/2026/09/kinesis/service-managed-partition-keys/) / [AWS 4](https://docs.aws.amazon.com/streams/latest/dev/large-records.html) / [AWS 5](https://aws.amazon.com/kinesis/data-streams/pricing/) |
 | Amazon ML | 新規ユーザー受付停止（公式Developer Guide）／既存ユーザー向けDocs継続。Full Shutdownとは断定しない | 既存顧客の利用リージョンは未確認 | 既存顧客の利用リージョンは未確認 | 新規ユーザー受付停止（公式）。旧ユーザーの継続条件・サポートプランは未確認 | 公式ガイドに no longer updating / no longer accepting new users と明記。正式ライフサイクル3表未掲載をGAとみなさず、新規導入候補から除外。既存ユーザーへの利用停止やFull Shutdownは推定しない。 | [AWS 1](https://docs.aws.amazon.com/machine-learning/latest/dg/what-is-amazon-machine-learning.html) |
 | Amazon SimpleDB | GA・現行の新規利用条件は未確認（古いFAQでは利用開始案内あり） | 旧FAQでは東京での利用を記載。2026-11の新規提供は未確認 | 確認したFAQに大阪の記載なし。未提供とは判断しない | 公式Pricingは最低利用料なし、FAQは事前コミットメントなしと説明。2026年現在の新規アカウント受付は未確認 | AWS公式FAQは『AWSアカウントがあれば利用開始可能』と記すが更新日不明で2026年の新規顧客受付保証にはならない。終了・受付停止を示す明示的な公式告知は今回の確認範囲で見つかっていない。 料金ページは最低利用料なしを明記。FAQにno commitmentsとあるが将来保証ではない。 | [AWS 1](https://aws.amazon.com/simpledb/faqs/) / [AWS 2](https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/Endpoints.html) / [AWS 3](https://aws.amazon.com/simpledb/pricing/) |
 
