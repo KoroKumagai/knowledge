@@ -16,6 +16,9 @@ cloud/
 │   ├── products-source.json # 公式API応答を正規化した取得記録
 │   ├── products-coverage.md # 237カードと269項目の相互差分
 │   ├── products-mapping.json # 検証済み別名・関連別粒度の定義
+│   ├── open-items.md       # 33カード/95参照項目の一次分類と提供条件の検証
+│   ├── open-items-classification.json # 暫定分類のソースデータ
+│   ├── availability-evidence.json  # 公式GA・リージョン・契約条件の個別根拠
 │   ├── lifecycle.md         # Maintenance / Sunset / Full Shutdown
 │   ├── lifecycle-unmatched.md  # 公式エンドポイントと未対応のライフサイクル項目
 │   ├── lifecycle-mapping.json  # 手動確認した製品名と機能の対応表
@@ -59,7 +62,7 @@ cloud/
 ## 公式カタログ網羅性の進捗
 
 - **Cloudflare（公式Docs/Productsの掲載単位）:** [調査結果](cloudflare/README.md) に収録済み（公式Docs索引195件・公式Products68件）。提供状況の全件検証は未完了。
-- **AWS（Products / General Reference）:** [調査結果](aws/README.md) に、公式Productsのservice区分237カードとGeneral Reference269参照項目を全件収録・差分照合。Maintenance 56件、Sunset 16件、Full Shutdown 62件の公式台帳も収録。全製品のGA・リージョン・機能粒度の判定は未完了。
+- **AWS（Products / General Reference）:** [調査結果](aws/README.md) に、Products237カード、General Reference269項目の全件スナップショットと差分を収録。**未対応33カード・95参照項目の一次分類済み**、GA・リージョン・契約条件は[根拠付き5項目から調査中](aws/open-items.md)。全件の提供可否の判断は未完了。
 - **Azure / Google Cloud / OCI:** 現時点では公式カタログとの全件照合が未完了。
 - 共通比較表・個別一覧の行数は全製品数ではありません。公式目録の採録件数と、実務上の機能比較件数を分けて管理します。
 
