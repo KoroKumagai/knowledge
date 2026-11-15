@@ -7,7 +7,7 @@
 > 東京（ap-northeast-1）と大阪（ap-northeast-3）を優先確認。未確認は不提供と同じ意味ではありません。
 > APIエンドポイント掲載はGA・契約可能性を保証しません。ライフサイクルはサービス本体と個別機能を区別します。
 
-**一覧:** Products 33カード（カードIDで区別）/ General Reference 95項目。 **公式根拠付き個別確認:** 5件（すべての列が確定したという意味ではありません）。
+**一覧:** Products 33カード（カードIDで区別）/ General Reference 95項目。 **公式根拠付き個別確認:** 8件（すべての列が確定したという意味ではありません）。
 
 ## 調査方法と今後のデータソース
 
@@ -46,7 +46,7 @@
 | Amazon Nimble Studio (ID: amazon-nimble-studio) | 提供終了の旧製品 | [Full Shutdown（終了済み）](lifecycle.md)（2024-06-30） | Full Shutdown（公式台帳） | 未確認 | 未確認 | 未確認 | [AWS Products](https://aws.amazon.com/nimble-studio/?did=ap_card&trk=ap_card) |
 | Amazon Nova (ID: amazon-nova) | AIモデル・モデル構築/操作機能 | 本体の該当記載なし（GA未確認） | 未確認 | 未確認 | 未確認 | 未確認 | [AWS Products](https://aws.amazon.com/nova/?hp=fa&trk=c6553eb9-60f2-436a-b294-162bda8a1ebb) |
 | Amazon Quantum Ledger Database (QLDB) (ID: amazon-quantum-ledger-database-qldb) | 提供終了の旧製品 | [Full Shutdown（終了済み）](lifecycle.md)（2025-07-31） | Full Shutdown（公式台帳） | 未確認 | 未確認 | 未確認 | [AWS Products](https://aws.amazon.com/qldb/?did=ap_card&trk=ap_card) |
-| Amazon WorkSpaces Thin Client (ID: amazon-workspaces-thin-client) | 終了予定・提供制限の製品 | [Sunset（終了予定）](lifecycle.md)（2027-03-31） | Sunset（公式台帳） | 未確認 | 未確認 | 未確認 | [AWS Products](https://aws.amazon.com/workspaces/thin-client/?did=ap_card&trk=ap_card) |
+| Amazon WorkSpaces Thin Client (ID: amazon-workspaces-thin-client) | 終了予定・提供制限の製品 | [Sunset（終了予定）](lifecycle.md)（2027-03-31） | Sunset（2027-03-31終了予定） | 対象地域・販売国の確認が必要（物理端末） | 対象地域・販売国の確認が必要（物理端末） | 新規顧客受付停止。既存登録端末は終了日まで月額6米ドル/台（公式文書の開始日表記に差があるため要確認） | [AWS Products](https://aws.amazon.com/workspaces/thin-client/?did=ap_card&trk=ap_card) / [根拠1](https://docs.aws.amazon.com/workspaces-thin-client/latest/ug/workspacesthinclient-end-of-support.html) |
 | AWS App2Container (ID: aws-app2container) | ツール・SDK・配布物 | 本体の該当記載なし（GA未確認） | 未確認 | 未確認 | 未確認 | 未確認 | [AWS Products](https://aws.amazon.com/app2container/?did=ap_card&trk=ap_card) |
 | AWS Artifact (ID: aws-artifact) | ポータル・移行支援サービス | 本体の該当記載なし（GA未確認） | 未確認 | 未確認 | 未確認 | 未確認 | [AWS Products](https://aws.amazon.com/artifact/?did=ap_card&trk=ap_card) |
 | AWS Command Line Interface (CLI) (ID: aws-command-line-interface) | ツール・SDK・配布物 | 本体の該当記載なし（GA未確認） | 未確認 | 未確認 | 未確認 | 未確認 | [AWS Products](https://aws.amazon.com/cli/?did=ap_card&trk=ap_card) |
@@ -60,14 +60,14 @@
 | AWS Elemental Appliances & Software (ID: aws-elemental-appliances-software) | 端末・アプライアンス | 本体の該当記載なし（GA未確認） | 未確認 | 未確認 | 未確認 | 未確認 | [AWS Products](https://aws.amazon.com/elemental-appliances-software/?did=ap_card&trk=ap_card) |
 | AWS Elemental MediaStore (ID: aws-elemental-mediastore) | 提供終了の旧製品 | [Full Shutdown（終了済み）](lifecycle.md)（2025-11-12） | Full Shutdown（公式台帳） | 未確認 | 未確認 | 未確認 | [AWS Products](https://aws.amazon.com/mediastore/?did=ap_card&trk=ap_card) |
 | AWS IoT Button (ID: aws-iot-button) | 端末・アプライアンス | [関連サービスが終了済み：AWS IoT 1-Click](lifecycle.md)（2025-01-29終了）。製品本体の提供状態とは区別 | 未確認 | 未確認 | 未確認 | 未確認 | [AWS Products](https://aws.amazon.com/iotbutton/?did=ap_card&trk=ap_card) |
-| AWS RTB Fabric (ID: aws-rtb-fabric) | 業務アプリ・専門マネージドサービス候補 | 本体の該当記載なし（GA未確認） | 未確認 | 未確認 | 未確認 | 未確認 | [AWS Products](https://aws.amazon.com/rtb-fabric/) |
+| AWS RTB Fabric (ID: aws-rtb-fabric) | 業務アプリ・専門マネージドサービス候補 | 本体の該当記載なし（GA未確認） | GA（2025-10-23確認） | サービス提供確認（2026-09-18公式発表） | 2026-09-18のAWS公式提供リージョン一覧に記載なし（最新状況要確認） | 事前コミットメント不要（AWS公式発表）。詳細契約・利用条件は個別確認 | [AWS Products](https://aws.amazon.com/rtb-fabric/) / [根拠1](https://aws.amazon.com/about-aws/whats-new/2025/10/aws-rtb-fabric-generally-available/) / [根拠2](https://aws.amazon.com/about-aws/whats-new/2026/09/aws-rtb-fabric-configurable-availability-zone-affinity/) |
 | AWS Security Agent (ID: aws-security-agent-) | 業務アプリ・専門マネージドサービス候補 | 本体の該当記載なし（GA未確認） | 未確認 | 未確認 | 未確認 | 未確認 | [AWS Products](https://aws.amazon.com/security-agent/) |
 | AWS Service Management Connector (ID: aws-service-management-connector) | 終了予定・提供制限の製品 | [Sunset（終了予定）](lifecycle.md)（2027-03-31） | Sunset（公式台帳） | 未確認 | 未確認 | 未確認 | [AWS Products](https://aws.amazon.com/service-management-connector/?did=ap_card&trk=ap_card) |
 | AWS Supply Chain (ID: aws-supply-chain) | 業務アプリ・専門マネージドサービス候補 | 本体の該当記載なし（GA未確認） | 未確認 | 未確認 | 未確認 | 未確認 | [AWS Products](https://aws.amazon.com/aws-supply-chain/?did=ap_card&trk=ap_card) |
 | AWS Tools and SDKs (ID: aws-tools-and-sdks) | ツール・SDK・配布物 | 本体の該当記載なし（GA未確認） | 未確認 | 未確認 | 未確認 | 未確認 | [AWS Products](https://aws.amazon.com/getting-started/tools-sdks/?did=ap_card&trk=ap_card) |
 | Kiro (ID: aws-kiro) | ツール・SDK・配布物 | 本体の該当記載なし（GA未確認） | 未確認 | 未確認 | 未確認 | 未確認 | [AWS Products](https://kiro.dev/) |
 | Migration Evaluator (formerly TSO Logic) (ID: migration-evaluator-formerly-tso-logic) | ポータル・移行支援サービス | 本体の該当記載なし（GA未確認） | 未確認 | 未確認 | 未確認 | 未確認 | [AWS Products](https://aws.amazon.com/migration-evaluator/?did=ap_card&trk=ap_card) |
-| Nova Act (ID: nova-act) | AIモデル・モデル構築/操作機能 | 本体の該当記載なし（GA未確認） | 未確認 | 未確認 | 未確認 | 未確認 | [AWS Products](https://aws.amazon.com/nova/act/) |
+| Nova Act (ID: nova-act) | AIモデル・モデル構築/操作機能 | 本体の該当記載なし（GA未確認） | GA（2025-12-02公式発表） | 未確認（2025-12-02 GA発表時は米国東部のみ） | 未確認（2025-12-02 GA発表時は米国東部のみ） | 未確認 | [AWS Products](https://aws.amazon.com/nova/act/) / [根拠1](https://aws.amazon.com/about-aws/whats-new/2025/12/build-automate-production-ui-workflows-nova-act/) |
 | Nova Forge (ID: nova-forge) | AIモデル・モデル構築/操作機能 | 本体の該当記載なし（GA未確認） | 未確認 | 未確認 | 未確認 | 未確認 | [AWS Products](https://aws.amazon.com/nova/forge/) |
 
 ## General Reference側の未対応95項目
@@ -179,6 +179,9 @@
 | Service Quotas | 東京・大阪に公式APIエンドポイントが列挙されている。ただし単独でGAや全機能の提供／契約可否を証明しない。 | [AWS 1](https://docs.aws.amazon.com/general/latest/gr/servicequotas.html) |
 | Support | この条件はSupport APIの利用権限であり、AWS Support全般の契約要件とは同一視しない。 | [AWS 1](https://docs.aws.amazon.com/awssupport/latest/APIReference/Welcome.html) / [AWS 2](https://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html) |
 | AWS WAF Classic | AWS公式のFull Shutdown台帳に掲載。最新AWS WAFとは異なる旧製品。 | [AWS 1](https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html) |
+| AWS RTB Fabric | 公式GA発表と2026-09-18時点の6リージョン一覧。東京は列挙。大阪は列挙なしだが、不提供と断定せず要再確認。 | [AWS 1](https://aws.amazon.com/about-aws/whats-new/2025/10/aws-rtb-fabric-generally-available/) / [AWS 2](https://aws.amazon.com/about-aws/whats-new/2026/09/aws-rtb-fabric-configurable-availability-zone-affinity/) |
+| Nova Act | GA時点で米国東部（バージニア北部）を提供。2026-11時点の東京・大阪や個別契約条件までは確定していない。 | [AWS 1](https://aws.amazon.com/about-aws/whats-new/2025/12/build-automate-production-ui-workflows-nova-act/) |
+| Amazon WorkSpaces Thin Client | 公式文書に2026-03-31と2026-04-20の新規受付停止日に関する表記差あり。物理端末の販売地域をAWSリージョン対応と同一視しない。 | [AWS 1](https://docs.aws.amazon.com/workspaces-thin-client/latest/ug/workspacesthinclient-end-of-support.html) |
 
 ## 次の検証
 
