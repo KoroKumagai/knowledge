@@ -177,7 +177,8 @@ def main():
     ap.add_argument("--as-of",type=str,default=None)
     args=ap.parse_args()
     state,count,stale,confirmed=audit(args.as_of)
-    expected=render(state,count,stale if not args.as_of else [])
+    # Generated Markdown is stable; aging only emits WARN, not a stale-file CI failure.
+    expected=render(state,count,[])
     for name,age in stale:
         print(f"WARN: AWS evidence {name} verified {age} days ago; recheck after 180d")
     if args.write:
