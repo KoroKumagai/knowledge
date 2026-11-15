@@ -216,13 +216,14 @@
         "new_customers": "確認済み",
         "support_plan": "未確認",
         "commitment": "未確認",
-        "sales_channel": "未確認"
+        "sales_channel": "確認済み"
       },
       "verified_on": "2026-11-15",
       "sources": [
-        "https://docs.aws.amazon.com/workspaces-thin-client/latest/ug/workspacesthinclient-end-of-support.html"
+        "https://docs.aws.amazon.com/workspaces-thin-client/latest/ug/workspacesthinclient-end-of-support.html",
+        "https://aws.amazon.com/workspaces/thin-client/pricing/"
       ],
-      "scope": "公式文書に2026-03-31と2026-04-20の新規受付停止日に関する表記差あり。物理端末の販売地域をAWSリージョン対応と同一視しない。"
+      "scope": "公式文書に2026-03-31と2026-04-20の新規受付停止日に関する表記差あり。物理端末の販売地域をAWSリージョン対応と同一視しない。 sales_channelは追加のAWS公式料金・購入経路ページから確認。"
     },
     {
       "type": "product",
@@ -1392,7 +1393,7 @@
         "osaka": "未確認",
         "new_customers": "未確認",
         "support_plan": "未確認",
-        "commitment": "未確認",
+        "commitment": "確認済み",
         "sales_channel": "未確認"
       },
       "verified_on": "2026-11-15",
@@ -1401,7 +1402,7 @@
         "https://docs.aws.amazon.com/general/latest/gr/fh.html",
         "https://aws.amazon.com/firehose/pricing/"
       ],
-      "scope": "Amazon Kinesis Data Firehose→Amazon Data Firehoseの改称を公式2024-02-09発表で確認。東京/大阪は公式General Reference APIエンドポイントに掲載（新規契約可否・各ソース連携の提供保証ではない）。"
+      "scope": "Amazon Kinesis Data Firehose→Amazon Data Firehoseの改称を公式2024-02-09発表で確認。東京/大阪は公式General Reference APIエンドポイントに掲載（新規契約可否・各ソース連携の提供保証ではない）。 commitmentは追加のAWS公式料金・購入経路ページから確認。"
     },
     {
       "type": "reference",
@@ -2064,15 +2065,16 @@
         "osaka": "未確認",
         "new_customers": "未確認",
         "support_plan": "未確認",
-        "commitment": "未確認",
+        "commitment": "確認済み",
         "sales_channel": "未確認"
       },
       "verified_on": "2026-11-15",
       "sources": [
         "https://aws.amazon.com/simpledb/faqs/",
-        "https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/Endpoints.html"
+        "https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/Endpoints.html",
+        "https://aws.amazon.com/simpledb/pricing/"
       ],
-      "scope": "AWS公式FAQは『AWSアカウントがあれば利用開始可能』と記すが更新日不明で2026年の新規顧客受付保証にはならない。終了・受付停止を示す明示的な公式告知は今回の確認範囲で見つかっていない。 公式FAQは古い開始案内を含むが、2026-11時点の新規受付可否の確認とは区別。"
+      "scope": "AWS公式FAQは『AWSアカウントがあれば利用開始可能』と記すが更新日不明で2026年の新規顧客受付保証にはならない。終了・受付停止を示す明示的な公式告知は今回の確認範囲で見つかっていない。 公式FAQは古い開始案内を含むが、2026-11時点の新規受付可否の確認とは区別。 commitmentは追加のAWS公式料金・購入経路ページから確認。"
     },
     {
       "type": "reference",
