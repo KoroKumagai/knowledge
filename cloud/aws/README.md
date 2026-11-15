@@ -23,6 +23,7 @@ Cloudflareで採用した「全件の公式目録」と「編集された独自�
 - 製品のサブ機能・API・マーケットプレイス商品・リージョン・SKUと、エンドポイント・クォータの掲載項目は同じ粒度ではありません。
 - AWSのライフサイクル表は**サービスと機能の両方**を含みます。終了日を過ぎたSunset掲載項目も、正式なFull Shutdown掲載がなければ推測で改分類しません。
 - ライフサイクルの個別機能を本体に結び付ける際は、明示的な別名/完全一致/境界付き接頭辞のみを使います。未照合は別表で可視化し、製品本体の新規提供を保証しません。
+- Products台帳ではサービス本体の状態と、**製品が利用する関連サービスの状態**を区別します。関連サービスはMaintenance／Sunset／Full Shutdownの各段階を表示できますが、関連サービスの終了が製品本体の終了を意味するわけではありません。明示的な別名は `lifecycle_aliases`、関連・依存関係は `lifecycle_related` で管理します。
 - 出典に掲載されていないサービスや、新しい製品名への移行があっても、そのサービスが存在しないとは判断できません。
 
 ## 公式ProductsとGeneral Referenceの差分（2026-11-14 UTC）
@@ -35,6 +36,7 @@ Cloudflareで採用した「全件の公式目録」と「編集された独自�
 - AWS公式のマーケティング分類（badge）をそのまま採録。分類名に不自然なものがあっても独自の推測で書き換えません。
 - AWS公式サイト内部の検索エンドポイントには [Kiro](https://kiro.dev/) のような外部ドメインの製品ページも登録されています。ドメインだけで除外せず、発見元の公式データと製品IDを保持します。
 - **Productsへの掲載は新規利用可能・GAの証明ではありません。** 停止品の採用判断は[lifecycle.md](lifecycle.md)と個別の公式発表を確認します。
+- [products-coverage.md](products-coverage.md) の**Full Shutdown注記は、General Referenceとの照合状況に関係なく表示**します。照合済みと提供中を混同しないようにしています。
 - [products.md](products.md)ではライフサイクルの列を追加し、**サービス本体に完全一致（または明示的別名）したMaintenance・Sunset・Full Shutdown**を表示。SageMakerなどの一部機能の終了を、親サービス全体の終了とは扱いません。
 - **QLDBの正式名称差**も手動別名で照合。[AWS Full Shutdown一覧](https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html)に掲載されています。
 
@@ -51,6 +53,9 @@ Cloudflareで採用した「全件の公式目録」と「編集された独自�
 
 - **AWS Quick**：公式発表のとおり2026-11-09に改称。Products APIでは「AWS Quick」が掲載される一方、「Amazon QuickSight」の旧表示名が残っています。これは [AWS Quick Sight](https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-quick-aws-quick/) との**確認済み別名**としてマッピングしています。マーケティング表示を黙って書き換えていません。
 - **AWS App Mesh**：Products APIには掲載されますが、ライフサイクルではFull Shutdown。GA/契約可能性をAPI掲載だけで判断してはいけません。
+- **Amazon WorkSpaces Thin Client**：AWS公式Sunsetでは「Amazon WorkSpaces – Thin Client」と掲載。名前の差を明示的に対応付け、**2027-03-31終了予定**として表示します。
+- **AWS IoT Button**：関連する**AWS IoT 1-Click**は2025-01-29にFull Shutdownですが、IoT Button本体の終了とは区別します。
+- **Amazon QLDB**：General Referenceの対応先未確定でも、公式Full Shutdown（2025-07-31）は[products-coverage.md](products-coverage.md)に注記します。
 
 ## 更新手順
 
@@ -67,13 +72,6 @@ Cloudflareで採用した「全件の公式目録」と「編集された独自�
 - `python scripts/refresh_aws_service_catalog.py`：エンドポイント・クォータとライフサイクルのAWS公式4ページを取得し、既存台帳を再生成。
 - `python scripts/check_aws_service_catalog.py`：公式参照269項目、Maintenance・Sunset・Full Shutdown、未対応台帳と個別一覧との整合性を検証。
 - GitHub Actions **Propose AWS official service catalog refresh**：手動実行でレビュー用PRを提案。提供状態や構造が変わった場合には公式根拠をレビューし、無条件に提供中とみなさない。
-
-## ライフサイクルの追加照合（2026-11-15）
-
-- **Amazon WorkSpaces Thin Client:** [AWS公式Sunset台帳](lifecycle.md)は「Amazon WorkSpaces – Thin Client」と掲載。名称の差を明示的に対応付け、**2027-03-31終了予定**として表示します。
-- **AWS IoT Button:** 利用する **AWS IoT 1-Click** は2025-01-29にFull Shutdown。ただし**ボタン製品自体の終了と同義ではありません**。Products表では関連サービスの終了として表示し、確認済み別名にはしません。
-- **Amazon QLDB:** Products表のFull Shutdown表示と[差分表](products-coverage.md)の「目録外・未対応」を維持しつつ、後者に**2025-07-31終了済み**を明記。エンドポイント一覧の掲載粒度と提供状態を混同しません。
-- この判定は [products-mapping.json](products-mapping.json) の `lifecycle_aliases` と `lifecycle_related` で区別し、再生成・検証スクリプトの双方で確認します。
 
 ## 公式Products照合の残課題
 
