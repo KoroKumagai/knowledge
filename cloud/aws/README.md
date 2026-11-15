@@ -9,9 +9,12 @@ Cloudflareで採用した「全件の公式目録」と「編集された独自�
 | [products.md](products.md) | 公式Products検索のサービス区分 **237カード** を全件収録（2026-11-14 UTC、32カテゴリ） |
 | [products-source.json](products-source.json) | 公式サイト内部の検索エンドポイントの totalHits・取得日・製品ID・掲載名・URL・カテゴリの取得記録 |
 | [products-coverage.md](products-coverage.md) | Products **237カード** とGeneral Reference **269項目**を相互照合。未対応を残す |
-| [open-items.md](open-items.md) | **未対応33カードと95参照項目**の暫定分類、GA・東京/大阪リージョン・契約条件の検証台帳（**公式根拠付き個別確認9件**） |
+| [open-items.md](open-items.md) | **未対応33カードと95参照項目**の暫定分類、GA・東京/大阪リージョン・契約条件の検証台帳（**公式根拠付き個別確認15件**） |
 | [open-items-classification.json](open-items-classification.json) | 対応未確定128項目の原票ID付き分類データ（独立サービス／機能／開発ツール／旧製品など） |
 | [availability-evidence.json](availability-evidence.json) | 公式根拠に基づくGA・リージョン・契約条件の確認記録と未確認の区別 |
+| [availability-decisions.md](availability-decisions.md) | 未対応128件×7次元の確認済み／公式記載なし／対象外／未確認の進捗と第1段6項目 |
+| [availability-decisions.json](availability-decisions.json) | 128レコードの7次元判定データとAWS公式ソース、検証日 |
+| [availability-policy.md](availability-policy.md) | 判定の定義、180日WARN、契約条件の範囲、SSM公開パラメータのOIDC PoCと安全境界 |
 | [products-mapping.json](products-mapping.json) | 同一名称でない場合の手動確認済み別名／非同等の製品群・機能の分類 |
 | [catalog.md](catalog.md) | General Referenceの **269件**（サービスエンドポイント/クォータ一覧）の全件採録 |
 | [lifecycle.md](lifecycle.md) | Maintenance **56件**、Sunset **16件**、Full Shutdown **62件** の公式表を全件採録 |
@@ -81,9 +84,17 @@ Cloudflareで採用した「全件の公式目録」と「編集された独自�
 
 - [open-items.md](open-items.md)に**Products側33カード、General Reference側95参照項目をすべて一次分類**。既存の237/269件や分類75/101/28/33は変更していません。
 - **一次分類は仮説**です。原票の名称・機能説明・公式エンドポイント参照を根拠にした作業上の分類であり、GA・独立サービス・契約可能性の確定ではありません。
-- GA・東京/大阪の提供・契約条件の**個別確認は9項目から着手**。Aurora DSQL、Amazon Q Business、Service Quotas、Support API、WAF Classic、RTB Fabric、Nova Act、WorkSpaces Thin Client、旧Amazon Glacier（vault型）の公式根拠を[別データ](availability-evidence.json)で管理しています。全128件の検証完了を主張しません。
+- GA・東京/大阪の提供・契約条件の**個別確認は15項目まで着手**。Aurora DSQL、Amazon Q Business、Service Quotas、Support API、WAF Classic、RTB Fabric、Nova Act、WorkSpaces Thin Client、旧Amazon Glacier（vault型）、VPC Lattice、Firehose、Private CA、Kinesis Data Streams、Amazon ML、Amazon SimpleDBの公式根拠を[別データ](availability-evidence.json)で管理しています。全128件の検証完了を主張しません。
 - 各リージョンでのAWS公式データは[AWS Capabilities by Region](https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/)が優先参照先です。公式の[S3公開データ取得](https://aws.amazon.com/blogs/storage/building-automated-aws-regional-availability-checks-with-amazon-s3/)にはAWS認証・IAM権限が必要なため、このPRでは一括取得は実施していません。
 - `python scripts/render_aws_open_items.py --write`で台帳再生成、`--check`で元データ・検証根拠・Markdownの全件整合性をチェックします。
+
+## 提供条件判定の進捗と継続方法
+
+- 公式根拠付き**15件**（第1段のVPC Lattice、Firehose、Private CA、Kinesis Data Streams、Amazon ML、SimpleDBを追加）。すべての次元が確定した数ではなく、未確認は残っています。
+- **128件×7次元**について[判定台帳](availability-decisions.md)を整備。CLI/SDK等のツール、公式Full Shutdownの製品、物理端末は、根拠付きで**対象外**にできるようにしました。
+- [判定規約](availability-policy.md)でGA・Preview・Maintenance等の根拠、`公式記載なし`と`未確認`の違い、契約条件（新規顧客・サポートプラン・事前契約・購入経路のみ）、検証から180日超のCI警告を明文化。料金の数値は転記しません。
+- AWS SSMのサービス・リージョン公開パラメータは**GAや新規利用の根拠にせず**、読み取り専用OIDCの[手動Workflow](../../.github/workflows/probe-aws-ssm-regions.yml)で試験する方針。AWS側のRole未接続のため、実際のSSM取得は**未実施**です（[#17](https://github.com/KoroKumagai/knowledge/issues/17)）。
+- 第2段～第4段は親[#11](https://github.com/KoroKumagai/knowledge/issues/11)と段階別[#14](https://github.com/KoroKumagai/knowledge/issues/14)、[#15](https://github.com/KoroKumagai/knowledge/issues/15)、[#16](https://github.com/KoroKumagai/knowledge/issues/16)で続行。
 
 ## 公式Products照合の残課題
 

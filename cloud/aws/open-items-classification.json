@@ -452,8 +452,8 @@
     },
     {
       "name": "Amazon ML",
-      "kind": "独立サービス・専門サービス候補",
-      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+      "kind": "終了予定・提供制限の製品",
+      "basis": "AWS公式Developer Guideで新規ユーザー受付停止を確認。Full Shutdownとは断定せず、既存ユーザー向けDocs継続中の提供制限製品として分類"
     },
     {
       "name": "Managed Service for Apache Flink",

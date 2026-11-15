@@ -7,7 +7,7 @@
 > 東京（ap-northeast-1）と大阪（ap-northeast-3）を優先確認。未確認は不提供と同じ意味ではありません。
 > APIエンドポイント掲載はGA・契約可能性を保証しません。ライフサイクルはサービス本体と個別機能を区別します。
 
-**一覧:** Products 33カード（カードIDで区別）/ General Reference 95項目。 **公式根拠付き個別確認:** 9件（すべての列が確定したという意味ではありません）。
+**一覧:** Products 33カード（カードIDで区別）/ General Reference 95項目。 **公式根拠付き個別確認:** 15件（すべての列が確定したという意味ではありません）。
 
 ## 調査方法と今後のデータソース
 
@@ -28,9 +28,9 @@
 | 共通管理・基盤API候補 | 12 |
 | 提供終了の旧製品 | 10 |
 | 業務アプリ・専門マネージドサービス候補 | 7 |
-| 独立サービス・専門サービス候補 | 30 |
+| 独立サービス・専門サービス候補 | 29 |
 | 端末・アプライアンス | 3 |
-| 終了予定・提供制限の製品 | 3 |
+| 終了予定・提供制限の製品 | 4 |
 
 ## Products側の未対応33カード
 
@@ -154,7 +154,6 @@ GA・リージョン・契約条件は下段の検証済み記録だけに示し
 | Amazon Chime SDK | 独立サービス・専門サービス候補 | [機能単位の掲載あり（Maintenance（新規利用制限あり） / Full Shutdown（終了済））](lifecycle.md)（本体のGA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/chime-sdk.html) |
 | Amazon EVS | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/evs.html) |
 | Amazon GameLift Streams | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/gameliftstreams.html) |
-| Amazon ML | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/machinelearning.html) |
 | Amazon Q Business | 独立サービス・専門サービス候補 | [Maintenance（新規利用制限あり）](https://docs.aws.amazon.com/general/latest/gr/maintenance_services.html) | [公式参照](https://docs.aws.amazon.com/general/latest/gr/amazonq.html) |
 | Amazon Q Developer | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/amazonqdev.html) |
 | Amazon SWF | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/swf-service.html) |
@@ -172,6 +171,7 @@ GA・リージョン・契約条件は下段の検証済み記録だけに示し
 | Oracle Database@AWS | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/odb-service.html) |
 | VPC Lattice | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/vpc-lattice-service.html) |
 | Amazon Glacier | 終了予定・提供制限の製品 | [Maintenance（新規利用制限あり）](https://docs.aws.amazon.com/general/latest/gr/maintenance_services.html) | [公式参照](https://docs.aws.amazon.com/general/latest/gr/s3glacier.html) |
+| Amazon ML | 終了予定・提供制限の製品 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/machinelearning.html) |
 | AWS IoT Greengrass V1 | 提供終了の旧製品 | [Full Shutdown（終了済）](https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html) | [公式参照](https://docs.aws.amazon.com/general/latest/gr/greengrass.html) |
 | AWS WAF Classic | 提供終了の旧製品 | [Full Shutdown（終了済）](https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html) | [公式参照](https://docs.aws.amazon.com/general/latest/gr/waf-classic.html) |
 
@@ -189,8 +189,14 @@ Full Shutdownの製品について、リージョン別の新規利用可否は�
 | AWS WAF Classic | Full Shutdown（2026-10-07） | 対象外（終了済み） | 対象外（終了済み） | 新規導入不可（Full Shutdown） | AWS公式のFull Shutdown台帳に掲載。最新AWS WAFとは異なる旧製品。 | [AWS 1](https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html) |
 | AWS RTB Fabric | GA（2025-10-23確認） | サービス提供確認（2026-09-18公式発表） | 2026-09-18のAWS公式提供リージョン一覧に記載なし（最新状況要確認） | 事前コミットメント不要（AWS公式発表）。詳細契約・利用条件は個別確認 | 公式GA発表と2026-09-18時点の6リージョン一覧。東京は列挙。大阪は列挙なしだが、不提供と断定せず要再確認。 | [AWS 1](https://aws.amazon.com/about-aws/whats-new/2025/10/aws-rtb-fabric-generally-available/) / [AWS 2](https://aws.amazon.com/about-aws/whats-new/2026/09/aws-rtb-fabric-configurable-availability-zone-affinity/) |
 | Nova Act | GA（2025-12-02公式発表） | 未確認（2025-12-02 GA発表時は米国東部のみ） | 未確認（2025-12-02 GA発表時は米国東部のみ） | 未確認 | GA時点で米国東部（バージニア北部）を提供。2026-11時点の東京・大阪や個別契約条件までは確定していない。 | [AWS 1](https://aws.amazon.com/about-aws/whats-new/2025/12/build-automate-production-ui-workflows-nova-act/) |
-| Amazon WorkSpaces Thin Client | Sunset（2027-03-31終了予定） | 対象地域・販売国の確認が必要（物理端末） | 対象地域・販売国の確認が必要（物理端末） | 新規顧客受付停止。既存登録端末は終了日まで月額6米ドル/台（公式文書の開始日表記に差があるため要確認） | 公式文書に2026-03-31と2026-04-20の新規受付停止日に関する表記差あり。物理端末の販売地域をAWSリージョン対応と同一視しない。 | [AWS 1](https://docs.aws.amazon.com/workspaces-thin-client/latest/ug/workspacesthinclient-end-of-support.html) |
+| Amazon WorkSpaces Thin Client | Sunset（2027-03-31終了予定） | 対象地域・販売国の確認が必要（物理端末） | 対象地域・販売国の確認が必要（物理端末） | 新規顧客受付停止。既存登録デバイスの管理料・ハードウェア購入価格は公式料金ページを参照。販売はAmazon Business等、対象国・既存顧客向けの個別条件を要確認 | 公式文書に2026-03-31と2026-04-20の新規受付停止日に関する表記差あり。物理端末の販売地域をAWSリージョン対応と同一視しない。 金額は台帳へ転記しない。販売経路はAWS公式料金ページでAmazon Businessを確認。 | [AWS 1](https://docs.aws.amazon.com/workspaces-thin-client/latest/ug/workspacesthinclient-end-of-support.html) / [AWS 2](https://aws.amazon.com/workspaces/thin-client/pricing/) |
 | Amazon Glacier | Maintenance（旧vault型の新規顧客受付停止） | 未確認（旧顧客向けの利用条件・地域を個別確認） | 未確認（旧顧客向けの利用条件・地域を個別確認） | Amazon Glacier旧vault APIは2025-12-15から新規顧客の受付を停止。既存顧客データはアクセス可能、S3 Glacierのストレージクラスは別の現行製品 | AWS公式Pricingが旧vault型Amazon Glacierの2025-12-15新規受付停止を明記。Product LifecycleはAmazon S3 Glacier DirectとしてMaintenance、AWS Storage Blogは旧Glacier Direct APIとの同一性を説明。S3 Glacier Flexible/Deep ArchiveなどのS3ストレージクラスをMaintenance扱いしない。 | [AWS 1](https://aws.amazon.com/s3/glacier/pricing/) / [AWS 2](https://docs.aws.amazon.com/amazonglacier/latest/dev/intro.html) / [AWS 3](https://docs.aws.amazon.com/general/latest/gr/maintenance_services.html) / [AWS 4](https://aws.amazon.com/blogs/storage/how-reuters-built-easily-accessible-large-scale-news-archives-on-aws/) |
+| VPC Lattice | GA（2023-03-31 AWS公式発表） | 提供確認（公式FAQに明記） | 提供確認（公式FAQに明記） | 使用量に基づく課金。新規受付・別途契約・必要サポートプランは未確認 | 2023-03-31 GA発表。現在のAWS公式FAQは東京・大阪の両方を提供リージョンとして列挙。料金ページに利用量課金あり。新規受付・サポート・販売チャネルの制限を否定する根拠は未確認。 | [AWS 1](https://aws.amazon.com/about-aws/whats-new/2023/03/general-availability-amazon-vpc-lattice/) / [AWS 2](https://aws.amazon.com/vpc/lattice/faqs/) / [AWS 3](https://aws.amazon.com/vpc/lattice/pricing/) |
+| Firehose | GA確認（AWS SLAの一般提供サービス一覧。2015-10-07にAWS公式がサービス導入を発表） | サービス利用可能（公式Firehoseクォータでリージョン別ストリーム数を確認） | サービス利用可能（公式Firehoseクォータでリージョン別ストリーム数を確認） | 公式料金ページで初期費用・事前コミットメントなしと明記。新規顧客受付・販売チャネル制限は別途未確認 | AWS SLAは有償の一般提供サービス一覧にAmazon Data Firehoseを掲載。2015-10-07の公式導入発表と2024-02-09の改称を確認。現行Firehoseクォータは東京・大阪の各リージョンについてFirehose stream数とCreateDeliveryStream時の制限を明記しており、APIエンドポイント掲載だけに依存せずサービス利用可能と判断。料金ページに初期費用・事前コミットメントなしを明記。 | [AWS 1](https://aws.amazon.com/legal/service-level-agreements/) / [AWS 2](https://aws.amazon.com/about-aws/whats-new/2015/10/introducing-amazon-kinesis-firehose/) / [AWS 3](https://aws.amazon.com/about-aws/whats-new/2024/02/amazon-data-firehose-formerly-kinesis-data-firehose/) / [AWS 4](https://docs.aws.amazon.com/firehose/latest/dev/limits.html) / [AWS 5](https://aws.amazon.com/firehose/pricing/) |
+| AWS Private CA | GA確認（AWS SLAの一般提供サービス一覧。2018-04-04にAWS公式がPrivate CAの提供開始を発表） | サービス利用可能（AWS公式が全商用リージョンでの提供を明記） | サービス利用可能（AWS公式が全商用リージョンでの提供を明記） | CAの運用・証明書発行で課金。事前契約・新規顧客受付・販売経路は未確認 | AWS SLAは有償の一般提供サービス一覧にAWS Private Certificate Authorityを掲載。2018-04-04のAWS公式ブログはPrivate CAを「Available Now」として東京を含む提供地域を列挙。2025-07のAWS公式発表はAWS Private CAが全商用AWSリージョンで利用可能と明記しているため、東京・大阪のサービス提供を確認。個別コネクタ等の機能差は別途確認。 | [AWS 1](https://aws.amazon.com/legal/service-level-agreements/) / [AWS 2](https://aws.amazon.com/blogs/aws/aws-certificate-manager-launches-private-certificate-authority/) / [AWS 3](https://aws.amazon.com/about-aws/whats-new/2025/07/aws-private-ca-issuing-100-million-certificates-ca/) / [AWS 4](https://docs.aws.amazon.com/privateca/latest/userguide/) / [AWS 5](https://aws.amazon.com/private-ca/pricing/) |
+| Kinesis Data Streams | GA確認（AWS SLAの一般提供サービス一覧。旧Amazon KinesisからKinesis Streamsへの名称継承を公式発表で確認） | サービス利用可能（現行Kinesis Data Streams公式資料で東京を確認） | サービス利用可能（現行Kinesis Data Streams公式資料で大阪を確認） | 従量/プロビジョンド等の課金モード。On-demand Advantageには最低利用容量の課金あり。事前契約が必要という意味ではない | AWS SLAは有償の一般提供サービス一覧にAmazon Kinesisを掲載。2015-10の公式発表でAmazon KinesisがAmazon Kinesis Streamsへ改称されたことを確認。2026-09のKinesis Data Streams公式発表は対象機能を全AWS商用リージョンで提供とし、現行Data Streamsの公式リージョン表にも東京・大阪を明記。APIエンドポイント掲載だけに依存せずサービス利用可能と判断。最低利用量の課金は事前契約/コミットメントと別の意味。 | [AWS 1](https://aws.amazon.com/legal/service-level-agreements/) / [AWS 2](https://aws.amazon.com/about-aws/whats-new/2015/10/amazon-kinesis-extended-data-retention/) / [AWS 3](https://aws.amazon.com/about-aws/whats-new/2026/09/kinesis/service-managed-partition-keys/) / [AWS 4](https://docs.aws.amazon.com/streams/latest/dev/large-records.html) / [AWS 5](https://aws.amazon.com/kinesis/data-streams/pricing/) |
+| Amazon ML | 新規ユーザー受付停止（公式Developer Guide）／既存ユーザー向けDocs継続。Full Shutdownとは断定しない | 既存顧客の利用リージョンは未確認 | 既存顧客の利用リージョンは未確認 | 新規ユーザー受付停止（公式）。旧ユーザーの継続条件・サポートプランは未確認 | 公式ガイドに no longer updating / no longer accepting new users と明記。正式ライフサイクル3表未掲載をGAとみなさず、新規導入候補から除外。既存ユーザーへの利用停止やFull Shutdownは推定しない。 | [AWS 1](https://docs.aws.amazon.com/machine-learning/latest/dg/what-is-amazon-machine-learning.html) |
+| Amazon SimpleDB | GA・現行の新規利用条件は未確認（古いFAQでは利用開始案内あり） | 旧FAQでは東京での利用を記載。2026-11の新規提供は未確認 | 確認したFAQに大阪の記載なし。未提供とは判断しない | 公式Pricingは最低利用料なし、FAQは事前コミットメントなしと説明。2026年現在の新規アカウント受付は未確認 | AWS公式FAQは『AWSアカウントがあれば利用開始可能』と記すが更新日不明で2026年の新規顧客受付保証にはならない。終了・受付停止を示す明示的な公式告知は今回の確認範囲で見つかっていない。 料金ページは最低利用料なしを明記。FAQにno commitmentsとあるが将来保証ではない。 | [AWS 1](https://aws.amazon.com/simpledb/faqs/) / [AWS 2](https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/Endpoints.html) / [AWS 3](https://aws.amazon.com/simpledb/pricing/) |
 
 ## 次の検証
 
