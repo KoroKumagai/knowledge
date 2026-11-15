@@ -10,6 +10,7 @@ on:
       - "scripts/check_aws_marketing_products.py"
       - "scripts/render_aws_open_items.py"
       - "scripts/check_aws_audit_decisions.py"
+      - "scripts/test_aws_audit_decisions.py"
       - "scripts/probe_aws_ssm_regions.py"
       - ".github/workflows/probe-aws-ssm-regions.yml"
       - "scripts/refresh_aws_marketing_products.py"
@@ -28,6 +29,7 @@ on:
       - "scripts/check_aws_marketing_products.py"
       - "scripts/render_aws_open_items.py"
       - "scripts/check_aws_audit_decisions.py"
+      - "scripts/test_aws_audit_decisions.py"
       - "scripts/probe_aws_ssm_regions.py"
       - ".github/workflows/probe-aws-ssm-regions.yml"
       - "scripts/refresh_aws_marketing_products.py"
@@ -73,6 +75,8 @@ jobs:
         run: python scripts/render_aws_open_items.py --check
       - name: Regression test that child feature shutdown does not retire service
         run: python scripts/check_aws_audit_decisions.py --self-test-retirement
+      - name: Regression test dimension-specific exclusion breakdowns
+        run: python scripts/test_aws_audit_decisions.py
       - name: Validate all AWS availability decisions and source freshness
         run: python scripts/check_aws_audit_decisions.py --check
       - name: Verify expired evidence warns without failing CI
