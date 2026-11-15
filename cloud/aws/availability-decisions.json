@@ -570,9 +570,10 @@
       },
       "verified_on": "2026-11-15",
       "sources": [
+        "https://aws.amazon.com/products/",
         "https://kiro.dev/"
       ],
-      "scope": "クラウドサービスのGA・リージョン提供・新規顧客契約の確認軸は直接適用しない。配布物の対応OS・利用規約は別の分類。"
+      "scope": "クラウドサービスのGA・リージョン提供・新規顧客契約の確認軸は直接適用しない。配布物の対応OS・利用規約は別の分類。 Kiroの外部製品URLはAWS公式Productsの掲載先として取り扱い、独立したAWS公式ドキュメントのURLとは区別。"
     },
     {
       "type": "product",
