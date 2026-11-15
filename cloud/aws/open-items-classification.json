@@ -568,7 +568,7 @@
     {
       "name": "Amazon Glacier",
       "kind": "終了予定・提供制限の製品",
-      "basis": "旧vault型Amazon GlacierはAmazon S3 Glacier Direct（公式Maintenance掲載名）に対応。2025-12-15以降の新規受付停止をAWS公式料金案内で確認。S3 Glacierストレージクラスとは別物"
+      "basis": "旧vault型Amazon Glacierは、Pricingと公式Maintenance行のResourcesが参照する共通のvault移行ガイドに基づきGlacier Directへ台帳上で対応付ける（正式改称の断定ではない）。新規受付停止日2025-12-15はPricingで確認。S3 Glacierストレージクラスとは別"
     },
     {
       "name": "AWS Signer",
