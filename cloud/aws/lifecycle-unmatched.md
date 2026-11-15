@@ -1,7 +1,7 @@
 # AWSライフサイクル：General Referenceと紐付かない項目
 
 **取得日 (UTC):** 2026-11-14  
-**未対応:** **74 / 134件**
+**未対応:** **73 / 134件**
 
 照合は [lifecycle-mapping.json](lifecycle-mapping.json) の明示的な別名と、サービス名＋区切り記号（– / -）による機能名だけを対象にしています。
 未対応は**製品が存在しない・終了したという意味ではありません**。AWSが目録とは別名称で案内する機能や、別の商用製品が含まれます。
@@ -20,7 +20,6 @@
 | Maintenance（新規利用制限あり） | AWS IoT SiteWise Monitor | [AWS公式](https://docs.aws.amazon.com/iot-sitewise/latest/appguide/iotsitewise-monitor-availability-change.html) |
 | Maintenance（新規利用制限あり） | AWS .NET Modernization Tools | [AWS公式](https://docs.aws.amazon.com/portingassistant/latest/userguide/what-is-porting-assistant.html) |
 | Maintenance（新規利用制限あり） | AWS Resource Groups – Group Lifecycle Events | [AWS公式](https://docs.aws.amazon.com/console/ARG/latest/userguide/resource-groups-gle-availability-change.html) |
-| Maintenance（新規利用制限あり） | Amazon S3 Glacier Direct | [AWS公式](https://aws.amazon.com/solutions/guidance/data-transfer-from-amazon-s3-glacier-vaults-to-amazon-s3/) |
 | Maintenance（新規利用制限あり） | Amazon S3 Glacier Select | [AWS公式](https://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/) |
 | Maintenance（新規利用制限あり） | Amazon S3 Object Lambda | [AWS公式](https://docs.aws.amazon.com/AmazonS3/latest/userguide/amazons3-ol-change.html) |
 | Maintenance（新規利用制限あり） | Amazon S3 Select | [AWS公式](https://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/) |
