@@ -19,6 +19,9 @@ cloud/
 │   ├── open-items.md       # 33カード/95参照項目の一次分類と提供条件の検証
 │   ├── open-items-classification.json # 暫定分類のソースデータ
 │   ├── availability-evidence.json  # 公式GA・リージョン・契約条件の個別根拠
+│   ├── availability-decisions.md  # 128件×7次元の判定・対象外・未確認の集計
+│   ├── availability-decisions.json # 判定データと公式出典・検証日
+│   ├── availability-policy.md    # Preview・契約範囲・180日警告・SSM/OIDC方針
 │   ├── lifecycle.md         # Maintenance / Sunset / Full Shutdown
 │   ├── lifecycle-unmatched.md  # 公式エンドポイントと未対応のライフサイクル項目
 │   ├── lifecycle-mapping.json  # 手動確認した製品名と機能の対応表
@@ -62,7 +65,7 @@ cloud/
 ## 公式カタログ網羅性の進捗
 
 - **Cloudflare（公式Docs/Productsの掲載単位）:** [調査結果](cloudflare/README.md) に収録済み（公式Docs索引195件・公式Products68件）。提供状況の全件検証は未完了。
-- **AWS（Products / General Reference）:** [調査結果](aws/README.md) に、Productsのservice区分237カード、General Reference269項目の全件スナップショットと差分を収録。**未対応33カード・95参照項目の一次分類済み**、GA・リージョン・契約条件は[根拠付き9項目から調査中](aws/open-items.md)。全件の提供可否の判断は未完了。
+- **AWS（Products / General Reference）:** [調査結果](aws/README.md) に、Productsのservice区分237カード、General Reference269項目の全件スナップショットと差分を収録。**未対応33カード・95参照項目の一次分類済み**、GA・リージョン・契約条件は[根拠付き15項目から調査中](aws/open-items.md)。全件の提供可否の判断は未完了。
 - **Azure / Google Cloud / OCI:** 現時点では公式カタログとの全件照合が未完了。
 - 共通比較表・個別一覧の行数は全製品数ではありません。公式目録の採録件数と、実務上の機能比較件数を分けて管理します。
 
