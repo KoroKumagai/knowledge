@@ -74,6 +74,9 @@ for feature_name in ("SageMaker AI", "CloudTrail", "AWS Glue",
     feature_match = [row for row in catalog_rows if row[1] == feature_name]
     check(len(feature_match) == 1 and "機能単位の掲載あり" in feature_match[0][3],
           "Missing parent-service feature lifecycle warning: " + feature_name)
+check(any(row[1] == "Amazon Glacier" and "Maintenance" in row[3]
+          for row in catalog_rows),
+      "Legacy Amazon Glacier must display Maintenance in General Reference")
 check("機能だけがMaintenance" in catalog,
       "Catalog must distinguish parent service and feature lifecycle")
 for note in ("商用製品一覧", "新規導入可能"):
@@ -116,6 +119,8 @@ check("製品と個別機能" in lifecycle and "Full Shutdown" in lifecycle and
 # remains inspectable in lifecycle-unmatched.md, not silently dropped.
 check(mapping.get("version") == 1, "Unknown AWS lifecycle mapping format")
 direct_aliases = mapping.get("direct_service_names", {})
+check(direct_aliases.get("Amazon Glacier") == "Amazon S3 Glacier Direct",
+      "Legacy Amazon Glacier vaults must map to official Direct maintenance entry")
 prefix_aliases = mapping.get("feature_prefixes", {})
 exact_aliases = mapping.get("feature_exact", {})
 for group_name, values in (("direct", direct_aliases),

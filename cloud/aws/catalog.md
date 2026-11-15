@@ -245,7 +245,7 @@
 | 229 | AWS Service Catalog endpoints and quotas | [公式](https://docs.aws.amazon.com/general/latest/gr/servicecatalog.html) | [機能単位の掲載あり（Maintenance（新規利用制限あり））](lifecycle.md)（本体のGA判定不可） |
 | 230 | Shield Advanced | [公式](https://docs.aws.amazon.com/general/latest/gr/shield.html) | 該当記載なし（GA判定不可） |
 | 231 | Amazon S3 | [公式](https://docs.aws.amazon.com/general/latest/gr/s3.html) | 該当記載なし（GA判定不可） |
-| 232 | Amazon Glacier | [公式](https://docs.aws.amazon.com/general/latest/gr/s3glacier.html) | 該当記載なし（GA判定不可） |
+| 232 | Amazon Glacier | [公式](https://docs.aws.amazon.com/general/latest/gr/s3glacier.html) | [Maintenance（新規利用制限あり）](https://docs.aws.amazon.com/general/latest/gr/maintenance_services.html) |
 | 233 | Amazon SES | [公式](https://docs.aws.amazon.com/general/latest/gr/ses.html) | 該当記載なし（GA判定不可） |
 | 234 | AWS Signer | [公式](https://docs.aws.amazon.com/general/latest/gr/signer.html) | 該当記載なし（GA判定不可） |
 | 235 | AWS Sign-In | [公式](https://docs.aws.amazon.com/general/latest/gr/signin-service.html) | 該当記載なし（GA判定不可） |

@@ -344,7 +344,7 @@
 | AWS Security Incident Response | [公式](https://docs.aws.amazon.com/general/latest/gr/securityir.html) | 該当記載なし（GA判定不可） |
 | Service Quotas | [公式](https://docs.aws.amazon.com/general/latest/gr/servicequotas.html) | 該当記載なし（GA判定不可） |
 | Shield Advanced | [公式](https://docs.aws.amazon.com/general/latest/gr/shield.html) | 該当記載なし（GA判定不可） |
-| Amazon Glacier | [公式](https://docs.aws.amazon.com/general/latest/gr/s3glacier.html) | 該当記載なし（GA判定不可） |
+| Amazon Glacier | [公式](https://docs.aws.amazon.com/general/latest/gr/s3glacier.html) | [Maintenance（新規利用制限あり）](https://docs.aws.amazon.com/general/latest/gr/maintenance_services.html) |
 | AWS Signer | [公式](https://docs.aws.amazon.com/general/latest/gr/signer.html) | 該当記載なし（GA判定不可） |
 | AWS Sign-In | [公式](https://docs.aws.amazon.com/general/latest/gr/signin-service.html) | 該当記載なし（GA判定不可） |
 | Amazon SimpleDB | [公式](https://docs.aws.amazon.com/general/latest/gr/sdb.html) | 該当記載なし（GA判定不可） |

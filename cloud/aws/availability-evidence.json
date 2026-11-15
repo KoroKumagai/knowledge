@@ -1,0 +1,127 @@
+{
+  "version": 1,
+  "verified_on": "2026-11-15",
+  "notice": "This is NOT a comprehensive verification. Availability/status and contracts are distinct. Product/endpoint listings alone never establish GA or availability. Region evidence defaults to 未確認 unless official documents affirm it. Evidence is current only to cited source date and must be rechecked before procurement.",
+  "region_keys": {
+    "ap-northeast-1": "東京",
+    "ap-northeast-3": "大阪"
+  },
+  "records": [
+    {
+      "type": "reference",
+      "key": "Aurora DSQL",
+      "ga": "GA確認",
+      "tokyo": "サービス利用可能（公式）",
+      "osaka": "サービス利用可能（公式）",
+      "contract": "従量課金・前払い費用なし（DPU／ストレージ）",
+      "sources": [
+        "https://aws.amazon.com/about-aws/whats-new/2025/05/amazon-aurora-dsql-generally-available/",
+        "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/",
+        "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/billing-metering.html"
+      ],
+      "notes": "2025-05-27 GAを公式発表。東京・大阪の利用可能リージョンを公式User Guideで確認。料金は使用量課金で、各地域の最新単価・アカウント権限は別途確認。"
+    },
+    {
+      "type": "reference",
+      "key": "Amazon Q Business",
+      "ga": "Maintenance（新規顧客受付停止）",
+      "tokyo": "未確認",
+      "osaka": "未確認",
+      "contract": "新規顧客受付停止。AWS公式文書間で開始日が2026-07-30／2026-07-31と異なるため、既存顧客以外の新規利用は停止済みとして扱い、厳密な停止日は要確認",
+      "sources": [
+        "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/qbusiness-availability-change.html",
+        "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-service-availability/"
+      ],
+      "notes": "Q Business案内およびAPI文書は2026-07-31以降の新規受付停止（7/30より前に登録）を案内。一方2026-06-30のAWS What's Newは7/30開始と記載。両方を保持し一方の日時に確定しない。東京・大阪の既存顧客の利用状況は未検証。"
+    },
+    {
+      "type": "reference",
+      "key": "Service Quotas",
+      "ga": "未確認",
+      "tokyo": "APIエンドポイント掲載のみ",
+      "osaka": "APIエンドポイント掲載のみ",
+      "contract": "未確認",
+      "sources": [
+        "https://docs.aws.amazon.com/general/latest/gr/servicequotas.html"
+      ],
+      "notes": "東京・大阪に公式APIエンドポイントが列挙されている。ただし単独でGAや全機能の提供／契約可否を証明しない。"
+    },
+    {
+      "type": "reference",
+      "key": "Support",
+      "ga": "未確認",
+      "tokyo": "未確認",
+      "osaka": "未確認",
+      "contract": "AWS Support API利用にはBusiness Support+／Enterprise Support／Unified Operations等の対象サポートプランが必要（例外条件あり）",
+      "sources": [
+        "https://docs.aws.amazon.com/awssupport/latest/APIReference/Welcome.html",
+        "https://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html"
+      ],
+      "notes": "この条件はSupport APIの利用権限であり、AWS Support全般の契約要件とは同一視しない。"
+    },
+    {
+      "type": "reference",
+      "key": "AWS WAF Classic",
+      "ga": "Full Shutdown（2026-10-07）",
+      "tokyo": "対象外（終了済み）",
+      "osaka": "対象外（終了済み）",
+      "contract": "新規導入不可（Full Shutdown）",
+      "sources": [
+        "https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html"
+      ],
+      "notes": "AWS公式のFull Shutdown台帳に掲載。最新AWS WAFとは異なる旧製品。"
+    },
+    {
+      "type": "product",
+      "key": "aws-rtb-fabric",
+      "ga": "GA（2025-10-23確認）",
+      "tokyo": "サービス提供確認（2026-09-18公式発表）",
+      "osaka": "2026-09-18のAWS公式提供リージョン一覧に記載なし（最新状況要確認）",
+      "contract": "事前コミットメント不要（AWS公式発表）。詳細契約・利用条件は個別確認",
+      "sources": [
+        "https://aws.amazon.com/about-aws/whats-new/2025/10/aws-rtb-fabric-generally-available/",
+        "https://aws.amazon.com/about-aws/whats-new/2026/09/aws-rtb-fabric-configurable-availability-zone-affinity/"
+      ],
+      "notes": "公式GA発表と2026-09-18時点の6リージョン一覧。東京は列挙。大阪は列挙なしだが、不提供と断定せず要再確認。"
+    },
+    {
+      "type": "product",
+      "key": "nova-act",
+      "ga": "GA（2025-12-02公式発表）",
+      "tokyo": "未確認（2025-12-02 GA発表時は米国東部のみ）",
+      "osaka": "未確認（2025-12-02 GA発表時は米国東部のみ）",
+      "contract": "未確認",
+      "sources": [
+        "https://aws.amazon.com/about-aws/whats-new/2025/12/build-automate-production-ui-workflows-nova-act/"
+      ],
+      "notes": "GA時点で米国東部（バージニア北部）を提供。2026-11時点の東京・大阪や個別契約条件までは確定していない。"
+    },
+    {
+      "type": "product",
+      "key": "amazon-workspaces-thin-client",
+      "ga": "Sunset（2027-03-31終了予定）",
+      "tokyo": "対象地域・販売国の確認が必要（物理端末）",
+      "osaka": "対象地域・販売国の確認が必要（物理端末）",
+      "contract": "新規顧客受付停止。既存登録端末は終了日まで月額6米ドル/台（公式文書の開始日表記に差があるため要確認）",
+      "sources": [
+        "https://docs.aws.amazon.com/workspaces-thin-client/latest/ug/workspacesthinclient-end-of-support.html"
+      ],
+      "notes": "公式文書に2026-03-31と2026-04-20の新規受付停止日に関する表記差あり。物理端末の販売地域をAWSリージョン対応と同一視しない。"
+    },
+    {
+      "type": "reference",
+      "key": "Amazon Glacier",
+      "ga": "Maintenance（旧vault型の新規顧客受付停止）",
+      "tokyo": "未確認（旧顧客向けの利用条件・地域を個別確認）",
+      "osaka": "未確認（旧顧客向けの利用条件・地域を個別確認）",
+      "contract": "Amazon Glacier旧vault APIは2025-12-15から新規顧客の受付を停止。既存顧客データはアクセス可能、S3 Glacierのストレージクラスは別の現行製品",
+      "sources": [
+        "https://aws.amazon.com/s3/glacier/pricing/",
+        "https://docs.aws.amazon.com/amazonglacier/latest/dev/intro.html",
+        "https://docs.aws.amazon.com/general/latest/gr/maintenance_services.html",
+        "https://aws.amazon.com/blogs/storage/how-reuters-built-easily-accessible-large-scale-news-archives-on-aws/"
+      ],
+      "notes": "AWS公式Pricingが旧vault型Amazon Glacierの2025-12-15新規受付停止を明記。Product LifecycleはAmazon S3 Glacier DirectとしてMaintenance、AWS Storage Blogは旧Glacier Direct APIとの同一性を説明。S3 Glacier Flexible/Deep ArchiveなどのS3ストレージクラスをMaintenance扱いしない。"
+    }
+  ]
+}
