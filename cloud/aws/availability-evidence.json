@@ -19,7 +19,10 @@
         "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/",
         "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/billing-metering.html"
       ],
-      "notes": "2025-05-27 GAを公式発表。東京・大阪の利用可能リージョンを公式User Guideで確認。料金は使用量課金で、各地域の最新単価・アカウント権限は別途確認。"
+      "notes": "2025-05-27 GAを公式発表。東京・大阪の利用可能リージョンを公式User Guideで確認。料金は使用量課金で、各地域の最新単価・アカウント権限は別途確認。",
+      "verified_on": "2026-11-15",
+      "scope": "記載する各値はリンク先の公式資料で明示的に確認できる範囲。未確認の次元はGA・新規契約可否を推定しない。",
+      "pricing_url": null
     },
     {
       "type": "reference",
@@ -32,7 +35,10 @@
         "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/qbusiness-availability-change.html",
         "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-service-availability/"
       ],
-      "notes": "Q Business案内およびAPI文書は2026-07-31以降の新規受付停止（7/30より前に登録）を案内。一方2026-06-30のAWS What's Newは7/30開始と記載。両方を保持し一方の日時に確定しない。東京・大阪の既存顧客の利用状況は未検証。"
+      "notes": "Q Business案内およびAPI文書は2026-07-31以降の新規受付停止（7/30より前に登録）を案内。一方2026-06-30のAWS What's Newは7/30開始と記載。両方を保持し一方の日時に確定しない。東京・大阪の既存顧客の利用状況は未検証。",
+      "verified_on": "2026-11-15",
+      "scope": "記載する各値はリンク先の公式資料で明示的に確認できる範囲。未確認の次元はGA・新規契約可否を推定しない。",
+      "pricing_url": null
     },
     {
       "type": "reference",
@@ -44,7 +50,10 @@
       "sources": [
         "https://docs.aws.amazon.com/general/latest/gr/servicequotas.html"
       ],
-      "notes": "東京・大阪に公式APIエンドポイントが列挙されている。ただし単独でGAや全機能の提供／契約可否を証明しない。"
+      "notes": "東京・大阪に公式APIエンドポイントが列挙されている。ただし単独でGAや全機能の提供／契約可否を証明しない。",
+      "verified_on": "2026-11-15",
+      "scope": "記載する各値はリンク先の公式資料で明示的に確認できる範囲。未確認の次元はGA・新規契約可否を推定しない。",
+      "pricing_url": null
     },
     {
       "type": "reference",
@@ -57,7 +66,10 @@
         "https://docs.aws.amazon.com/awssupport/latest/APIReference/Welcome.html",
         "https://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html"
       ],
-      "notes": "この条件はSupport APIの利用権限であり、AWS Support全般の契約要件とは同一視しない。"
+      "notes": "この条件はSupport APIの利用権限であり、AWS Support全般の契約要件とは同一視しない。",
+      "verified_on": "2026-11-15",
+      "scope": "記載する各値はリンク先の公式資料で明示的に確認できる範囲。未確認の次元はGA・新規契約可否を推定しない。",
+      "pricing_url": null
     },
     {
       "type": "reference",
@@ -69,7 +81,10 @@
       "sources": [
         "https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html"
       ],
-      "notes": "AWS公式のFull Shutdown台帳に掲載。最新AWS WAFとは異なる旧製品。"
+      "notes": "AWS公式のFull Shutdown台帳に掲載。最新AWS WAFとは異なる旧製品。",
+      "verified_on": "2026-11-15",
+      "scope": "記載する各値はリンク先の公式資料で明示的に確認できる範囲。未確認の次元はGA・新規契約可否を推定しない。",
+      "pricing_url": null
     },
     {
       "type": "product",
@@ -82,7 +97,10 @@
         "https://aws.amazon.com/about-aws/whats-new/2025/10/aws-rtb-fabric-generally-available/",
         "https://aws.amazon.com/about-aws/whats-new/2026/09/aws-rtb-fabric-configurable-availability-zone-affinity/"
       ],
-      "notes": "公式GA発表と2026-09-18時点の6リージョン一覧。東京は列挙。大阪は列挙なしだが、不提供と断定せず要再確認。"
+      "notes": "公式GA発表と2026-09-18時点の6リージョン一覧。東京は列挙。大阪は列挙なしだが、不提供と断定せず要再確認。",
+      "verified_on": "2026-11-15",
+      "scope": "記載する各値はリンク先の公式資料で明示的に確認できる範囲。未確認の次元はGA・新規契約可否を推定しない。",
+      "pricing_url": null
     },
     {
       "type": "product",
@@ -94,7 +112,10 @@
       "sources": [
         "https://aws.amazon.com/about-aws/whats-new/2025/12/build-automate-production-ui-workflows-nova-act/"
       ],
-      "notes": "GA時点で米国東部（バージニア北部）を提供。2026-11時点の東京・大阪や個別契約条件までは確定していない。"
+      "notes": "GA時点で米国東部（バージニア北部）を提供。2026-11時点の東京・大阪や個別契約条件までは確定していない。",
+      "verified_on": "2026-11-15",
+      "scope": "記載する各値はリンク先の公式資料で明示的に確認できる範囲。未確認の次元はGA・新規契約可否を推定しない。",
+      "pricing_url": null
     },
     {
       "type": "product",
@@ -106,7 +127,10 @@
       "sources": [
         "https://docs.aws.amazon.com/workspaces-thin-client/latest/ug/workspacesthinclient-end-of-support.html"
       ],
-      "notes": "公式文書に2026-03-31と2026-04-20の新規受付停止日に関する表記差あり。物理端末の販売地域をAWSリージョン対応と同一視しない。"
+      "notes": "公式文書に2026-03-31と2026-04-20の新規受付停止日に関する表記差あり。物理端末の販売地域をAWSリージョン対応と同一視しない。",
+      "verified_on": "2026-11-15",
+      "scope": "記載する各値はリンク先の公式資料で明示的に確認できる範囲。未確認の次元はGA・新規契約可否を推定しない。",
+      "pricing_url": null
     },
     {
       "type": "reference",
@@ -121,7 +145,109 @@
         "https://docs.aws.amazon.com/general/latest/gr/maintenance_services.html",
         "https://aws.amazon.com/blogs/storage/how-reuters-built-easily-accessible-large-scale-news-archives-on-aws/"
       ],
-      "notes": "AWS公式Pricingが旧vault型Amazon Glacierの2025-12-15新規受付停止を明記。Product LifecycleはAmazon S3 Glacier DirectとしてMaintenance、AWS Storage Blogは旧Glacier Direct APIとの同一性を説明。S3 Glacier Flexible/Deep ArchiveなどのS3ストレージクラスをMaintenance扱いしない。"
+      "notes": "AWS公式Pricingが旧vault型Amazon Glacierの2025-12-15新規受付停止を明記。Product LifecycleはAmazon S3 Glacier DirectとしてMaintenance、AWS Storage Blogは旧Glacier Direct APIとの同一性を説明。S3 Glacier Flexible/Deep ArchiveなどのS3ストレージクラスをMaintenance扱いしない。",
+      "verified_on": "2026-11-15",
+      "scope": "記載する各値はリンク先の公式資料で明示的に確認できる範囲。未確認の次元はGA・新規契約可否を推定しない。",
+      "pricing_url": null
+    },
+    {
+      "type": "reference",
+      "key": "VPC Lattice",
+      "ga": "GA（2023-03-31 AWS公式発表）",
+      "tokyo": "提供確認（公式FAQに明記）",
+      "osaka": "提供確認（公式FAQに明記）",
+      "contract": "使用量に基づく課金。新規受付・別途契約・必要サポートプランは未確認",
+      "sources": [
+        "https://aws.amazon.com/about-aws/whats-new/2023/03/general-availability-amazon-vpc-lattice/",
+        "https://aws.amazon.com/vpc/lattice/faqs/",
+        "https://aws.amazon.com/vpc/lattice/pricing/"
+      ],
+      "pricing_url": "https://aws.amazon.com/vpc/lattice/pricing/",
+      "notes": "2023-03-31 GA発表。現在のAWS公式FAQは東京・大阪の両方を提供リージョンとして列挙。料金ページに利用量課金あり。新規受付・サポート・販売チャネルの制限を否定する根拠は未確認。",
+      "verified_on": "2026-11-15",
+      "scope": "2026-11-15時点で閲覧したAWS公式の記述。地域はサービスとエンドポイントを区別。契約条件は新規受付、プラン、事前コミットメント、販売チャネルのみ対象。"
+    },
+    {
+      "type": "reference",
+      "key": "Firehose",
+      "ga": "サービス運用を公式文書で確認（最新GA状態は未確認）",
+      "tokyo": "APIエンドポイント掲載のみ（サービス提供の全機能は未確認）",
+      "osaka": "APIエンドポイント掲載のみ（サービス提供の全機能は未確認）",
+      "contract": "データ処理量ベースの課金、最低利用料・初期設定費なし（2024年公式発表）。新規受付・販売チャネル等は未確認",
+      "sources": [
+        "https://aws.amazon.com/about-aws/whats-new/2024/02/amazon-data-firehose-formerly-kinesis-data-firehose/",
+        "https://docs.aws.amazon.com/general/latest/gr/fh.html",
+        "https://aws.amazon.com/firehose/pricing/"
+      ],
+      "pricing_url": "https://aws.amazon.com/firehose/pricing/",
+      "notes": "Amazon Kinesis Data Firehose→Amazon Data Firehoseの改称を公式2024-02-09発表で確認。東京/大阪は公式General Reference APIエンドポイントに掲載（新規契約可否・各ソース連携の提供保証ではない）。",
+      "verified_on": "2026-11-15",
+      "scope": "2026-11-15時点で閲覧したAWS公式の記述。地域はサービスとエンドポイントを区別。契約条件は新規受付、プラン、事前コミットメント、販売チャネルのみ対象。"
+    },
+    {
+      "type": "reference",
+      "key": "AWS Private CA",
+      "ga": "地域型のマネージド認証局（GA発表日未確認）",
+      "tokyo": "公式VPCエンドポイント対応地域（CAの提供確認は要追加調査）",
+      "osaka": "公式VPCエンドポイント対応地域（CAの提供確認は要追加調査）",
+      "contract": "CAの運用・証明書発行で課金。事前契約・新規顧客受付・販売経路は未確認",
+      "sources": [
+        "https://docs.aws.amazon.com/privateca/latest/userguide/",
+        "https://docs.aws.amazon.com/privateca/latest/userguide/vpc-endpoints.html",
+        "https://aws.amazon.com/private-ca/pricing/"
+      ],
+      "pricing_url": "https://aws.amazon.com/private-ca/pricing/",
+      "notes": "公式ユーザーガイドでCAはRegionリソースと記載、VPCエンドポイント提供地域に東京・大阪を確認。ただしPrivateLink利用可能＝サービス全機能提供とは扱わない。",
+      "verified_on": "2026-11-15",
+      "scope": "2026-11-15時点で閲覧したAWS公式の記述。地域はサービスとエンドポイントを区別。契約条件は新規受付、プラン、事前コミットメント、販売チャネルのみ対象。"
+    },
+    {
+      "type": "reference",
+      "key": "Kinesis Data Streams",
+      "ga": "サービスドキュメント・課金体系確認（GA発表日未確認）",
+      "tokyo": "APIエンドポイント掲載・VPCエンドポイント機能対応（サービス全体は要追加確認）",
+      "osaka": "APIエンドポイント掲載・VPCエンドポイント機能対応（サービス全体は要追加確認）",
+      "contract": "従量/プロビジョンド等の課金モード。On-demand Advantageには最低利用容量の課金あり。事前契約が必要という意味ではない",
+      "sources": [
+        "https://docs.aws.amazon.com/general/latest/gr/ak.html",
+        "https://docs.aws.amazon.com/streams/latest/dev/vpc.html",
+        "https://aws.amazon.com/kinesis/data-streams/pricing/"
+      ],
+      "pricing_url": "https://aws.amazon.com/kinesis/data-streams/pricing/",
+      "notes": "東京・大阪のAPIエンドポイントおよびVPC endpoint policyの対象リージョンをAWS公式文書で確認。GA/新規受付/コミットメントはAPIがあるだけでは判断しない。",
+      "verified_on": "2026-11-15",
+      "scope": "2026-11-15時点で閲覧したAWS公式の記述。地域はサービスとエンドポイントを区別。契約条件は新規受付、プラン、事前コミットメント、販売チャネルのみ対象。"
+    },
+    {
+      "type": "reference",
+      "key": "Amazon ML",
+      "ga": "新規ユーザー受付停止（公式Developer Guide）／既存ユーザー向けDocs継続。Full Shutdownとは断定しない",
+      "tokyo": "既存顧客の利用リージョンは未確認",
+      "osaka": "既存顧客の利用リージョンは未確認",
+      "contract": "新規ユーザー受付停止（公式）。旧ユーザーの継続条件・サポートプランは未確認",
+      "sources": [
+        "https://docs.aws.amazon.com/machine-learning/latest/dg/what-is-amazon-machine-learning.html"
+      ],
+      "pricing_url": null,
+      "notes": "公式ガイドに no longer updating / no longer accepting new users と明記。正式ライフサイクル3表未掲載をGAとみなさず、新規導入候補から除外。既存ユーザーへの利用停止やFull Shutdownは推定しない。",
+      "verified_on": "2026-11-15",
+      "scope": "2026-11-15時点で閲覧したAWS公式の記述。地域はサービスとエンドポイントを区別。契約条件は新規受付、プラン、事前コミットメント、販売チャネルのみ対象。"
+    },
+    {
+      "type": "reference",
+      "key": "Amazon SimpleDB",
+      "ga": "GA・現行の新規利用条件は未確認（古いFAQでは利用開始案内あり）",
+      "tokyo": "旧FAQでは東京での利用を記載。2026-11の新規提供は未確認",
+      "osaka": "確認したFAQに大阪の記載なし。未提供とは判断しない",
+      "contract": "旧FAQではセットアップ料・事前コミットメント不要と記載。現行新規顧客受付は未確認",
+      "sources": [
+        "https://aws.amazon.com/simpledb/faqs/",
+        "https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/Endpoints.html"
+      ],
+      "pricing_url": "https://aws.amazon.com/simpledb/pricing/",
+      "notes": "AWS公式FAQは『AWSアカウントがあれば利用開始可能』と記すが更新日不明で2026年の新規顧客受付保証にはならない。終了・受付停止を示す明示的な公式告知は今回の確認範囲で見つかっていない。",
+      "verified_on": "2026-11-15",
+      "scope": "2026-11-15時点で閲覧したAWS公式の記述。地域はサービスとエンドポイントを区別。契約条件は新規受付、プラン、事前コミットメント、販売チャネルのみ対象。"
     }
   ]
 }
