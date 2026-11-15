@@ -36,7 +36,7 @@ Cloudflareで採用した「全件の公式目録」と「編集された独自�
 - AWS公式のマーケティング分類（badge）をそのまま採録。分類名に不自然なものがあっても独自の推測で書き換えません。
 - AWS公式サイト内部の検索エンドポイントには [Kiro](https://kiro.dev/) のような外部ドメインの製品ページも登録されています。ドメインだけで除外せず、発見元の公式データと製品IDを保持します。
 - **Productsへの掲載は新規利用可能・GAの証明ではありません。** 停止品の採用判断は[lifecycle.md](lifecycle.md)と個別の公式発表を確認します。
-- [products-coverage.md](products-coverage.md) の**Full Shutdown注記は、General Referenceとの照合状況に関係なく表示**します。照合済みと提供中を混同しないようにしています。
+- [products-coverage.md](products-coverage.md) は**Maintenance・Sunset・Full Shutdownを、General Referenceとの照合状況に関係なく表示**します。照合済みと提供中を混同せず、関連サービスの終了を製品本体の終了と混同しないようにしています。
 - [products.md](products.md)ではライフサイクルの列を追加し、**サービス本体に完全一致（または明示的別名）したMaintenance・Sunset・Full Shutdown**を表示。SageMakerなどの一部機能の終了を、親サービス全体の終了とは扱いません。
 - **QLDBの正式名称差**も手動別名で照合。[AWS Full Shutdown一覧](https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html)に掲載されています。
 

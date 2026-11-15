@@ -122,6 +122,24 @@ LIFECYCLE_LABELS={
     "shutdown":"Full Shutdown（終了済み）"
 }
 
+def lifecycle_coverage_note(row):
+    """A full-product or related-service status, independent of ref mapping."""
+    stage=row["stage"]
+    date=row["end"]
+    if stage=="shutdown":
+        return "Full Shutdown済み"+("（"+date+"）" if date!="—" else "")
+    if stage=="sunset":
+        return "Sunset"+("（"+date+"終了予定）" if date!="—" else "（終了予定）")
+    return "Maintenance（新規利用に制限）"+(
+        "（サポート終了日 "+date+"）" if date!="—" else "")
+
+def related_product_date(row):
+    if row["end"]=="—":
+        return ""
+    return "（"+row["end"]+("終了" if row["stage"]=="shutdown"
+             else "終了予定" if row["stage"]=="sunset"
+             else "サポート終了日")+"）"
+
 def related_lifecycle(name,config,byname):
     """Return statuses of a related service, NOT the Product's own statuses."""
     relation=config.get("lifecycle_related",{}).get(name)
@@ -146,9 +164,9 @@ def product_lifecycle(name,config,byname):
                     state="関連サービスが終了済み"
                 else:
                     state="関連サービスの"+LIFECYCLE_LABELS[row["stage"]]
-                detail=("（"+row["end"]+"）" if row["end"]!="—" else "")
-                terms.append("["+state+"："+dependency+"](lifecycle.md)"+detail)
-            return " / ".join(terms)+"（製品本体の提供状態とは区別）",[]
+                terms.append("["+state+"："+dependency+"](lifecycle.md)"
+                             +related_product_date(row))
+            return " / ".join(terms)+"。製品本体の提供状態とは区別",[]
         return "本体の該当記載なし（GA未確認）",[]
     terms=[]
     for row in rows:
@@ -215,7 +233,8 @@ def generate(products, references, config, day):
         "この表は**掲載名・掲載粒度の差分**です。目録外を製品不存在と解釈しません。",
         "**分類:** 同名＝名称一致（サービス同等・GAの証明ではない）、確認済み別名＝明示的な名称の対応、関連・別粒度＝関連はあるが非同等、目録外・未対応＝対応先未確定。",
         "理由欄は例外事項のみ記載します。原本のカードIDは[全件一覧](products.md)と[取得データ](products-source.json)で確認できます。",
-        "同名の別カードはその行だけIDを併記します。",""]
+        "同名の別カードはその行だけIDを併記します。",
+        "この差分表でも**Maintenance・Sunset・Full Shutdownの本体ステータス**を表示します。関連サービスの状態は本体と区別して記載します。",""]
     display_rows=[]
     matched=set()
     classes=Counter()
@@ -233,20 +252,16 @@ def generate(products, references, config, day):
             note=related[name]["reason"]
         else:
             key=None;kind="目録外・未対応";note=""
-        # Lifecycle and the Products-vs-Reference classification are independent.
-        # A shutdown must not be hidden simply because a reference name matched.
+        # Reference matching and lifecycle are orthogonal. Surface all three
+        # lifecycle stages for every Product, regardless of match class.
         _,own_statuses=product_lifecycle(name,config,byname)
-        shutdown=next((r for r in own_statuses if r["stage"]=="shutdown"),None)
-        if shutdown:
-            suffix="Full Shutdown済み（"+shutdown["end"]+"）"
+        for status in own_statuses:
+            suffix=lifecycle_coverage_note(status)
             note=(note+"。"+suffix) if note else suffix
         dependency=related_lifecycle(name,config,byname)
         if dependency:
             related_name=related_lifecycle_cfg[name]["service"]
-            parts=[]
-            for row in dependency:
-                date="（"+row["end"]+"）" if row["end"]!="—" else ""
-                parts.append(LIFECYCLE_LABELS[row["stage"]]+date)
+            parts=[lifecycle_coverage_note(row) for row in dependency]
             suffix=(related_name+"（関連サービス）は"+" / ".join(parts)
                     +"。製品本体の提供状態とは区別")
             note=(note+"。"+suffix) if note else suffix
