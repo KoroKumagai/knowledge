@@ -4,14 +4,16 @@ on:
   workflow_dispatch:
 
 # No AWS IAM keys in GitHub. OIDC is used only for a manually triggered
-# read-only probe, and only after AWS_AUDIT_ROLE_ARN has been set.
+# read-only probe, and only after the role/account variables and protected
+# aws-audit Environment have been configured.
 permissions:
   contents: read
   id-token: write
 
 jobs:
   probe:
-    if: ${{ vars.AWS_AUDIT_ROLE_ARN != '' }}
+    if: ${{ vars.AWS_AUDIT_ROLE_ARN != '' && vars.AWS_AUDIT_ACCOUNT_ID != '' }}
+    environment: aws-audit
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -25,6 +27,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v6.3.0
         with:
           role-to-assume: ${{ vars.AWS_AUDIT_ROLE_ARN }}
+          allowed-account-ids: ${{ vars.AWS_AUDIT_ACCOUNT_ID }}
           aws-region: us-east-1
           role-session-name: aws-audit-ssm
       - name: Read only official SSM public infrastructure parameters
