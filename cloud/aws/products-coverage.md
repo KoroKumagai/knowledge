@@ -28,7 +28,7 @@
 | [Amazon Bedrock](https://aws.amazon.com/bedrock/?did=ap_card&trk=ap_card) | 同名 | [Amazon Bedrock](https://docs.aws.amazon.com/general/latest/gr/bedrock.html) | — |
 | [Amazon Bedrock AgentCore](https://aws.amazon.com/bedrock/agentcore/) | 同名 | [Amazon Bedrock AgentCore](https://docs.aws.amazon.com/general/latest/gr/bedrock_agentcore.html) | — |
 | [Amazon Braket](https://aws.amazon.com/braket/?did=ap_card&trk=ap_card) | 確認済み別名 | [Braket](https://docs.aws.amazon.com/general/latest/gr/braket.html) | — |
-| [Amazon Chime](https://aws.amazon.com/chime/?did=ap_card&trk=ap_card) | 同名 | [Amazon Chime](https://docs.aws.amazon.com/general/latest/gr/chime.html) | — |
+| [Amazon Chime](https://aws.amazon.com/chime/?did=ap_card&trk=ap_card) | 同名 | [Amazon Chime](https://docs.aws.amazon.com/general/latest/gr/chime.html) | Full Shutdown済み（2026-02-20） |
 | [Amazon CloudFront](https://aws.amazon.com/cloudfront/?did=ap_card&trk=ap_card) | 確認済み別名 | [CloudFront](https://docs.aws.amazon.com/general/latest/gr/cf_region.html) | — |
 | [Amazon CloudSearch](https://aws.amazon.com/cloudsearch/?did=ap_card&trk=ap_card) | 同名 | [Amazon CloudSearch](https://docs.aws.amazon.com/general/latest/gr/cloudsearch.html) | — |
 | [Amazon CloudWatch](https://aws.amazon.com/cloudwatch/?did=ap_card&trk=ap_card) | 確認済み別名 | [CloudWatch](https://docs.aws.amazon.com/general/latest/gr/cw_region.html) | — |
@@ -58,7 +58,7 @@
 | [Amazon ElastiCache](https://aws.amazon.com/elasticache/?did=ap_card&trk=ap_card) | 確認済み別名 | [ElastiCache](https://docs.aws.amazon.com/general/latest/gr/elasticache-service.html) | — |
 | [Amazon EMR](https://aws.amazon.com/emr/?did=ap_card&trk=ap_card) | 同名 | [Amazon EMR](https://docs.aws.amazon.com/general/latest/gr/emr.html) | — |
 | [Amazon EventBridge](https://aws.amazon.com/eventbridge/?did=ap_card&trk=ap_card) | 確認済み別名 | [EventBridge](https://docs.aws.amazon.com/general/latest/gr/ev.html) | — |
-| [Amazon FinSpace](https://aws.amazon.com/finspace/?did=ap_card&trk=ap_card) | 確認済み別名 | [FinSpace](https://docs.aws.amazon.com/general/latest/gr/finspace.html) | — |
+| [Amazon FinSpace](https://aws.amazon.com/finspace/?did=ap_card&trk=ap_card) | 確認済み別名 | [FinSpace](https://docs.aws.amazon.com/general/latest/gr/finspace.html) | Full Shutdown済み（2026-10-07） |
 | [Amazon Forecast](https://aws.amazon.com/forecast/?did=ap_card&trk=ap_card) | 確認済み別名 | [Forecast](https://docs.aws.amazon.com/general/latest/gr/forecast.html) | — |
 | [Amazon Fraud Detector](https://aws.amazon.com/fraud-detector/?did=ap_card&trk=ap_card) | 同名 | [Amazon Fraud Detector](https://docs.aws.amazon.com/general/latest/gr/fraud-detector.html) | — |
 | [Amazon FSx](https://aws.amazon.com/fsx/?did=ap_card&trk=ap_card) | 同名 | [Amazon FSx](https://docs.aws.amazon.com/general/latest/gr/fsxn.html) | — |
@@ -74,7 +74,7 @@
 | [Amazon Lex](https://aws.amazon.com/lex/?did=ap_card&trk=ap_card) | 同名 | [Amazon Lex](https://docs.aws.amazon.com/general/latest/gr/lex.html) | — |
 | [Amazon Lightsail](https://aws.amazon.com/lightsail/?did=ap_card&trk=ap_card) | 確認済み別名 | [Lightsail](https://docs.aws.amazon.com/general/latest/gr/lightsail.html) | — |
 | [Amazon Location Service](https://aws.amazon.com/location/?did=ap_card&trk=ap_card) | 同名 | [Amazon Location Service](https://docs.aws.amazon.com/general/latest/gr/location.html) | — |
-| [Amazon Lookout for Equipment](https://aws.amazon.com/lookout-for-equipment/?did=ap_card&trk=ap_card) | 確認済み別名 | [Lookout for Equipment](https://docs.aws.amazon.com/general/latest/gr/lookoutequipment.html) | — |
+| [Amazon Lookout for Equipment](https://aws.amazon.com/lookout-for-equipment/?did=ap_card&trk=ap_card) | 確認済み別名 | [Lookout for Equipment](https://docs.aws.amazon.com/general/latest/gr/lookoutequipment.html) | Full Shutdown済み（2026-10-07） |
 | [Amazon Lookout for Metrics](https://aws.amazon.com/lookout-for-metrics/?did=ap_card&trk=ap_card) | 目録外・未対応 | — | Full Shutdown済み（2025-10-10） |
 | [Amazon Lookout for Vision](https://aws.amazon.com/lookout-for-vision/?did=ap_card&trk=ap_card) | 目録外・未対応 | — | Full Shutdown済み（2025-10-31） |
 | [Amazon Macie](https://aws.amazon.com/macie/?did=ap_card&trk=ap_card) | 確認済み別名 | [Macie](https://docs.aws.amazon.com/general/latest/gr/macie.html) | — |
@@ -91,7 +91,7 @@
 | [Amazon Nova](https://aws.amazon.com/nova/?hp=fa&trk=c6553eb9-60f2-436a-b294-162bda8a1ebb) | 目録外・未対応 | — | — |
 | [Amazon OpenSearch Service](https://aws.amazon.com/opensearch-service/?did=ap_card&trk=ap_card) | 確認済み別名 | [OpenSearch Service](https://docs.aws.amazon.com/general/latest/gr/opensearch-service.html) | — |
 | [Amazon Personalize](https://aws.amazon.com/personalize/?did=ap_card&trk=ap_card) | 同名 | [Amazon Personalize](https://docs.aws.amazon.com/general/latest/gr/personalize.html) | — |
-| [Amazon Pinpoint](https://aws.amazon.com/pinpoint/?did=ap_card&trk=ap_card) | 同名 | [Amazon Pinpoint](https://docs.aws.amazon.com/general/latest/gr/pinpoint.html) | — |
+| [Amazon Pinpoint](https://aws.amazon.com/pinpoint/?did=ap_card&trk=ap_card) | 同名 | [Amazon Pinpoint](https://docs.aws.amazon.com/general/latest/gr/pinpoint.html) | Full Shutdown済み（2026-10-30） |
 | [Amazon Polly](https://aws.amazon.com/polly/?did=ap_card&trk=ap_card) | 同名 | [Amazon Polly](https://docs.aws.amazon.com/general/latest/gr/pol.html) | — |
 | [Amazon Q](https://aws.amazon.com/q/?did=ap_card&trk=ap_card&nc2=hp) | 関連・別粒度（非同等） | [Amazon Q Business](https://docs.aws.amazon.com/general/latest/gr/amazonq.html) | Q Business / Q Developer等を含む製品群の総称。Q Business単独とは異なる |
 | [Amazon Quantum Ledger Database (QLDB)](https://aws.amazon.com/qldb/?did=ap_card&trk=ap_card) | 目録外・未対応 | — | Full Shutdown済み（2025-07-31） |
@@ -121,7 +121,7 @@
 | [Amazon WorkSpaces Family](https://aws.amazon.com/workspaces/?did=ap_card&trk=ap_card) | 関連・別粒度（非同等） | [Amazon WorkSpaces](https://docs.aws.amazon.com/general/latest/gr/wsp.html) | WorkSpacesの複数製品群・クライアントをまとめた名称 |
 | [Amazon WorkSpaces Thin Client](https://aws.amazon.com/workspaces/thin-client/?did=ap_card&trk=ap_card) | 目録外・未対応 | — | — |
 | [AWS Amplify](https://aws.amazon.com/amplify/?did=ap_card&trk=ap_card) | 確認済み別名 | [Amplify](https://docs.aws.amazon.com/general/latest/gr/amplify.html) | — |
-| [AWS App Mesh](https://aws.amazon.com/app-mesh/?did=ap_card&trk=ap_card) | 確認済み別名 | [App Mesh](https://docs.aws.amazon.com/general/latest/gr/appmesh.html) | — |
+| [AWS App Mesh](https://aws.amazon.com/app-mesh/?did=ap_card&trk=ap_card) | 確認済み別名 | [App Mesh](https://docs.aws.amazon.com/general/latest/gr/appmesh.html) | Full Shutdown済み（2026-09-30） |
 | [AWS App Runner](https://aws.amazon.com/apprunner/?did=ap_card&trk=ap_card) | 確認済み別名 | [App Runner](https://docs.aws.amazon.com/general/latest/gr/apprunner.html) | — |
 | [AWS App Studio](https://aws.amazon.com/appstudio/) | 同名 | [AWS App Studio](https://docs.aws.amazon.com/general/latest/gr/appstudio.html) | — |
 | [AWS App2Container](https://aws.amazon.com/app2container/?did=ap_card&trk=ap_card) | 目録外・未対応 | — | — |
@@ -194,7 +194,7 @@
 | [AWS Identity and Access Management](https://aws.amazon.com/iam/?did=ap_card&trk=ap_card) | 確認済み別名 | [IAM](https://docs.aws.amazon.com/general/latest/gr/iam-service.html) | — |
 | [AWS Inferentia](https://aws.amazon.com/machine-learning/inferentia/?did=ap_card&trk=ap_card) | 関連・別粒度（非同等） | [Amazon EC2](https://docs.aws.amazon.com/general/latest/gr/ec2-service.html) | EC2 Inf系インスタンスで利用する推論用チップ。EC2サービスそのものと同等ではない |
 | [AWS Infrastructure Composer](https://aws.amazon.com/infrastructure-composer/?did=ap_card&trk=ap_card) | 関連・別粒度（非同等） | [CloudFormation](https://docs.aws.amazon.com/general/latest/gr/cfn.html) | 構成可視化・編集ツールとIaCリソース管理サービスは別 |
-| [AWS IoT Button](https://aws.amazon.com/iotbutton/?did=ap_card&trk=ap_card) | 目録外・未対応 | — | AWS IoT 1-Click（関連サービス）はFull Shutdown（2025-01-29）。ボタン本体の終了状態とは区別 |
+| [AWS IoT Button](https://aws.amazon.com/iotbutton/?did=ap_card&trk=ap_card) | 目録外・未対応 | — | AWS IoT 1-Click（関連サービス）はFull Shutdown（終了済み）（2025-01-29）。製品本体の提供状態とは区別 |
 | [AWS IoT Core](https://aws.amazon.com/iot-core/?did=ap_card&trk=ap_card) | 同名 | [AWS IoT Core](https://docs.aws.amazon.com/general/latest/gr/iot-core.html) | — |
 | [AWS IoT Device Defender](https://aws.amazon.com/iot-device-defender/?did=ap_card&trk=ap_card) | 同名 | [AWS IoT Device Defender](https://docs.aws.amazon.com/general/latest/gr/iot_device_defender.html) | — |
 | [AWS IoT Device Management](https://aws.amazon.com/iot-device-management/?did=ap_card&trk=ap_card) | 同名 | [AWS IoT Device Management](https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html) | — |
@@ -218,7 +218,7 @@
 | [AWS Outposts](https://aws.amazon.com/outposts/?did=ap_card&trk=ap_card) | 同名 | [AWS Outposts](https://docs.aws.amazon.com/general/latest/gr/outposts_region.html) | — |
 | [AWS Personal Health Dashboard](https://aws.amazon.com/premiumsupport/technology/personal-health-dashboard/?did=ap_card&trk=ap_card) | 確認済み別名 | [AWS Health](https://docs.aws.amazon.com/general/latest/gr/awshealth.html) | 2022年にAWS Health Dashboardへ名称変更（[AWS Health文書履歴](https://docs.aws.amazon.com/health/latest/ug/doc-history.html)） |
 | [AWS PrivateLink](https://aws.amazon.com/privatelink/?did=ap_card&trk=ap_card) | 関連・別粒度（非同等） | [Amazon VPC](https://docs.aws.amazon.com/general/latest/gr/vpc-service.html) | VPCエンドポイントによるプライベート接続機能。VPC全体と同一ではない |
-| [AWS Proton](https://aws.amazon.com/proton/?did=ap_card&trk=ap_card) | 同名 | [AWS Proton](https://docs.aws.amazon.com/general/latest/gr/proton.html) | — |
+| [AWS Proton](https://aws.amazon.com/proton/?did=ap_card&trk=ap_card) | 同名 | [AWS Proton](https://docs.aws.amazon.com/general/latest/gr/proton.html) | Full Shutdown済み（2026-10-07） |
 | [AWS Quick](https://aws.amazon.com/quick/) | 関連・別粒度（非同等） | [AWS Quick Sight](https://docs.aws.amazon.com/general/latest/gr/quicksight.html) | AWS QuickはAIワークスペース全体、Quick SightはBI機能のみ |
 | [AWS Resilience Hub](https://aws.amazon.com/resilience-hub/?did=ap_card&trk=ap_card) | 確認済み別名 | [Resilience Hub](https://docs.aws.amazon.com/general/latest/gr/resiliencehub.html) | — |
 | [AWS Resource Access Manager](https://aws.amazon.com/ram/?did=ap_card&trk=ap_card) | 確認済み別名 | [AWS RAM](https://docs.aws.amazon.com/general/latest/gr/ram.html) | — |

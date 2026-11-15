@@ -122,21 +122,33 @@ LIFECYCLE_LABELS={
     "shutdown":"Full Shutdown（終了済み）"
 }
 
+def related_lifecycle(name,config,byname):
+    """Return statuses of a related service, NOT the Product's own statuses."""
+    relation=config.get("lifecycle_related",{}).get(name)
+    if not relation:
+        return []
+    return sorted(byname[relation["service"]],key=lambda r:
+                  {"shutdown":0,"sunset":1,"maintenance":2}[r["stage"]])
+
 def product_lifecycle(name,config,byname):
     alias=config.get("lifecycle_aliases",{}).get(name,name)
     rows=sorted(byname.get(alias,[]),key=lambda r:
                 {"shutdown":0,"sunset":1,"maintenance":2}[r["stage"]])
     if not rows:
-        # A dependency retirement is not the Product's own lifecycle state.
-        # Never place the related service in lifecycle_aliases.
+        # Related services are shown as dependencies, never as product aliases.
         related=config.get("lifecycle_related",{}).get(name)
-        if related:
+        statuses=related_lifecycle(name,config,byname)
+        if related and statuses:
             dependency=related["service"]
-            records=byname[dependency]
-            shutdown=next((r for r in records if r["stage"]=="shutdown"),None)
-            if shutdown:
-                return ("[関連サービスが終了済み："+dependency+"](lifecycle.md)"
-                        +"（"+shutdown["end"]+"。ボタン本体の終了を意味しない）"),[]
+            terms=[]
+            for row in statuses:
+                if row["stage"]=="shutdown":
+                    state="関連サービスが終了済み"
+                else:
+                    state="関連サービスの"+LIFECYCLE_LABELS[row["stage"]]
+                detail=("（"+row["end"]+"）" if row["end"]!="—" else "")
+                terms.append("["+state+"："+dependency+"](lifecycle.md)"+detail)
+            return " / ".join(terms)+"（製品本体の提供状態とは区別）",[]
         return "本体の該当記載なし（GA未確認）",[]
     terms=[]
     for row in rows:
@@ -163,12 +175,12 @@ def generate(products, references, config, day):
     whole_aliases=config.get("lifecycle_aliases",{})
     if not set(whole_aliases).issubset(prod_names) or not set(whole_aliases.values()).issubset(byname):
         raise ValueError("Invalid product-level lifecycle alias map")
-    related_lifecycle=config.get("lifecycle_related",{})
-    if (not set(related_lifecycle).issubset(prod_names)
-        or set(related_lifecycle)&set(whole_aliases)
+    related_lifecycle_cfg=config.get("lifecycle_related",{})
+    if (not set(related_lifecycle_cfg).issubset(prod_names)
+        or set(related_lifecycle_cfg)&set(whole_aliases)
         or not all(isinstance(v,dict) and v.get("service") in byname
                    and v.get("reason") and v["service"]!=k
-                   for k,v in related_lifecycle.items())):
+                   for k,v in related_lifecycle_cfg.items())):
         raise ValueError("Invalid separate lifecycle-related service mapping")
     note_names=config.get("alias_notes",{})
     if not set(note_names).issubset(set(aliases)):
@@ -221,18 +233,23 @@ def generate(products, references, config, day):
             note=related[name]["reason"]
         else:
             key=None;kind="目録外・未対応";note=""
-            _,service_statuses=product_lifecycle(name,config,byname)
-            closed=next((r for r in service_statuses if r["stage"]=="shutdown"),None)
-            if closed:
-                note="Full Shutdown済み（"+closed["end"]+"）"
-            elif name in related_lifecycle:
-                dependency=related_lifecycle[name]
-                ended=next((r for r in byname[dependency["service"]]
-                            if r["stage"]=="shutdown"),None)
-                if ended:
-                    note=(dependency["service"]+"（関連サービス）"
-                          +"はFull Shutdown（"+ended["end"]+"）。"
-                          +"ボタン本体の終了状態とは区別")
+        # Lifecycle and the Products-vs-Reference classification are independent.
+        # A shutdown must not be hidden simply because a reference name matched.
+        _,own_statuses=product_lifecycle(name,config,byname)
+        shutdown=next((r for r in own_statuses if r["stage"]=="shutdown"),None)
+        if shutdown:
+            suffix="Full Shutdown済み（"+shutdown["end"]+"）"
+            note=(note+"。"+suffix) if note else suffix
+        dependency=related_lifecycle(name,config,byname)
+        if dependency:
+            related_name=related_lifecycle_cfg[name]["service"]
+            parts=[]
+            for row in dependency:
+                date="（"+row["end"]+"）" if row["end"]!="—" else ""
+                parts.append(LIFECYCLE_LABELS[row["stage"]]+date)
+            suffix=(related_name+"（関連サービス）は"+" / ".join(parts)
+                    +"。製品本体の提供状態とは区別")
+            note=(note+"。"+suffix) if note else suffix
         classes[kind]+=1
         link="["+esc(name)+"]("+p["url"]+")"
         if repeated[name]>1:
