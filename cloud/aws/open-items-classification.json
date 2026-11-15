@@ -437,8 +437,8 @@
     },
     {
       "name": "AWS IoT Greengrass V1",
-      "kind": "サブ機能・専門API候補",
-      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+      "kind": "提供終了の旧製品",
+      "basis": "AWS General Reference Full Shutdown公式一覧で2026-10-07終了を確認。V2は別"
     },
     {
       "name": "AWS IoT Greengrass V2",
@@ -447,8 +447,8 @@
     },
     {
       "name": "Kinesis Data Streams",
-      "kind": "サブ機能・専門API候補",
-      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+      "kind": "独立サービス・専門サービス候補",
+      "basis": "AWS公式Kinesis Data Streams料金表はオンデマンド／プロビジョンドによる独立の使用量課金とストリーム単位の請求を明記（https://aws.amazon.com/kinesis/data-streams/pricing/）"
     },
     {
       "name": "Amazon ML",
@@ -567,8 +567,8 @@
     },
     {
       "name": "Amazon Glacier",
-      "kind": "サブ機能・専門API候補",
-      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+      "kind": "終了予定・提供制限の製品",
+      "basis": "旧vault型Amazon GlacierはAmazon S3 Glacier Direct（公式Maintenance掲載名）に対応。2025-12-15以降の新規受付停止をAWS公式料金案内で確認。S3 Glacierストレージクラスとは別物"
     },
     {
       "name": "AWS Signer",
@@ -627,8 +627,8 @@
     },
     {
       "name": "AWS WAF Classic",
-      "kind": "共通管理・基盤API候補",
-      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+      "kind": "提供終了の旧製品",
+      "basis": "AWS General Reference Full Shutdown公式一覧で2026-10-07終了を確認。現行AWS WAFとは別"
     },
     {
       "name": "Amazon WorkSpaces",
