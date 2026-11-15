@@ -149,7 +149,7 @@ check("AWS IoT Button" not in mapping.get("lifecycle_aliases",{}),
       "IoT Button may not inherit whole-product retirement through an alias")
 for product_name,expected in (
     ("Amazon WorkSpaces Thin Client", "[Sunset（終了予定）](lifecycle.md)（2027-03-31）"),
-    ("AWS IoT Button", "[関連サービスが終了済み：AWS IoT 1-Click](lifecycle.md)（2025-01-29）（製品本体の提供状態とは区別）")
+    ("AWS IoT Button", "[関連サービスが終了済み：AWS IoT 1-Click](lifecycle.md)（2025-01-29終了）。製品本体の提供状態とは区別")
 ):
     candidates=[line for line in product_md.splitlines()
                 if line.startswith("| "+product_name+" |")]
@@ -158,7 +158,7 @@ for product_name,expected in (
 check("| [Amazon Quantum Ledger Database (QLDB)]" in coverage_md and
       "目録外・未対応 | — | Full Shutdown済み（2025-07-31） |" in coverage_md,
       "QLDB General Reference mismatch needs its shutdown annotation")
-check("AWS IoT 1-Click（関連サービス）はFull Shutdown（終了済み）（2025-01-29）。"
+check("AWS IoT 1-Click（関連サービス）はFull Shutdown済み（2025-01-29）。"
       "製品本体の提供状態とは区別" in coverage_md,
       "Related service must be marked as distinct, using product-neutral wording")
 check("ボタン本体" not in coverage_md and "ボタン本体" not in product_md,
@@ -181,19 +181,31 @@ check(not synthetic_own and all(x in synthetic_text for x in (
       "関連サービスのMaintenance", "関連サービスのSunset",
       "関連サービスが終了済み", "製品本体の提供状態とは区別")),
       "Related service must support Maintenance, Sunset and Shutdown generically")
-# Confirm lifecycle status is shown in coverage even when General Reference
-# has a same-name or confirmed-alias mapping.
-source_shutdown=generator.read_product_lifecycle()
+# All lifecycle stages must appear in coverage even if General Reference
+# matches by exact name or a reviewed alias. No state implies GA.
+source_lifecycle=generator.read_product_lifecycle()
+counts=Counter()
 for item in products:
     name=item["name"]
-    _,direct_rows=generator.product_lifecycle(name,mapping,source_shutdown)
-    closed=next((r for r in direct_rows if r["stage"]=="shutdown"),None)
-    if not closed: continue
+    _,direct_rows=generator.product_lifecycle(name,mapping,source_lifecycle)
+    if not direct_rows:
+        continue
     candidates=[row for row in coverage_md.splitlines()
                 if row.startswith("| ["+name+"](")]
-    expected="Full Shutdown済み（"+closed["end"]+"）"
-    check(len(candidates)==1 and expected in candidates[0],
-          "Coverage must flag discontinued services irrespective of match type: "+name)
+    for status in direct_rows:
+        counts[status["stage"]]+=1
+        expected=generator.lifecycle_coverage_note(status)
+        check(len(candidates)==1 and expected in candidates[0],
+              "Coverage omits "+status["stage"]+" for Product "+name)
+check(counts["shutdown"]>=14 and counts["maintenance"]>=12 and counts["sunset"]>=5,
+      "Unexpectedly few official lifecycle matches in marketing inventory")
+check("この差分表でも**Maintenance・Sunset・Full Shutdown" in coverage_md,
+      "Coverage needs lifecycle scope explanation")
+for name,statement in (("AWS App Runner","Maintenance（新規利用に制限）"),
+                       ("Amazon WorkSpaces Thin Client","Sunset（2027-03-31終了予定）")):
+    rows=[line for line in coverage_md.splitlines() if line.startswith("| ["+name+"](")]
+    check(len(rows)==1 and statement in rows[0],
+          "Coverage spot-check missing: "+name)
 
 summary="**公式Full Shutdown台帳でサービス本体の終了を確認: 14カード**"
 check(summary+"\n\n[269項目との差分]" in product_md,
