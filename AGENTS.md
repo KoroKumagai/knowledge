@@ -36,8 +36,9 @@
   - `cloud/aws/products.md`, `products-coverage.md`, `products-source.json` … `scripts/refresh_aws_marketing_products.py`
   - `cloud/aws/open-items.md` … `python scripts/render_aws_open_items.py --write`（元: `open-items-classification.json`, `availability-evidence.json`）
   - `cloud/aws/availability-decisions.md` … `python scripts/check_aws_audit_decisions.py --write`（元: `availability-decisions.json`）
-  - `cloud/cloudflare/catalog.md`, `products.md` … `scripts/refresh_cloudflare_directory.py`（提供段階は `catalog-status.json` を手動保守）
+  - `cloud/cloudflare/catalog.md` … `scripts/refresh_cloudflare_directory.py`（提供段階は `catalog-status.json` を手動保守）
   - 上記の refresh スクリプトは `cloud/README.md` や各社 `README.md` の件数も書き換える。
+- **手動保守のファイル:** `cloud/cloudflare/products.md` の製品行・対応付け・分類は手動で保守する（再生成用のJSONはない）。製品の追加・改称時はこの表を直接編集する。ただし `refresh_cloudflare_directory.py` が `**Docs照合元コミット:**` と Docs エントリ件数を書き換え、参照中の YAML が upstream から削除されていないか検証するため、これらの記載形式は崩さないこと。
 - **手動対応表:** 名称の別名・対応付けは `products-mapping.json` / `lifecycle-mapping.json` に根拠付きで追加する。曖昧一致で済ませない。
 - 件数（例: 237カード、269項目）を本文に書く場合は、検証スクリプトが照合する箇所と一致させる。
 
