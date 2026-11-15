@@ -24,6 +24,7 @@
 - **出典:** 事実の主張は一次資料（公式ドキュメント・公式発表）へのリンクで裏付ける。推測で提供状況（GA・Preview・終了など）を書かない。未確認のものは「未確認」と明示する。
 - **リンク:** リポジトリ内のリンクは相対パス。ファイルを移動・改名したらリンク切れを直す。
 - 既存の文体・表形式・見出し構成に合わせる。新しいディレクトリを作ったら [README.md](README.md) のディレクトリ構成も更新する。
+- **変更が読者にも影響がある場合は、README.md を確認し、必要であれば修正する。** 例: ディレクトリやファイルの追加・移動・削除、収録範囲・件数・基準日の変更、掲載内容の扱い（GA・未確認などの意味）の変更、コミット規約や作業ルールの変更。ルートの [README.md](README.md) に加え、該当ディレクトリの README.md（`cloud/README.md`、`cloud/aws/README.md`、`cloud/cloudflare/README.md`）も確認する。
 
 ## `cloud/` の編集ルール
 
@@ -73,7 +74,7 @@ python scripts/probe_aws_ssm_regions.py --self-test
 
 ## コミット・PR
 
-- [Conventional Commits](https://www.conventionalcommits.org/ja/v1.0.0/) に従う。主なタイプ: `docs:`, `fix(docs):`, `feat:`, `chore(repo):`, `ci:`, `test:`, `build:`。対象が明確ならスコープを付ける（例: `docs(aws):`, `docs(cloudflare):`, `ci(aws):`）。
+- [Conventional Commits](https://www.conventionalcommits.org/ja/v1.0.0/) に従う。主なタイプ: `docs:`, `fix:`（ドキュメントのみなら `fix(docs):`）, `feat:`, `refactor:`, `test:`, `ci:`, `build:`, `chore(repo):`。各タイプの意味は [README.md](README.md) の「コミットメッセージ規約」を参照。対象が明確ならスコープを付ける（例: `docs(aws):`, `docs(cloudflare):`, `ci(aws):`）。
 - コミットメッセージ・PR本文は日本語・英語どちらでもよい。変更の根拠（公式出典URL・検証日）を記載する。
 - 関連 Issue があれば PR で参照する（例: AWS監査は #11 系）。
 - `.obsidian/` は `.gitignore` 対象。コミットしない。
