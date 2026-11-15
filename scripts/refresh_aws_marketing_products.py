@@ -13,6 +13,7 @@ from urllib.parse import urlencode, urljoin, urlsplit
 from urllib.request import Request, urlopen
 import json
 import re
+from aws_lifecycle import lifecycle_label
 
 ROOT = Path(__file__).resolve().parent.parent
 DIR = ROOT / "cloud/aws"
@@ -116,29 +117,9 @@ def read_product_lifecycle():
             raise ValueError("Lifecycle table section count mismatch: "+status)
     return byname
 
-LIFECYCLE_LABELS={
-    "maintenance":"Maintenance（新規利用に制限）",
-    "sunset":"Sunset（終了予定）",
-    "shutdown":"Full Shutdown（終了済み）"
-}
-
 def lifecycle_coverage_note(row):
     """A full-product or related-service status, independent of ref mapping."""
-    stage=row["stage"]
-    date=row["end"]
-    if stage=="shutdown":
-        return "Full Shutdown済み"+("（"+date+"）" if date!="—" else "")
-    if stage=="sunset":
-        return "Sunset"+("（"+date+"終了予定）" if date!="—" else "（終了予定）")
-    return "Maintenance（新規利用に制限）"+(
-        "（サポート終了日 "+date+"）" if date!="—" else "")
-
-def related_product_date(row):
-    if row["end"]=="—":
-        return ""
-    return "（"+row["end"]+("終了" if row["stage"]=="shutdown"
-             else "終了予定" if row["stage"]=="sunset"
-             else "サポート終了日")+"）"
+    return lifecycle_label(row["stage"], row["end"])
 
 def related_lifecycle(name,config,byname):
     """Return statuses of a related service, NOT the Product's own statuses."""
@@ -160,18 +141,13 @@ def product_lifecycle(name,config,byname):
             dependency=related["service"]
             terms=[]
             for row in statuses:
-                if row["stage"]=="shutdown":
-                    state="関連サービスが終了済み"
-                else:
-                    state="関連サービスの"+LIFECYCLE_LABELS[row["stage"]]
-                terms.append("["+state+"："+dependency+"](lifecycle.md)"
-                             +related_product_date(row))
+                state="関連サービスの"+lifecycle_coverage_note(row)
+                terms.append("["+state+"："+dependency+"](lifecycle.md)")
             return " / ".join(terms)+"。製品本体の提供状態とは区別",[]
         return "本体の該当記載なし（GA未確認）",[]
     terms=[]
     for row in rows:
-        term="["+LIFECYCLE_LABELS[row["stage"]]+"](lifecycle.md)"
-        if row["end"]!="—":term+="（"+row["end"]+"）"
+        term="["+lifecycle_coverage_note(row)+"](lifecycle.md)"
         terms.append(term)
     return " / ".join(terms),rows
 

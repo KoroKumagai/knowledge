@@ -118,8 +118,8 @@ shutdown_products={
 }
 for name in shutdown_products:
     lines=[line for line in product_md.splitlines() if line.startswith("| "+name+" |")]
-    check(len(lines)==1 and "Full Shutdown（終了済み）" in lines[0] and
-          "](lifecycle.md)" in lines[0],
+    check(len(lines)==1 and re.search(
+          r"\[Full Shutdown（(?:\d{4}-\d{2}-\d{2}終了|終了済み)）\]\(lifecycle.md\)", lines[0]),
           "Full Shutdown must be visible on official Product row: "+name)
 check("**"+str(total)+"カード**" in overview and
       str(len({p["category"] for p in products}))+"カテゴリ" in overview,
@@ -148,17 +148,17 @@ check(related_button.get("service")=="AWS IoT 1-Click" and related_button.get("r
 check("AWS IoT Button" not in mapping.get("lifecycle_aliases",{}),
       "IoT Button may not inherit whole-product retirement through an alias")
 for product_name,expected in (
-    ("Amazon WorkSpaces Thin Client", "[Sunset（終了予定）](lifecycle.md)（2027-03-31）"),
-    ("AWS IoT Button", "[関連サービスが終了済み：AWS IoT 1-Click](lifecycle.md)（2025-01-29終了）。製品本体の提供状態とは区別")
+    ("Amazon WorkSpaces Thin Client", "[Sunset（2027-03-31終了予定）](lifecycle.md)"),
+    ("AWS IoT Button", "[関連サービスのFull Shutdown（2025-01-29終了）：AWS IoT 1-Click](lifecycle.md)。製品本体の提供状態とは区別")
 ):
     candidates=[line for line in product_md.splitlines()
                 if line.startswith("| "+product_name+" |")]
     check(len(candidates)==1 and expected in candidates[0],
           "Expected lifecycle status missing for "+product_name)
 check("| [Amazon Quantum Ledger Database (QLDB)]" in coverage_md and
-      "目録外・未対応 | — | Full Shutdown済み（2025-07-31） |" in coverage_md,
+      "目録外・未対応 | — | Full Shutdown（2025-07-31終了） |" in coverage_md,
       "QLDB General Reference mismatch needs its shutdown annotation")
-check("AWS IoT 1-Click（関連サービス）はFull Shutdown済み（2025-01-29）。"
+check("AWS IoT 1-Click（関連サービス）はFull Shutdown（2025-01-29終了）。"
       "製品本体の提供状態とは区別" in coverage_md,
       "Related service must be marked as distinct, using product-neutral wording")
 check("ボタン本体" not in coverage_md and "ボタン本体" not in product_md,
@@ -179,7 +179,7 @@ synthetic_text, synthetic_own=generator.product_lifecycle(
     "Example Product",synthetic_config,synthetic)
 check(not synthetic_own and all(x in synthetic_text for x in (
       "関連サービスのMaintenance", "関連サービスのSunset",
-      "関連サービスが終了済み", "製品本体の提供状態とは区別")),
+      "関連サービスのFull Shutdown", "製品本体の提供状態とは区別")),
       "Related service must support Maintenance, Sunset and Shutdown generically")
 # All lifecycle stages must appear in coverage even if General Reference
 # matches by exact name or a reviewed alias. No state implies GA.

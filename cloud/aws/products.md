@@ -28,7 +28,7 @@
 | Amazon CloudSearch | [公式](https://aws.amazon.com/cloudsearch/?did=ap_card&trk=ap_card) | — | [Maintenance（新規利用に制限）](lifecycle.md) | amazon-cloudsearch |
 | Amazon DataZone | [公式](https://aws.amazon.com/datazone/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/datazone/) | 本体の該当記載なし（GA未確認） | amazon-datazone |
 | Amazon EMR | [公式](https://aws.amazon.com/emr/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/emr/) | 本体の該当記載なし（GA未確認） | amazon-emr |
-| Amazon FinSpace | [公式](https://aws.amazon.com/finspace/?did=ap_card&trk=ap_card) | — | [Full Shutdown（終了済み）](lifecycle.md)（2026-10-07） | amazon-finspace |
+| Amazon FinSpace | [公式](https://aws.amazon.com/finspace/?did=ap_card&trk=ap_card) | — | [Full Shutdown（2026-10-07終了）](lifecycle.md) | amazon-finspace |
 | Amazon Managed Streaming for Apache Kafka (MSK) | [公式](https://aws.amazon.com/msk/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/msk/) | 本体の該当記載なし（GA未確認） | amazon-managed-streaming-for-apache-kafka |
 | Amazon OpenSearch Service | [公式](https://aws.amazon.com/opensearch-service/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/opensearch-service/) | 本体の該当記載なし（GA未確認） | amazon-opensearch-service |
 | Amazon QuickSight | [公式](https://aws.amazon.com/quicksight/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/quicksuite/) | 本体の該当記載なし（GA未確認） | amazon-quicksight |
@@ -71,7 +71,7 @@
 | Amazon Fraud Detector | [公式](https://aws.amazon.com/fraud-detector/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/frauddetector/) | [Maintenance（新規利用に制限）](lifecycle.md) | amazon-fraud-detector |
 | Amazon Kendra | [公式](https://aws.amazon.com/kendra/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/kendra/) | [Maintenance（新規利用に制限）](lifecycle.md) | amazon-kendra |
 | Amazon Lex | [公式](https://aws.amazon.com/lex/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/lex/) | 本体の該当記載なし（GA未確認） | amazon-lex |
-| Amazon Lookout for Equipment | [公式](https://aws.amazon.com/lookout-for-equipment/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/lookout-for-equipment/) | [Full Shutdown（終了済み）](lifecycle.md)（2026-10-07） | amazon-lookout-for-equipment |
+| Amazon Lookout for Equipment | [公式](https://aws.amazon.com/lookout-for-equipment/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/lookout-for-equipment/) | [Full Shutdown（2026-10-07終了）](lifecycle.md) | amazon-lookout-for-equipment |
 | Amazon Monitron | [公式](https://aws.amazon.com/monitron/?did=ap_card&trk=ap_card) | — | [Maintenance（新規利用に制限）](lifecycle.md) | amazon-monitron |
 | Amazon Nova | [公式](https://aws.amazon.com/nova/?hp=fa&trk=c6553eb9-60f2-436a-b294-162bda8a1ebb) | — | 本体の該当記載なし（GA未確認） | amazon-nova |
 | Amazon Personalize | [公式](https://aws.amazon.com/personalize/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/personalize/) | 本体の該当記載なし（GA未確認） | amazon-personalize |
@@ -84,7 +84,7 @@
 | Amazon Translate | [公式](https://aws.amazon.com/translate/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/translate/) | 本体の該当記載なし（GA未確認） | amazon-translate |
 | AWS Deep Learning AMIs | [公式](https://aws.amazon.com/machine-learning/amis/?did=ap_card&trk=ap_card) | — | 本体の該当記載なし（GA未確認） | aws-deep-learning-amis |
 | AWS Deep Learning Containers | [公式](https://aws.amazon.com/machine-learning/containers/?did=ap_card&trk=ap_card) | — | 本体の該当記載なし（GA未確認） | aws-deep-learning-containers |
-| AWS DeepLens | [公式](https://aws.amazon.com/deeplens/?did=ap_card&trk=ap_card) | — | [Full Shutdown（終了済み）](lifecycle.md)（2024-01-31） | aws-deeplens |
+| AWS DeepLens | [公式](https://aws.amazon.com/deeplens/?did=ap_card&trk=ap_card) | — | [Full Shutdown（2024-01-31終了）](lifecycle.md) | aws-deeplens |
 | AWS DevOps Agent | [公式](https://aws.amazon.com/devops-agent/) | — | 本体の該当記載なし（GA未確認） | aws-devops-agent-(preview) |
 | AWS DevOps Agent | [公式](https://aws.amazon.com/devops-agent/) | — | 本体の該当記載なし（GA未確認） | aws-devops-agent-preview |
 | Kiro | [公式](https://kiro.dev/) | — | 本体の該当記載なし（GA未確認） | aws-kiro |
@@ -95,14 +95,14 @@
 
 | 公式Products名 | 製品ページ | Docs（掲載分） | ライフサイクル（本体） | ディレクトリID |
 |---|---|---|---|---|
-| Amazon Chime | [公式](https://aws.amazon.com/chime/?did=ap_card&trk=ap_card) | — | [Full Shutdown（終了済み）](lifecycle.md)（2026-02-20） | amazon-chime |
+| Amazon Chime | [公式](https://aws.amazon.com/chime/?did=ap_card&trk=ap_card) | — | [Full Shutdown（2026-02-20終了）](lifecycle.md) | amazon-chime |
 | Amazon Connect Customer | [公式](https://aws.amazon.com/products/connect/customer/) | [Docs](https://docs.aws.amazon.com/connect/) | 本体の該当記載なし（GA未確認） | amazon-connect |
 | Amazon Connect Decisions | [公式](https://aws.amazon.com/products/connect/decisions/) | — | 本体の該当記載なし（GA未確認） | amazon-connect-decisions |
 | Amazon Connect Health | [公式](https://aws.amazon.com/products/connect/health/) | — | 本体の該当記載なし（GA未確認） | amazon-connect-health |
 | Amazon Connect Talent | [公式](https://aws.amazon.com/products/connect/talent/) | — | 本体の該当記載なし（GA未確認） | amazon-connect-talent |
 | Amazon Dash Cart | [公式](https://aws.amazon.com/dash-cart/?did=ap_card&trk=ap_card) | — | 本体の該当記載なし（GA未確認） | amazon-dash-cart |
 | Amazon Simple Email Service (SES) | [公式](https://aws.amazon.com/ses/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/ses/) | 本体の該当記載なし（GA未確認） | amazon-simple-email-service-ses |
-| Amazon WorkMail | [公式](https://aws.amazon.com/workmail/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/workmail/) | [Sunset（終了予定）](lifecycle.md)（2027-03-31） | amazon-workmail |
+| Amazon WorkMail | [公式](https://aws.amazon.com/workmail/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/workmail/) | [Sunset（2027-03-31終了予定）](lifecycle.md) | amazon-workmail |
 | AWS AppFabric | [公式](https://aws.amazon.com/appfabric/) | [Docs](https://docs.aws.amazon.com/appfabric/) | 本体の該当記載なし（GA未確認） | aws-appfabric |
 | AWS End User Messaging | [公式](https://aws.amazon.com/end-user-messaging/?refid=ap_card) | [Docs](https://docs.aws.amazon.com/end-user-messaging/) | 本体の該当記載なし（GA未確認） | aws-end-user-messaging |
 | AWS Quick | [公式](https://aws.amazon.com/quick/) | — | 本体の該当記載なし（GA未確認） | amazon-quick |
@@ -135,7 +135,7 @@
 | AWS Compute Optimizer | [公式](https://aws.amazon.com/compute-optimizer/?did=ap_card&trk=ap_card) | — | 本体の該当記載なし（GA未確認） | aws-compute-optimizer |
 | AWS Elastic Beanstalk | [公式](https://aws.amazon.com/elasticbeanstalk/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/elastic-beanstalk/) | 本体の該当記載なし（GA未確認） | aws-elastic-beanstalk |
 | AWS Fargate | [公式](https://aws.amazon.com/fargate/?did=ap_card&trk=ap_card) | [Docs](https://aws.amazon.com/documentation-overview/fargate/) | 本体の該当記載なし（GA未確認） | aws-fargate |
-| AWS Infrastructure Composer | [公式](https://aws.amazon.com/infrastructure-composer/?did=ap_card&trk=ap_card) | — | [Sunset（終了予定）](lifecycle.md)（2027-09-29） | aws-application-composer |
+| AWS Infrastructure Composer | [公式](https://aws.amazon.com/infrastructure-composer/?did=ap_card&trk=ap_card) | — | [Sunset（2027-09-29終了予定）](lifecycle.md) | aws-application-composer |
 | AWS Lambda | [公式](https://aws.amazon.com/lambda/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/lambda/) | 本体の該当記載なし（GA未確認） | aws-lambda |
 | AWS Local Zones | [公式](https://aws.amazon.com/about-aws/global-infrastructure/localzones/?did=ap_card&trk=ap_card) | — | 本体の該当記載なし（GA未確認） | local-zones |
 | AWS Outposts | [公式](https://aws.amazon.com/outposts/?did=ap_card&trk=ap_card) | — | 本体の該当記載なし（GA未確認） | aws-outposts |
@@ -167,7 +167,7 @@
 | Amazon DynamoDB | [公式](https://aws.amazon.com/dynamodb/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/dynamodb/) | 本体の該当記載なし（GA未確認） | amazon-dynamodb |
 | Amazon ElastiCache | [公式](https://aws.amazon.com/elasticache/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/elasticache/) | 本体の該当記載なし（GA未確認） | amazon-elasticache |
 | Amazon Keyspaces (for Apache Cassandra) | [公式](https://aws.amazon.com/keyspaces/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/keyspaces/) | 本体の該当記載なし（GA未確認） | amazon-keyspaces-for-apache-cassandra |
-| Amazon Managed Blockchain | [公式](https://aws.amazon.com/managed-blockchain/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/managed-blockchain/) | [Sunset（終了予定）](lifecycle.md)（2027-09-29） | amazon-managed-blockchain |
+| Amazon Managed Blockchain | [公式](https://aws.amazon.com/managed-blockchain/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/managed-blockchain/) | [Sunset（2027-09-29終了予定）](lifecycle.md) | amazon-managed-blockchain |
 | Amazon MemoryDB | [公式](https://aws.amazon.com/memorydb/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/memorydb/) | 本体の該当記載なし（GA未確認） | amazon-memorydb-for-redis |
 | Amazon Neptune | [公式](https://aws.amazon.com/neptune/?did=ap_card&trk=ap_card) | — | 本体の該当記載なし（GA未確認） | amazon-neptune |
 | Amazon RDS | [公式](https://aws.amazon.com/rds/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/rds/) | 本体の該当記載なし（GA未確認） | amazon-rds |
@@ -204,13 +204,13 @@
 |---|---|---|---|---|
 | Amazon WorkSpaces Applications | [公式](https://aws.amazon.com/appstream2/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html) | 本体の該当記載なし（GA未確認） | amazon-appstream-2-0 |
 | Amazon WorkSpaces Family | [公式](https://aws.amazon.com/workspaces/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/workspaces/) | 本体の該当記載なし（GA未確認） | amazon-workspaces |
-| Amazon WorkSpaces Thin Client | [公式](https://aws.amazon.com/workspaces/thin-client/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/workspaces-thin-client/) | [Sunset（終了予定）](lifecycle.md)（2027-03-31） | amazon-workspaces-thin-client |
+| Amazon WorkSpaces Thin Client | [公式](https://aws.amazon.com/workspaces/thin-client/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/workspaces-thin-client/) | [Sunset（2027-03-31終了予定）](lifecycle.md) | amazon-workspaces-thin-client |
 
 ## Front End Web & Mobile, Serverless（1件）
 
 | 公式Products名 | 製品ページ | Docs（掲載分） | ライフサイクル（本体） | ディレクトリID |
 |---|---|---|---|---|
-| Amazon Pinpoint | [公式](https://aws.amazon.com/pinpoint/?did=ap_card&trk=ap_card) | — | [Full Shutdown（終了済み）](lifecycle.md)（2026-10-30） | amazon-pinpoint |
+| Amazon Pinpoint | [公式](https://aws.amazon.com/pinpoint/?did=ap_card&trk=ap_card) | — | [Full Shutdown（2026-10-30終了）](lifecycle.md) | amazon-pinpoint |
 
 ## Games（1件）
 
@@ -228,7 +228,7 @@
 
 | 公式Products名 | 製品ページ | Docs（掲載分） | ライフサイクル（本体） | ディレクトリID |
 |---|---|---|---|---|
-| AWS IoT Button | [公式](https://aws.amazon.com/iotbutton/?did=ap_card&trk=ap_card) | — | [関連サービスが終了済み：AWS IoT 1-Click](lifecycle.md)（2025-01-29終了）。製品本体の提供状態とは区別 | aws-iot-button |
+| AWS IoT Button | [公式](https://aws.amazon.com/iotbutton/?did=ap_card&trk=ap_card) | — | [関連サービスのFull Shutdown（2025-01-29終了）：AWS IoT 1-Click](lifecycle.md)。製品本体の提供状態とは区別 | aws-iot-button |
 | AWS IoT Core | [公式](https://aws.amazon.com/iot-core/?did=ap_card&trk=ap_card) | — | 本体の該当記載なし（GA未確認） | aws-iot-core |
 | AWS IoT Device Defender | [公式](https://aws.amazon.com/iot-device-defender/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/iot-device-defender/) | 本体の該当記載なし（GA未確認） | aws-iot-device-defender |
 | AWS IoT Device Management | [公式](https://aws.amazon.com/iot-device-management/?did=ap_card&trk=ap_card) | — | 本体の該当記載なし（GA未確認） | aws-iot-device-management |
@@ -248,10 +248,10 @@
 | 公式Products名 | 製品ページ | Docs（掲載分） | ライフサイクル（本体） | ディレクトリID |
 |---|---|---|---|---|
 | Amazon HealthLake | [公式](https://aws.amazon.com/healthlake/?did=ap_card&trk=ap_card) | — | 本体の該当記載なし（GA未確認） | amazon-healthlake |
-| Amazon Lookout for Metrics | [公式](https://aws.amazon.com/lookout-for-metrics/?did=ap_card&trk=ap_card) | — | [Full Shutdown（終了済み）](lifecycle.md)（2025-10-10） | amazon-lookout-for-metrics |
-| Amazon Lookout for Vision | [公式](https://aws.amazon.com/lookout-for-vision/?did=ap_card&trk=ap_card) | — | [Full Shutdown（終了済み）](lifecycle.md)（2025-10-31） | amazon-lookout-for-vision |
+| Amazon Lookout for Metrics | [公式](https://aws.amazon.com/lookout-for-metrics/?did=ap_card&trk=ap_card) | — | [Full Shutdown（2025-10-10終了）](lifecycle.md) | amazon-lookout-for-metrics |
+| Amazon Lookout for Vision | [公式](https://aws.amazon.com/lookout-for-vision/?did=ap_card&trk=ap_card) | — | [Full Shutdown（2025-10-31終了）](lifecycle.md) | amazon-lookout-for-vision |
 | Amazon SageMaker | [公式](https://aws.amazon.com/sagemaker/?did=ap_card&trk=ap_card) | — | 本体の該当記載なし（GA未確認） | amazon-sagemaker-1 |
-| AWS DeepComposer | [公式](https://aws.amazon.com/deepcomposer/?did=ap_card&trk=ap_card) | — | [Full Shutdown（終了済み）](lifecycle.md)（2025-09-17） | aws-deepcomposer |
+| AWS DeepComposer | [公式](https://aws.amazon.com/deepcomposer/?did=ap_card&trk=ap_card) | — | [Full Shutdown（2025-09-17終了）](lifecycle.md) | aws-deepcomposer |
 | AWS DeepRacer | [公式](https://aws.amazon.com/deepracer/?did=ap_card&trk=ap_card) | — | 本体の該当記載なし（GA未確認） | aws-deepracer |
 | AWS HealthOmics | [公式](https://aws.amazon.com/omics/?did=ap_card&trk=ap_card) | — | 本体の該当記載なし（GA未確認） | amazon-omics |
 | AWS Inferentia | [公式](https://aws.amazon.com/machine-learning/inferentia/?did=ap_card&trk=ap_card) | — | 本体の該当記載なし（GA未確認） | aws-inferentia |
@@ -272,9 +272,9 @@
 | AWS Management Console Mobile Application | [公式](https://aws.amazon.com/console/mobile/?did=ap_card&trk=ap_card) | — | 本体の該当記載なし（GA未確認） | aws-console-mobile-application |
 | AWS Organizations | [公式](https://aws.amazon.com/organizations/?did=ap_card&trk=ap_card) | — | 本体の該当記載なし（GA未確認） | aws-organizations |
 | AWS Personal Health Dashboard | [公式](https://aws.amazon.com/premiumsupport/technology/personal-health-dashboard/?did=ap_card&trk=ap_card) | — | 本体の該当記載なし（GA未確認） | aws-personal-health-dashboard |
-| AWS Proton | [公式](https://aws.amazon.com/proton/?did=ap_card&trk=ap_card) | — | [Full Shutdown（終了済み）](lifecycle.md)（2026-10-07） | aws-proton |
+| AWS Proton | [公式](https://aws.amazon.com/proton/?did=ap_card&trk=ap_card) | — | [Full Shutdown（2026-10-07終了）](lifecycle.md) | aws-proton |
 | AWS Resilience Hub | [公式](https://aws.amazon.com/resilience-hub/?did=ap_card&trk=ap_card) | — | 本体の該当記載なし（GA未確認） | aws-resilience-hub |
-| AWS Service Management Connector | [公式](https://aws.amazon.com/service-management-connector/?did=ap_card&trk=ap_card) | — | [Sunset（終了予定）](lifecycle.md)（2027-03-31） | aws-service-management-connector |
+| AWS Service Management Connector | [公式](https://aws.amazon.com/service-management-connector/?did=ap_card&trk=ap_card) | — | [Sunset（2027-03-31終了予定）](lifecycle.md) | aws-service-management-connector |
 | AWS Systems Manager | [公式](https://aws.amazon.com/systems-manager/?did=ap_card&trk=ap_card) | — | 本体の該当記載なし（GA未確認） | aws-systems-manager |
 | AWS Trusted Advisor | [公式](https://aws.amazon.com/premiumsupport/technology/trusted-advisor/?did=ap_card&trk=ap_card) | — | 本体の該当記載なし（GA未確認） | aws-trusted-advisor |
 | AWS User Notifications | [公式](https://aws.amazon.com/notifications/?did=ap_card&trk=ap_card) | — | 本体の該当記載なし（GA未確認） | aws-user-notifications |
@@ -289,7 +289,7 @@
 
 | 公式Products名 | 製品ページ | Docs（掲載分） | ライフサイクル（本体） | ディレクトリID |
 |---|---|---|---|---|
-| Amazon Elastic Transcoder | [公式](https://aws.amazon.com/elastictranscoder/?did=ap_card&trk=ap_card) | — | [Full Shutdown（終了済み）](lifecycle.md)（2025-11-13） | amazon-elastic-transcoder |
+| Amazon Elastic Transcoder | [公式](https://aws.amazon.com/elastictranscoder/?did=ap_card&trk=ap_card) | — | [Full Shutdown（2025-11-13終了）](lifecycle.md) | amazon-elastic-transcoder |
 | Amazon Interactive Video Service | [公式](https://aws.amazon.com/ivs/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/ivs/) | 本体の該当記載なし（GA未確認） | amazon-interactive-video-service |
 | Amazon Kinesis Video Streams | [公式](https://aws.amazon.com/kinesis/video-streams/?did=ap_card&trk=ap_card) | [Docs](https://aws.amazon.com/documentation-overview/kinesis-video-streams/) | 本体の該当記載なし（GA未確認） | amazon-kinesis-video-streams |
 | AWS Deadline Cloud | [公式](https://aws.amazon.com/deadline-cloud/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/deadline-cloud/) | 本体の該当記載なし（GA未確認） | aws-deadline-cloud-service |
@@ -298,7 +298,7 @@
 | AWS Elemental MediaConvert | [公式](https://aws.amazon.com/mediaconvert/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/mediaconvert/) | 本体の該当記載なし（GA未確認） | aws-elemental-mediaconvert |
 | AWS Elemental MediaLive | [公式](https://aws.amazon.com/medialive/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/medialive/) | 本体の該当記載なし（GA未確認） | aws-elemental-medialive |
 | AWS Elemental MediaPackage | [公式](https://aws.amazon.com/mediapackage/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/mediapackage/) | 本体の該当記載なし（GA未確認） | aws-elemental-mediapackage |
-| AWS Elemental MediaStore | [公式](https://aws.amazon.com/mediastore/?did=ap_card&trk=ap_card) | — | [Full Shutdown（終了済み）](lifecycle.md)（2025-11-12） | aws-elemental-mediastore |
+| AWS Elemental MediaStore | [公式](https://aws.amazon.com/mediastore/?did=ap_card&trk=ap_card) | — | [Full Shutdown（2025-11-12終了）](lifecycle.md) | aws-elemental-mediastore |
 | AWS Elemental MediaTailor | [公式](https://aws.amazon.com/mediatailor/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/mediatailor/) | 本体の該当記載なし（GA未確認） | aws-elemental-mediatailor |
 
 ## Migration（8件）
@@ -321,7 +321,7 @@
 | Amazon CloudFront | [公式](https://aws.amazon.com/cloudfront/?did=ap_card&trk=ap_card) | — | 本体の該当記載なし（GA未確認） | amazon-cloudfront |
 | Amazon Route 53 | [公式](https://aws.amazon.com/route53/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/route53/) | 本体の該当記載なし（GA未確認） | amazon-route-53 |
 | Amazon VPC | [公式](https://aws.amazon.com/vpc/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/vpc/) | 本体の該当記載なし（GA未確認） | amazon-vpc |
-| AWS App Mesh | [公式](https://aws.amazon.com/app-mesh/?did=ap_card&trk=ap_card) | — | [Full Shutdown（終了済み）](lifecycle.md)（2026-09-30） | aws-app-mesh |
+| AWS App Mesh | [公式](https://aws.amazon.com/app-mesh/?did=ap_card&trk=ap_card) | — | [Full Shutdown（2026-09-30終了）](lifecycle.md) | aws-app-mesh |
 | AWS Cloud Map | [公式](https://aws.amazon.com/cloud-map/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/cloud-map/) | 本体の該当記載なし（GA未確認） | aws-cloud-map |
 | AWS Cloud WAN | [公式](https://aws.amazon.com/cloud-wan/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/network-manager/latest/cloudwan/what-is-cloudwan.html) | 本体の該当記載なし（GA未確認） | aws-cloud-wan |
 | AWS Direct Connect | [公式](https://aws.amazon.com/directconnect/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/directconnect/) | 本体の該当記載なし（GA未確認） | aws-direct-connect |
@@ -402,8 +402,8 @@
 | Amazon GuardDuty | [公式](https://aws.amazon.com/guardduty/?did=ap_card&trk=ap_card) | — | 本体の該当記載なし（GA未確認） | amazon-guardduty |
 | Amazon Inspector | [公式](https://aws.amazon.com/inspector/?did=ap_card&trk=ap_card) | — | 本体の該当記載なし（GA未確認） | amazon-inspector |
 | Amazon Macie | [公式](https://aws.amazon.com/macie/?did=ap_card&trk=ap_card) | — | 本体の該当記載なし（GA未確認） | amazon-macie |
-| Amazon Nimble Studio | [公式](https://aws.amazon.com/nimble-studio/?did=ap_card&trk=ap_card) | — | [Full Shutdown（終了済み）](lifecycle.md)（2024-06-30） | amazon-nimble-studio |
-| Amazon Quantum Ledger Database (QLDB) | [公式](https://aws.amazon.com/qldb/?did=ap_card&trk=ap_card) | — | [Full Shutdown（終了済み）](lifecycle.md)（2025-07-31） | amazon-quantum-ledger-database-qldb |
+| Amazon Nimble Studio | [公式](https://aws.amazon.com/nimble-studio/?did=ap_card&trk=ap_card) | — | [Full Shutdown（2024-06-30終了）](lifecycle.md) | amazon-nimble-studio |
+| Amazon Quantum Ledger Database (QLDB) | [公式](https://aws.amazon.com/qldb/?did=ap_card&trk=ap_card) | — | [Full Shutdown（2025-07-31終了）](lifecycle.md) | amazon-quantum-ledger-database-qldb |
 | Amazon Security Lake | [公式](https://aws.amazon.com/security-lake/?did=ap_card&trk=ap_card) | — | 本体の該当記載なし（GA未確認） | amazon-security-lake |
 | Amazon Verified Permissions | [公式](https://aws.amazon.com/verified-permissions/?did=ap_card&trk=ap_card) | — | 本体の該当記載なし（GA未確認） | amazon-verified-permissions |
 | AWS Firewall Manager | [公式](https://aws.amazon.com/firewall-manager/?did=ap_card&trk=ap_card) | — | 本体の該当記載なし（GA未確認） | aws-firewall-manager |

@@ -11,6 +11,8 @@ on:
       - "scripts/render_aws_open_items.py"
       - "scripts/check_aws_audit_decisions.py"
       - "scripts/test_aws_audit_decisions.py"
+      - "scripts/aws_lifecycle.py"
+      - "scripts/test_aws_lifecycle.py"
       - "scripts/probe_aws_ssm_regions.py"
       - ".github/workflows/probe-aws-ssm-regions.yml"
       - "scripts/refresh_aws_marketing_products.py"
@@ -30,6 +32,8 @@ on:
       - "scripts/render_aws_open_items.py"
       - "scripts/check_aws_audit_decisions.py"
       - "scripts/test_aws_audit_decisions.py"
+      - "scripts/aws_lifecycle.py"
+      - "scripts/test_aws_lifecycle.py"
       - "scripts/probe_aws_ssm_regions.py"
       - ".github/workflows/probe-aws-ssm-regions.yml"
       - "scripts/refresh_aws_marketing_products.py"
@@ -64,10 +68,13 @@ jobs:
           python -m py_compile scripts/render_aws_open_items.py
           python -m py_compile scripts/check_aws_audit_decisions.py
           python -m py_compile scripts/test_aws_audit_decisions.py
+          python -m py_compile scripts/aws_lifecycle.py scripts/test_aws_lifecycle.py
           python -m py_compile scripts/probe_aws_ssm_regions.py
           python -m py_compile scripts/check_cloud_consistency.py
       - name: Validate Cloudflare official catalogs
         run: python scripts/check_cloudflare_catalog.py
+      - name: Test lifecycle labels and optional support-end dates
+        run: python scripts/test_aws_lifecycle.py
       - name: Validate AWS General Reference and lifecycle catalogs
         run: python scripts/check_aws_service_catalog.py
       - name: Validate complete AWS marketing Products and 269-reference diff
