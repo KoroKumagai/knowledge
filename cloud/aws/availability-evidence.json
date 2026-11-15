@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "verified_on": "2026-11-15",
+  "notice": "This is NOT a comprehensive verification. Availability/status and contracts are distinct. Product/endpoint listings alone never establish GA or availability. Region evidence defaults to 未確認 unless official documents affirm it. Evidence is current only to cited source date and must be rechecked before procurement.",
+  "region_keys": {
+    "ap-northeast-1": "東京",
+    "ap-northeast-3": "大阪"
+  },
+  "records": [
+    {
+      "type": "reference",
+      "key": "Aurora DSQL",
+      "ga": "GA確認",
+      "tokyo": "サービス利用可能（公式）",
+      "osaka": "サービス利用可能（公式）",
+      "contract": "従量課金・前払い費用なし（DPU／ストレージ）",
+      "sources": [
+        "https://aws.amazon.com/about-aws/whats-new/2025/05/amazon-aurora-dsql-generally-available/",
+        "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/",
+        "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/billing-metering.html"
+      ],
+      "notes": "2025-05-27 GAを公式発表。東京・大阪の利用可能リージョンを公式User Guideで確認。料金は使用量課金で、各地域の最新単価・アカウント権限は別途確認。"
+    },
+    {
+      "type": "reference",
+      "key": "Amazon Q Business",
+      "ga": "Maintenance（新規顧客受付停止）",
+      "tokyo": "未確認",
+      "osaka": "未確認",
+      "contract": "新規顧客利用不可（2026-07-31から）。既存顧客へのサポート継続",
+      "sources": [
+        "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/qbusiness-availability-change.html",
+        "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-service-availability/"
+      ],
+      "notes": "同一サービスの地域別既存顧客利用状況は未検証。Quickへの移行ガイダンスあり。"
+    },
+    {
+      "type": "reference",
+      "key": "Service Quotas",
+      "ga": "未確認",
+      "tokyo": "APIエンドポイント掲載のみ",
+      "osaka": "APIエンドポイント掲載のみ",
+      "contract": "未確認",
+      "sources": [
+        "https://docs.aws.amazon.com/general/latest/gr/servicequotas.html"
+      ],
+      "notes": "東京・大阪に公式APIエンドポイントが列挙されている。ただし単独でGAや全機能の提供／契約可否を証明しない。"
+    },
+    {
+      "type": "reference",
+      "key": "Support",
+      "ga": "未確認",
+      "tokyo": "未確認",
+      "osaka": "未確認",
+      "contract": "AWS Support API利用にはBusiness Support+／Enterprise Support／Unified Operations等の対象サポートプランが必要（例外条件あり）",
+      "sources": [
+        "https://docs.aws.amazon.com/awssupport/latest/APIReference/Welcome.html",
+        "https://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html"
+      ],
+      "notes": "この条件はSupport APIの利用権限であり、AWS Support全般の契約要件とは同一視しない。"
+    },
+    {
+      "type": "reference",
+      "key": "AWS WAF Classic",
+      "ga": "Full Shutdown（2026-10-07）",
+      "tokyo": "終了済み・リージョン判定対象外",
+      "osaka": "終了済み・リージョン判定対象外",
+      "contract": "新規導入不可（Full Shutdown）",
+      "sources": [
+        "https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html"
+      ],
+      "notes": "AWS公式のFull Shutdown台帳に掲載。最新AWS WAFとは異なる旧製品。"
+    }
+  ]
+}
