@@ -117,6 +117,25 @@ def render():
         if any(not item.get(field) for field in ("ga","tokyo","osaka","contract")):
             raise ValueError("Each verified fact must specify all verification dimensions")
         facts[key]=item
+    # Regression checks for adoption-critical facts. Document discrepancies,
+    # do not silently choose one conflicting official date.
+    q=facts.get(("reference","Amazon Q Business"))
+    glacier=facts.get(("reference","Amazon Glacier"))
+    if (not q or not all(day in q["contract"]+q["notes"]
+                         for day in ("2026-07-30","2026-07-31"))):
+        raise ValueError("Amazon Q Business official cutoff discrepancy must remain visible")
+    if (not glacier or "2025-12-15" not in glacier["contract"]
+        or not any("aws.amazon.com/s3/glacier/pricing" in url
+                   for url in glacier["sources"])):
+        raise ValueError("Amazon Glacier vault new-customer freeze requires AWS pricing evidence")
+    glacier_kind=next(x["kind"] for x in reference if x["name"]=="Amazon Glacier")
+    if glacier_kind!="終了予定・提供制限の製品":
+        raise ValueError("Legacy Amazon Glacier vaults must be classified as restricted")
+    if phase(refs["Amazon Glacier"][1])!="Maintenance（公式台帳）":
+        raise ValueError("Legacy Glacier General Reference must show Maintenance")
+    kinesis_kind=next(x["kind"] for x in reference if x["name"]=="Kinesis Data Streams")
+    if kinesis_kind!="独立サービス・専門サービス候補":
+        raise ValueError("Kinesis Data Streams independent billable service classification regressed")
     counts=Counter(x["kind"] for x in products+reference)
     out=[
       "# AWS未対応項目：一次分類と提供条件の検証台帳","",
