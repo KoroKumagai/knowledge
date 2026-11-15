@@ -7,6 +7,8 @@ import argparse, json, re, sys
 BASE=Path(__file__).resolve().parents[1]/"cloud/aws"
 OUT=BASE/"open-items.md"
 UNKNOWN="未確認"
+NOT_APPLICABLE="対象外（終了済み）"
+RETIRED_KIND="提供終了の旧製品"
 
 def load(name):
     return json.loads((BASE/name).read_text(encoding="utf-8"))
@@ -53,8 +55,11 @@ def unmatched():
         raise ValueError("Unexpected unresolved counts: "+str((len(names),len(refs))))
     return names,refs
 
+def is_shutdown(s):
+    return s.startswith("[Full Shutdown（")
+
 def phase(s):
-    if s.startswith("[Full Shutdown（"):return "Full Shutdown（公式台帳）"
+    if is_shutdown(s):return "Full Shutdown（公式台帳）"
     if s.startswith("[Sunset（"):return "Sunset（公式台帳）"
     if s.startswith("[Maintenance（"):return "Maintenance（公式台帳）"
     return UNKNOWN
@@ -78,6 +83,20 @@ def render():
         raise ValueError("Reference taxonomy does not match unresolved entries")
     if any(not x["kind"] or not x.get("basis") for x in products+reference):
         raise ValueError("Incomplete provisional taxonomy classification")
+    # Terminated services must be classified consistently in both official
+    # source lists, irrespective of whether evidence records exist.
+    for row in products:
+        own=original.get(row["id"])
+        if own is None:
+            raise ValueError("Product card missing: "+row["id"])
+        if is_shutdown(own[3]) and row["kind"]!=RETIRED_KIND:
+            raise ValueError("Full Shutdown Product must be retired: "+row["id"])
+    for row in reference:
+        name=row["name"]
+        if name not in refs:
+            raise ValueError("General Reference not in catalog: "+name)
+        if is_shutdown(refs[name][1]) and row["kind"]!=RETIRED_KIND:
+            raise ValueError("Full Shutdown Reference must be retired: "+name)
     facts={}
     for item in evidence["records"]:
         key=(item["type"],item["key"])
@@ -120,52 +139,47 @@ def render():
     for kind,count in sorted(counts.items()):
         out.append("| "+esc(kind)+" | "+str(count)+" |")
     out+=["","## Products側の未対応33カード","",
-          "| 公式Productsカード | 暫定分類 | 既存ライフサイクル | GA・提供状態 | 東京 | 大阪 | 契約条件 | 根拠 |",
-          "|---|---|---|---|---|---|---|---|"]
-    for row in products:
+          "全33件を分類と公式ライフサイクルに絞って表示。終了済みの製品は後方にまとめています。",
+          "GA・リージョン・契約条件は下段の検証済み記録だけに示します。","",
+          "| 公式Productsカード | 暫定分類 | 公式ライフサイクル | 出典 |",
+          "|---|---|---|---|"]
+    for row in sorted(products, key=lambda x:
+                      (is_shutdown(original[x["id"]][3]), x["kind"], byid[x["id"]]["name"], x["id"])):
         card=byid[row["id"]]
-        own=original.get(row["id"])
-        if not own:raise ValueError("Missing original Product card: "+row["id"])
-        fact=facts.get(("product",row["id"]))
-        ga=fact["ga"] if fact else phase(own[3])
-        tokyo=fact["tokyo"] if fact else UNKNOWN
-        osaka=fact["osaka"] if fact else UNKNOWN
-        contract=fact["contract"] if fact else UNKNOWN
-        source="[AWS Products]("+card["url"]+")"
-        if fact:
-            source+=" / "+" / ".join("[根拠"+str(i)+"]("+u+")"
-                                  for i,u in enumerate(fact["sources"],1))
+        own=original[row["id"]]
         out.append("| "+" | ".join([
             esc(card["name"])+" (ID: "+row["id"]+")",
-            esc(row["kind"]),own[3],esc(ga),esc(tokyo),
-            esc(osaka),esc(contract),source])+" |")
+            esc(row["kind"]),own[3],
+            "[AWS Products]("+card["url"]+")"])+" |")
     out+=["","## General Reference側の未対応95項目","",
-          "| 公式General Reference | 暫定分類 | ライフサイクルの掲載 | GA・提供状態 | 東京 | 大阪 | 契約条件 | 根拠 |",
-          "|---|---|---|---|---|---|---|---|"]
-    for row in reference:
+          "全95件は元の公式参照へのリンクと暫定分類を掲載。Full Shutdownは末尾にまとめています。","",
+          "| 公式General Reference | 暫定分類 | 公式ライフサイクル | 出典 |",
+          "|---|---|---|---|"]
+    for row in sorted(reference, key=lambda x:
+                      (is_shutdown(refs[x["name"]][1]), x["kind"], x["name"])):
         name=row["name"]
-        if name not in refs:raise ValueError("Reference link absent: "+name)
         url,state=refs[name]
-        fact=facts.get(("reference",name))
-        ga= fact["ga"] if fact else phase(state)
-        tokyo= fact["tokyo"] if fact else UNKNOWN
-        osaka= fact["osaka"] if fact else UNKNOWN
-        contract= fact["contract"] if fact else UNKNOWN
-        links=("[公式参照]("+url+")" +
-               (" "+" / ".join("[根拠"+str(i)+"]("+u+")"
-                   for i,u in enumerate(fact["sources"],1)) if fact else ""))
         out.append("| "+" | ".join([
-            esc(name),esc(row["kind"]),state,esc(ga),esc(tokyo),
-            esc(osaka),esc(contract),links])+" |")
-    out+=["","## 個別の公式確認例","",
-          "| 名称 | 確認範囲・留意点 | 公式出典 |",
-          "|---|---|---|"]
+            esc(name),esc(row["kind"]),state,"[公式参照]("+url+")"])+" |")
+    out+=["","## GA・リージョン・契約条件を個別確認した記録","",
+          "ここに掲載するのは**根拠付きで個別確認した項目だけ**です。"
+          "各列の「未確認」は不提供を意味しません。",
+          "Full Shutdownの製品について、リージョン別の新規利用可否は「対象外（終了済み）」と表示します。","",
+          "| 公式名称 | GA・提供段階 | 東京 | 大阪 | 契約条件 | 根拠の適用範囲 | AWS一次資料 |",
+          "|---|---|---|---|---|---|---|"]
     for item in evidence["records"]:
         links=" / ".join("[AWS "+str(i)+"]("+u+")"
                        for i,u in enumerate(item["sources"],1))
         label=(byid[item["key"]]["name"] if item["type"]=="product"
                else item["key"])
-        out.append("| "+esc(label)+" | "+esc(item["notes"])+" | "+links+" |")
+        source_lifecycle=(original[item["key"]][3] if item["type"]=="product"
+                          else refs[item["key"]][1])
+        discontinued=is_shutdown(source_lifecycle) or item["ga"].startswith("Full Shutdown")
+        tokyo=NOT_APPLICABLE if discontinued else item["tokyo"]
+        osaka=NOT_APPLICABLE if discontinued else item["osaka"]
+        out.append("| "+" | ".join([
+            esc(label),esc(item["ga"]),esc(tokyo),esc(osaka),
+            esc(item["contract"]),esc(item["notes"]),links])+" |")
     out+=["","## 次の検証","",
           "1. 128項目の一次分類について、公式ドキュメントを基に製品本体・機能・旧名称を追加で確定する。",
           "2. 東京・大阪を優先に、AWS Capabilities by Regionと個別サービス文書で地域可用性を検証する。",
