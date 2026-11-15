@@ -1388,9 +1388,9 @@
       "key": "Firehose",
       "name": "Firehose",
       "status": {
-        "phase": "公式記載なし",
-        "tokyo": "未確認",
-        "osaka": "未確認",
+        "phase": "確認済み",
+        "tokyo": "確認済み",
+        "osaka": "確認済み",
         "new_customers": "未確認",
         "support_plan": "未確認",
         "commitment": "確認済み",
@@ -1398,11 +1398,13 @@
       },
       "verified_on": "2026-11-15",
       "sources": [
+        "https://aws.amazon.com/legal/service-level-agreements/",
+        "https://aws.amazon.com/about-aws/whats-new/2015/10/introducing-amazon-kinesis-firehose/",
         "https://aws.amazon.com/about-aws/whats-new/2024/02/amazon-data-firehose-formerly-kinesis-data-firehose/",
-        "https://docs.aws.amazon.com/general/latest/gr/fh.html",
+        "https://docs.aws.amazon.com/firehose/latest/dev/limits.html",
         "https://aws.amazon.com/firehose/pricing/"
       ],
-      "scope": "Amazon Kinesis Data Firehose→Amazon Data Firehoseの改称を公式2024-02-09発表で確認。東京/大阪は公式General Reference APIエンドポイントに掲載（新規契約可否・各ソース連携の提供保証ではない）。 commitmentは追加のAWS公式料金・購入経路ページから確認。"
+      "scope": "2026-11-15時点のAWS公式SLA、Firehose公式発表・クォータ・料金資料。地域はサービス固有クォータで東京/大阪の利用を確認し、個別ソース/宛先機能の地域差までは一般化しない。契約条件は新規受付、プラン、事前コミットメント、販売チャネルのみ対象。"
     },
     {
       "type": "reference",
@@ -1581,9 +1583,9 @@
       "key": "Kinesis Data Streams",
       "name": "Kinesis Data Streams",
       "status": {
-        "phase": "公式記載なし",
-        "tokyo": "未確認",
-        "osaka": "未確認",
+        "phase": "確認済み",
+        "tokyo": "確認済み",
+        "osaka": "確認済み",
         "new_customers": "未確認",
         "support_plan": "未確認",
         "commitment": "未確認",
@@ -1591,11 +1593,13 @@
       },
       "verified_on": "2026-11-15",
       "sources": [
-        "https://docs.aws.amazon.com/general/latest/gr/ak.html",
-        "https://docs.aws.amazon.com/streams/latest/dev/vpc.html",
+        "https://aws.amazon.com/legal/service-level-agreements/",
+        "https://aws.amazon.com/about-aws/whats-new/2015/10/amazon-kinesis-extended-data-retention/",
+        "https://aws.amazon.com/about-aws/whats-new/2026/09/kinesis/service-managed-partition-keys/",
+        "https://docs.aws.amazon.com/streams/latest/dev/large-records.html",
         "https://aws.amazon.com/kinesis/data-streams/pricing/"
       ],
-      "scope": "東京・大阪のAPIエンドポイントおよびVPC endpoint policyの対象リージョンをAWS公式文書で確認。GA/新規受付/コミットメントはAPIがあるだけでは判断しない。 ODA最低利用量の課金は事前契約/コミットメントと別の意味。"
+      "scope": "2026-11-15時点のAWS公式SLA、Kinesis Streams改称資料、現行Kinesis Data Streamsの全商用リージョン告知・機能リージョン表・料金資料。製品本体の存在を確認する根拠として使い、各機能が全リージョン同一とは推定しない。"
     },
     {
       "type": "reference",
@@ -1791,9 +1795,9 @@
       "key": "AWS Private CA",
       "name": "AWS Private CA",
       "status": {
-        "phase": "公式記載なし",
-        "tokyo": "未確認",
-        "osaka": "未確認",
+        "phase": "確認済み",
+        "tokyo": "確認済み",
+        "osaka": "確認済み",
         "new_customers": "未確認",
         "support_plan": "未確認",
         "commitment": "未確認",
@@ -1801,11 +1805,13 @@
       },
       "verified_on": "2026-11-15",
       "sources": [
+        "https://aws.amazon.com/legal/service-level-agreements/",
+        "https://aws.amazon.com/blogs/aws/aws-certificate-manager-launches-private-certificate-authority/",
+        "https://aws.amazon.com/about-aws/whats-new/2025/07/aws-private-ca-issuing-100-million-certificates-ca/",
         "https://docs.aws.amazon.com/privateca/latest/userguide/",
-        "https://docs.aws.amazon.com/privateca/latest/userguide/vpc-endpoints.html",
         "https://aws.amazon.com/private-ca/pricing/"
       ],
-      "scope": "公式ユーザーガイドでCAはRegionリソースと記載、VPCエンドポイント提供地域に東京・大阪を確認。ただしPrivateLink利用可能＝サービス全機能提供とは扱わない。"
+      "scope": "2026-11-15時点のAWS公式SLA、提供開始ブログ、2025-07の全商用リージョン提供告知、User Guide、料金資料。製品本体のサービス提供と個別機能/PrivateLinkの対応地域を分離する。"
     },
     {
       "type": "reference",
