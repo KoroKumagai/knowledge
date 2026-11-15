@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """状態の表示語彙・日付・製品と関連サービスの境界を検証する。"""
+from datetime import date, timedelta
 from pathlib import Path
 import json
 import shutil
@@ -83,9 +84,13 @@ source["retrieved_utc"] = day
 
 
 class RegenerateAndCheckTest(unittest.TestCase):
-    """取得スナップショットから再描画し、実際の検証スクリプトまで通す。"""
+    """取得スナップショットから再描画し、実際の検証スクリプトまで通す。
+
+    期待値に製品名・日付を直書きしない。スナップショット更新後もそのまま使える。
+    """
 
     ROOT = Path(__file__).resolve().parents[1]
+    AWS = ROOT / "cloud/aws"
 
     def regenerate_and_check(self, day):
         with tempfile.TemporaryDirectory() as tmp:
@@ -98,24 +103,50 @@ class RegenerateAndCheckTest(unittest.TestCase):
             result = subprocess.run(
                 [sys.executable, str(work / "scripts/check_aws_marketing_products.py")],
                 capture_output=True, text=True)
-            products_md = (work / "cloud/aws/products.md").read_text(encoding="utf-8")
-            row = next(line for line in products_md.splitlines()
-                       if line.startswith("| Amazon WorkSpaces Thin Client |"))
-            return result, row
+            rendered = {name: (work / "cloud/aws" / name).read_text(encoding="utf-8")
+                        for name in ("products.md", "products-coverage.md")}
+            return result, rendered
 
-    def test_current_snapshot_day_is_reproduced(self):
-        day = json.loads((self.ROOT / "cloud/aws/products-source.json")
+    def sunset_product(self):
+        """公式Sunset表にサービス本体が一致し、ISO形式の終了日を持つ製品を1件選ぶ。"""
+        import refresh_aws_marketing_products as generator
+        source = json.loads((self.AWS / "products-source.json").read_text(encoding="utf-8"))
+        config = json.loads((self.AWS / "products-mapping.json").read_text(encoding="utf-8"))
+        byname = generator.read_product_lifecycle()
+        for product in sorted(source["products"], key=lambda p: p["name"]):
+            _, rows = generator.product_lifecycle(product["name"], config, byname)
+            for row in rows:
+                if row["stage"] == "sunset":
+                    try:
+                        return product["name"], date.fromisoformat(row["end"])
+                    except ValueError:
+                        continue
+        self.skipTest("No Product matches a dated official Sunset entry")
+
+    def test_current_snapshot_is_reproduced(self):
+        # 保存済みの取得日で再描画した結果が、コミット済みの生成物と一致する。
+        day = json.loads((self.AWS / "products-source.json")
                          .read_text(encoding="utf-8"))["retrieved_utc"]
-        result, row = self.regenerate_and_check(day)
+        result, rendered = self.regenerate_and_check(day)
         self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertIn("[Sunset（2027-03-31終了予定）](lifecycle.md)", row)
+        for name, text in rendered.items():
+            with self.subTest(file=name):
+                self.assertEqual(text, (self.AWS / name).read_text(encoding="utf-8"))
 
-    def test_snapshot_after_sunset_end_date_passes_checks(self):
+    def test_sunset_before_and_after_end_date_pass_checks(self):
+        # 基準日は公式の終了日の前日・翌日に固定する（保存済みの取得日には依存しない）。
         # 公式Sunset表に残ったまま終了日を過ぎても、更新Workflowの検証で止まらない。
-        result, row = self.regenerate_and_check("2027-04-01")
-        self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertIn("[Sunset（2027-03-31終了日経過・Full Shutdown未照合）](lifecycle.md)", row)
-
+        name, end = self.sunset_product()
+        for day, label in (
+            (end - timedelta(days=1), f"Sunset（{end.isoformat()}終了予定）"),
+            (end + timedelta(days=1), f"Sunset（{end.isoformat()}終了日経過・Full Shutdown未照合）"),
+        ):
+            with self.subTest(product=name, day=day.isoformat()):
+                result, rendered = self.regenerate_and_check(day.isoformat())
+                self.assertEqual(result.returncode, 0, result.stderr)
+                row = next(line for line in rendered["products.md"].splitlines()
+                           if line.startswith("| " + name + " |"))
+                self.assertIn(f"[{label}](lifecycle.md)", row)
 
 if __name__ == "__main__":
     unittest.main()
