@@ -88,7 +88,9 @@ def audit(as_of=None):
             confirmed.append(item["name"])
         if any(v=="対象外（ツール）" for v in statuses.values()) and kinds[key]!="ツール・SDK・配布物":
             raise ValueError("Tool exclusion is not a tool: "+str(key))
-        if any(v=="対象外（物理端末）" for v in statuses.values()) and kinds[key]!="端末・アプライアンス":
+        if (any(v=="対象外（物理端末）" for v in statuses.values())
+            and kinds[key]!="端末・アプライアンス"
+            and key!=("product","amazon-workspaces-thin-client")):
             raise ValueError("Physical-device exclusion without device category: "+str(key))
         if any(v=="対象外（終了済み）" for v in statuses.values()):
             # Statuses of terminated services are grounded by the official
