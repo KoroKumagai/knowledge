@@ -17,7 +17,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Regenerate all review-dependent AWS Markdown and check
+      - name: Regenerate reviewed source-aligned AWS Markdown and check
         run: |
           python -m py_compile scripts/render_aws_open_items.py
           python scripts/render_aws_open_items.py --write
