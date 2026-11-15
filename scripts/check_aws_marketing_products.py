@@ -30,6 +30,16 @@ overview=(AWS/"README.md").read_text(encoding="utf-8")
 global_overview=(ROOT/"cloud/README.md").read_text(encoding="utf-8")
 refs=generator.get_general_reference()
 total=source.get("source_total_hits",0)
+# Render expectations with the snapshot day, as the generator does, so that a
+# Sunset entry whose end date has passed is expected as "終了日経過".
+snapshot_day=source["retrieved_utc"]
+source_lifecycle=generator.read_product_lifecycle()
+def expected_label(lifecycle_name, stage):
+    rows=[r for r in source_lifecycle.get(lifecycle_name,[]) if r["stage"]==stage]
+    check(len(rows)==1, "Official lifecycle row missing: "+lifecycle_name+" ("+stage+")")
+    return generator.lifecycle_coverage_note(rows[0],snapshot_day) if rows else "<missing>"
+thin_client_label=expected_label("Amazon WorkSpaces – Thin Client","sunset")
+iot_1click_label=expected_label("AWS IoT 1-Click","shutdown")
 
 check(source.get("source_page")=="https://aws.amazon.com/products/",
       "Official marketing source page missing")
@@ -148,8 +158,8 @@ check(related_button.get("service")=="AWS IoT 1-Click" and related_button.get("r
 check("AWS IoT Button" not in mapping.get("lifecycle_aliases",{}),
       "IoT Button may not inherit whole-product retirement through an alias")
 for product_name,expected in (
-    ("Amazon WorkSpaces Thin Client", "[Sunset（2027-03-31終了予定）](lifecycle.md)"),
-    ("AWS IoT Button", "[関連サービスのFull Shutdown（2025-01-29終了）：AWS IoT 1-Click](lifecycle.md)。製品本体の提供状態とは区別")
+    ("Amazon WorkSpaces Thin Client", "["+thin_client_label+"](lifecycle.md)"),
+    ("AWS IoT Button", "[関連サービスの"+iot_1click_label+"：AWS IoT 1-Click](lifecycle.md)。製品本体の提供状態とは区別")
 ):
     candidates=[line for line in product_md.splitlines()
                 if line.startswith("| "+product_name+" |")]
@@ -158,7 +168,7 @@ for product_name,expected in (
 check("| [Amazon Quantum Ledger Database (QLDB)]" in coverage_md and
       "目録外・未対応 | — | Full Shutdown（2025-07-31終了） |" in coverage_md,
       "QLDB General Reference mismatch needs its shutdown annotation")
-check("AWS IoT 1-Click（関連サービス）はFull Shutdown（2025-01-29終了）。"
+check("AWS IoT 1-Click（関連サービス）は"+iot_1click_label+"。"
       "製品本体の提供状態とは区別" in coverage_md,
       "Related service must be marked as distinct, using product-neutral wording")
 check("ボタン本体" not in coverage_md and "ボタン本体" not in product_md,
@@ -183,9 +193,6 @@ check(not synthetic_own and all(x in synthetic_text for x in (
       "Related service must support Maintenance, Sunset and Shutdown generically")
 # All lifecycle stages must appear in coverage even if General Reference
 # matches by exact name or a reviewed alias. No state implies GA.
-source_lifecycle=generator.read_product_lifecycle()
-# Render with the snapshot day, as the generator does.
-snapshot_day=source["retrieved_utc"]
 counts=Counter()
 for item in products:
     name=item["name"]
@@ -203,8 +210,8 @@ check(counts["shutdown"]>=14 and counts["maintenance"]>=12 and counts["sunset"]>
       "Unexpectedly few official lifecycle matches in marketing inventory")
 check("この差分表でも**Maintenance・Sunset・Full Shutdown" in coverage_md,
       "Coverage needs lifecycle scope explanation")
-for name,statement in (("AWS App Runner","Maintenance（新規利用に制限）"),
-                       ("Amazon WorkSpaces Thin Client","Sunset（2027-03-31終了予定）")):
+for name,statement in (("AWS App Runner",expected_label("AWS App Runner","maintenance")),
+                       ("Amazon WorkSpaces Thin Client",thin_client_label)):
     rows=[line for line in coverage_md.splitlines() if line.startswith("| ["+name+"](")]
     check(len(rows)==1 and statement in rows[0],
           "Coverage spot-check missing: "+name)

@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
 """状態の表示語彙・日付・製品と関連サービスの境界を検証する。"""
 from pathlib import Path
+import json
+import shutil
+import subprocess
 import sys
+import tempfile
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -59,6 +63,58 @@ class LifecycleLabelTest(unittest.TestCase):
             with self.subTest(stage=stage):
                 self.assertEqual(lifecycle_label(stage, "2025-01-29", "2027-04-01"),
                                  lifecycle_label(stage, "2025-01-29"))
+
+
+REGENERATE = """
+import json, sys
+from pathlib import Path
+root = Path(sys.argv[1]); day = sys.argv[2]
+sys.path.insert(0, str(root / "scripts"))
+import refresh_aws_marketing_products as g
+aws = root / "cloud/aws"
+source = json.loads((aws / "products-source.json").read_text(encoding="utf-8"))
+config = json.loads((aws / "products-mapping.json").read_text(encoding="utf-8"))
+products_md, coverage_md, _, _ = g.render(source["products"], g.get_general_reference(), config, day)
+source["retrieved_utc"] = day
+(aws / "products-source.json").write_text(json.dumps(source, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+(aws / "products.md").write_text(products_md, encoding="utf-8")
+(aws / "products-coverage.md").write_text(coverage_md, encoding="utf-8")
+"""
+
+
+class RegenerateAndCheckTest(unittest.TestCase):
+    """取得スナップショットから再描画し、実際の検証スクリプトまで通す。"""
+
+    ROOT = Path(__file__).resolve().parents[1]
+
+    def regenerate_and_check(self, day):
+        with tempfile.TemporaryDirectory() as tmp:
+            work = Path(tmp)
+            for name in ("cloud", "scripts"):
+                shutil.copytree(self.ROOT / name, work / name,
+                                ignore=shutil.ignore_patterns("__pycache__"))
+            subprocess.run([sys.executable, "-I", "-c", REGENERATE, str(work), day],
+                           check=True, capture_output=True, text=True)
+            result = subprocess.run(
+                [sys.executable, str(work / "scripts/check_aws_marketing_products.py")],
+                capture_output=True, text=True)
+            products_md = (work / "cloud/aws/products.md").read_text(encoding="utf-8")
+            row = next(line for line in products_md.splitlines()
+                       if line.startswith("| Amazon WorkSpaces Thin Client |"))
+            return result, row
+
+    def test_current_snapshot_day_is_reproduced(self):
+        day = json.loads((self.ROOT / "cloud/aws/products-source.json")
+                         .read_text(encoding="utf-8"))["retrieved_utc"]
+        result, row = self.regenerate_and_check(day)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("[Sunset（2027-03-31終了予定）](lifecycle.md)", row)
+
+    def test_snapshot_after_sunset_end_date_passes_checks(self):
+        # 公式Sunset表に残ったまま終了日を過ぎても、更新Workflowの検証で止まらない。
+        result, row = self.regenerate_and_check("2027-04-01")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("[Sunset（2027-03-31終了日経過・Full Shutdown未照合）](lifecycle.md)", row)
 
 
 if __name__ == "__main__":

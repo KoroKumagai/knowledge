@@ -313,11 +313,8 @@ def synchronize_documented_counts(total, categories, classes, matched, reference
     aws_path.write_text(aws,encoding="utf-8")
     global_path.write_text(general,encoding="utf-8")
 
-def main():
-    api,total,products=get_products()
-    refs=get_general_reference()
-    config=json.loads((DIR/"products-mapping.json").read_text(encoding="utf-8"))
-    day=datetime.now(timezone.utc).strftime("%Y-%m-%d")
+def render(products,refs,config,day):
+    """Render products.md / products-coverage.md from already-fetched data."""
     products_md,coverage_md,classes,matched=generate(products,refs,config,day)
     dups={name:n for name,n in Counter(p["name"] for p in products).items() if n>1}
     if dups:
@@ -328,6 +325,14 @@ def main():
             additions.append("- "+title+": "+", ".join(ids))
         products_md += "\n".join(additions)+"\n"
         coverage_md += "\n".join(additions)+"\n"
+    return products_md,coverage_md,classes,matched
+
+def main():
+    api,total,products=get_products()
+    refs=get_general_reference()
+    config=json.loads((DIR/"products-mapping.json").read_text(encoding="utf-8"))
+    day=datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    products_md,coverage_md,classes,matched=render(products,refs,config,day)
     snapshot={"retrieved_utc":day,"source_page":PAGE,"api_url":api,
               "source_total_hits":total,"products":products}
     (DIR/"products-source.json").write_text(
