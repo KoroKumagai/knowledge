@@ -17,8 +17,8 @@
 | 大阪 | 2 | 0 | 23 | 103 |
 | 新規顧客受付 | 4 | 0 | 19 | 105 |
 | サポートプラン | 1 | 0 | 19 | 108 |
-| 事前契約 | 2 | 0 | 19 | 107 |
-| 購入経路 | 0 | 0 | 19 | 109 |
+| 事前契約 | 4 | 0 | 19 | 105 |
+| 購入経路 | 1 | 0 | 19 | 108 |
 
 ## 第1段：優先6項目（現時点での根拠状況）
 
@@ -29,7 +29,7 @@
 | AWS Private CA | 公式記載なし | 未確認 / 未確認 | 未確認 | [AWS 1](https://docs.aws.amazon.com/privateca/latest/userguide/) / [AWS 2](https://docs.aws.amazon.com/privateca/latest/userguide/vpc-endpoints.html) / [AWS 3](https://aws.amazon.com/private-ca/pricing/) |
 | Kinesis Data Streams | 公式記載なし | 未確認 / 未確認 | 未確認 | [AWS 1](https://docs.aws.amazon.com/general/latest/gr/ak.html) / [AWS 2](https://docs.aws.amazon.com/streams/latest/dev/vpc.html) / [AWS 3](https://aws.amazon.com/kinesis/data-streams/pricing/) |
 | Amazon ML | 公式記載なし | 未確認 / 未確認 | 確認済み | [AWS 1](https://docs.aws.amazon.com/machine-learning/latest/dg/what-is-amazon-machine-learning.html) |
-| Amazon SimpleDB | 公式記載なし | 未確認 / 未確認 | 未確認 | [AWS 1](https://aws.amazon.com/simpledb/faqs/) / [AWS 2](https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/Endpoints.html) |
+| Amazon SimpleDB | 公式記載なし | 未確認 / 未確認 | 未確認 | [AWS 1](https://aws.amazon.com/simpledb/faqs/) / [AWS 2](https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/Endpoints.html) / [AWS 3](https://aws.amazon.com/simpledb/pricing/) |
 
 ## 実施上の制限と次段階
 
