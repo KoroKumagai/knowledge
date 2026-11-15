@@ -51,29 +51,37 @@ def official_shutdown_names(lifecycle_text):
         raise ValueError("Official lifecycle Full Shutdown table is empty")
     return names
 
-def check_retired_service(name, shutdown_names, mapping, kind):
+def retirement_aliases():
+    """Keep Product aliases separate from General Reference service aliases."""
+    products=json.loads((AWS/"products-mapping.json").read_text(encoding="utf-8"))
+    reference=json.loads((AWS/"lifecycle-mapping.json").read_text(encoding="utf-8"))
+    return {"product":products["lifecycle_aliases"],
+            "reference":reference["direct_service_names"]}
+
+def check_retired_service(name, shutdown_names, aliases):
     """Only exact service-name matches or explicit, service-level aliases qualify."""
-    alias_group=("product_service_names" if kind=="product" else "direct_service_names")
-    alias=mapping.get(alias_group,{})
-    target=alias.get(name,name)
+    target=aliases.get(name,name)
     if target not in shutdown_names:
         raise ValueError("Retired exclusion without full service shutdown source: "+name+
                          " (resolved name: "+target+")")
 
 def selftest_retirement():
     names={"Amazon Chime","Amazon Chime SDK – Carrier Voice Focus",
-           "Amazon Chime SDK – Proxy Sessions","AWS WAF Classic",
+           "Amazon Chime SDK – Proxy Sessions","AWS WAF Classic","AWS App Mesh",
            "Amazon Quantum Ledger Database (Amazon QLDB)"}
-    mapping={"direct_service_names":{"AWS WAF Classic":"AWS WAF Classic"},
-             "product_service_names":{
-                 "Amazon Quantum Ledger Database (QLDB)":
-                 "Amazon Quantum Ledger Database (Amazon QLDB)"}}
+    aliases=retirement_aliases()
     for name,kind in (("AWS WAF Classic","reference"),
+                      ("App Mesh","reference"),
                       ("Amazon Quantum Ledger Database (QLDB)","product")):
-        check_retired_service(name,names,mapping,kind)
-    for name in ("Amazon Chime SDK","Amazon Chime SDK SIP Media Application"):
+        check_retired_service(name,names,aliases[kind])
+    for name,kind in (("Amazon Chime SDK","reference"),
+                      ("Amazon Chime SDK SIP Media Application","reference"),
+                      ("Amazon Chime SDK","product"),
+                      ("App Mesh","product"),
+                      ("Amazon Quantum Ledger Database (QLDB)","reference"),
+                      ("AWS IoT Button","product")):
         try:
-            check_retired_service(name,names,mapping,"reference")
+            check_retired_service(name,names | {"AWS IoT 1-Click"},aliases[kind])
         except ValueError:
             pass
         else:
@@ -83,6 +91,7 @@ def selftest_retirement():
     assert "Amazon Chime" in real
     assert "Amazon Chime SDK" not in real
     assert "Amazon Chime SDK – Carrier Voice Focus" in real
+    check_retired_service("Amazon Quantum Ledger Database (QLDB)",real,aliases["product"])
     print("OK: Full Shutdown direct-service matching and Chime SDK negative tests")
 
 def audit(as_of=None):
@@ -92,7 +101,7 @@ def audit(as_of=None):
         raise ValueError("Unexpected verification schema version/expiry rule")
     rows=state["records"]
     shutdown_names=official_shutdown_names((AWS/"lifecycle.md").read_text(encoding="utf-8"))
-    lifecycle_mapping=json.loads((AWS/"lifecycle-mapping.json").read_text(encoding="utf-8"))
+    aliases=retirement_aliases()
     byid={p["id"]:p["name"] for p in products["products"]}
     expected={("product",x["id"]):byid[x["id"]] for x in cls["product_cards"]}
     expected.update({("reference",x["name"]):x["name"] for x in cls["reference_entries"]})
@@ -153,7 +162,7 @@ def audit(as_of=None):
             and key!=("product","amazon-workspaces-thin-client")):
             raise ValueError("Physical-device exclusion without device category: "+str(key))
         if any(v=="対象外（終了済み）" for v in statuses.values()):
-            check_retired_service(item["name"],shutdown_names,lifecycle_mapping,key[0])
+            check_retired_service(item["name"],shutdown_names,aliases[key[0]])
         if statuses["phase"]=="確認済み":
             confirmed.append(item["name"])
     if keyset!=set(expected):

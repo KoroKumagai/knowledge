@@ -29,7 +29,7 @@ Cloudflareで採用した「全件の公式目録」と「編集された独自�
 - 製品のサブ機能・API・マーケットプレイス商品・リージョン・SKUと、エンドポイント・クォータの掲載項目は同じ粒度ではありません。
 - AWSのライフサイクル表は**サービスと機能の両方**を含みます。終了日を過ぎたSunset掲載項目も、正式なFull Shutdown掲載がなければ推測で改分類しません。
 - ライフサイクルの個別機能を本体に結び付ける際は、明示的な別名/完全一致/境界付き接頭辞のみを使います。未照合は別表で可視化し、製品本体の新規提供を保証しません。
-- Products台帳ではサービス本体の状態と、**製品が利用する関連サービスの状態**を区別します。関連サービスはMaintenance／Sunset／Full Shutdownの各段階を表示できますが、関連サービスの終了が製品本体の終了を意味するわけではありません。明示的な別名は `lifecycle_aliases`、関連・依存関係は `lifecycle_related` で管理します。
+- Products台帳ではサービス本体の状態と、**製品が利用する関連サービスの状態**を区別します。関連サービスはMaintenance／Sunset／Full Shutdownの各段階を表示できますが、関連サービスの終了が製品本体の終了を意味するわけではありません。製品本体の明示的な別名は [products-mapping.json](products-mapping.json) の `lifecycle_aliases` のみで管理し、対象外（終了済み）の判定でも同じ定義を参照します。関連・依存関係は同ファイルの `lifecycle_related` で管理し、本体の終了判定には使用しません。General Reference側のサービス別名は [lifecycle-mapping.json](lifecycle-mapping.json) の `direct_service_names` で別に管理します。
 - 出典に掲載されていないサービスや、新しい製品名への移行があっても、そのサービスが存在しないとは判断できません。
 
 ## 公式ProductsとGeneral Referenceの差分（2026-11-14 UTC）
