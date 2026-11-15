@@ -63,6 +63,7 @@ jobs:
           python -m py_compile scripts/check_aws_marketing_products.py
           python -m py_compile scripts/render_aws_open_items.py
           python -m py_compile scripts/check_aws_audit_decisions.py
+          python -m py_compile scripts/test_aws_audit_decisions.py
           python -m py_compile scripts/probe_aws_ssm_regions.py
           python -m py_compile scripts/check_cloud_consistency.py
       - name: Validate Cloudflare official catalogs

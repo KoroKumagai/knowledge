@@ -188,10 +188,13 @@ def render(state,count,stale):
         "| 次元 | 確認済み | 公式記載なし | 対象外 | 未確認 |",
         "|---|---:|---:|---:|---:|"]
     notes=[]
+    # Order breakdown items as defined in the schema, not by code point.
+    order={s:i for i,s in enumerate(state["status_values"])}
     for d in dimensions:
         n=lambda s:count[(d,s)]
-        exclusions=sorted((status,v) for (dim,status),v in count.items()
-                          if dim==d and status.startswith("対象外") and v)
+        exclusions=sorted(((status,v) for (dim,status),v in count.items()
+                           if dim==d and status.startswith("対象外") and v),
+                          key=lambda x:(order.get(x[0],len(order)),x[0]))
         na=sum(v for status,v in exclusions)
         vals=(n("確認済み"),n("公式記載なし"),na,n("未確認"))
         if sum(vals)!=128:

@@ -2,10 +2,14 @@
 """判定表と対象外注記の整合性を検証するオフライン回帰テスト。"""
 from collections import Counter
 from copy import deepcopy
+from pathlib import Path
 import re
+import sys
 import unittest
 
-import check_aws_audit_decisions as audit
+# Allow `python -m unittest` from the repository root as well as direct execution.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import check_aws_audit_decisions as audit  # noqa: E402
 
 
 class ExclusionBreakdownTest(unittest.TestCase):
@@ -31,6 +35,9 @@ class ExclusionBreakdownTest(unittest.TestCase):
                 self.assertEqual(note.split("：", 1)[0], "> - "+row[0].strip())
                 self.assertTrue(note.endswith("＝"+str(total)+"件") if total
                                 else note.endswith("なし（0件）"))
+                order = [s for s in state["status_values"] if s in expected]
+                labels = re.findall(r"([^：＋＝（]+?)\d+件(?=[＋＝])", note)
+                self.assertEqual(["対象外（"+label+"）" for label in labels], order)
 
     def test_current_data_and_chime_sdk(self):
         self.assert_breakdown(self.state, self.count)
