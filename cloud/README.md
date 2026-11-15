@@ -62,7 +62,7 @@ cloud/
 ## 公式カタログ網羅性の進捗
 
 - **Cloudflare（公式Docs/Productsの掲載単位）:** [調査結果](cloudflare/README.md) に収録済み（公式Docs索引195件・公式Products68件）。提供状況の全件検証は未完了。
-- **AWS（Products / General Reference）:** [調査結果](aws/README.md) に、Products237カード、General Reference269項目の全件スナップショットと差分を収録。**未対応33カード・95参照項目の一次分類済み**、GA・リージョン・契約条件は[根拠付き5項目から調査中](aws/open-items.md)。全件の提供可否の判断は未完了。
+- **AWS（Products / General Reference）:** [調査結果](aws/README.md) に、Productsのservice区分237カード、General Reference269項目の全件スナップショットと差分を収録。**未対応33カード・95参照項目の一次分類済み**、GA・リージョン・契約条件は[根拠付き5項目から調査中](aws/open-items.md)。全件の提供可否の判断は未完了。
 - **Azure / Google Cloud / OCI:** 現時点では公式カタログとの全件照合が未完了。
 - 共通比較表・個別一覧の行数は全製品数ではありません。公式目録の採録件数と、実務上の機能比較件数を分けて管理します。
 
