@@ -63,8 +63,8 @@
       "type": "reference",
       "key": "AWS WAF Classic",
       "ga": "Full Shutdown（2026-10-07）",
-      "tokyo": "終了済み・リージョン判定対象外",
-      "osaka": "終了済み・リージョン判定対象外",
+      "tokyo": "対象外（終了済み）",
+      "osaka": "対象外（終了済み）",
       "contract": "新規導入不可（Full Shutdown）",
       "sources": [
         "https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html"
