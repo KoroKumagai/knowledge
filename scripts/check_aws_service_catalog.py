@@ -120,6 +120,20 @@ check(mapping.get("version") == 1, "Unknown AWS lifecycle mapping format")
 direct_aliases = mapping.get("direct_service_names", {})
 check(direct_aliases.get("Amazon Glacier") == "Amazon S3 Glacier Direct",
       "Legacy Amazon Glacier vaults must map to official Direct maintenance entry")
+check("Amazon Glacier" in mapping.get("direct_service_evidence", {}),
+      "Legacy Glacier crosswalk must retain its direct-source evidence")
+for name, evidence in mapping.get("direct_service_evidence", {}).items():
+    sources = evidence.get("sources", [])
+    check(name in direct_aliases and bool(evidence.get("reason")) and bool(evidence.get("scope"))
+          and bool(re.fullmatch(r"\d{4}-\d{2}-\d{2}", evidence.get("verified_on", ""))),
+          "Incomplete direct-service crosswalk evidence: " + name)
+    check(bool(sources) and all(url.startswith(("https://aws.amazon.com/",
+                                               "https://docs.aws.amazon.com/")) for url in sources),
+          "Direct-service crosswalk requires official sources: " + name)
+    check(any(row[0] == direct_aliases.get(name) and
+              any(row[3] == "[公式](" + url + ")" for url in sources)
+              for rows in groups.values() for row in rows),
+          "Crosswalk evidence must include the official lifecycle row's resource: " + name)
 prefix_aliases = mapping.get("feature_prefixes", {})
 exact_aliases = mapping.get("feature_exact", {})
 for group_name, values in (("direct", direct_aliases),

@@ -2023,11 +2023,12 @@
       "verified_on": "2026-11-15",
       "sources": [
         "https://aws.amazon.com/s3/glacier/pricing/",
-        "https://docs.aws.amazon.com/amazonglacier/latest/dev/intro.html",
+        "https://docs.aws.amazon.com/pdfs/amazonglacier/latest/dev/glacier-dg.pdf#page=10",
         "https://docs.aws.amazon.com/general/latest/gr/maintenance_services.html",
-        "https://aws.amazon.com/blogs/storage/how-reuters-built-easily-accessible-large-scale-news-archives-on-aws/"
+        "https://docs.aws.amazon.com/solutions/data-transfer-from-amazon-s3-glacier-vaults-to-amazon-s3/",
+        "https://docs.aws.amazon.com/solutions/latest/data-transfer-from-amazon-s3-glacier-vaults-to-amazon-s3/overview.html"
       ],
-      "scope": "AWS公式Pricingが旧vault型Amazon Glacierの2025-12-15新規受付停止を明記。Product LifecycleはAmazon S3 Glacier DirectとしてMaintenance、AWS Storage Blogは旧Glacier Direct APIとの同一性を説明。S3 Glacier Flexible/Deep ArchiveなどのS3ストレージクラスをMaintenance扱いしない。"
+      "scope": "Pricingと公式MaintenanceのGlacier Direct行が同じvault移行ガイドを参照するため台帳上で対応付ける。正式改称の断定ではない。Developer Guideと移行ガイドはvault型とS3ストレージクラスを区別する。 旧vault APIのみ。Pricingで新規受付停止日と既存データの継続アクセスを確認し、Developer Guide PDF p.xおよび移行ガイドでS3ストレージクラスとの違いを確認。公式Maintenance行のResourcesの参照先を照合。東京・大阪、サポートプラン、事前契約、購入経路の提供条件は未確認。"
     },
     {
       "type": "reference",

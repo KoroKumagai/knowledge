@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "note": "Manually reviewed exact name and prefix relationships between AWS General Reference directory entries and lifecycle rows. A feature relationship never implies retirement of the parent service. CloudSearch / AWS Panorama are absent from this version of the endpoint directory and remain reviewable in the lifecycle unmatched report. The Amazon Glacier standalone vault REST API is explicitly mapped to the Maintenance entry 'Amazon S3 Glacier Direct', supported by the AWS Pricing vault service notice and AWS Storage Blog (Reuters' original Glacier Direct API), NOT the S3 Glacier storage classes.",
+  "note": "Manually reviewed exact name and prefix relationships between AWS General Reference directory entries and lifecycle rows. A feature relationship never implies retirement of the parent service. CloudSearch / AWS Panorama are absent from this version of the endpoint directory and remain reviewable in the lifecycle unmatched report. The Amazon Glacier vault API crosswalk is documented in direct_service_evidence. It is not a claim of an official rename or a mapping of S3 Glacier storage classes.",
   "direct_service_names": {
     "App Mesh": "AWS App Mesh",
     "DevOps Guru": "Amazon DevOps Guru",
@@ -54,5 +54,20 @@
       "AWS Systems Manager Change Manager",
       "AWS Systems Manager Incident Manager"
     ]
+  },
+  "direct_service_evidence": {
+    "Amazon Glacier": {
+      "verified_on": "2026-11-15",
+      "sources": [
+        "https://aws.amazon.com/s3/glacier/pricing/",
+        "https://docs.aws.amazon.com/pdfs/amazonglacier/latest/dev/glacier-dg.pdf#page=10",
+        "https://docs.aws.amazon.com/general/latest/gr/maintenance_services.html",
+        "https://docs.aws.amazon.com/solutions/data-transfer-from-amazon-s3-glacier-vaults-to-amazon-s3/",
+        "https://docs.aws.amazon.com/solutions/latest/data-transfer-from-amazon-s3-glacier-vaults-to-amazon-s3/overview.html",
+        "https://aws.amazon.com/solutions/guidance/data-transfer-from-amazon-s3-glacier-vaults-to-amazon-s3/"
+      ],
+      "reason": "Pricingと公式MaintenanceのGlacier Direct行が同じvault移行ガイドを参照するため台帳上で対応付ける。正式改称の断定ではない。Developer Guideと移行ガイドはvault型とS3ストレージクラスを区別する。",
+      "scope": "旧vault APIのみ。Pricingで新規受付停止日と既存データの継続アクセスを確認し、Developer Guide PDF p.xおよび移行ガイドでS3ストレージクラスとの違いを確認。公式Maintenance行のResourcesの参照先を照合。東京・大阪、サポートプラン、事前契約、購入経路の提供条件は未確認。"
+    }
   }
 }

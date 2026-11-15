@@ -42,10 +42,16 @@ Cloudflareで採用した「全件の公式目録」と「編集された独自�
 - AWS公式のマーケティング分類（badge）をそのまま採録。分類名に不自然なものがあっても独自の推測で書き換えません。
 - AWS公式サイト内部の検索エンドポイントには [Kiro](https://kiro.dev/) のような外部ドメインの製品ページも登録されています。ドメインだけで除外せず、発見元の公式データと製品IDを保持します。
 - **Productsへの掲載は新規利用可能・GAの証明ではありません。** 停止品の採用判断は[lifecycle.md](lifecycle.md)と個別の公式発表を確認します。
-- **旧Amazon Glacier（vault型）**は公式ライフサイクルの「Amazon S3 Glacier Direct」に対応（Maintenance）。2025-12-15から新規顧客受付停止で、**Amazon S3のGlacierストレージクラスとは別**。[公式料金](https://aws.amazon.com/s3/glacier/pricing/) / [公式ライフサイクル](lifecycle.md)。
+- **旧Amazon Glacier（vault型）**は、公式資料の参照関係を照合し「Amazon S3 Glacier Direct」（Maintenance）へ台帳上で対応付けています。正式改称という主張ではありません。2025-12-15から新規顧客受付停止、既存データは継続アクセス可能で移行は必須ではありません。**S3 Glacierストレージクラスとは別**。[公式料金](https://aws.amazon.com/s3/glacier/pricing/) / [公式Developer Guide（PDF p.x）](https://docs.aws.amazon.com/pdfs/amazonglacier/latest/dev/glacier-dg.pdf#page=10)。
 - [products-coverage.md](products-coverage.md) は**Maintenance・Sunset・Full Shutdownを、General Referenceとの照合状況に関係なく表示**します。照合済みと提供中を混同せず、関連サービスの終了を製品本体の終了と混同しないようにしています。
 - [products.md](products.md)ではライフサイクルの列を追加し、**サービス本体に完全一致（または明示的別名）したMaintenance・Sunset・Full Shutdown**を表示。SageMakerなどの一部機能の終了を、親サービス全体の終了とは扱いません。
 - **QLDBの正式名称差**も手動別名で照合。[AWS Full Shutdown一覧](https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html)に掲載されています。
+
+## 旧vault型Glacierの対応根拠（2026-11-15確認）
+
+[公式Maintenance一覧](https://docs.aws.amazon.com/general/latest/gr/maintenance_services.html)の「Amazon S3 Glacier Direct」行のResourcesと、[Pricing](https://aws.amazon.com/s3/glacier/pricing/)の「Move from Glacier Vaults to S3 Glacier storage classes」は、同じ[公式移行ガイド](https://docs.aws.amazon.com/solutions/data-transfer-from-amazon-s3-glacier-vaults-to-amazon-s3/)を参照します。その[実装ガイド](https://docs.aws.amazon.com/solutions/latest/data-transfer-from-amazon-s3-glacier-vaults-to-amazon-s3/overview.html)は、移行元をAmazon Glacierのvault、移行先をAmazon S3のbucket・storage classとして区別しています。この参照関係を `lifecycle-mapping.json` の `direct_service_evidence` に記録し、対応表を維持します。名称の類似や導入事例ブログを根拠にはしません。
+
+Maintenance行の2025-10-07は発表日です。新規受付停止の実効日2025-12-15はPricingで確認し、混同しません。Developer GuideのHTML版は今回取得できず、公式PDF版の冒頭注意書き（印刷ページx）と「What Is Amazon Glacier?」（p.1）を参照しました。東京・大阪などの個別提供条件は引き続き未確認です。
 
 ## 現行名称の注意（2026-11時点）
 
