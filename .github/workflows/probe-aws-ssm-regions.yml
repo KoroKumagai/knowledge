@@ -1,0 +1,39 @@
+name: Probe AWS SSM public regions via OIDC (manual)
+
+on:
+  workflow_dispatch:
+
+# No AWS IAM keys in GitHub. OIDC is used only for a manually triggered
+# read-only probe, and only after AWS_AUDIT_ROLE_ARN has been set.
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  probe:
+    if: ${{ vars.AWS_AUDIT_ROLE_ARN != '' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Offline parsing and failure-semantics test
+        run: python scripts/probe_aws_ssm_regions.py --self-test
+      - name: Assume restricted read-only role
+        uses: aws-actions/configure-aws-credentials@v6.3.0
+        with:
+          role-to-assume: ${{ vars.AWS_AUDIT_ROLE_ARN }}
+          aws-region: us-east-1
+          role-session-name: aws-audit-ssm
+      - name: Read only official SSM public infrastructure parameters
+        run: |
+          python -m pip install --disable-pip-version-check boto3
+          python scripts/probe_aws_ssm_regions.py --output aws-ssm-region-probe.json
+      - name: Archive observations for manual review (no main push)
+        uses: actions/upload-artifact@v4
+        with:
+          name: aws-ssm-region-probe
+          path: aws-ssm-region-probe.json
+          retention-days: 30
