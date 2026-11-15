@@ -1,0 +1,649 @@
+{
+  "version": 1,
+  "as_of_utc": "2026-11-15",
+  "method": "公式Productsのサービス区分33カード（カードIDで識別）とGeneral Reference未対応95参照項目の一次分類。分類は名称・原票説明に基づく作業仮説。GA／リージョン／契約条件は別の根拠台帳で判断する。",
+  "product_cards": [
+    {
+      "id": "amazon-connect-decisions",
+      "kind": "業務アプリ・専門マネージドサービス候補",
+      "basis": "AWS公式Products原票の名称・説明による一次分類。GA・契約可否・リージョンの確定ではない"
+    },
+    {
+      "id": "amazon-connect-talent",
+      "kind": "業務アプリ・専門マネージドサービス候補",
+      "basis": "AWS公式Products原票の名称・説明による一次分類。GA・契約可否・リージョンの確定ではない"
+    },
+    {
+      "id": "amazon-corretto",
+      "kind": "ツール・SDK・配布物",
+      "basis": "AWS公式Products原票の名称・説明による一次分類。GA・契約可否・リージョンの確定ではない"
+    },
+    {
+      "id": "amazon-dash-cart",
+      "kind": "端末・アプライアンス",
+      "basis": "AWS公式Products原票の名称・説明による一次分類。GA・契約可否・リージョンの確定ではない"
+    },
+    {
+      "id": "amazon-elastic-transcoder",
+      "kind": "提供終了の旧製品",
+      "basis": "AWS公式Products原票の名称・説明による一次分類。GA・契約可否・リージョンの確定ではない"
+    },
+    {
+      "id": "amazon-lookout-for-metrics",
+      "kind": "提供終了の旧製品",
+      "basis": "AWS公式Products原票の名称・説明による一次分類。GA・契約可否・リージョンの確定ではない"
+    },
+    {
+      "id": "amazon-lookout-for-vision",
+      "kind": "提供終了の旧製品",
+      "basis": "AWS公式Products原票の名称・説明による一次分類。GA・契約可否・リージョンの確定ではない"
+    },
+    {
+      "id": "amazon-nimble-studio",
+      "kind": "提供終了の旧製品",
+      "basis": "AWS公式Products原票の名称・説明による一次分類。GA・契約可否・リージョンの確定ではない"
+    },
+    {
+      "id": "amazon-nova",
+      "kind": "AIモデル・モデル構築/操作機能",
+      "basis": "AWS公式Products原票の名称・説明による一次分類。GA・契約可否・リージョンの確定ではない"
+    },
+    {
+      "id": "amazon-quantum-ledger-database-qldb",
+      "kind": "提供終了の旧製品",
+      "basis": "AWS公式Products原票の名称・説明による一次分類。GA・契約可否・リージョンの確定ではない"
+    },
+    {
+      "id": "amazon-workspaces-thin-client",
+      "kind": "終了予定・提供制限の製品",
+      "basis": "AWS公式Products原票の名称・説明による一次分類。GA・契約可否・リージョンの確定ではない"
+    },
+    {
+      "id": "aws-app2container",
+      "kind": "ツール・SDK・配布物",
+      "basis": "AWS公式Products原票の名称・説明による一次分類。GA・契約可否・リージョンの確定ではない"
+    },
+    {
+      "id": "aws-artifact",
+      "kind": "ポータル・移行支援サービス",
+      "basis": "AWS公式Products原票の名称・説明による一次分類。GA・契約可否・リージョンの確定ではない"
+    },
+    {
+      "id": "aws-command-line-interface",
+      "kind": "ツール・SDK・配布物",
+      "basis": "AWS公式Products原票の名称・説明による一次分類。GA・契約可否・リージョンの確定ではない"
+    },
+    {
+      "id": "aws-copilot",
+      "kind": "ツール・SDK・配布物",
+      "basis": "AWS公式Products原票の名称・説明による一次分類。GA・契約可否・リージョンの確定ではない"
+    },
+    {
+      "id": "aws-deep-learning-containers",
+      "kind": "ツール・SDK・配布物",
+      "basis": "AWS公式Products原票の名称・説明による一次分類。GA・契約可否・リージョンの確定ではない"
+    },
+    {
+      "id": "aws-deepcomposer",
+      "kind": "提供終了の旧製品",
+      "basis": "AWS公式Products原票の名称・説明による一次分類。GA・契約可否・リージョンの確定ではない"
+    },
+    {
+      "id": "aws-deeplens",
+      "kind": "提供終了の旧製品",
+      "basis": "AWS公式Products原票の名称・説明による一次分類。GA・契約可否・リージョンの確定ではない"
+    },
+    {
+      "id": "aws-devops-agent-(preview)",
+      "kind": "業務アプリ・専門マネージドサービス候補",
+      "basis": "AWS公式Products原票の名称・説明による一次分類。GA・契約可否・リージョンの確定ではない"
+    },
+    {
+      "id": "aws-devops-agent-preview",
+      "kind": "業務アプリ・専門マネージドサービス候補",
+      "basis": "AWS公式Products原票の名称・説明による一次分類。GA・契約可否・リージョンの確定ではない"
+    },
+    {
+      "id": "aws-distro-open-telemetry",
+      "kind": "ツール・SDK・配布物",
+      "basis": "AWS公式Products原票の名称・説明による一次分類。GA・契約可否・リージョンの確定ではない"
+    },
+    {
+      "id": "aws-elemental-appliances-software",
+      "kind": "端末・アプライアンス",
+      "basis": "AWS公式Products原票の名称・説明による一次分類。GA・契約可否・リージョンの確定ではない"
+    },
+    {
+      "id": "aws-elemental-mediastore",
+      "kind": "提供終了の旧製品",
+      "basis": "AWS公式Products原票の名称・説明による一次分類。GA・契約可否・リージョンの確定ではない"
+    },
+    {
+      "id": "aws-iot-button",
+      "kind": "端末・アプライアンス",
+      "basis": "AWS公式Products原票の名称・説明による一次分類。GA・契約可否・リージョンの確定ではない"
+    },
+    {
+      "id": "aws-rtb-fabric",
+      "kind": "業務アプリ・専門マネージドサービス候補",
+      "basis": "AWS公式Products原票の名称・説明による一次分類。GA・契約可否・リージョンの確定ではない"
+    },
+    {
+      "id": "aws-security-agent-",
+      "kind": "業務アプリ・専門マネージドサービス候補",
+      "basis": "AWS公式Products原票の名称・説明による一次分類。GA・契約可否・リージョンの確定ではない"
+    },
+    {
+      "id": "aws-service-management-connector",
+      "kind": "終了予定・提供制限の製品",
+      "basis": "AWS公式Products原票の名称・説明による一次分類。GA・契約可否・リージョンの確定ではない"
+    },
+    {
+      "id": "aws-supply-chain",
+      "kind": "業務アプリ・専門マネージドサービス候補",
+      "basis": "AWS公式Products原票の名称・説明による一次分類。GA・契約可否・リージョンの確定ではない"
+    },
+    {
+      "id": "aws-tools-and-sdks",
+      "kind": "ツール・SDK・配布物",
+      "basis": "AWS公式Products原票の名称・説明による一次分類。GA・契約可否・リージョンの確定ではない"
+    },
+    {
+      "id": "aws-kiro",
+      "kind": "ツール・SDK・配布物",
+      "basis": "AWS公式Products原票の名称・説明による一次分類。GA・契約可否・リージョンの確定ではない"
+    },
+    {
+      "id": "migration-evaluator-formerly-tso-logic",
+      "kind": "ポータル・移行支援サービス",
+      "basis": "AWS公式Products原票の名称・説明による一次分類。GA・契約可否・リージョンの確定ではない"
+    },
+    {
+      "id": "nova-act",
+      "kind": "AIモデル・モデル構築/操作機能",
+      "basis": "AWS公式Products原票の名称・説明による一次分類。GA・契約可否・リージョンの確定ではない"
+    },
+    {
+      "id": "nova-forge",
+      "kind": "AIモデル・モデル構築/操作機能",
+      "basis": "AWS公式Products原票の名称・説明による一次分類。GA・契約可否・リージョンの確定ではない"
+    }
+  ],
+  "reference_entries": [
+    {
+      "name": "Account access management",
+      "kind": "共通管理・基盤API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "Amazon AI Operations",
+      "kind": "独立サービス・専門サービス候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "AWS AppConfig",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "ARC",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "Application Auto Scaling",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "Aurora DSQL",
+      "kind": "独立サービス・専門サービス候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "AWS MCP Server",
+      "kind": "独立サービス・専門サービス候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "Billing and Cost Management",
+      "kind": "共通管理・基盤API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "AWS Billing Conductor",
+      "kind": "共通管理・基盤API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "Amazon Chime SDK",
+      "kind": "独立サービス・専門サービス候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "AWS Clean Rooms ML",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "Cloud Control API",
+      "kind": "共通管理・基盤API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "Cloud Directory",
+      "kind": "独立サービス・専門サービス候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "CloudShell",
+      "kind": "共通管理・基盤API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "AWS Control Catalog",
+      "kind": "共通管理・基盤API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "CloudWatch Application Insights",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "CloudWatch Application Signals",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "CloudWatch Events",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "CloudWatch Internet Monitor",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "CloudWatch Logs",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "CloudWatch Network Synthetic Monitor",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "CloudWatch OAM",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "CloudWatch Observability Admin",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "CloudWatch Omni",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "CloudWatch RUM",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "CloudWatch Synthetics",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "AWS CodeConnections",
+      "kind": "共通管理・基盤API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "CodeGuru Profiler",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "CodeGuru Reviewer",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "CodeGuru Security",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "AWS CodeStar Connections",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "AWS CodeStar Notifications",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "Amazon Comprehend Medical",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "Amazon Data Lifecycle Manager",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "DevOps Guru",
+      "kind": "詳細分類保留",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "EC2 Image Builder",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "EC2 Instance Connect",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "Amazon ECR Public",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "Elemental Inference",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "AWS Entity Resolution",
+      "kind": "独立サービス・専門サービス候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "EventBridge Pipes",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "EventBridge Scheduler",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "EventBridge Schemas",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "Amazon EVS",
+      "kind": "独立サービス・専門サービス候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "Firehose",
+      "kind": "独立サービス・専門サービス候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "Amazon GameLift Streams",
+      "kind": "独立サービス・専門サービス候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "Global Networks for Transit Gateways",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "DataBrew",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "HealthImaging",
+      "kind": "独立サービス・専門サービス候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "IAM Access Analyzer",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "IAM Roles Anywhere",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "Incident Manager",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "AWS IoT Wireless",
+      "kind": "独立サービス・専門サービス候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "AWS IoT Greengrass V1",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "AWS IoT Greengrass V2",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "Kinesis Data Streams",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "Amazon ML",
+      "kind": "独立サービス・専門サービス候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "Managed Service for Apache Flink",
+      "kind": "独立サービス・専門サービス候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "AWS Marketplace",
+      "kind": "共通管理・基盤API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "Amazon MSK Connect",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "Migration Hub Orchestrator",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "AWS Migration Hub Refactor Spaces",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "Migration Hub Strategy Recommendations",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "Network Security Manager",
+      "kind": "独立サービス・専門サービス候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "Oracle Database@AWS",
+      "kind": "独立サービス・専門サービス候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "AWS Payment Cryptography",
+      "kind": "独立サービス・専門サービス候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "AWS PCS",
+      "kind": "独立サービス・専門サービス候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "AWS Private CA",
+      "kind": "独立サービス・専門サービス候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "Amazon Q Business",
+      "kind": "独立サービス・専門サービス候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "Amazon Q Developer",
+      "kind": "独立サービス・専門サービス候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "Quick Setup",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "Recycle Bin",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "AWS re:Post Private",
+      "kind": "独立サービス・専門サービス候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "Resource Explorer",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "Resource Groups and Tagging",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "Security Hub CSPM",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "AWS Security Incident Response",
+      "kind": "独立サービス・専門サービス候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "Service Quotas",
+      "kind": "共通管理・基盤API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "Shield Advanced",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "Amazon Glacier",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "AWS Signer",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "AWS Sign-In",
+      "kind": "共通管理・基盤API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "Amazon SimpleDB",
+      "kind": "独立サービス・専門サービス候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "AWS STS",
+      "kind": "共通管理・基盤API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "Amazon SWF",
+      "kind": "独立サービス・専門サービス候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "Support",
+      "kind": "共通管理・基盤API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "AWS Systems Manager for SAP",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "AWS TNB",
+      "kind": "独立サービス・専門サービス候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "Trusted Advisor API",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "AWS User Experience Customization",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "VPC Lattice",
+      "kind": "独立サービス・専門サービス候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "AWS WAF Classic",
+      "kind": "共通管理・基盤API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "Amazon WorkSpaces",
+      "kind": "独立サービス・専門サービス候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "Amazon WorkSpaces Instances",
+      "kind": "サブ機能・専門API候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    },
+    {
+      "name": "Amazon WorkSpaces Secure Browser",
+      "kind": "独立サービス・専門サービス候補",
+      "basis": "General Reference公式参照見出しからの一次分類。製品独立性・契約可否は未検証"
+    }
+  ]
+}
