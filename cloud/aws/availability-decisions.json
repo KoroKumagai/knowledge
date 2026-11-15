@@ -1,0 +1,2290 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-15",
+  "max_age_days": 180,
+  "status_values": [
+    "確認済み",
+    "公式記載なし",
+    "対象外（ツール）",
+    "対象外（グローバル）",
+    "対象外（物理端末）",
+    "対象外（終了済み）",
+    "未確認"
+  ],
+  "dimensions": {
+    "phase": "GA / Preview / Maintenance / Sunset / Full Shutdown",
+    "tokyo": "東京・実際のサービス提供（エンドポイント掲載のみでは確認済みにしない）",
+    "osaka": "大阪・実際のサービス提供（エンドポイント掲載のみでは確認済みにしない）",
+    "new_customers": "新規顧客の受付",
+    "support_plan": "必要なサポートプラン",
+    "commitment": "事前契約・コミットメントの要否",
+    "sales_channel": "Marketplace/代理店等の販売チャネル制限"
+  },
+  "records": [
+    {
+      "type": "product",
+      "key": "amazon-connect-decisions",
+      "name": "Amazon Connect Decisions",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "product",
+      "key": "amazon-connect-talent",
+      "name": "Amazon Connect Talent",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "product",
+      "key": "amazon-corretto",
+      "name": "Amazon Corretto",
+      "status": {
+        "phase": "対象外（ツール）",
+        "tokyo": "対象外（ツール）",
+        "osaka": "対象外（ツール）",
+        "new_customers": "対象外（ツール）",
+        "support_plan": "対象外（ツール）",
+        "commitment": "対象外（ツール）",
+        "sales_channel": "対象外（ツール）"
+      },
+      "verified_on": "2026-11-15",
+      "sources": [
+        "https://aws.amazon.com/corretto/?did=ap_card&trk=ap_card"
+      ],
+      "scope": "クラウドサービスのGA・リージョン提供・新規顧客契約の確認軸は直接適用しない。配布物の対応OS・利用規約は別の分類。"
+    },
+    {
+      "type": "product",
+      "key": "amazon-dash-cart",
+      "name": "Amazon Dash Cart",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "対象外（物理端末）",
+        "osaka": "対象外（物理端末）",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": "2026-11-15",
+      "sources": [
+        "https://aws.amazon.com/dash-cart/?did=ap_card&trk=ap_card"
+      ],
+      "scope": "物理デバイスの販売国・対応デスクトップサービスはAWSリージョンの提供とは別。"
+    },
+    {
+      "type": "product",
+      "key": "amazon-elastic-transcoder",
+      "name": "Amazon Elastic Transcoder",
+      "status": {
+        "phase": "対象外（終了済み）",
+        "tokyo": "対象外（終了済み）",
+        "osaka": "対象外（終了済み）",
+        "new_customers": "対象外（終了済み）",
+        "support_plan": "対象外（終了済み）",
+        "commitment": "対象外（終了済み）",
+        "sales_channel": "対象外（終了済み）"
+      },
+      "verified_on": "2026-11-15",
+      "sources": [
+        "https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html"
+      ],
+      "scope": "公式Full Shutdownに基づく新規導入判定対象外。既存データ保全/移行は別途確認。"
+    },
+    {
+      "type": "product",
+      "key": "amazon-lookout-for-metrics",
+      "name": "Amazon Lookout for Metrics",
+      "status": {
+        "phase": "対象外（終了済み）",
+        "tokyo": "対象外（終了済み）",
+        "osaka": "対象外（終了済み）",
+        "new_customers": "対象外（終了済み）",
+        "support_plan": "対象外（終了済み）",
+        "commitment": "対象外（終了済み）",
+        "sales_channel": "対象外（終了済み）"
+      },
+      "verified_on": "2026-11-15",
+      "sources": [
+        "https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html"
+      ],
+      "scope": "公式Full Shutdownに基づく新規導入判定対象外。既存データ保全/移行は別途確認。"
+    },
+    {
+      "type": "product",
+      "key": "amazon-lookout-for-vision",
+      "name": "Amazon Lookout for Vision",
+      "status": {
+        "phase": "対象外（終了済み）",
+        "tokyo": "対象外（終了済み）",
+        "osaka": "対象外（終了済み）",
+        "new_customers": "対象外（終了済み）",
+        "support_plan": "対象外（終了済み）",
+        "commitment": "対象外（終了済み）",
+        "sales_channel": "対象外（終了済み）"
+      },
+      "verified_on": "2026-11-15",
+      "sources": [
+        "https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html"
+      ],
+      "scope": "公式Full Shutdownに基づく新規導入判定対象外。既存データ保全/移行は別途確認。"
+    },
+    {
+      "type": "product",
+      "key": "amazon-nimble-studio",
+      "name": "Amazon Nimble Studio",
+      "status": {
+        "phase": "対象外（終了済み）",
+        "tokyo": "対象外（終了済み）",
+        "osaka": "対象外（終了済み）",
+        "new_customers": "対象外（終了済み）",
+        "support_plan": "対象外（終了済み）",
+        "commitment": "対象外（終了済み）",
+        "sales_channel": "対象外（終了済み）"
+      },
+      "verified_on": "2026-11-15",
+      "sources": [
+        "https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html"
+      ],
+      "scope": "公式Full Shutdownに基づく新規導入判定対象外。既存データ保全/移行は別途確認。"
+    },
+    {
+      "type": "product",
+      "key": "amazon-nova",
+      "name": "Amazon Nova",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "product",
+      "key": "amazon-quantum-ledger-database-qldb",
+      "name": "Amazon Quantum Ledger Database (QLDB)",
+      "status": {
+        "phase": "対象外（終了済み）",
+        "tokyo": "対象外（終了済み）",
+        "osaka": "対象外（終了済み）",
+        "new_customers": "対象外（終了済み）",
+        "support_plan": "対象外（終了済み）",
+        "commitment": "対象外（終了済み）",
+        "sales_channel": "対象外（終了済み）"
+      },
+      "verified_on": "2026-11-15",
+      "sources": [
+        "https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html"
+      ],
+      "scope": "公式Full Shutdownに基づく新規導入判定対象外。既存データ保全/移行は別途確認。"
+    },
+    {
+      "type": "product",
+      "key": "amazon-workspaces-thin-client",
+      "name": "Amazon WorkSpaces Thin Client",
+      "status": {
+        "phase": "確認済み",
+        "tokyo": "対象外（物理端末）",
+        "osaka": "対象外（物理端末）",
+        "new_customers": "確認済み",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": "2026-11-15",
+      "sources": [
+        "https://docs.aws.amazon.com/workspaces-thin-client/latest/ug/workspacesthinclient-end-of-support.html"
+      ],
+      "scope": "公式文書に2026-03-31と2026-04-20の新規受付停止日に関する表記差あり。物理端末の販売地域をAWSリージョン対応と同一視しない。"
+    },
+    {
+      "type": "product",
+      "key": "aws-app2container",
+      "name": "AWS App2Container",
+      "status": {
+        "phase": "対象外（ツール）",
+        "tokyo": "対象外（ツール）",
+        "osaka": "対象外（ツール）",
+        "new_customers": "対象外（ツール）",
+        "support_plan": "対象外（ツール）",
+        "commitment": "対象外（ツール）",
+        "sales_channel": "対象外（ツール）"
+      },
+      "verified_on": "2026-11-15",
+      "sources": [
+        "https://aws.amazon.com/app2container/?did=ap_card&trk=ap_card"
+      ],
+      "scope": "クラウドサービスのGA・リージョン提供・新規顧客契約の確認軸は直接適用しない。配布物の対応OS・利用規約は別の分類。"
+    },
+    {
+      "type": "product",
+      "key": "aws-artifact",
+      "name": "AWS Artifact",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "product",
+      "key": "aws-command-line-interface",
+      "name": "AWS Command Line Interface (CLI)",
+      "status": {
+        "phase": "対象外（ツール）",
+        "tokyo": "対象外（ツール）",
+        "osaka": "対象外（ツール）",
+        "new_customers": "対象外（ツール）",
+        "support_plan": "対象外（ツール）",
+        "commitment": "対象外（ツール）",
+        "sales_channel": "対象外（ツール）"
+      },
+      "verified_on": "2026-11-15",
+      "sources": [
+        "https://aws.amazon.com/cli/?did=ap_card&trk=ap_card"
+      ],
+      "scope": "クラウドサービスのGA・リージョン提供・新規顧客契約の確認軸は直接適用しない。配布物の対応OS・利用規約は別の分類。"
+    },
+    {
+      "type": "product",
+      "key": "aws-copilot",
+      "name": "AWS Copilot",
+      "status": {
+        "phase": "対象外（ツール）",
+        "tokyo": "対象外（ツール）",
+        "osaka": "対象外（ツール）",
+        "new_customers": "対象外（ツール）",
+        "support_plan": "対象外（ツール）",
+        "commitment": "対象外（ツール）",
+        "sales_channel": "対象外（ツール）"
+      },
+      "verified_on": "2026-11-15",
+      "sources": [
+        "https://aws.amazon.com/containers/copilot/?did=ap_card&trk=ap_card"
+      ],
+      "scope": "クラウドサービスのGA・リージョン提供・新規顧客契約の確認軸は直接適用しない。配布物の対応OS・利用規約は別の分類。"
+    },
+    {
+      "type": "product",
+      "key": "aws-deep-learning-containers",
+      "name": "AWS Deep Learning Containers",
+      "status": {
+        "phase": "対象外（ツール）",
+        "tokyo": "対象外（ツール）",
+        "osaka": "対象外（ツール）",
+        "new_customers": "対象外（ツール）",
+        "support_plan": "対象外（ツール）",
+        "commitment": "対象外（ツール）",
+        "sales_channel": "対象外（ツール）"
+      },
+      "verified_on": "2026-11-15",
+      "sources": [
+        "https://aws.amazon.com/machine-learning/containers/?did=ap_card&trk=ap_card"
+      ],
+      "scope": "クラウドサービスのGA・リージョン提供・新規顧客契約の確認軸は直接適用しない。配布物の対応OS・利用規約は別の分類。"
+    },
+    {
+      "type": "product",
+      "key": "aws-deepcomposer",
+      "name": "AWS DeepComposer",
+      "status": {
+        "phase": "対象外（終了済み）",
+        "tokyo": "対象外（終了済み）",
+        "osaka": "対象外（終了済み）",
+        "new_customers": "対象外（終了済み）",
+        "support_plan": "対象外（終了済み）",
+        "commitment": "対象外（終了済み）",
+        "sales_channel": "対象外（終了済み）"
+      },
+      "verified_on": "2026-11-15",
+      "sources": [
+        "https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html"
+      ],
+      "scope": "公式Full Shutdownに基づく新規導入判定対象外。既存データ保全/移行は別途確認。"
+    },
+    {
+      "type": "product",
+      "key": "aws-deeplens",
+      "name": "AWS DeepLens",
+      "status": {
+        "phase": "対象外（終了済み）",
+        "tokyo": "対象外（終了済み）",
+        "osaka": "対象外（終了済み）",
+        "new_customers": "対象外（終了済み）",
+        "support_plan": "対象外（終了済み）",
+        "commitment": "対象外（終了済み）",
+        "sales_channel": "対象外（終了済み）"
+      },
+      "verified_on": "2026-11-15",
+      "sources": [
+        "https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html"
+      ],
+      "scope": "公式Full Shutdownに基づく新規導入判定対象外。既存データ保全/移行は別途確認。"
+    },
+    {
+      "type": "product",
+      "key": "aws-devops-agent-(preview)",
+      "name": "AWS DevOps Agent",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "product",
+      "key": "aws-devops-agent-preview",
+      "name": "AWS DevOps Agent",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "product",
+      "key": "aws-distro-open-telemetry",
+      "name": "AWS Distro for OpenTelemetry",
+      "status": {
+        "phase": "対象外（ツール）",
+        "tokyo": "対象外（ツール）",
+        "osaka": "対象外（ツール）",
+        "new_customers": "対象外（ツール）",
+        "support_plan": "対象外（ツール）",
+        "commitment": "対象外（ツール）",
+        "sales_channel": "対象外（ツール）"
+      },
+      "verified_on": "2026-11-15",
+      "sources": [
+        "https://aws.amazon.com/otel/?did=ap_card&trk=ap_card"
+      ],
+      "scope": "クラウドサービスのGA・リージョン提供・新規顧客契約の確認軸は直接適用しない。配布物の対応OS・利用規約は別の分類。"
+    },
+    {
+      "type": "product",
+      "key": "aws-elemental-appliances-software",
+      "name": "AWS Elemental Appliances & Software",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "対象外（物理端末）",
+        "osaka": "対象外（物理端末）",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": "2026-11-15",
+      "sources": [
+        "https://aws.amazon.com/elemental-appliances-software/?did=ap_card&trk=ap_card"
+      ],
+      "scope": "物理デバイスの販売国・対応デスクトップサービスはAWSリージョンの提供とは別。"
+    },
+    {
+      "type": "product",
+      "key": "aws-elemental-mediastore",
+      "name": "AWS Elemental MediaStore",
+      "status": {
+        "phase": "対象外（終了済み）",
+        "tokyo": "対象外（終了済み）",
+        "osaka": "対象外（終了済み）",
+        "new_customers": "対象外（終了済み）",
+        "support_plan": "対象外（終了済み）",
+        "commitment": "対象外（終了済み）",
+        "sales_channel": "対象外（終了済み）"
+      },
+      "verified_on": "2026-11-15",
+      "sources": [
+        "https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html"
+      ],
+      "scope": "公式Full Shutdownに基づく新規導入判定対象外。既存データ保全/移行は別途確認。"
+    },
+    {
+      "type": "product",
+      "key": "aws-iot-button",
+      "name": "AWS IoT Button",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "対象外（物理端末）",
+        "osaka": "対象外（物理端末）",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": "2026-11-15",
+      "sources": [
+        "https://aws.amazon.com/iotbutton/?did=ap_card&trk=ap_card"
+      ],
+      "scope": "物理デバイスの販売国・対応デスクトップサービスはAWSリージョンの提供とは別。"
+    },
+    {
+      "type": "product",
+      "key": "aws-rtb-fabric",
+      "name": "AWS RTB Fabric",
+      "status": {
+        "phase": "確認済み",
+        "tokyo": "確認済み",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "確認済み",
+        "sales_channel": "未確認"
+      },
+      "verified_on": "2026-11-15",
+      "sources": [
+        "https://aws.amazon.com/about-aws/whats-new/2025/10/aws-rtb-fabric-generally-available/",
+        "https://aws.amazon.com/about-aws/whats-new/2026/09/aws-rtb-fabric-configurable-availability-zone-affinity/"
+      ],
+      "scope": "公式GA発表と2026-09-18時点の6リージョン一覧。東京は列挙。大阪は列挙なしだが、不提供と断定せず要再確認。"
+    },
+    {
+      "type": "product",
+      "key": "aws-security-agent-",
+      "name": "AWS Security Agent",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "product",
+      "key": "aws-service-management-connector",
+      "name": "AWS Service Management Connector",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "product",
+      "key": "aws-supply-chain",
+      "name": "AWS Supply Chain",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "product",
+      "key": "aws-tools-and-sdks",
+      "name": "AWS Tools and SDKs",
+      "status": {
+        "phase": "対象外（ツール）",
+        "tokyo": "対象外（ツール）",
+        "osaka": "対象外（ツール）",
+        "new_customers": "対象外（ツール）",
+        "support_plan": "対象外（ツール）",
+        "commitment": "対象外（ツール）",
+        "sales_channel": "対象外（ツール）"
+      },
+      "verified_on": "2026-11-15",
+      "sources": [
+        "https://aws.amazon.com/getting-started/tools-sdks/?did=ap_card&trk=ap_card"
+      ],
+      "scope": "クラウドサービスのGA・リージョン提供・新規顧客契約の確認軸は直接適用しない。配布物の対応OS・利用規約は別の分類。"
+    },
+    {
+      "type": "product",
+      "key": "aws-kiro",
+      "name": "Kiro",
+      "status": {
+        "phase": "対象外（ツール）",
+        "tokyo": "対象外（ツール）",
+        "osaka": "対象外（ツール）",
+        "new_customers": "対象外（ツール）",
+        "support_plan": "対象外（ツール）",
+        "commitment": "対象外（ツール）",
+        "sales_channel": "対象外（ツール）"
+      },
+      "verified_on": "2026-11-15",
+      "sources": [
+        "https://kiro.dev/"
+      ],
+      "scope": "クラウドサービスのGA・リージョン提供・新規顧客契約の確認軸は直接適用しない。配布物の対応OS・利用規約は別の分類。"
+    },
+    {
+      "type": "product",
+      "key": "migration-evaluator-formerly-tso-logic",
+      "name": "Migration Evaluator (formerly TSO Logic)",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "product",
+      "key": "nova-act",
+      "name": "Nova Act",
+      "status": {
+        "phase": "確認済み",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": "2026-11-15",
+      "sources": [
+        "https://aws.amazon.com/about-aws/whats-new/2025/12/build-automate-production-ui-workflows-nova-act/"
+      ],
+      "scope": "GA時点で米国東部（バージニア北部）を提供。2026-11時点の東京・大阪や個別契約条件までは確定していない。"
+    },
+    {
+      "type": "product",
+      "key": "nova-forge",
+      "name": "Nova Forge",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "Account access management",
+      "name": "Account access management",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "Amazon AI Operations",
+      "name": "Amazon AI Operations",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "AWS AppConfig",
+      "name": "AWS AppConfig",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "ARC",
+      "name": "ARC",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "Application Auto Scaling",
+      "name": "Application Auto Scaling",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "Aurora DSQL",
+      "name": "Aurora DSQL",
+      "status": {
+        "phase": "確認済み",
+        "tokyo": "確認済み",
+        "osaka": "確認済み",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "確認済み",
+        "sales_channel": "未確認"
+      },
+      "verified_on": "2026-11-15",
+      "sources": [
+        "https://aws.amazon.com/about-aws/whats-new/2025/05/amazon-aurora-dsql-generally-available/",
+        "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/",
+        "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/billing-metering.html"
+      ],
+      "scope": "2025-05-27 GAを公式発表。東京・大阪の利用可能リージョンを公式User Guideで確認。料金は使用量課金で、各地域の最新単価・アカウント権限は別途確認。"
+    },
+    {
+      "type": "reference",
+      "key": "AWS MCP Server",
+      "name": "AWS MCP Server",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "Billing and Cost Management",
+      "name": "Billing and Cost Management",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "AWS Billing Conductor",
+      "name": "AWS Billing Conductor",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "Amazon Chime SDK",
+      "name": "Amazon Chime SDK",
+      "status": {
+        "phase": "対象外（終了済み）",
+        "tokyo": "対象外（終了済み）",
+        "osaka": "対象外（終了済み）",
+        "new_customers": "対象外（終了済み）",
+        "support_plan": "対象外（終了済み）",
+        "commitment": "対象外（終了済み）",
+        "sales_channel": "対象外（終了済み）"
+      },
+      "verified_on": "2026-11-15",
+      "sources": [
+        "https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html"
+      ],
+      "scope": "公式Full Shutdownに基づく新規導入判定対象外。既存データ保全/移行は別途確認。"
+    },
+    {
+      "type": "reference",
+      "key": "AWS Clean Rooms ML",
+      "name": "AWS Clean Rooms ML",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "Cloud Control API",
+      "name": "Cloud Control API",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "Cloud Directory",
+      "name": "Cloud Directory",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "CloudShell",
+      "name": "CloudShell",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "AWS Control Catalog",
+      "name": "AWS Control Catalog",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "CloudWatch Application Insights",
+      "name": "CloudWatch Application Insights",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "CloudWatch Application Signals",
+      "name": "CloudWatch Application Signals",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "CloudWatch Events",
+      "name": "CloudWatch Events",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "CloudWatch Internet Monitor",
+      "name": "CloudWatch Internet Monitor",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "CloudWatch Logs",
+      "name": "CloudWatch Logs",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "CloudWatch Network Synthetic Monitor",
+      "name": "CloudWatch Network Synthetic Monitor",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "CloudWatch OAM",
+      "name": "CloudWatch OAM",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "CloudWatch Observability Admin",
+      "name": "CloudWatch Observability Admin",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "CloudWatch Omni",
+      "name": "CloudWatch Omni",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "CloudWatch RUM",
+      "name": "CloudWatch RUM",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "CloudWatch Synthetics",
+      "name": "CloudWatch Synthetics",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "AWS CodeConnections",
+      "name": "AWS CodeConnections",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "CodeGuru Profiler",
+      "name": "CodeGuru Profiler",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "CodeGuru Reviewer",
+      "name": "CodeGuru Reviewer",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "CodeGuru Security",
+      "name": "CodeGuru Security",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "AWS CodeStar Connections",
+      "name": "AWS CodeStar Connections",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "AWS CodeStar Notifications",
+      "name": "AWS CodeStar Notifications",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "Amazon Comprehend Medical",
+      "name": "Amazon Comprehend Medical",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "Amazon Data Lifecycle Manager",
+      "name": "Amazon Data Lifecycle Manager",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "DevOps Guru",
+      "name": "DevOps Guru",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "EC2 Image Builder",
+      "name": "EC2 Image Builder",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "EC2 Instance Connect",
+      "name": "EC2 Instance Connect",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "Amazon ECR Public",
+      "name": "Amazon ECR Public",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "Elemental Inference",
+      "name": "Elemental Inference",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "AWS Entity Resolution",
+      "name": "AWS Entity Resolution",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "EventBridge Pipes",
+      "name": "EventBridge Pipes",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "EventBridge Scheduler",
+      "name": "EventBridge Scheduler",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "EventBridge Schemas",
+      "name": "EventBridge Schemas",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "Amazon EVS",
+      "name": "Amazon EVS",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "Firehose",
+      "name": "Firehose",
+      "status": {
+        "phase": "公式記載なし",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": "2026-11-15",
+      "sources": [
+        "https://aws.amazon.com/about-aws/whats-new/2024/02/amazon-data-firehose-formerly-kinesis-data-firehose/",
+        "https://docs.aws.amazon.com/general/latest/gr/fh.html",
+        "https://aws.amazon.com/firehose/pricing/"
+      ],
+      "scope": "Amazon Kinesis Data Firehose→Amazon Data Firehoseの改称を公式2024-02-09発表で確認。東京/大阪は公式General Reference APIエンドポイントに掲載（新規契約可否・各ソース連携の提供保証ではない）。"
+    },
+    {
+      "type": "reference",
+      "key": "Amazon GameLift Streams",
+      "name": "Amazon GameLift Streams",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "Global Networks for Transit Gateways",
+      "name": "Global Networks for Transit Gateways",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "DataBrew",
+      "name": "DataBrew",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "HealthImaging",
+      "name": "HealthImaging",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "IAM Access Analyzer",
+      "name": "IAM Access Analyzer",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "IAM Roles Anywhere",
+      "name": "IAM Roles Anywhere",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "Incident Manager",
+      "name": "Incident Manager",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "AWS IoT Wireless",
+      "name": "AWS IoT Wireless",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "AWS IoT Greengrass V1",
+      "name": "AWS IoT Greengrass V1",
+      "status": {
+        "phase": "対象外（終了済み）",
+        "tokyo": "対象外（終了済み）",
+        "osaka": "対象外（終了済み）",
+        "new_customers": "対象外（終了済み）",
+        "support_plan": "対象外（終了済み）",
+        "commitment": "対象外（終了済み）",
+        "sales_channel": "対象外（終了済み）"
+      },
+      "verified_on": "2026-11-15",
+      "sources": [
+        "https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html"
+      ],
+      "scope": "公式Full Shutdownに基づく新規導入判定対象外。既存データ保全/移行は別途確認。"
+    },
+    {
+      "type": "reference",
+      "key": "AWS IoT Greengrass V2",
+      "name": "AWS IoT Greengrass V2",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "Kinesis Data Streams",
+      "name": "Kinesis Data Streams",
+      "status": {
+        "phase": "公式記載なし",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": "2026-11-15",
+      "sources": [
+        "https://docs.aws.amazon.com/general/latest/gr/ak.html",
+        "https://docs.aws.amazon.com/streams/latest/dev/vpc.html",
+        "https://aws.amazon.com/kinesis/data-streams/pricing/"
+      ],
+      "scope": "東京・大阪のAPIエンドポイントおよびVPC endpoint policyの対象リージョンをAWS公式文書で確認。GA/新規受付/コミットメントはAPIがあるだけでは判断しない。 ODA最低利用量の課金は事前契約/コミットメントと別の意味。"
+    },
+    {
+      "type": "reference",
+      "key": "Amazon ML",
+      "name": "Amazon ML",
+      "status": {
+        "phase": "公式記載なし",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "確認済み",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": "2026-11-15",
+      "sources": [
+        "https://docs.aws.amazon.com/machine-learning/latest/dg/what-is-amazon-machine-learning.html"
+      ],
+      "scope": "公式ガイドに no longer updating / no longer accepting new users と明記。正式ライフサイクル3表未掲載をGAとみなさず、新規導入候補から除外。既存ユーザーへの利用停止やFull Shutdownは推定しない。 新規受付停止は新規ユーザーに対するもので、Full Shutdownとは判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "Managed Service for Apache Flink",
+      "name": "Managed Service for Apache Flink",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "AWS Marketplace",
+      "name": "AWS Marketplace",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "Amazon MSK Connect",
+      "name": "Amazon MSK Connect",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "Migration Hub Orchestrator",
+      "name": "Migration Hub Orchestrator",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "AWS Migration Hub Refactor Spaces",
+      "name": "AWS Migration Hub Refactor Spaces",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "Migration Hub Strategy Recommendations",
+      "name": "Migration Hub Strategy Recommendations",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "Network Security Manager",
+      "name": "Network Security Manager",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "Oracle Database@AWS",
+      "name": "Oracle Database@AWS",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "AWS Payment Cryptography",
+      "name": "AWS Payment Cryptography",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "AWS PCS",
+      "name": "AWS PCS",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "AWS Private CA",
+      "name": "AWS Private CA",
+      "status": {
+        "phase": "公式記載なし",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": "2026-11-15",
+      "sources": [
+        "https://docs.aws.amazon.com/privateca/latest/userguide/",
+        "https://docs.aws.amazon.com/privateca/latest/userguide/vpc-endpoints.html",
+        "https://aws.amazon.com/private-ca/pricing/"
+      ],
+      "scope": "公式ユーザーガイドでCAはRegionリソースと記載、VPCエンドポイント提供地域に東京・大阪を確認。ただしPrivateLink利用可能＝サービス全機能提供とは扱わない。"
+    },
+    {
+      "type": "reference",
+      "key": "Amazon Q Business",
+      "name": "Amazon Q Business",
+      "status": {
+        "phase": "確認済み",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "確認済み",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": "2026-11-15",
+      "sources": [
+        "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/qbusiness-availability-change.html",
+        "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-service-availability/"
+      ],
+      "scope": "Q Business案内およびAPI文書は2026-07-31以降の新規受付停止（7/30より前に登録）を案内。一方2026-06-30のAWS What's Newは7/30開始と記載。両方を保持し一方の日時に確定しない。東京・大阪の既存顧客の利用状況は未検証。"
+    },
+    {
+      "type": "reference",
+      "key": "Amazon Q Developer",
+      "name": "Amazon Q Developer",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "Quick Setup",
+      "name": "Quick Setup",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "Recycle Bin",
+      "name": "Recycle Bin",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "AWS re:Post Private",
+      "name": "AWS re:Post Private",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "Resource Explorer",
+      "name": "Resource Explorer",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "Resource Groups and Tagging",
+      "name": "Resource Groups and Tagging",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "Security Hub CSPM",
+      "name": "Security Hub CSPM",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "AWS Security Incident Response",
+      "name": "AWS Security Incident Response",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "Service Quotas",
+      "name": "Service Quotas",
+      "status": {
+        "phase": "公式記載なし",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": "2026-11-15",
+      "sources": [
+        "https://docs.aws.amazon.com/general/latest/gr/servicequotas.html"
+      ],
+      "scope": "東京・大阪に公式APIエンドポイントが列挙されている。ただし単独でGAや全機能の提供／契約可否を証明しない。"
+    },
+    {
+      "type": "reference",
+      "key": "Shield Advanced",
+      "name": "Shield Advanced",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "Amazon Glacier",
+      "name": "Amazon Glacier",
+      "status": {
+        "phase": "確認済み",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "確認済み",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": "2026-11-15",
+      "sources": [
+        "https://aws.amazon.com/s3/glacier/pricing/",
+        "https://docs.aws.amazon.com/amazonglacier/latest/dev/intro.html",
+        "https://docs.aws.amazon.com/general/latest/gr/maintenance_services.html",
+        "https://aws.amazon.com/blogs/storage/how-reuters-built-easily-accessible-large-scale-news-archives-on-aws/"
+      ],
+      "scope": "AWS公式Pricingが旧vault型Amazon Glacierの2025-12-15新規受付停止を明記。Product LifecycleはAmazon S3 Glacier DirectとしてMaintenance、AWS Storage Blogは旧Glacier Direct APIとの同一性を説明。S3 Glacier Flexible/Deep ArchiveなどのS3ストレージクラスをMaintenance扱いしない。"
+    },
+    {
+      "type": "reference",
+      "key": "AWS Signer",
+      "name": "AWS Signer",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "AWS Sign-In",
+      "name": "AWS Sign-In",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "Amazon SimpleDB",
+      "name": "Amazon SimpleDB",
+      "status": {
+        "phase": "公式記載なし",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": "2026-11-15",
+      "sources": [
+        "https://aws.amazon.com/simpledb/faqs/",
+        "https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/Endpoints.html"
+      ],
+      "scope": "AWS公式FAQは『AWSアカウントがあれば利用開始可能』と記すが更新日不明で2026年の新規顧客受付保証にはならない。終了・受付停止を示す明示的な公式告知は今回の確認範囲で見つかっていない。 公式FAQは古い開始案内を含むが、2026-11時点の新規受付可否の確認とは区別。"
+    },
+    {
+      "type": "reference",
+      "key": "AWS STS",
+      "name": "AWS STS",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "Amazon SWF",
+      "name": "Amazon SWF",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "Support",
+      "name": "Support",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "確認済み",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": "2026-11-15",
+      "sources": [
+        "https://docs.aws.amazon.com/awssupport/latest/APIReference/Welcome.html",
+        "https://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html"
+      ],
+      "scope": "この条件はSupport APIの利用権限であり、AWS Support全般の契約要件とは同一視しない。"
+    },
+    {
+      "type": "reference",
+      "key": "AWS Systems Manager for SAP",
+      "name": "AWS Systems Manager for SAP",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "AWS TNB",
+      "name": "AWS TNB",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "Trusted Advisor API",
+      "name": "Trusted Advisor API",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "AWS User Experience Customization",
+      "name": "AWS User Experience Customization",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "VPC Lattice",
+      "name": "VPC Lattice",
+      "status": {
+        "phase": "確認済み",
+        "tokyo": "確認済み",
+        "osaka": "確認済み",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": "2026-11-15",
+      "sources": [
+        "https://aws.amazon.com/about-aws/whats-new/2023/03/general-availability-amazon-vpc-lattice/",
+        "https://aws.amazon.com/vpc/lattice/faqs/",
+        "https://aws.amazon.com/vpc/lattice/pricing/"
+      ],
+      "scope": "2023-03-31 GA発表。現在のAWS公式FAQは東京・大阪の両方を提供リージョンとして列挙。料金ページに利用量課金あり。新規受付・サポート・販売チャネルの制限を否定する根拠は未確認。"
+    },
+    {
+      "type": "reference",
+      "key": "AWS WAF Classic",
+      "name": "AWS WAF Classic",
+      "status": {
+        "phase": "対象外（終了済み）",
+        "tokyo": "対象外（終了済み）",
+        "osaka": "対象外（終了済み）",
+        "new_customers": "対象外（終了済み）",
+        "support_plan": "対象外（終了済み）",
+        "commitment": "対象外（終了済み）",
+        "sales_channel": "対象外（終了済み）"
+      },
+      "verified_on": "2026-11-15",
+      "sources": [
+        "https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html"
+      ],
+      "scope": "公式Full Shutdownに基づく新規導入判定対象外。既存データ保全/移行は別途確認。 AWS公式のFull Shutdown台帳に掲載。最新AWS WAFとは異なる旧製品。"
+    },
+    {
+      "type": "reference",
+      "key": "Amazon WorkSpaces",
+      "name": "Amazon WorkSpaces",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "Amazon WorkSpaces Instances",
+      "name": "Amazon WorkSpaces Instances",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    },
+    {
+      "type": "reference",
+      "key": "Amazon WorkSpaces Secure Browser",
+      "name": "Amazon WorkSpaces Secure Browser",
+      "status": {
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
+      },
+      "verified_on": null,
+      "sources": [],
+      "scope": "未調査。AWS公式Products／General Referenceの目録掲載のみからはGAや新規受付を判断しない。"
+    }
+  ]
+}
