@@ -228,7 +228,7 @@
 
 | 公式Products名 | 製品ページ | Docs（掲載分） | ライフサイクル（本体） | ディレクトリID |
 |---|---|---|---|---|
-| AWS IoT Button | [公式](https://aws.amazon.com/iotbutton/?did=ap_card&trk=ap_card) | — | [関連サービスが終了済み：AWS IoT 1-Click](lifecycle.md)（2025-01-29）（製品本体の提供状態とは区別） | aws-iot-button |
+| AWS IoT Button | [公式](https://aws.amazon.com/iotbutton/?did=ap_card&trk=ap_card) | — | [関連サービスが終了済み：AWS IoT 1-Click](lifecycle.md)（2025-01-29終了）。製品本体の提供状態とは区別 | aws-iot-button |
 | AWS IoT Core | [公式](https://aws.amazon.com/iot-core/?did=ap_card&trk=ap_card) | — | 本体の該当記載なし（GA未確認） | aws-iot-core |
 | AWS IoT Device Defender | [公式](https://aws.amazon.com/iot-device-defender/?did=ap_card&trk=ap_card) | [Docs](https://docs.aws.amazon.com/iot-device-defender/) | 本体の該当記載なし（GA未確認） | aws-iot-device-defender |
 | AWS IoT Device Management | [公式](https://aws.amazon.com/iot-device-management/?did=ap_card&trk=ap_card) | — | 本体の該当記載なし（GA未確認） | aws-iot-device-management |
