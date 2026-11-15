@@ -54,5 +54,8 @@
       "AWS Systems Manager Change Manager",
       "AWS Systems Manager Incident Manager"
     ]
+  },
+  "product_service_names": {
+    "Amazon Quantum Ledger Database (QLDB)": "Amazon Quantum Ledger Database (Amazon QLDB)"
   }
 }
