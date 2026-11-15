@@ -9,7 +9,7 @@ Cloudflareで採用した「全件の公式目録」と「編集された独自�
 | [products.md](products.md) | 公式Products検索のサービス区分 **237カード** を全件収録（2026-11-14 UTC、32カテゴリ） |
 | [products-source.json](products-source.json) | 公式サイト内部の検索エンドポイントの totalHits・取得日・製品ID・掲載名・URL・カテゴリの取得記録 |
 | [products-coverage.md](products-coverage.md) | Products **237カード** とGeneral Reference **269項目**を相互照合。未対応を残す |
-| [open-items.md](open-items.md) | **未対応33カードと95参照項目**の暫定分類、GA・東京/大阪リージョン・契約条件の検証台帳（**公式根拠付き個別確認5件**） |
+| [open-items.md](open-items.md) | **未対応33カードと95参照項目**の暫定分類、GA・東京/大阪リージョン・契約条件の検証台帳（**公式根拠付き個別確認8件**） |
 | [open-items-classification.json](open-items-classification.json) | 対応未確定128項目の原票ID付き分類データ（独立サービス／機能／開発ツール／旧製品など） |
 | [availability-evidence.json](availability-evidence.json) | 公式根拠に基づくGA・リージョン・契約条件の確認記録と未確認の区別 |
 | [products-mapping.json](products-mapping.json) | 同一名称でない場合の手動確認済み別名／非同等の製品群・機能の分類 |
@@ -80,7 +80,7 @@ Cloudflareで採用した「全件の公式目録」と「編集された独自�
 
 - [open-items.md](open-items.md)に**Products側33カード、General Reference側95参照項目をすべて一次分類**。既存の237/269件や分類75/101/28/33は変更していません。
 - **一次分類は仮説**です。原票の名称・機能説明・公式エンドポイント参照を根拠にした作業上の分類であり、GA・独立サービス・契約可能性の確定ではありません。
-- GA・東京/大阪の提供・契約条件の**個別確認は5項目から着手**。Aurora DSQL、Amazon Q Business、Service Quotas、Support API、WAF Classicの公式根拠を[別データ](availability-evidence.json)で管理しています。全128件の検証完了を主張しません。
+- GA・東京/大阪の提供・契約条件の**個別確認は8項目から着手**。Aurora DSQL、Amazon Q Business、Service Quotas、Support API、WAF Classic、RTB Fabric、Nova Act、WorkSpaces Thin Clientの公式根拠を[別データ](availability-evidence.json)で管理しています。全128件の検証完了を主張しません。
 - 各リージョンでのAWS公式データは[AWS Capabilities by Region](https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/)が優先参照先です。公式の[S3公開データ取得](https://aws.amazon.com/blogs/storage/building-automated-aws-regional-availability-checks-with-amazon-s3/)にはAWS認証・IAM権限が必要なため、このPRでは一括取得は実施していません。
 - `python scripts/render_aws_open_items.py --write`で台帳再生成、`--check`で元データ・検証根拠・Markdownの全件整合性をチェックします。
 
