@@ -81,8 +81,16 @@ def render():
     facts={}
     for item in evidence["records"]:
         key=(item["type"],item["key"])
-        if key in facts or item["type"]!="reference" or item["key"] not in ref_names:
-            raise ValueError("Bad evidence identifier: "+str(key))
+        if key in facts:
+            raise ValueError("Duplicate verification record: "+str(key))
+        if item["type"]=="reference":
+            valid=item["key"] in ref_names
+        elif item["type"]=="product":
+            valid=item["key"] in {r["id"] for r in products}
+        else:
+            valid=False
+        if not valid:
+            raise ValueError("Evidence key outside the unresolved 33+95 scope: "+str(key))
         if not item.get("sources") or not all(
                 u.startswith(("https://docs.aws.amazon.com/","https://aws.amazon.com/"))
                 for u in item["sources"]):
@@ -118,10 +126,19 @@ def render():
         card=byid[row["id"]]
         own=original.get(row["id"])
         if not own:raise ValueError("Missing original Product card: "+row["id"])
+        fact=facts.get(("product",row["id"]))
+        ga=fact["ga"] if fact else phase(own[3])
+        tokyo=fact["tokyo"] if fact else UNKNOWN
+        osaka=fact["osaka"] if fact else UNKNOWN
+        contract=fact["contract"] if fact else UNKNOWN
+        source="[AWS Products]("+card["url"]+")"
+        if fact:
+            source+=" / "+" / ".join("[根拠"+str(i)+"]("+u+")"
+                                  for i,u in enumerate(fact["sources"],1))
         out.append("| "+" | ".join([
             esc(card["name"])+" (ID: "+row["id"]+")",
-            esc(row["kind"]),own[3],phase(own[3]),UNKNOWN,UNKNOWN,UNKNOWN,
-            "[AWS Products]("+card["url"]+")"])+" |")
+            esc(row["kind"]),own[3],esc(ga),esc(tokyo),
+            esc(osaka),esc(contract),source])+" |")
     out+=["","## General Reference側の未対応95項目","",
           "| 公式General Reference | 暫定分類 | ライフサイクルの掲載 | GA・提供状態 | 東京 | 大阪 | 契約条件 | 根拠 |",
           "|---|---|---|---|---|---|---|---|"]
@@ -146,7 +163,9 @@ def render():
     for item in evidence["records"]:
         links=" / ".join("[AWS "+str(i)+"]("+u+")"
                        for i,u in enumerate(item["sources"],1))
-        out.append("| "+esc(item["key"])+" | "+esc(item["notes"])+" | "+links+" |")
+        label=(byid[item["key"]]["name"] if item["type"]=="product"
+               else item["key"])
+        out.append("| "+esc(label)+" | "+esc(item["notes"])+" | "+links+" |")
     out+=["","## 次の検証","",
           "1. 128項目の一次分類について、公式ドキュメントを基に製品本体・機能・旧名称を追加で確定する。",
           "2. 東京・大阪を優先に、AWS Capabilities by Regionと個別サービス文書で地域可用性を検証する。",
