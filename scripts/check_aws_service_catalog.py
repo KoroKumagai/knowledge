@@ -134,6 +134,15 @@ for name, evidence in mapping.get("direct_service_evidence", {}).items():
               any(row[3] == "[公式](" + url + ")" for url in sources)
               for rows in groups.values() for row in rows),
           "Crosswalk evidence must include the official lifecycle row's resource: " + name)
+    # The rendered ledgers (open-items.md) must cite the same deciding resource.
+    resources = {row[3][len("[公式]("):-1] for rows in groups.values() for row in rows
+                 if row[0] == direct_aliases.get(name)}
+    for ledger, key in (("availability-evidence.json", "key"),
+                        ("availability-decisions.json", "name")):
+        records = [r for r in json.loads((AWS / ledger).read_text(encoding="utf-8"))["records"]
+                   if r.get(key) == name]
+        check(all(resources & set(r.get("sources", [])) for r in records),
+              "Crosswalk resource missing from " + ledger + ": " + name)
 prefix_aliases = mapping.get("feature_prefixes", {})
 exact_aliases = mapping.get("feature_exact", {})
 for group_name, values in (("direct", direct_aliases),
