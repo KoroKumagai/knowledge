@@ -181,12 +181,14 @@ def main():
     ap.add_argument("--check",action="store_true")
     ap.add_argument("--write",action="store_true")
     ap.add_argument("--as-of",type=str,default=None)
+    ap.add_argument("--quiet-warnings",action="store_true",help="suppress per-item stale WARN lines; summary still reports count")
     args=ap.parse_args()
     state,count,stale,confirmed=audit(args.as_of)
     # Generated Markdown is stable; aging only emits WARN, not a stale-file CI failure.
     expected=render(state,count,[])
-    for name,age in stale:
-        print(f"WARN: AWS evidence {name} verified {age} days ago; recheck after 180d")
+    if not args.quiet_warnings:
+        for name,age in stale:
+            print(f"WARN: AWS evidence {name} verified {age} days ago; recheck after 180d")
     if args.write:
         OUTPUT.write_text(expected,encoding="utf-8")
     if args.check:
