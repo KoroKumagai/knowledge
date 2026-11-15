@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "note": "Manually reviewed exact name and prefix relationships between AWS General Reference directory entries and lifecycle rows. A feature relationship never implies retirement of the parent service. CloudSearch / AWS Panorama are absent from this version of the endpoint directory and remain reviewable in the lifecycle unmatched report.",
+  "note": "Manually reviewed exact name and prefix relationships between AWS General Reference directory entries and lifecycle rows. A feature relationship never implies retirement of the parent service. CloudSearch / AWS Panorama are absent from this version of the endpoint directory and remain reviewable in the lifecycle unmatched report. The Amazon Glacier standalone vault REST API is explicitly mapped to the Maintenance entry 'Amazon S3 Glacier Direct', supported by the AWS Pricing vault service notice and AWS Storage Blog (Reuters' original Glacier Direct API), NOT the S3 Glacier storage classes.",
   "direct_service_names": {
     "App Mesh": "AWS App Mesh",
     "DevOps Guru": "Amazon DevOps Guru",
@@ -16,7 +16,8 @@
     "FinSpace": "Amazon FinSpace",
     "Amazon Pinpoint": "Amazon Pinpoint",
     "AWS Proton": "AWS Proton",
-    "AWS WAF Classic": "AWS WAF Classic"
+    "AWS WAF Classic": "AWS WAF Classic",
+    "Amazon Glacier": "Amazon S3 Glacier Direct"
   },
   "feature_prefixes": {
     "SageMaker AI": [
