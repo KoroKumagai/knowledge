@@ -2025,6 +2025,7 @@
         "https://aws.amazon.com/s3/glacier/pricing/",
         "https://docs.aws.amazon.com/pdfs/amazonglacier/latest/dev/glacier-dg.pdf#page=10",
         "https://docs.aws.amazon.com/general/latest/gr/maintenance_services.html",
+        "https://aws.amazon.com/solutions/guidance/data-transfer-from-amazon-s3-glacier-vaults-to-amazon-s3/",
         "https://docs.aws.amazon.com/solutions/data-transfer-from-amazon-s3-glacier-vaults-to-amazon-s3/",
         "https://docs.aws.amazon.com/solutions/latest/data-transfer-from-amazon-s3-glacier-vaults-to-amazon-s3/overview.html"
       ],
