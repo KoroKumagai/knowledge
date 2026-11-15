@@ -71,9 +71,13 @@ def audit(as_of=None):
                 raise ValueError("Verification date in future for "+str(key))
             if age > state["max_age_days"]:
                 stale.append((item["name"],age))
-            if not all(u.startswith(("https://aws.amazon.com/","https://docs.aws.amazon.com/"))
-                       for u in item["sources"]):
-                raise ValueError("Audit decision needs AWS official URLs "+str(key))
+            if not all(
+                u.startswith(("https://aws.amazon.com/","https://docs.aws.amazon.com/"))
+                or (key[0]=="product" and "https://aws.amazon.com/products/" in item["sources"]
+                    and u==next(p["url"] for p in products["products"] if p["id"]==key[1]))
+                for u in item["sources"]
+            ):
+                raise ValueError("Audit decision needs AWS-catalog-proven official URLs "+str(key))
         elif item.get("verified_on") and item.get("sources"):
             # An old open inquiry remains allowed, but is not called complete.
             pass
