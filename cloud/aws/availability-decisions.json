@@ -791,19 +791,21 @@
       "key": "Amazon Chime SDK",
       "name": "Amazon Chime SDK",
       "status": {
-        "phase": "対象外（終了済み）",
-        "tokyo": "対象外（終了済み）",
-        "osaka": "対象外（終了済み）",
-        "new_customers": "対象外（終了済み）",
-        "support_plan": "対象外（終了済み）",
-        "commitment": "対象外（終了済み）",
-        "sales_channel": "対象外（終了済み）"
+        "phase": "未確認",
+        "tokyo": "未確認",
+        "osaka": "未確認",
+        "new_customers": "未確認",
+        "support_plan": "未確認",
+        "commitment": "未確認",
+        "sales_channel": "未確認"
       },
       "verified_on": "2026-11-15",
       "sources": [
-        "https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html"
+        "https://docs.aws.amazon.com/general/latest/gr/maintenance_services.html",
+        "https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html",
+        "https://docs.aws.amazon.com/general/latest/gr/chime-sdk.html"
       ],
-      "scope": "公式Full Shutdownに基づく新規導入判定対象外。既存データ保全/移行は別途確認。"
+      "scope": "Amazon Chime SDK本体のGA、東京・大阪のサービス提供、新規受付・サポート・事前契約・購入経路は未確認。公式Full ShutdownはAmazon Chime会議アプリ、Chime SDK Carrier Voice Focus・Proxy Sessions等の機能単位。SIP Media ApplicationはMaintenance。子機能の終了をSDK本体に伝播させない。"
     },
     {
       "type": "reference",
