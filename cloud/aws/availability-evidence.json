@@ -171,53 +171,59 @@
     {
       "type": "reference",
       "key": "Firehose",
-      "ga": "サービス運用を公式文書で確認（最新GA状態は未確認）",
-      "tokyo": "APIエンドポイント掲載のみ（サービス提供の全機能は未確認）",
-      "osaka": "APIエンドポイント掲載のみ（サービス提供の全機能は未確認）",
+      "ga": "GA確認（AWS SLAの一般提供サービス一覧。2015-10-07にAWS公式がサービス導入を発表）",
+      "tokyo": "サービス利用可能（公式Firehoseクォータでリージョン別ストリーム数を確認）",
+      "osaka": "サービス利用可能（公式Firehoseクォータでリージョン別ストリーム数を確認）",
       "contract": "公式料金ページで初期費用・事前コミットメントなしと明記。新規顧客受付・販売チャネル制限は別途未確認",
       "sources": [
+        "https://aws.amazon.com/legal/service-level-agreements/",
+        "https://aws.amazon.com/about-aws/whats-new/2015/10/introducing-amazon-kinesis-firehose/",
         "https://aws.amazon.com/about-aws/whats-new/2024/02/amazon-data-firehose-formerly-kinesis-data-firehose/",
-        "https://docs.aws.amazon.com/general/latest/gr/fh.html",
+        "https://docs.aws.amazon.com/firehose/latest/dev/limits.html",
         "https://aws.amazon.com/firehose/pricing/"
       ],
       "pricing_url": "https://aws.amazon.com/firehose/pricing/",
-      "notes": "Amazon Kinesis Data Firehose→Amazon Data Firehoseの改称を公式2024-02-09発表で確認。東京/大阪は公式General Reference APIエンドポイントに掲載（新規契約可否・各ソース連携の提供保証ではない）。 AWS公式料金ページにno upfront commitments明記。",
+      "notes": "AWS SLAは有償の一般提供サービス一覧にAmazon Data Firehoseを掲載。2015-10-07の公式導入発表と2024-02-09の改称を確認。現行Firehoseクォータは東京・大阪の各リージョンについてFirehose stream数とCreateDeliveryStream時の制限を明記しており、APIエンドポイント掲載だけに依存せずサービス利用可能と判断。料金ページに初期費用・事前コミットメントなしを明記。",
       "verified_on": "2026-11-15",
-      "scope": "2026-11-15時点で閲覧したAWS公式の記述。地域はサービスとエンドポイントを区別。契約条件は新規受付、プラン、事前コミットメント、販売チャネルのみ対象。"
+      "scope": "2026-11-15時点のAWS公式SLA、Firehose公式発表・クォータ・料金資料。地域はサービス固有クォータで東京/大阪の利用を確認し、個別ソース/宛先機能の地域差までは一般化しない。契約条件は新規受付、プラン、事前コミットメント、販売チャネルのみ対象。"
     },
     {
       "type": "reference",
       "key": "AWS Private CA",
-      "ga": "地域型のマネージド認証局（GA発表日未確認）",
-      "tokyo": "公式VPCエンドポイント対応地域（CAの提供確認は要追加調査）",
-      "osaka": "公式VPCエンドポイント対応地域（CAの提供確認は要追加調査）",
+      "ga": "GA確認（AWS SLAの一般提供サービス一覧。2018-04-04にAWS公式がPrivate CAの提供開始を発表）",
+      "tokyo": "サービス利用可能（AWS公式が全商用リージョンでの提供を明記）",
+      "osaka": "サービス利用可能（AWS公式が全商用リージョンでの提供を明記）",
       "contract": "CAの運用・証明書発行で課金。事前契約・新規顧客受付・販売経路は未確認",
       "sources": [
+        "https://aws.amazon.com/legal/service-level-agreements/",
+        "https://aws.amazon.com/blogs/aws/aws-certificate-manager-launches-private-certificate-authority/",
+        "https://aws.amazon.com/about-aws/whats-new/2025/07/aws-private-ca-issuing-100-million-certificates-ca/",
         "https://docs.aws.amazon.com/privateca/latest/userguide/",
-        "https://docs.aws.amazon.com/privateca/latest/userguide/vpc-endpoints.html",
         "https://aws.amazon.com/private-ca/pricing/"
       ],
       "pricing_url": "https://aws.amazon.com/private-ca/pricing/",
-      "notes": "公式ユーザーガイドでCAはRegionリソースと記載、VPCエンドポイント提供地域に東京・大阪を確認。ただしPrivateLink利用可能＝サービス全機能提供とは扱わない。",
+      "notes": "AWS SLAは有償の一般提供サービス一覧にAWS Private Certificate Authorityを掲載。2018-04-04のAWS公式ブログはPrivate CAを「Available Now」として東京を含む提供地域を列挙。2025-07のAWS公式発表はAWS Private CAが全商用AWSリージョンで利用可能と明記しているため、東京・大阪のサービス提供を確認。個別コネクタ等の機能差は別途確認。",
       "verified_on": "2026-11-15",
-      "scope": "2026-11-15時点で閲覧したAWS公式の記述。地域はサービスとエンドポイントを区別。契約条件は新規受付、プラン、事前コミットメント、販売チャネルのみ対象。"
+      "scope": "2026-11-15時点のAWS公式SLA、提供開始ブログ、2025-07の全商用リージョン提供告知、User Guide、料金資料。製品本体のサービス提供と個別機能/PrivateLinkの対応地域を分離する。"
     },
     {
       "type": "reference",
       "key": "Kinesis Data Streams",
-      "ga": "サービスドキュメント・課金体系確認（GA発表日未確認）",
-      "tokyo": "APIエンドポイント掲載・VPCエンドポイント機能対応（サービス全体は要追加確認）",
-      "osaka": "APIエンドポイント掲載・VPCエンドポイント機能対応（サービス全体は要追加確認）",
+      "ga": "GA確認（AWS SLAの一般提供サービス一覧。旧Amazon KinesisからKinesis Streamsへの名称継承を公式発表で確認）",
+      "tokyo": "サービス利用可能（現行Kinesis Data Streams公式資料で東京を確認）",
+      "osaka": "サービス利用可能（現行Kinesis Data Streams公式資料で大阪を確認）",
       "contract": "従量/プロビジョンド等の課金モード。On-demand Advantageには最低利用容量の課金あり。事前契約が必要という意味ではない",
       "sources": [
-        "https://docs.aws.amazon.com/general/latest/gr/ak.html",
-        "https://docs.aws.amazon.com/streams/latest/dev/vpc.html",
+        "https://aws.amazon.com/legal/service-level-agreements/",
+        "https://aws.amazon.com/about-aws/whats-new/2015/10/amazon-kinesis-extended-data-retention/",
+        "https://aws.amazon.com/about-aws/whats-new/2026/09/kinesis/service-managed-partition-keys/",
+        "https://docs.aws.amazon.com/streams/latest/dev/large-records.html",
         "https://aws.amazon.com/kinesis/data-streams/pricing/"
       ],
       "pricing_url": "https://aws.amazon.com/kinesis/data-streams/pricing/",
-      "notes": "東京・大阪のAPIエンドポイントおよびVPC endpoint policyの対象リージョンをAWS公式文書で確認。GA/新規受付/コミットメントはAPIがあるだけでは判断しない。",
+      "notes": "AWS SLAは有償の一般提供サービス一覧にAmazon Kinesisを掲載。2015-10の公式発表でAmazon KinesisがAmazon Kinesis Streamsへ改称されたことを確認。2026-09のKinesis Data Streams公式発表は対象機能を全AWS商用リージョンで提供とし、現行Data Streamsの公式リージョン表にも東京・大阪を明記。APIエンドポイント掲載だけに依存せずサービス利用可能と判断。最低利用量の課金は事前契約/コミットメントと別の意味。",
       "verified_on": "2026-11-15",
-      "scope": "2026-11-15時点で閲覧したAWS公式の記述。地域はサービスとエンドポイントを区別。契約条件は新規受付、プラン、事前コミットメント、販売チャネルのみ対象。"
+      "scope": "2026-11-15時点のAWS公式SLA、Kinesis Streams改称資料、現行Kinesis Data Streamsの全商用リージョン告知・機能リージョン表・料金資料。製品本体の存在を確認する根拠として使い、各機能が全リージョン同一とは推定しない。"
     },
     {
       "type": "reference",
