@@ -40,17 +40,18 @@ AWS公式は、`/aws/service/global-infrastructure/services/<service-id>/regions
 - 対象は第1段のVPC Lattice / Firehose / Private CA / Kinesis / ML / SimpleDBの6項目。IDは推定候補としてコード内に登録し、取得前にSSMの公式サービス名一覧と照合。
 - **取得元リージョンはus-east-1**。このSSMパスは任意リージョンから利用できるとは限りません。
 - `NextToken`で全ページ取得。結果は`aws-ssm-region-probe.json`としてGitHub Actionsの**Artifactに30日保存**し、mainの監査表は自動上書きしません。
-- [手動Workflow](../../.github/workflows/probe-aws-ssm-regions.yml)：`AWS_AUDIT_ROLE_ARN`がGitHub Repository Variablesに設定されているときのみ実行。設定しない場合はSKIP。
+- [手動Workflow](../../.github/workflows/probe-aws-ssm-regions.yml)：`AWS_AUDIT_ROLE_ARN`と`AWS_AUDIT_ACCOUNT_ID`がGitHub Repository Variablesに設定され、保護された`aws-audit` Environmentを通過した場合のみ実行。どちらか未設定ならSKIP。
 - 公式リージョン名とAWS CLI/SDKのservice IDが常に一致するわけではありません。サービス識別子の対応を確認してから適用します。
 
 ### 必要なAWS側設定（接続前は実行しない）
 
 1. GitHub OIDC Provider `token.actions.githubusercontent.com`をAWS IAMに作成（`aud=sts.amazonaws.com`）。
-2. **`KoroKumagai/knowledge`のmainブランチだけを許可**する信頼ポリシーで読取専用Roleを作成。GitHubのOIDC `sub`は設定や作成時期によって変わるため、IAMの実際のsubject値を確認して厳密に制限する。
-3. ロールの許可は`ssm:GetParametersByPath`と`/aws/service/global-infrastructure/services`以下への読み取りのみ（Public ParameterのARN表現と対応IAMロールを検証する）。`ssm:PutParameter`や、他の顧客パラメータの読み出し権限は**付けない**。
-4. Actions `Settings → Secrets and variables → Actions → Variables`で`AWS_AUDIT_ROLE_ARN`を登録し、**手動Workflow実行を承認**する。IAMアクセスキーは保存しない。
+2. GitHub Environment `aws-audit`を作成し、**required reviewers** と **deployment branches = mainのみ**を設定する。Workflow側も`environment: aws-audit`を指定する。
+3. `KoroKumagai/knowledge`の`aws-audit` Environmentだけを許可する信頼ポリシーで読取専用Roleを作成。Environmentを使う標準OIDC subjectは`repo:KoroKumagai/knowledge:environment:aws-audit`。ただしorganization/repository IDベースのsubject customizationを有効化している場合は形式が変わるため、GitHub側の実設定を確認してからIAM条件を確定し、作成時期だけから形式を推定しない。
+4. ロールの許可は`ssm:GetParametersByPath`と`/aws/service/global-infrastructure/services`以下への読み取りのみ（Public ParameterのARN表現と対応IAMロールを検証する）。`ssm:PutParameter`や、他の顧客パラメータの読み出し権限は**付けない**。
+5. Actions `Settings → Secrets and variables → Actions → Variables`で`AWS_AUDIT_ROLE_ARN`とAWSアカウントIDの`AWS_AUDIT_ACCOUNT_ID`を登録。`configure-aws-credentials`の`allowed-account-ids`でも接続先を固定する。IAMアクセスキーは保存しない。
 
-信頼ポリシー例（AWS側のOIDCの`sub`形式に合わせ調整。例をそのまま適用しない）：
+信頼ポリシー例（標準のEnvironment subjectを使う場合。subject customizationを有効化している場合はGitHubの実設定に合わせる）：
 
 ```json
 {
@@ -61,7 +62,7 @@ AWS公式は、`/aws/service/global-infrastructure/services/<service-id>/regions
     "Action": "sts:AssumeRoleWithWebIdentity",
     "Condition": {"StringEquals": {
       "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
-      "token.actions.githubusercontent.com:sub": "repo:KoroKumagai/knowledge:ref:refs/heads/main"
+      "token.actions.githubusercontent.com:sub": "repo:KoroKumagai/knowledge:environment:aws-audit"
     }}
   }]
 }
