@@ -27,12 +27,12 @@
       "ga": "Maintenance（新規顧客受付停止）",
       "tokyo": "未確認",
       "osaka": "未確認",
-      "contract": "新規顧客利用不可（2026-07-31から）。既存顧客へのサポート継続",
+      "contract": "新規顧客受付停止。AWS公式文書間で開始日が2026-07-30／2026-07-31と異なるため、既存顧客以外の新規利用は停止済みとして扱い、厳密な停止日は要確認",
       "sources": [
         "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/qbusiness-availability-change.html",
         "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-service-availability/"
       ],
-      "notes": "同一サービスの地域別既存顧客利用状況は未検証。Quickへの移行ガイダンスあり。"
+      "notes": "Q Business案内およびAPI文書は2026-07-31以降の新規受付停止（7/30より前に登録）を案内。一方2026-06-30のAWS What's Newは7/30開始と記載。両方を保持し一方の日時に確定しない。東京・大阪の既存顧客の利用状況は未検証。"
     },
     {
       "type": "reference",
@@ -107,6 +107,21 @@
         "https://docs.aws.amazon.com/workspaces-thin-client/latest/ug/workspacesthinclient-end-of-support.html"
       ],
       "notes": "公式文書に2026-03-31と2026-04-20の新規受付停止日に関する表記差あり。物理端末の販売地域をAWSリージョン対応と同一視しない。"
+    },
+    {
+      "type": "reference",
+      "key": "Amazon Glacier",
+      "ga": "Maintenance（旧vault型の新規顧客受付停止）",
+      "tokyo": "未確認（旧顧客向けの利用条件・地域を個別確認）",
+      "osaka": "未確認（旧顧客向けの利用条件・地域を個別確認）",
+      "contract": "Amazon Glacier旧vault APIは2025-12-15から新規顧客の受付を停止。既存顧客データはアクセス可能、S3 Glacierのストレージクラスは別の現行製品",
+      "sources": [
+        "https://aws.amazon.com/s3/glacier/pricing/",
+        "https://docs.aws.amazon.com/amazonglacier/latest/dev/intro.html",
+        "https://docs.aws.amazon.com/general/latest/gr/maintenance_services.html",
+        "https://aws.amazon.com/blogs/storage/how-reuters-built-easily-accessible-large-scale-news-archives-on-aws/"
+      ],
+      "notes": "AWS公式Pricingが旧vault型Amazon Glacierの2025-12-15新規受付停止を明記。Product LifecycleはAmazon S3 Glacier DirectとしてMaintenance、AWS Storage Blogは旧Glacier Direct APIとの同一性を説明。S3 Glacier Flexible/Deep ArchiveなどのS3ストレージクラスをMaintenance扱いしない。"
     }
   ]
 }
