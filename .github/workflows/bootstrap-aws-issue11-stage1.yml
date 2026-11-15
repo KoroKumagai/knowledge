@@ -1,0 +1,40 @@
+name: Bootstrap AWS Issue11 stage1 docs (temporary)
+on:
+  pull_request:
+    paths:
+      - .github/workflows/bootstrap-aws-issue11-stage1.yml
+permissions:
+  contents: write
+jobs:
+  build:
+    if: github.head_ref == 'docs/aws-issue11-stage1-ssm-audit-20261115'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Render and validate evidence decision inventory
+        run: |
+          python -m py_compile scripts/render_aws_open_items.py scripts/check_aws_audit_decisions.py scripts/probe_aws_ssm_regions.py
+          python scripts/render_aws_open_items.py --write
+          python scripts/check_aws_audit_decisions.py --write
+          python scripts/render_aws_open_items.py --check
+          python scripts/check_aws_audit_decisions.py --check
+          python scripts/probe_aws_ssm_regions.py --self-test
+          python scripts/check_aws_service_catalog.py
+          python scripts/check_aws_marketing_products.py
+          python scripts/check_cloudflare_catalog.py
+          python scripts/check_cloud_consistency.py
+      - name: Save regenerated Markdown to review branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add cloud/aws/open-items.md cloud/aws/availability-decisions.md
+          if ! git diff --cached --quiet; then
+            git commit -m 'docs(aws): render 128 availability decisions and 15 verified evidence notes'
+            git push origin HEAD:refs/heads/docs/aws-issue11-stage1-ssm-audit-20261115
+          fi
