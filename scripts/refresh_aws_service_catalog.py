@@ -15,7 +15,7 @@ import argparse
 import json
 import re
 import sys
-from aws_lifecycle import LIFECYCLE_LABELS
+from aws_lifecycle import EXPIRED_SUNSET_LABEL, LIFECYCLE_LABELS
 
 from bs4 import BeautifulSoup
 
@@ -154,8 +154,8 @@ def date_state(row, today):
     except ValueError:
         return LIFECYCLE_LABELS[stage]
     if expires <= today:
-        return "終了日経過（Sunset掲載・Full Shutdown未照合）"
-    return "Sunset（終了予定）"
+        return EXPIRED_SUNSET_LABEL
+    return LIFECYCLE_LABELS[stage]
 
 def main():
     parser = argparse.ArgumentParser()

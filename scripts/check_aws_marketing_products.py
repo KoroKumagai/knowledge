@@ -184,17 +184,19 @@ check(not synthetic_own and all(x in synthetic_text for x in (
 # All lifecycle stages must appear in coverage even if General Reference
 # matches by exact name or a reviewed alias. No state implies GA.
 source_lifecycle=generator.read_product_lifecycle()
+# Render with the snapshot day, as the generator does.
+snapshot_day=source["retrieved_utc"]
 counts=Counter()
 for item in products:
     name=item["name"]
-    _,direct_rows=generator.product_lifecycle(name,mapping,source_lifecycle)
+    _,direct_rows=generator.product_lifecycle(name,mapping,source_lifecycle,snapshot_day)
     if not direct_rows:
         continue
     candidates=[row for row in coverage_md.splitlines()
                 if row.startswith("| ["+name+"](")]
     for status in direct_rows:
         counts[status["stage"]]+=1
-        expected=generator.lifecycle_coverage_note(status)
+        expected=generator.lifecycle_coverage_note(status,snapshot_day)
         check(len(candidates)==1 and expected in candidates[0],
               "Coverage omits "+status["stage"]+" for Product "+name)
 check(counts["shutdown"]>=14 and counts["maintenance"]>=12 and counts["sunset"]>=5,
