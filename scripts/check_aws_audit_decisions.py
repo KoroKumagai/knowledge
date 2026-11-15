@@ -134,9 +134,7 @@ def render(state,count,stale):
     out=[
         "# AWS未対応128項目：適用可否・根拠付き判定の進捗","",
         "**基準日:** "+state["review_date"]+" / **再検証期限:** 180日超でWARN（CIは失敗させない）","",
-        "> **確認済み = サービスのGAとは限りません。** 受付停止・契約制限の事実が確認できた場合も含みます。",
-        "> **未確認 ≠ 利用不可**、**公式記載なし ≠ 提供なし**。対象外はツール／地域概念のないサービス／物理端末／終了済みに限り、理由とAWS公式出典を記録します。",
-        "> AWS SSM公開パラメータはエンドポイント/リージョン候補の補助情報であり、GA、新規顧客受付、契約可能性の直接の証拠にはしません。","",
+        "判定値の定義とSSMの扱いは [availability-policy.md](availability-policy.md) を正とします。",
         "公式根拠の全文と確認範囲は [availability-evidence.json](availability-evidence.json)、"
         "128件の個別判定・適用理由は [availability-decisions.json](availability-decisions.json)。","",
         "## 次元別判定（128行×7次元）","",
@@ -149,6 +147,7 @@ def render(state,count,stale):
         if sum(vals)!=128:
             raise ValueError("Dimensions do not total 128: "+d)
         out.append("| "+names[d]+" | "+" | ".join(map(str,vals))+" |")
+    out+=["","> 対象外の内訳：提供段階・契約系はツール8件＋終了済み11件＝19件。東京・大阪はそれに物理端末4件を加えた23件です。",""]
     out+=["","## 第1段：優先6項目（現時点での根拠状況）","",
           "| 項目 | 提供段階 | 東京 / 大阪 | 新規顧客受付 | 公式根拠 |",
           "|---|---|---|---|---|"]
