@@ -54,6 +54,7 @@ python scripts/check_aws_service_catalog.py
 python scripts/check_aws_marketing_products.py
 python scripts/render_aws_open_items.py --check
 python scripts/check_aws_audit_decisions.py --self-test-retirement
+python scripts/test_aws_audit_decisions.py
 python scripts/check_aws_audit_decisions.py --check
 python scripts/check_aws_audit_decisions.py --as-of 2027-06-01 --quiet-warnings
 python scripts/probe_aws_ssm_regions.py --self-test

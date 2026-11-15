@@ -187,14 +187,24 @@ def render(state,count,stale):
         "## 次元別判定（128行×7次元）","",
         "| 次元 | 確認済み | 公式記載なし | 対象外 | 未確認 |",
         "|---|---:|---:|---:|---:|"]
+    notes=[]
+    # Order breakdown items as defined in the schema, not by code point.
+    order={s:i for i,s in enumerate(state["status_values"])}
     for d in dimensions:
         n=lambda s:count[(d,s)]
-        na=sum(v for (dim,status),v in count.items() if dim==d and status.startswith("対象外"))
+        exclusions=sorted(((status,v) for (dim,status),v in count.items()
+                           if dim==d and status.startswith("対象外") and v),
+                          key=lambda x:(order.get(x[0],len(order)),x[0]))
+        na=sum(v for status,v in exclusions)
         vals=(n("確認済み"),n("公式記載なし"),na,n("未確認"))
         if sum(vals)!=128:
             raise ValueError("Dimensions do not total 128: "+d)
         out.append("| "+names[d]+" | "+" | ".join(map(str,vals))+" |")
-    out+=["","> 対象外の内訳：提供段階・契約系はツール8件＋終了済み10件＝18件。東京・大阪はそれに物理端末4件を加えた22件です。",""]
+        detail="＋".join(status.removeprefix("対象外（").removesuffix("）")+
+                        str(v)+"件" for status,v in exclusions)
+        breakdown=f"{detail}＝{na}件" if detail else f"なし（{na}件）"
+        notes.append("> - "+names[d]+"："+breakdown)
+    out+=["","> 対象外の内訳：",">",*notes,""]
     out+=["","## 第1段：優先6項目（現時点での根拠状況）","",
           "| 項目 | 提供段階 | 東京 / 大阪 | 新規顧客受付 | 公式根拠 |",
           "|---|---|---|---|---|"]
