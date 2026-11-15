@@ -9,13 +9,13 @@ Cloudflareで採用した「全件の公式目録」と「編集された独自�
 | [products.md](products.md) | 公式Products検索のサービス区分 **237カード** を全件収録（2026-11-14 UTC、32カテゴリ） |
 | [products-source.json](products-source.json) | 公式サイト内部の検索エンドポイントの totalHits・取得日・製品ID・掲載名・URL・カテゴリの取得記録 |
 | [products-coverage.md](products-coverage.md) | Products **237カード** とGeneral Reference **269項目**を相互照合。未対応を残す |
-| [open-items.md](open-items.md) | **未対応33カードと95参照項目**の暫定分類、GA・東京/大阪リージョン・契約条件の検証台帳（**公式根拠付き個別確認8件**） |
+| [open-items.md](open-items.md) | **未対応33カードと95参照項目**の暫定分類、GA・東京/大阪リージョン・契約条件の検証台帳（**公式根拠付き個別確認9件**） |
 | [open-items-classification.json](open-items-classification.json) | 対応未確定128項目の原票ID付き分類データ（独立サービス／機能／開発ツール／旧製品など） |
 | [availability-evidence.json](availability-evidence.json) | 公式根拠に基づくGA・リージョン・契約条件の確認記録と未確認の区別 |
 | [products-mapping.json](products-mapping.json) | 同一名称でない場合の手動確認済み別名／非同等の製品群・機能の分類 |
 | [catalog.md](catalog.md) | General Referenceの **269件**（サービスエンドポイント/クォータ一覧）の全件採録 |
 | [lifecycle.md](lifecycle.md) | Maintenance **56件**、Sunset **16件**、Full Shutdown **62件** の公式表を全件採録 |
-| [lifecycle-unmatched.md](lifecycle-unmatched.md) | 未対応 **74 / 134件** の明示的な照合残と一次資料。マッピングは [lifecycle-mapping.json](lifecycle-mapping.json) で管理 |
+| [lifecycle-unmatched.md](lifecycle-unmatched.md) | 未対応 **73 / 134件** の明示的な照合残と一次資料。マッピングは [lifecycle-mapping.json](lifecycle-mapping.json) で管理 |
 | [coverage.md](coverage.md) | 既存[個別一覧](services.md)22件と公式参照名の突合。移動済みの項目は[横断表](../service-comparison.md)で管理 |
 | [services.md](services.md) | AWS独自・個別扱いの人手で編集した一覧（全製品カタログとは別） |
 
@@ -39,6 +39,7 @@ Cloudflareで採用した「全件の公式目録」と「編集された独自�
 - AWS公式のマーケティング分類（badge）をそのまま採録。分類名に不自然なものがあっても独自の推測で書き換えません。
 - AWS公式サイト内部の検索エンドポイントには [Kiro](https://kiro.dev/) のような外部ドメインの製品ページも登録されています。ドメインだけで除外せず、発見元の公式データと製品IDを保持します。
 - **Productsへの掲載は新規利用可能・GAの証明ではありません。** 停止品の採用判断は[lifecycle.md](lifecycle.md)と個別の公式発表を確認します。
+- **旧Amazon Glacier（vault型）**は公式ライフサイクルの「Amazon S3 Glacier Direct」に対応（Maintenance）。2025-12-15から新規顧客受付停止で、**Amazon S3のGlacierストレージクラスとは別**。[公式料金](https://aws.amazon.com/s3/glacier/pricing/) / [公式ライフサイクル](lifecycle.md)。
 - [products-coverage.md](products-coverage.md) は**Maintenance・Sunset・Full Shutdownを、General Referenceとの照合状況に関係なく表示**します。照合済みと提供中を混同せず、関連サービスの終了を製品本体の終了と混同しないようにしています。
 - [products.md](products.md)ではライフサイクルの列を追加し、**サービス本体に完全一致（または明示的別名）したMaintenance・Sunset・Full Shutdown**を表示。SageMakerなどの一部機能の終了を、親サービス全体の終了とは扱いません。
 - **QLDBの正式名称差**も手動別名で照合。[AWS Full Shutdown一覧](https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html)に掲載されています。
@@ -76,11 +77,11 @@ Cloudflareで採用した「全件の公式目録」と「編集された独自�
 - `python scripts/check_aws_service_catalog.py`：公式参照269項目、Maintenance・Sunset・Full Shutdown、未対応台帳と個別一覧との整合性を検証。
 - GitHub Actions **Propose AWS official service catalog refresh**：手動実行でレビュー用PRを提案。提供状態や構造が変わった場合には公式根拠をレビューし、無条件に提供中とみなさない。
 
-## 未対応項目の一次分類と提供条件調査（2026-11-15）
+## 未対応項目の一次分類と提供条件の検証範囲
 
 - [open-items.md](open-items.md)に**Products側33カード、General Reference側95参照項目をすべて一次分類**。既存の237/269件や分類75/101/28/33は変更していません。
 - **一次分類は仮説**です。原票の名称・機能説明・公式エンドポイント参照を根拠にした作業上の分類であり、GA・独立サービス・契約可能性の確定ではありません。
-- GA・東京/大阪の提供・契約条件の**個別確認は8項目から着手**。Aurora DSQL、Amazon Q Business、Service Quotas、Support API、WAF Classic、RTB Fabric、Nova Act、WorkSpaces Thin Clientの公式根拠を[別データ](availability-evidence.json)で管理しています。全128件の検証完了を主張しません。
+- GA・東京/大阪の提供・契約条件の**個別確認は9項目から着手**。Aurora DSQL、Amazon Q Business、Service Quotas、Support API、WAF Classic、RTB Fabric、Nova Act、WorkSpaces Thin Client、旧Amazon Glacier（vault型）の公式根拠を[別データ](availability-evidence.json)で管理しています。全128件の検証完了を主張しません。
 - 各リージョンでのAWS公式データは[AWS Capabilities by Region](https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/)が優先参照先です。公式の[S3公開データ取得](https://aws.amazon.com/blogs/storage/building-automated-aws-regional-availability-checks-with-amazon-s3/)にはAWS認証・IAM権限が必要なため、このPRでは一括取得は実施していません。
 - `python scripts/render_aws_open_items.py --write`で台帳再生成、`--check`で元データ・検証根拠・Markdownの全件整合性をチェックします。
 
