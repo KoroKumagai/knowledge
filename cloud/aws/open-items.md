@@ -60,18 +60,18 @@ GA・リージョン・契約条件は下段の検証済み記録だけに示し
 | Amazon Connect Decisions (ID: amazon-connect-decisions) | 業務アプリ・専門マネージドサービス候補 | 本体の該当記載なし（GA未確認） | [AWS Products](https://aws.amazon.com/products/connect/decisions/) |
 | Amazon Connect Talent (ID: amazon-connect-talent) | 業務アプリ・専門マネージドサービス候補 | 本体の該当記載なし（GA未確認） | [AWS Products](https://aws.amazon.com/products/connect/talent/) |
 | AWS Elemental Appliances & Software (ID: aws-elemental-appliances-software) | 端末・アプライアンス | 本体の該当記載なし（GA未確認） | [AWS Products](https://aws.amazon.com/elemental-appliances-software/?did=ap_card&trk=ap_card) |
-| AWS IoT Button (ID: aws-iot-button) | 端末・アプライアンス | [関連サービスが終了済み：AWS IoT 1-Click](lifecycle.md)（2025-01-29終了）。製品本体の提供状態とは区別 | [AWS Products](https://aws.amazon.com/iotbutton/?did=ap_card&trk=ap_card) |
+| AWS IoT Button (ID: aws-iot-button) | 端末・アプライアンス | [関連サービスのFull Shutdown（2025-01-29終了）：AWS IoT 1-Click](lifecycle.md)。製品本体の提供状態とは区別 | [AWS Products](https://aws.amazon.com/iotbutton/?did=ap_card&trk=ap_card) |
 | Amazon Dash Cart (ID: amazon-dash-cart) | 端末・アプライアンス | 本体の該当記載なし（GA未確認） | [AWS Products](https://aws.amazon.com/dash-cart/?did=ap_card&trk=ap_card) |
-| AWS Service Management Connector (ID: aws-service-management-connector) | 終了予定・提供制限の製品 | [Sunset（終了予定）](lifecycle.md)（2027-03-31） | [AWS Products](https://aws.amazon.com/service-management-connector/?did=ap_card&trk=ap_card) |
-| Amazon WorkSpaces Thin Client (ID: amazon-workspaces-thin-client) | 終了予定・提供制限の製品 | [Sunset（終了予定）](lifecycle.md)（2027-03-31） | [AWS Products](https://aws.amazon.com/workspaces/thin-client/?did=ap_card&trk=ap_card) |
-| AWS DeepComposer (ID: aws-deepcomposer) | 提供終了の旧製品 | [Full Shutdown（終了済み）](lifecycle.md)（2025-09-17） | [AWS Products](https://aws.amazon.com/deepcomposer/?did=ap_card&trk=ap_card) |
-| AWS DeepLens (ID: aws-deeplens) | 提供終了の旧製品 | [Full Shutdown（終了済み）](lifecycle.md)（2024-01-31） | [AWS Products](https://aws.amazon.com/deeplens/?did=ap_card&trk=ap_card) |
-| AWS Elemental MediaStore (ID: aws-elemental-mediastore) | 提供終了の旧製品 | [Full Shutdown（終了済み）](lifecycle.md)（2025-11-12） | [AWS Products](https://aws.amazon.com/mediastore/?did=ap_card&trk=ap_card) |
-| Amazon Elastic Transcoder (ID: amazon-elastic-transcoder) | 提供終了の旧製品 | [Full Shutdown（終了済み）](lifecycle.md)（2025-11-13） | [AWS Products](https://aws.amazon.com/elastictranscoder/?did=ap_card&trk=ap_card) |
-| Amazon Lookout for Metrics (ID: amazon-lookout-for-metrics) | 提供終了の旧製品 | [Full Shutdown（終了済み）](lifecycle.md)（2025-10-10） | [AWS Products](https://aws.amazon.com/lookout-for-metrics/?did=ap_card&trk=ap_card) |
-| Amazon Lookout for Vision (ID: amazon-lookout-for-vision) | 提供終了の旧製品 | [Full Shutdown（終了済み）](lifecycle.md)（2025-10-31） | [AWS Products](https://aws.amazon.com/lookout-for-vision/?did=ap_card&trk=ap_card) |
-| Amazon Nimble Studio (ID: amazon-nimble-studio) | 提供終了の旧製品 | [Full Shutdown（終了済み）](lifecycle.md)（2024-06-30） | [AWS Products](https://aws.amazon.com/nimble-studio/?did=ap_card&trk=ap_card) |
-| Amazon Quantum Ledger Database (QLDB) (ID: amazon-quantum-ledger-database-qldb) | 提供終了の旧製品 | [Full Shutdown（終了済み）](lifecycle.md)（2025-07-31） | [AWS Products](https://aws.amazon.com/qldb/?did=ap_card&trk=ap_card) |
+| AWS Service Management Connector (ID: aws-service-management-connector) | 終了予定・提供制限の製品 | [Sunset（2027-03-31終了予定）](lifecycle.md) | [AWS Products](https://aws.amazon.com/service-management-connector/?did=ap_card&trk=ap_card) |
+| Amazon WorkSpaces Thin Client (ID: amazon-workspaces-thin-client) | 終了予定・提供制限の製品 | [Sunset（2027-03-31終了予定）](lifecycle.md) | [AWS Products](https://aws.amazon.com/workspaces/thin-client/?did=ap_card&trk=ap_card) |
+| AWS DeepComposer (ID: aws-deepcomposer) | 提供終了の旧製品 | [Full Shutdown（2025-09-17終了）](lifecycle.md) | [AWS Products](https://aws.amazon.com/deepcomposer/?did=ap_card&trk=ap_card) |
+| AWS DeepLens (ID: aws-deeplens) | 提供終了の旧製品 | [Full Shutdown（2024-01-31終了）](lifecycle.md) | [AWS Products](https://aws.amazon.com/deeplens/?did=ap_card&trk=ap_card) |
+| AWS Elemental MediaStore (ID: aws-elemental-mediastore) | 提供終了の旧製品 | [Full Shutdown（2025-11-12終了）](lifecycle.md) | [AWS Products](https://aws.amazon.com/mediastore/?did=ap_card&trk=ap_card) |
+| Amazon Elastic Transcoder (ID: amazon-elastic-transcoder) | 提供終了の旧製品 | [Full Shutdown（2025-11-13終了）](lifecycle.md) | [AWS Products](https://aws.amazon.com/elastictranscoder/?did=ap_card&trk=ap_card) |
+| Amazon Lookout for Metrics (ID: amazon-lookout-for-metrics) | 提供終了の旧製品 | [Full Shutdown（2025-10-10終了）](lifecycle.md) | [AWS Products](https://aws.amazon.com/lookout-for-metrics/?did=ap_card&trk=ap_card) |
+| Amazon Lookout for Vision (ID: amazon-lookout-for-vision) | 提供終了の旧製品 | [Full Shutdown（2025-10-31終了）](lifecycle.md) | [AWS Products](https://aws.amazon.com/lookout-for-vision/?did=ap_card&trk=ap_card) |
+| Amazon Nimble Studio (ID: amazon-nimble-studio) | 提供終了の旧製品 | [Full Shutdown（2024-06-30終了）](lifecycle.md) | [AWS Products](https://aws.amazon.com/nimble-studio/?did=ap_card&trk=ap_card) |
+| Amazon Quantum Ledger Database (QLDB) (ID: amazon-quantum-ledger-database-qldb) | 提供終了の旧製品 | [Full Shutdown（2025-07-31終了）](lifecycle.md) | [AWS Products](https://aws.amazon.com/qldb/?did=ap_card&trk=ap_card) |
 
 ## General Reference側の未対応95項目
 
@@ -107,7 +107,7 @@ GA・リージョン・契約条件は下段の検証済み記録だけに示し
 | CloudWatch RUM | サブ機能・専門API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/cw_rum_region.html) |
 | CloudWatch Synthetics | サブ機能・専門API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/cw-synthetics_region.html) |
 | CodeGuru Profiler | サブ機能・専門API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/codeguru-profiler.html) |
-| CodeGuru Reviewer | サブ機能・専門API候補 | [Maintenance（新規利用制限あり）](https://docs.aws.amazon.com/general/latest/gr/maintenance_services.html) | [公式参照](https://docs.aws.amazon.com/general/latest/gr/codeguru-reviewer.html) |
+| CodeGuru Reviewer | サブ機能・専門API候補 | [Maintenance（新規利用に制限）](https://docs.aws.amazon.com/general/latest/gr/maintenance_services.html) | [公式参照](https://docs.aws.amazon.com/general/latest/gr/codeguru-reviewer.html) |
 | CodeGuru Security | サブ機能・専門API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/codeguru-security.html) |
 | DataBrew | サブ機能・専門API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/gluedatabrew.html) |
 | EC2 Image Builder | サブ機能・専門API候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/imagebuilder.html) |
@@ -151,17 +151,17 @@ GA・リージョン・契約条件は下段の検証済み記録だけに示し
 | AWS TNB | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/tnb.html) |
 | AWS re:Post Private | 独立サービス・専門サービス候補 | [Sunset（終了予定）](https://docs.aws.amazon.com/general/latest/gr/sunset_services.html) | [公式参照](https://docs.aws.amazon.com/general/latest/gr/repostprivate.html) |
 | Amazon AI Operations | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/aiops_region.html) |
-| Amazon Chime SDK | 独立サービス・専門サービス候補 | [機能単位の掲載あり（Maintenance（新規利用制限あり） / Full Shutdown（終了済））](lifecycle.md)（本体のGA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/chime-sdk.html) |
+| Amazon Chime SDK | 独立サービス・専門サービス候補 | [機能単位の掲載あり（Maintenance（新規利用に制限） / Full Shutdown（終了済み））](lifecycle.md)（本体のGA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/chime-sdk.html) |
 | Amazon EVS | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/evs.html) |
 | Amazon GameLift Streams | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/gameliftstreams.html) |
-| Amazon Q Business | 独立サービス・専門サービス候補 | [Maintenance（新規利用制限あり）](https://docs.aws.amazon.com/general/latest/gr/maintenance_services.html) | [公式参照](https://docs.aws.amazon.com/general/latest/gr/amazonq.html) |
+| Amazon Q Business | 独立サービス・専門サービス候補 | [Maintenance（新規利用に制限）](https://docs.aws.amazon.com/general/latest/gr/maintenance_services.html) | [公式参照](https://docs.aws.amazon.com/general/latest/gr/amazonq.html) |
 | Amazon Q Developer | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/amazonqdev.html) |
 | Amazon SWF | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/swf-service.html) |
 | Amazon SimpleDB | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/sdb.html) |
-| Amazon WorkSpaces | 独立サービス・専門サービス候補 | [機能単位の掲載あり（Maintenance（新規利用制限あり） / Sunset（終了日を確認））](lifecycle.md)（本体のGA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/wsp.html) |
-| Amazon WorkSpaces Secure Browser | 独立サービス・専門サービス候補 | [Maintenance（新規利用制限あり）](https://docs.aws.amazon.com/general/latest/gr/maintenance_services.html) | [公式参照](https://docs.aws.amazon.com/general/latest/gr/workspacesweb.html) |
+| Amazon WorkSpaces | 独立サービス・専門サービス候補 | [機能単位の掲載あり（Maintenance（新規利用に制限） / Sunset（終了予定））](lifecycle.md)（本体のGA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/wsp.html) |
+| Amazon WorkSpaces Secure Browser | 独立サービス・専門サービス候補 | [Maintenance（新規利用に制限）](https://docs.aws.amazon.com/general/latest/gr/maintenance_services.html) | [公式参照](https://docs.aws.amazon.com/general/latest/gr/workspacesweb.html) |
 | Aurora DSQL | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/dsql.html) |
-| Cloud Directory | 独立サービス・専門サービス候補 | [Maintenance（新規利用制限あり）](https://docs.aws.amazon.com/general/latest/gr/maintenance_services.html) | [公式参照](https://docs.aws.amazon.com/general/latest/gr/clouddirectory.html) |
+| Cloud Directory | 独立サービス・専門サービス候補 | [Maintenance（新規利用に制限）](https://docs.aws.amazon.com/general/latest/gr/maintenance_services.html) | [公式参照](https://docs.aws.amazon.com/general/latest/gr/clouddirectory.html) |
 | DevOps Guru | 独立サービス・専門サービス候補 | [Sunset（終了予定）](https://docs.aws.amazon.com/general/latest/gr/sunset_services.html) | [公式参照](https://docs.aws.amazon.com/general/latest/gr/devops-guru.html) |
 | Firehose | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/fh.html) |
 | HealthImaging | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/healthimaging.html) |
@@ -170,10 +170,10 @@ GA・リージョン・契約条件は下段の検証済み記録だけに示し
 | Network Security Manager | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/network-security-manager.html) |
 | Oracle Database@AWS | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/odb-service.html) |
 | VPC Lattice | 独立サービス・専門サービス候補 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/vpc-lattice-service.html) |
-| Amazon Glacier | 終了予定・提供制限の製品 | [Maintenance（新規利用制限あり）](https://docs.aws.amazon.com/general/latest/gr/maintenance_services.html) | [公式参照](https://docs.aws.amazon.com/general/latest/gr/s3glacier.html) |
+| Amazon Glacier | 終了予定・提供制限の製品 | [Maintenance（新規利用に制限）](https://docs.aws.amazon.com/general/latest/gr/maintenance_services.html) | [公式参照](https://docs.aws.amazon.com/general/latest/gr/s3glacier.html) |
 | Amazon ML | 終了予定・提供制限の製品 | 該当記載なし（GA判定不可） | [公式参照](https://docs.aws.amazon.com/general/latest/gr/machinelearning.html) |
-| AWS IoT Greengrass V1 | 提供終了の旧製品 | [Full Shutdown（終了済）](https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html) | [公式参照](https://docs.aws.amazon.com/general/latest/gr/greengrass.html) |
-| AWS WAF Classic | 提供終了の旧製品 | [Full Shutdown（終了済）](https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html) | [公式参照](https://docs.aws.amazon.com/general/latest/gr/waf-classic.html) |
+| AWS IoT Greengrass V1 | 提供終了の旧製品 | [Full Shutdown（終了済み）](https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html) | [公式参照](https://docs.aws.amazon.com/general/latest/gr/greengrass.html) |
+| AWS WAF Classic | 提供終了の旧製品 | [Full Shutdown（終了済み）](https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html) | [公式参照](https://docs.aws.amazon.com/general/latest/gr/waf-classic.html) |
 
 ## GA・リージョン・契約条件を個別確認した記録
 

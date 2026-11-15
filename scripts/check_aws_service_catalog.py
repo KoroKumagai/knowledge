@@ -9,6 +9,7 @@ import json
 from pathlib import Path
 import re
 import sys
+from aws_lifecycle import LIFECYCLE_LABELS
 
 ROOT = Path(__file__).resolve().parents[1] / "cloud"
 AWS = ROOT / "aws"
@@ -84,9 +85,7 @@ for note in ("商用製品一覧", "新規導入可能"):
 
 groups = {}
 for key in ("maintenance", "sunset", "shutdown"):
-    title = {"maintenance": "Maintenance（新規受付停止・継続提供）",
-             "sunset": "Sunset（終了予定）",
-             "shutdown": "Full Shutdown（終了済み）"}[key]
+    title = LIFECYCLE_LABELS[key]
     m = re.search(r"^## " + re.escape(title) + r" — (\d+)件$", lifecycle, re.M)
     check(bool(m), "Missing lifecycle section: "+key)
     if not m:
@@ -162,9 +161,7 @@ unmatched_lines = [line for line in unmatched_doc.splitlines()
 unmatched_rows = [cells(line) for line in unmatched_lines]
 check(all(len(row) == 3 for row in unmatched_rows),
       "Unmatched lifecycle report must have three Markdown columns")
-stage_labels = {"maintenance": "Maintenance（新規利用制限あり）",
-                "sunset": "Sunset（終了日を確認）",
-                "shutdown": "Full Shutdown（終了済）"}
+stage_labels = LIFECYCLE_LABELS
 expected_unmatched = [
     [stage_labels[stage], name, source.replace("[公式]", "[AWS公式]")]
     for stage, name, source in unmatched]

@@ -13,6 +13,7 @@ from urllib.parse import urlencode, urljoin, urlsplit
 from urllib.request import Request, urlopen
 import json
 import re
+from aws_lifecycle import lifecycle_label
 
 ROOT = Path(__file__).resolve().parent.parent
 DIR = ROOT / "cloud/aws"
@@ -116,29 +117,9 @@ def read_product_lifecycle():
             raise ValueError("Lifecycle table section count mismatch: "+status)
     return byname
 
-LIFECYCLE_LABELS={
-    "maintenance":"Maintenance（新規利用に制限）",
-    "sunset":"Sunset（終了予定）",
-    "shutdown":"Full Shutdown（終了済み）"
-}
-
-def lifecycle_coverage_note(row):
+def lifecycle_coverage_note(row, as_of=None):
     """A full-product or related-service status, independent of ref mapping."""
-    stage=row["stage"]
-    date=row["end"]
-    if stage=="shutdown":
-        return "Full Shutdown済み"+("（"+date+"）" if date!="—" else "")
-    if stage=="sunset":
-        return "Sunset"+("（"+date+"終了予定）" if date!="—" else "（終了予定）")
-    return "Maintenance（新規利用に制限）"+(
-        "（サポート終了日 "+date+"）" if date!="—" else "")
-
-def related_product_date(row):
-    if row["end"]=="—":
-        return ""
-    return "（"+row["end"]+("終了" if row["stage"]=="shutdown"
-             else "終了予定" if row["stage"]=="sunset"
-             else "サポート終了日")+"）"
+    return lifecycle_label(row["stage"], row["end"], as_of)
 
 def related_lifecycle(name,config,byname):
     """Return statuses of a related service, NOT the Product's own statuses."""
@@ -148,7 +129,7 @@ def related_lifecycle(name,config,byname):
     return sorted(byname[relation["service"]],key=lambda r:
                   {"shutdown":0,"sunset":1,"maintenance":2}[r["stage"]])
 
-def product_lifecycle(name,config,byname):
+def product_lifecycle(name,config,byname,as_of=None):
     alias=config.get("lifecycle_aliases",{}).get(name,name)
     rows=sorted(byname.get(alias,[]),key=lambda r:
                 {"shutdown":0,"sunset":1,"maintenance":2}[r["stage"]])
@@ -160,18 +141,13 @@ def product_lifecycle(name,config,byname):
             dependency=related["service"]
             terms=[]
             for row in statuses:
-                if row["stage"]=="shutdown":
-                    state="関連サービスが終了済み"
-                else:
-                    state="関連サービスの"+LIFECYCLE_LABELS[row["stage"]]
-                terms.append("["+state+"："+dependency+"](lifecycle.md)"
-                             +related_product_date(row))
+                state="関連サービスの"+lifecycle_coverage_note(row,as_of)
+                terms.append("["+state+"："+dependency+"](lifecycle.md)")
             return " / ".join(terms)+"。製品本体の提供状態とは区別",[]
         return "本体の該当記載なし（GA未確認）",[]
     terms=[]
     for row in rows:
-        term="["+LIFECYCLE_LABELS[row["stage"]]+"](lifecycle.md)"
-        if row["end"]!="—":term+="（"+row["end"]+"）"
+        term="["+lifecycle_coverage_note(row,as_of)+"](lifecycle.md)"
         terms.append(term)
     return " / ".join(terms),rows
 
@@ -221,7 +197,7 @@ def generate(products, references, config, day):
                 "| 公式Products名 | 製品ページ | Docs（掲載分） | ライフサイクル（本体） | ディレクトリID |",
                 "|---|---|---|---|---|"]
         for p in subset:
-            lifecycle_state,_=product_lifecycle(p["name"],config,byname)
+            lifecycle_state,_=product_lifecycle(p["name"],config,byname,day)
             lines.append("| "+esc(p["name"])+" | [公式]("+p["url"]+") | "+
               ("[Docs]("+p["docs_url"]+")" if p["docs_url"] else "—")+
               " | "+lifecycle_state+" | "+esc(p["id"])+" |")
@@ -254,14 +230,14 @@ def generate(products, references, config, day):
             key=None;kind="目録外・未対応";note=""
         # Reference matching and lifecycle are orthogonal. Surface all three
         # lifecycle stages for every Product, regardless of match class.
-        _,own_statuses=product_lifecycle(name,config,byname)
+        _,own_statuses=product_lifecycle(name,config,byname,day)
         for status in own_statuses:
-            suffix=lifecycle_coverage_note(status)
+            suffix=lifecycle_coverage_note(status,day)
             note=(note+"。"+suffix) if note else suffix
         dependency=related_lifecycle(name,config,byname)
         if dependency:
             related_name=related_lifecycle_cfg[name]["service"]
-            parts=[lifecycle_coverage_note(row) for row in dependency]
+            parts=[lifecycle_coverage_note(row,day) for row in dependency]
             suffix=(related_name+"（関連サービス）は"+" / ".join(parts)
                     +"。製品本体の提供状態とは区別")
             note=(note+"。"+suffix) if note else suffix
@@ -294,7 +270,7 @@ def generate(products, references, config, day):
     coverage+=["","**注意:** どちらのリストにもないことを理由に製品不在とは判断しない。",
                "区分変更は手動でproducts-mapping.jsonに根拠付きで記録する。",""]
     shutdown_cards=sum(
-        any(row["stage"]=="shutdown" for row in product_lifecycle(p["name"],config,byname)[1])
+        any(row["stage"]=="shutdown" for row in product_lifecycle(p["name"],config,byname,day)[1])
         for p in products)
     status_index=lines.index("[269項目との差分](products-coverage.md) / [手動対応定義](products-mapping.json)")
     lines.insert(status_index,"**公式Full Shutdown台帳でサービス本体の終了を確認: "+str(shutdown_cards)+"カード**")
@@ -337,11 +313,8 @@ def synchronize_documented_counts(total, categories, classes, matched, reference
     aws_path.write_text(aws,encoding="utf-8")
     global_path.write_text(general,encoding="utf-8")
 
-def main():
-    api,total,products=get_products()
-    refs=get_general_reference()
-    config=json.loads((DIR/"products-mapping.json").read_text(encoding="utf-8"))
-    day=datetime.now(timezone.utc).strftime("%Y-%m-%d")
+def render(products,refs,config,day):
+    """Render products.md / products-coverage.md from already-fetched data."""
     products_md,coverage_md,classes,matched=generate(products,refs,config,day)
     dups={name:n for name,n in Counter(p["name"] for p in products).items() if n>1}
     if dups:
@@ -352,6 +325,14 @@ def main():
             additions.append("- "+title+": "+", ".join(ids))
         products_md += "\n".join(additions)+"\n"
         coverage_md += "\n".join(additions)+"\n"
+    return products_md,coverage_md,classes,matched
+
+def main():
+    api,total,products=get_products()
+    refs=get_general_reference()
+    config=json.loads((DIR/"products-mapping.json").read_text(encoding="utf-8"))
+    day=datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    products_md,coverage_md,classes,matched=render(products,refs,config,day)
     snapshot={"retrieved_utc":day,"source_page":PAGE,"api_url":api,
               "source_total_hits":total,"products":products}
     (DIR/"products-source.json").write_text(

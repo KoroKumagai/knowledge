@@ -11,7 +11,7 @@
 - [Sunset](https://docs.aws.amazon.com/general/latest/gr/sunset_services.html): **16件**
 - [Full Shutdown](https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html): **62件**
 
-## Maintenance（新規受付停止・継続提供） — 56件
+## Maintenance（新規利用に制限） — 56件
 
 | AWS公式掲載名（サービス・機能） | 発表日 | サポート終了日 | 公式根拠 |
 |---|---|---|---|

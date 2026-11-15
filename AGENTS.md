@@ -50,6 +50,7 @@
 python -m py_compile scripts/*.py
 python scripts/check_cloud_consistency.py
 python scripts/check_cloudflare_catalog.py
+python scripts/test_aws_lifecycle.py
 python scripts/check_aws_service_catalog.py
 python scripts/check_aws_marketing_products.py
 python scripts/render_aws_open_items.py --check

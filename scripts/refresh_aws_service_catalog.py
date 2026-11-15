@@ -15,6 +15,7 @@ import argparse
 import json
 import re
 import sys
+from aws_lifecycle import EXPIRED_SUNSET_LABEL, LIFECYCLE_LABELS
 
 from bs4 import BeautifulSoup
 
@@ -32,11 +33,6 @@ INDEX_TO_LIFECYCLE = MAPPING["direct_service_names"]
 FEATURE_PARENT_PREFIXES = MAPPING["feature_prefixes"]
 FEATURE_PARENT_EXACT = MAPPING["feature_exact"]
 
-LIFECYCLE_LABELS = {
-    "maintenance": "Maintenance（新規利用制限あり）",
-    "sunset": "Sunset（終了日を確認）",
-    "shutdown": "Full Shutdown（終了済）",
-}
 CURATED_MAP = {
     "AWS Organizations": "Organizations",
     "AWS Control Tower": "AWS Control Tower",
@@ -158,8 +154,8 @@ def date_state(row, today):
     except ValueError:
         return LIFECYCLE_LABELS[stage]
     if expires <= today:
-        return "終了日経過（Sunset掲載・Full Shutdown未照合）"
-    return "Sunset（終了予定）"
+        return EXPIRED_SUNSET_LABEL
+    return LIFECYCLE_LABELS[stage]
 
 def main():
     parser = argparse.ArgumentParser()
@@ -235,9 +231,7 @@ def main():
         f"- [Sunset]({SOURCES['sunset']}): **{len(lists['sunset'])}件**",
         f"- [Full Shutdown]({SOURCES['shutdown']}): **{len(lists['shutdown'])}件**",""]
     for stage in ("maintenance", "sunset", "shutdown"):
-        titles = {"maintenance": "Maintenance（新規受付停止・継続提供）",
-                  "sunset": "Sunset（終了予定）",
-                  "shutdown": "Full Shutdown（終了済み）"}
+        titles = LIFECYCLE_LABELS
         changes += [f"## {titles[stage]} — {len(lists[stage])}件", "",
                     "| AWS公式掲載名（サービス・機能） | 発表日 | サポート終了日 | 公式根拠 |",
                     "|---|---|---|---|"]
