@@ -31,12 +31,68 @@ def files():
         json.loads((AWS/"products-source.json").read_text(encoding="utf-8"))
     )
 
+def official_shutdown_names(lifecycle_text):
+    """Read *only* the Full Shutdown table, never related feature annotations."""
+    heading="## Full Shutdown"
+    # Split on heading boundary to isolate the Full Shutdown table.
+    marker=next((line for line in lifecycle_text.splitlines()
+                 if line.startswith(heading)),None)
+    if marker is None:
+        raise ValueError("Official lifecycle Full Shutdown table not found")
+    block=lifecycle_text.split(marker,1)[1].split("\n## ",1)[0]
+    names=set()
+    for line in block.splitlines():
+        if not line.startswith("| "):
+            continue
+        cols=[x.strip() for x in line.strip().split("|")[1:-1]]
+        if len(cols)==4 and cols[0] not in ("AWS公式掲載名（サービス・機能）","---"):
+            names.add(cols[0])
+    if not names:
+        raise ValueError("Official lifecycle Full Shutdown table is empty")
+    return names
+
+def check_retired_service(name, shutdown_names, mapping, kind):
+    """Only exact service-name matches or explicit, service-level aliases qualify."""
+    alias_group=("product_service_names" if kind=="product" else "direct_service_names")
+    alias=mapping.get(alias_group,{})
+    target=alias.get(name,name)
+    if target not in shutdown_names:
+        raise ValueError("Retired exclusion without full service shutdown source: "+name+
+                         " (resolved name: "+target+")")
+
+def selftest_retirement():
+    names={"Amazon Chime","Amazon Chime SDK – Carrier Voice Focus",
+           "Amazon Chime SDK – Proxy Sessions","AWS WAF Classic",
+           "Amazon Quantum Ledger Database (Amazon QLDB)"}
+    mapping={"direct_service_names":{"AWS WAF Classic":"AWS WAF Classic"},
+             "product_service_names":{
+                 "Amazon Quantum Ledger Database (QLDB)":
+                 "Amazon Quantum Ledger Database (Amazon QLDB)"}}
+    for name,kind in (("AWS WAF Classic","reference"),
+                      ("Amazon Quantum Ledger Database (QLDB)","product")):
+        check_retired_service(name,names,mapping,kind)
+    for name in ("Amazon Chime SDK","Amazon Chime SDK SIP Media Application"):
+        try:
+            check_retired_service(name,names,mapping,"reference")
+        except ValueError:
+            pass
+        else:
+            raise AssertionError("Partial feature shutdown wrongly retires "+name)
+    # The real lifecycle table must contain both parent app and separate features.
+    real=official_shutdown_names((AWS/"lifecycle.md").read_text(encoding="utf-8"))
+    assert "Amazon Chime" in real
+    assert "Amazon Chime SDK" not in real
+    assert "Amazon Chime SDK – Carrier Voice Focus" in real
+    print("OK: Full Shutdown direct-service matching and Chime SDK negative tests")
+
 def audit(as_of=None):
     state,cls,evidence,products=files()
     now=date.fromisoformat(as_of) if as_of else date.today()
     if state["schema_version"]!=1 or state["max_age_days"]!=180:
         raise ValueError("Unexpected verification schema version/expiry rule")
     rows=state["records"]
+    shutdown_names=official_shutdown_names((AWS/"lifecycle.md").read_text(encoding="utf-8"))
+    lifecycle_mapping=json.loads((AWS/"lifecycle-mapping.json").read_text(encoding="utf-8"))
     byid={p["id"]:p["name"] for p in products["products"]}
     expected={("product",x["id"]):byid[x["id"]] for x in cls["product_cards"]}
     expected.update({("reference",x["name"]):x["name"] for x in cls["reference_entries"]})
@@ -97,16 +153,7 @@ def audit(as_of=None):
             and key!=("product","amazon-workspaces-thin-client")):
             raise ValueError("Physical-device exclusion without device category: "+str(key))
         if any(v=="対象外（終了済み）" for v in statuses.values()):
-            # Statuses of terminated services are grounded by the official
-            # lifecycle snapshot; check that an official shutdown exists.
-            name=item["name"]
-            original=(AWS/"products.md").read_text(encoding="utf-8") if key[0]=="product" else (AWS/"catalog.md").read_text(encoding="utf-8")
-            lines=original.splitlines()
-            official=[line for line in lines if
-                     ("| "+name+" |" in line if key[0]=="reference"
-                      else line.startswith("| "+name+" |") and (" | "+key[1]+" |" in line))]
-            if not any("Full Shutdown" in line for line in official):
-                raise ValueError("Retired exclusion without full shutdown source: "+name)
+            check_retired_service(item["name"],shutdown_names,lifecycle_mapping,key[0])
         if statuses["phase"]=="確認済み":
             confirmed.append(item["name"])
     if keyset!=set(expected):
@@ -147,7 +194,7 @@ def render(state,count,stale):
         if sum(vals)!=128:
             raise ValueError("Dimensions do not total 128: "+d)
         out.append("| "+names[d]+" | "+" | ".join(map(str,vals))+" |")
-    out+=["","> 対象外の内訳：提供段階・契約系はツール8件＋終了済み11件＝19件。東京・大阪はそれに物理端末4件を加えた23件です。",""]
+    out+=["","> 対象外の内訳：提供段階・契約系はツール8件＋終了済み10件＝18件。東京・大阪はそれに物理端末4件を加えた22件です。",""]
     out+=["","## 第1段：優先6項目（現時点での根拠状況）","",
           "| 項目 | 提供段階 | 東京 / 大阪 | 新規顧客受付 | 公式根拠 |",
           "|---|---|---|---|---|"]
@@ -177,11 +224,15 @@ def render(state,count,stale):
 
 def main():
     ap=argparse.ArgumentParser()
+    ap.add_argument("--self-test-retirement",action="store_true",help="assert that feature shutdown never retires a parent service")
     ap.add_argument("--check",action="store_true")
     ap.add_argument("--write",action="store_true")
     ap.add_argument("--as-of",type=str,default=None)
     ap.add_argument("--quiet-warnings",action="store_true",help="suppress per-item stale WARN lines; summary still reports count")
     args=ap.parse_args()
+    if args.self_test_retirement:
+        selftest_retirement()
+        return
     state,count,stale,confirmed=audit(args.as_of)
     # Generated Markdown is stable; aging only emits WARN, not a stale-file CI failure.
     expected=render(state,count,[])
